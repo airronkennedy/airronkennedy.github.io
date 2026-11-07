@@ -36,3 +36,23 @@ h2{font-size:24px;font-weight:500;color:#fff;margin:2px 0}
 footer{display:flex;justify-content:space-between;padding-bottom:28px;font-size:10px;opacity:.7}
 @media (max-width:560px){.shots img{height:190px}h2{font-size:21px}}
 @media (prefers-reduced-motion:reduce){.card{transition:none}}
+
+#stars{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.orb{position:fixed;border-radius:50%;z-index:-1;pointer-events:none;animation:orbf 14s ease-in-out infinite alternate;box-shadow:0 0 60px var(--g)}
+.orb::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 70% 72%,rgba(2,2,8,.92) 10%,transparent 68%)}
+.o1{width:150px;height:150px;right:6%;top:9%;--g:rgba(216,180,106,.35);background:radial-gradient(circle at 34% 30%,#f6e2b0,#d8b46a 40%,#5a4320 85%)}
+.o2{width:70px;height:70px;left:3%;top:46%;--g:rgba(122,90,166,.4);background:radial-gradient(circle at 34% 30%,#c7b2ea,#7a5aa6 40%,#2a1d40 85%);animation-duration:18s}
+.o3{width:44px;height:44px;right:12%;bottom:12%;--g:rgba(63,127,168,.4);background:radial-gradient(circle at 34% 30%,#a9d6f2,#3f7fa8 40%,#142a3a 85%);animation-duration:11s}
+@keyframes orbf{to{transform:translateY(18px)}}
+.card{position:relative;animation:drift2 9s ease-in-out infinite alternate}
+.card:nth-child(2n){animation-delay:-4s}
+@keyframes drift2{to{transform:translateY(-5px)}}
+.card::before,.card::after{content:"";position:absolute;width:22px;height:22px;border:1.5px solid rgba(240,217,184,.55);pointer-events:none;z-index:2}
+.card::before{top:8px;left:8px;border-right:0;border-bottom:0;border-radius:6px 0 0 0}
+.card::after{bottom:8px;right:8px;border-left:0;border-top:0;border-radius:0 0 6px 0}
+.card{box-shadow:inset 0 0 40px rgba(120,150,255,.06),0 0 0 1px rgba(120,150,255,.06)}
+.meta::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#d8b46a;box-shadow:0 0 8px #d8b46a;margin-right:8px;vertical-align:1px}
+.back{display:inline-block;padding:8px 14px;border:1px solid rgba(240,217,184,.35);border-radius:99px;background:rgba(12,14,28,.5)}
+.fab{position:fixed;left:16px;bottom:16px;z-index:5}
+@media (max-width:700px){.o1{width:90px;height:90px}}
+@media (prefers-reduced-motion:reduce){.orb,.card{animation:none}}
