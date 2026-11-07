@@ -1,0 +1,41 @@
+# Builds every gifts/<app>/main.py into a Windows .exe and attaches them to a GitHub Release.
+# Trigger: push a tag like `gifts-v1` (git tag gifts-v1 && git push origin gifts-v1).
+# Does not touch GitHub Pages (Pages serves main's root as static files).
+name: Build Christmas gifts
+on:
+  push:
+    tags: ['gifts-v*']
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install PyInstaller
+        run: python -m pip install --upgrade pip pyinstaller
+      - name: Build each gift
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force dist-gifts | Out-Null
+          Get-ChildItem gifts -Directory | ForEach-Object {
+            $name = $_.Name
+            $main = Join-Path $_.FullName 'main.py'
+            if (-not (Test-Path $main)) { return }
+            $req = Join-Path $_.FullName 'requirements.txt'
+            if (Test-Path $req) { python -m pip install -r $req }
+            $icon = Join-Path $_.FullName 'icon.ico'
+            $pyArgs = @('--onefile', '--windowed', '--name', $name, '--distpath', 'dist-gifts', '--workpath', "build/$name", '--specpath', "build/$name")
+            if (Test-Path $icon) { $pyArgs += @('--icon', $icon) }
+            pyinstaller @args $main
+            if ($LASTEXITCODE -ne 0) { throw "Build failed: $name" }
+          }
+          Get-ChildItem dist-gifts
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Christmas gifts ${{ github.ref_name }}
+          files: dist-gifts/*.exe

@@ -8,7 +8,7 @@
    - color: dominant hue of the planet (six-digit hex, e.g. '#7a5aa6').
    ========================================================================== */
 var PLANETS = [
-  { id: 'cinder',   label: '', url: '#', color: '#d9773f' },
+  { id: 'cinder',   label: 'Christmas Planet', url: '/christmas/', color: '#b8323f', show: true },
   { id: 'tidewell', label: "Weston's Planet", url: '/weston/', color: '#3f7fa8', show: true },
   { id: 'aurelian', label: 'Work', url: 'work/', color: '#d8b46a', show: true },
   { id: 'verdigris',label: 'Team Task Tracker', url: '/tracker/', color: '#4f9a8a', show: true },
