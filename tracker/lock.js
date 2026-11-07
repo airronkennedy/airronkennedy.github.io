@@ -2,7 +2,7 @@
 'use strict';
 const LOCKS={
  tracker:{key:'airron-tracker-unlocked-v1',hash:'92050f605d973135e2ece407e1fc70f01300880e406afa1e85ea2b337e958086',guard:()=>!!document.body.dataset.tracker,
-  html:`<div class="orbit-symbol" aria-hidden="true">♄</div><h2 id="lock-title">Team Task Tracker</h2><p>Your crew’s private orbit.<br>Enter the access code to continue.</p>`,cls:'orbit-lock',err:'That code did not unlock this orbit. Try again.'},
+  html:`<div class="orbit-symbol" aria-hidden="true">♄</div><h2 id="lock-title">Team Task Tracker Planet</h2><p>Your crew’s private orbit.<br>Enter the access code to continue.</p>`,cls:'orbit-lock',err:'That code did not unlock this orbit. Try again.'},
  christmas:{key:'airron-christmas-unlocked-v1',hash:'9e83e2a28e7c3a87c9eb94e840e682ae118b827ff6d579874b1edb23359527cd',guard:()=>!!document.body.dataset.christmas,
   html:`<div class="orbit-symbol" aria-hidden="true">🎄</div><h2 id="lock-title">Christmas Planet</h2><p>Family gifts live here.<br>Enter the password to land.</p>`,cls:'orbit-lock xmas-lock',err:'Not quite. Check the password and try again.'}
 };
