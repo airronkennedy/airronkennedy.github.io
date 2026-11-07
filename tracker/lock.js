@@ -1,6 +1,11 @@
 (() => {
 'use strict';
-const key='airron-tracker-unlocked-v1';
+const LOCKS={
+ tracker:{key:'airron-tracker-unlocked-v1',hash:'92050f605d973135e2ece407e1fc70f01300880e406afa1e85ea2b337e958086',guard:()=>!!document.body.dataset.tracker,
+  html:`<div class="orbit-symbol" aria-hidden="true">♄</div><h2 id="lock-title">Team Task Tracker</h2><p>Your crew’s private orbit.<br>Enter the access code to continue.</p>`,cls:'orbit-lock',err:'That code did not unlock this orbit. Try again.'},
+ christmas:{key:'airron-christmas-unlocked-v1',hash:'9e83e2a28e7c3a87c9eb94e840e682ae118b827ff6d579874b1edb23359527cd',guard:()=>!!document.body.dataset.christmas,
+  html:`<div class="orbit-symbol" aria-hidden="true">🎄</div><h2 id="lock-title">Christmas Planet</h2><p>Family gifts live here.<br>Enter the password to land.</p>`,cls:'orbit-lock xmas-lock',err:'Not quite. Check the password and try again.'}
+};
 // SHA-256 fallback for HTTP, where Web Crypto is unavailable. UTF-8 bytes in, digest bytes out.
 function sha256(bytes){
  const k=new Uint32Array([
@@ -43,18 +48,19 @@ async function digestCode(value){
  }
  return sha256(bytes);
 }
-function isUnlocked(){try{return sessionStorage.getItem(key)==='yes'}catch{return false}}
-function remember(){try{sessionStorage.setItem(key,'yes')}catch{}}
-window.TrackerLock={open};
-let dialog;
-function open(onSuccess){
- if(isUnlocked()){onSuccess();return;}
+function isUnlocked(L){try{return sessionStorage.getItem(L.key)==='yes'}catch{return false}}
+function remember(L){try{sessionStorage.setItem(L.key,'yes')}catch{}}
+window.TrackerLock={open:(cb)=>open(cb,'tracker'),openLock:open};
+const dialogs={};
+function open(onSuccess,name='tracker'){
+ const L=LOCKS[name];let dialog=dialogs[name];
+ if(isUnlocked(L)){onSuccess();return;}
  if(!dialog){
- dialog=document.createElement('dialog');dialog.className='orbit-lock';
+ dialog=dialogs[name]=document.createElement('dialog');dialog.className=L.cls;
  dialog.setAttribute('aria-labelledby','lock-title');
- dialog.innerHTML=`<div class="orbit-symbol" aria-hidden="true">♄</div><h2 id="lock-title">Team Task Tracker</h2><p>Your crew’s private orbit.<br>Enter the access code to continue.</p><form><label for="orbit-code">ACCESS CODE</label><input id="orbit-code" type="password" autocomplete="off" required><button class="lock-submit" type="submit">Unlock orbit →</button><p class="lock-error" role="status" aria-live="polite"></p></form><button class="lock-cancel" type="button">← Back to orbit</button><small>Casual access lock only. Do not enter sensitive information.</small>`;
+ dialog.innerHTML=L.html+`<form><label for="orbit-code">ACCESS CODE</label><input id="orbit-code" type="password" autocomplete="off" required><button class="lock-submit" type="submit">Unlock orbit →</button><p class="lock-error" role="status" aria-live="polite"></p></form><button class="lock-cancel" type="button">← Back to orbit</button><small>Casual access lock only. Do not enter sensitive information.</small>`;
  document.body.append(dialog);
- dialog.querySelector('.lock-cancel').onclick=()=>{if(document.body.dataset.tracker){location.href='/'}else{dialog.close()}};
+ dialog.querySelector('.lock-cancel').onclick=()=>{if(L.guard()){location.href='/'}else{dialog.close()}};
  }
  const form=dialog.querySelector('form'),input=dialog.querySelector('input'),error=dialog.querySelector('.lock-error');
  input.value='';error.textContent='';
@@ -62,13 +68,15 @@ function open(onSuccess){
  try{
  const digest=await digestCode(input.value);
  const actual=Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join('');
- if(actual==='92050f605d973135e2ece407e1fc70f01300880e406afa1e85ea2b337e958086'){remember();input.value='';dialog.close();onSuccess()}
- else{error.textContent='That code did not unlock this orbit. Try again.';input.select()}
+ if(actual===L.hash){remember(L);input.value='';dialog.close();onSuccess()}
+ else{error.textContent=L.err;input.select()}
  }catch{error.textContent='The access check could not finish. Please try again.'}
  };
- if(document.body.dataset.tracker)dialog.addEventListener('cancel',e=>{e.preventDefault();location.href='/'},{once:true});
+ if(L.guard())dialog.addEventListener('cancel',e=>{e.preventDefault();location.href='/'},{once:true});
  dialog.showModal();input.focus();
 }
-document.addEventListener('click',e=>{const a=e.target.closest('a[data-testid="link-planet-verdigris"]');if(a){e.preventDefault();open(()=>{location.href=a.href})}});
-if(document.body.dataset.tracker)open(()=>{document.getElementById('tracker-app').hidden=false;document.body.classList.add('unlocked');window.dispatchEvent(new Event('tracker-unlocked'))});
+document.addEventListener('click',e=>{const a=e.target.closest('a[data-testid="link-planet-verdigris"]');if(a){e.preventDefault();open(()=>{location.href=a.href},'tracker')}
+ const x=e.target.closest('a[data-testid="link-planet-cinder"]');if(x){e.preventDefault();open(()=>{location.href=x.href},'christmas')}});
+if(document.body.dataset.christmas)open(()=>{document.body.classList.add('unlocked')},'christmas');
+if(document.body.dataset.tracker)open(()=>{document.getElementById('tracker-app').hidden=false;document.body.classList.add('unlocked');window.dispatchEvent(new Event('tracker-unlocked'))},'tracker');
 })();
