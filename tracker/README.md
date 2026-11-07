@@ -9,3 +9,9 @@ Static, dependency-free forms for the existing GitHub Pages site.
 - Print only the active sheet: Letter portrait for timesheets and single supply requests, Letter landscape for two identical supply requests side by side. Disable browser print headers/footers and use 100% scale for the intended measurements.
 - Clear asks for confirmation and only clears the selected sheet. Enlarge paper provides full-size editing with scrolling on small screens; Fit paper restores the compact preview.
 - Paper layouts were recreated from the reference photo with blank fields, not embedded photographs. No identifying text from the photo is included.
+
+## Building supply catalog
+
+Edit `supplies.js` to add buildings and `{item, unit}` entries. All photographed items, including shaded rows, are retained; stock counts and handwritten quantities are excluded. OCB's trash-liners-only note is shown on screen without deleting its reference items.
+
+The Supply Request has a building selector plus Other site, 18 item selectors with quantity fields, and an Other/type-item fallback per line. Switching buildings preserves unavailable selections as custom text. Existing browser-saved free-text requests migrate to Other fields. Printed lines contain only item, unit, and entered quantity; untouched lines remain blank rules. Timesheet SITE cells offer the same building names while allowing arbitrary text.
