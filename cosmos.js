@@ -10,7 +10,7 @@
 var PLANETS = [
   { id: 'cinder',   label: '', url: '#', color: '#d9773f' },
   { id: 'tidewell', label: '', url: '#', color: '#3f7fa8' },
-  { id: 'aurelian', label: '', url: '#', color: '#d8b46a' },
+  { id: 'aurelian', label: 'Work', url: 'work/', color: '#d8b46a', show: true },
   { id: 'verdigris',label: '', url: '#', color: '#4f9a8a' },
   { id: 'umbra',    label: '', url: '#', color: '#7a5aa6' },
   { id: 'frost',    label: '', url: '#', color: '#b9d3e6' },
@@ -103,7 +103,7 @@ var PLANETS = [
       '<span class="atmo"></span><span class="body"><span class="tex"></span><span class="tex b" style="transform:scaleY(-1)"></span>' +
       (look.kind === 'storm' ? '<span style="position:absolute;left:58%;top:56%;width:22%;height:12%;border-radius:50%;background:radial-gradient(' + shift(hex, .5) + ',transparent 70%);opacity:.6"></span>' : '') +
       '<span class="shade"></span><span class="rim"></span></span>' +
-      (look.ring ? '<span class="ring front"></span>' : '') + '</span></span>';
+      (look.ring ? '<span class="ring front"></span>' : '') + '</span>' + (p.show && p.label ? '<span class="tag">' + p.label + '</span>' : '') + '</span>';
     a.addEventListener('click', function (e) { if (isPlaceholder(p.url)) e.preventDefault(); });
     a.addEventListener('pointerdown', function (e) {
       if (e.pointerType !== 'mouse') { a.classList.add('pressed'); setTimeout(function () { a.classList.remove('pressed'); }, 650); }
