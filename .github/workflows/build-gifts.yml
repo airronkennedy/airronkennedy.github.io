@@ -30,12 +30,14 @@ jobs:
             $icon = Join-Path $_.FullName 'icon.ico'
             $pyArgs = @('--onefile', '--windowed', '--name', $name, '--distpath', 'dist-gifts', '--workpath', "build/$name", '--specpath', "build/$name")
             if (Test-Path $icon) { $pyArgs += @('--icon', $icon) }
-            pyinstaller @args $main
+            pyinstaller @pyArgs $main
             if ($LASTEXITCODE -ne 0) { throw "Build failed: $name" }
           }
           Get-ChildItem dist-gifts
+          if (-not (Get-ChildItem dist-gifts -Filter *.exe)) { throw 'No .exe files were built' }
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
           name: Christmas gifts ${{ github.ref_name }}
           files: dist-gifts/*.exe
+          fail_on_unmatched_files: true
