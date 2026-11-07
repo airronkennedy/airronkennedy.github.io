@@ -11,7 +11,7 @@ var PLANETS = [
   { id: 'cinder',   label: '', url: '#', color: '#d9773f' },
   { id: 'tidewell', label: '', url: '#', color: '#3f7fa8' },
   { id: 'aurelian', label: 'Work', url: 'work/', color: '#d8b46a', show: true },
-  { id: 'verdigris',label: '', url: '#', color: '#4f9a8a' },
+  { id: 'verdigris',label: 'Team Task Tracker', url: '/tracker/', color: '#4f9a8a', show: true },
   { id: 'umbra',    label: '', url: '#', color: '#7a5aa6' },
   { id: 'frost',    label: '', url: '#', color: '#b9d3e6' },
   { id: 'carmine',  label: '', url: '#', color: '#a8434f' },
