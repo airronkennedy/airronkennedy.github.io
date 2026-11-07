@@ -3,9 +3,8 @@
   'use strict';
   var $ = function (id) { return document.getElementById(id); };
   var ICE = { config: { iceServers: [{ urls: 'stun:stun.l.google.com:19302' }, { urls: 'stun:stun1.l.google.com:19302' }] } };
-  var PRE = 'akweston-', MAX = 6;
+  var PRE = 'akweston-room-', MAX = 6;
   var qs = new URLSearchParams(location.search);
-  $('code').value = (qs.get('room') || '').toUpperCase();
   $('name').value = localStorage.getItem('weston-name') || '';
   var me, hub = null, hubConn = null, local, facing = 'user', code, myName, list = {}, people = {}, left = false;
   function status(t) { $('status').textContent = t || ''; }
@@ -100,10 +99,9 @@
   /* ---------- join ---------- */
   function join(c) {
     myName = ($('name').value.trim() || 'Guest').slice(0, 20); localStorage.setItem('weston-name', myName);
-    code = c.toUpperCase().replace(/[^A-Z0-9]/g, '');
-    if (code.length < 3) { $('lerr').textContent = 'Enter a room code (or Create room).'; return; }
+    code = 'MAIN'; $('bJoin').disabled = true;
     $('lerr').textContent = 'Connecting…';
-    history.replaceState(null, '', '?room=' + code);
+    if (location.search) history.replaceState(null, '', location.pathname);
     media().catch(function (e) { $('lerr').textContent = 'No camera/mic (' + (e.message || e.name) + '); joining without them.'; return silentStream(); })
       .then(function (s) {
         local = s; $('selfie').srcObject = s;
@@ -114,9 +112,8 @@
         me.on('disconnected', function () { if (!left) try { me.reconnect(); } catch (e) {} });
       });
   }
-  $('bJoin').onclick = function () { join($('code').value); };
-  $('bCreate').onclick = function () { var c = newCode(); $('code').value = c; join(c); };
-  $('code').onkeydown = function (e) { if (e.key === 'Enter') join($('code').value); };
+  $('bJoin').onclick = function () { join(); };
+  $('name').onkeydown = function (e) { if (e.key === 'Enter') join(); };
 
   /* ---------- controls ---------- */
   function tracks(kind) { return local ? (kind === 'a' ? local.getAudioTracks() : local.getVideoTracks()) : []; }
@@ -134,7 +131,7 @@
     }).catch(function () { status('Could not switch camera'); facing = facing === 'user' ? 'environment' : 'user'; });
   };
   $('bCopy').onclick = function () {
-    var url = location.origin + '/weston/?room=' + code;
+    var url = location.origin + '/weston/';
     if (navigator.share) { navigator.share({ title: "Weston's Planet", url: url }).catch(function () {}); return; }
     (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function () { status('Invite link copied'); }, function () { prompt('Invite link', url); });
   };

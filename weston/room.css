@@ -31,3 +31,4 @@ button.leave{background:rgba(168,67,79,.8)}
 button.alt{background:rgba(63,127,168,.55)}
 .err{min-height:1em;font-size:12px;color:#f2a3ad;text-align:center}
 [hidden]{display:none!important}
+.lobby button.enter{padding:18px;font-size:13px;letter-spacing:.24em;background:radial-gradient(circle at 30% 20%,rgba(120,180,230,.85),rgba(63,127,168,.75) 45%,rgba(20,30,70,.9));box-shadow:0 0 28px rgba(63,127,168,.6)}
