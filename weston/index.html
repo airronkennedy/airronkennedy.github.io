@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Weston's Planet</title>
+    <link rel="stylesheet" href="/cosmos.css" />
+    <link rel="stylesheet" href="room.css" />
+  </head>
+  <body>
+    <main class="sky" aria-label="Weston's Planet">
+      <div id="people" class="people"></div>
+      <a class="home nodrag" href="/" aria-label="Back home">&larr; Home</a>
+      <div id="hud" class="hud" hidden>
+        <div class="me nodrag"><video id="selfie" autoplay playsinline muted></video><span>You</span></div>
+        <div class="bar nodrag">
+          <button id="bMute" title="Mute">Mute</button>
+          <button id="bCam" title="Camera off">Camera</button>
+          <button id="bFlip" title="Flip camera">Flip</button>
+          <button id="bCopy" title="Copy invite link">Invite</button>
+          <button id="bLeave" class="leave" title="Leave">Leave</button>
+        </div>
+        <p id="status" class="status"></p>
+      </div>
+      <section id="lobby" class="lobby nodrag">
+        <h1>Weston's <span>Planet</span></h1>
+        <p class="sub">A video call out in space. Turn around to find everyone.</p>
+        <label>Your name<input id="name" maxlength="20" autocomplete="name" placeholder="Name" /></label>
+        <label>Room code<input id="code" maxlength="8" autocapitalize="characters" placeholder="e.g. K7Q2X" /></label>
+        <div class="row"><button id="bJoin">Join room</button><button id="bCreate" class="alt">Create room</button></div>
+        <p id="lerr" class="err" role="alert"></p>
+      </section>
+    </main>
+    <script src="/sky.js"></script>
+    <script src="peerjs.min.js"></script>
+    <script src="room.js"></script>
+  </body>
+</html>

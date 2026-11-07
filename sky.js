@@ -4,7 +4,8 @@
   var reduce = matchMedia('(prefers-reduced-motion: reduce)');
   var sky = document.querySelector('.sky'), neb = document.querySelector('.nebula');
   var cv = document.createElement('canvas'); cv.id = 'sphere'; cv.setAttribute('aria-hidden', 'true');
-  sky.insertBefore(cv, neb.nextSibling);
+  sky.insertBefore(cv, neb ? neb.nextSibling : sky.firstChild);
+  var hooks = [];
   var ctx = cv.getContext('2d'), W, H, F, dpr;
   function rnd(s) { return function () { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; }; }
   var R = rnd(91);
@@ -62,7 +63,7 @@
     addEventListener('pointerdown', ask, true);
   }
   /* desktop: drag empty space to look around; otherwise a slow drift */
-  addEventListener('pointerdown', function (e) { if (e.pointerType === 'mouse' && !e.target.closest('a,button,input,dialog')) drag = [e.clientX, e.clientY, yaw, pitch]; });
+  addEventListener('pointerdown', function (e) { if (e.pointerType === 'mouse' && !e.target.closest('a,button,input,dialog,.nodrag')) drag = [e.clientX, e.clientY, yaw, pitch]; });
   addEventListener('pointermove', function (e) { if (drag) { yaw = drag[2] + (e.clientX - drag[0]) * .0035; pitch = Math.max(-1.4, Math.min(1.4, drag[3] + (e.clientY - drag[1]) * .0035)); } });
   addEventListener('pointerup', function () { drag = null; });
   function resize() { dpr = Math.min(devicePixelRatio || 1, 1.5); W = innerWidth; H = innerHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); F = Math.max(W, H) * .6; }
@@ -86,12 +87,14 @@
     cur = qslerp(cur, target, gyro ? .15 : .12);
     /* Cosmic Cliffs photo sits straight ahead; it fades as you turn away */
     var fwd = rotInv([-cur[0], -cur[1], -cur[2], cur[3]], [0, 0, -1]), d = -fwd[2];
-    neb.style.opacity = Math.max(0, Math.min(1, (d - .55) / .35)).toFixed(3);
+    if (neb) neb.style.opacity = Math.max(0, Math.min(1, (d - .55) / .35)).toFixed(3);
     ctx.clearRect(0, 0, W, H);
     clouds.forEach(blob); glow.forEach(blob); dots(band, t); dots(stars, t); ctx.globalAlpha = .55; bodies.forEach(planet); ctx.globalAlpha = 1;
+    for (var h = 0; h < hooks.length; h++) hooks[h]();
     raf = reduce.matches ? 0 : requestAnimationFrame(frame);
   }
   function start() { cancelAnimationFrame(raf); resize(); last = 0; raf = requestAnimationFrame(frame); }
+  window.SKY = { proj: proj, hooks: hooks, F: function () { return F; } };
   start(); addEventListener('resize', start);
   if (reduce.addEventListener) reduce.addEventListener('change', start);
   document.addEventListener('visibilitychange', function () { if (document.hidden) cancelAnimationFrame(raf); else start(); });

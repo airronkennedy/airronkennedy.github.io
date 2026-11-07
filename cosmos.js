@@ -9,7 +9,7 @@
    ========================================================================== */
 var PLANETS = [
   { id: 'cinder',   label: '', url: '#', color: '#d9773f' },
-  { id: 'tidewell', label: '', url: '#', color: '#3f7fa8' },
+  { id: 'tidewell', label: "Weston's Planet", url: '/weston/', color: '#3f7fa8', show: true },
   { id: 'aurelian', label: 'Work', url: 'work/', color: '#d8b46a', show: true },
   { id: 'verdigris',label: 'Team Task Tracker', url: '/tracker/', color: '#4f9a8a', show: true },
   { id: 'umbra',    label: '', url: '#', color: '#7a5aa6' },
