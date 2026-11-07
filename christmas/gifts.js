@@ -5,5 +5,5 @@ var GIFT_REPO = 'airronkennedy/airronkennedy.github.io';
 var GIFTS = [
   { who: 'Buffi (Mom)', app: 'Coming soon', icon: '🎁', desc: 'A little app made just for Mom.', tag: '', file: '' },
   { who: 'Weston',      app: 'Coming soon', icon: '🚀', desc: 'A little app made just for Weston.', tag: '', file: '' },
-  { who: 'Everyone',    app: 'Hello Christmas', icon: '❄️', desc: 'A tiny snowy "Merry Christmas" window. Test gift for the build pipeline.', tag: '', file: '' }
+  { who: 'Everyone',    app: 'Hello Christmas', icon: '❄️', desc: 'A tiny snowy "Merry Christmas" window. Test gift for the build pipeline.', tag: 'gifts-v1', file: 'hello-christmas.exe' }
 ];
