@@ -1,11 +1,12 @@
 /* Weston's Planet: WebRTC mesh video room (PeerJS cloud signaling), people float as planets in the 360° sky. */
 (function () {
   'use strict';
-  var $ = function (id) { return document.getElementById(id); };
+  var DUMMY = { style: {}, classList: { add: function () {}, remove: function () {}, toggle: function () { return false; }, contains: function () { return false; } }, querySelector: function () { return null; } };
+  var $ = function (id) { return document.getElementById(id) || DUMMY; };
   var ICE = { config: { iceServers: [{ urls: 'stun:stun.l.google.com:19302' }, { urls: 'stun:stun1.l.google.com:19302' }] } };
   var PRE = 'akweston-room-', MAX = 6;
   var qs = new URLSearchParams(location.search);
-  $('name').value = localStorage.getItem('weston-name') || '';
+  try { $('name').value = localStorage.getItem('weston-name') || ''; } catch (e) {}
   var me, hub = null, hubConn = null, local, facing = 'user', code, myName, list = {}, people = {}, left = false;
   function status(t) { $('status').textContent = t || ''; }
   function newCode() { var a = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789', s = ''; for (var i = 0; i < 5; i++) s += a[(Math.random() * a.length) | 0]; return s; }
@@ -33,7 +34,7 @@
       $('people').appendChild(el);
       p = people[id] = { el: el, slot: slot, v: el.querySelector('video') };
     }
-    if (stream && p.v.srcObject !== stream) { p.v.srcObject = stream; var pr = p.v.play(); if (pr && pr.catch) pr.catch(function () {}); }
+    if (stream && p.v.srcObject !== stream) { p.v.srcObject = stream; var pr = p.v.play(); if (pr && pr.catch) pr.catch(function () { status('Tap anywhere to hear everyone'); }); }
     p.el.querySelector('.nm').textContent = list[id] || 'Guest';
     count();
   }
@@ -98,21 +99,34 @@
 
   /* ---------- join ---------- */
   function join(c) {
-    myName = ($('name').value.trim() || 'Guest').slice(0, 20); localStorage.setItem('weston-name', myName);
+    myName = (String($('name').value || '').trim() || 'Guest').slice(0, 20); try { localStorage.setItem('weston-name', myName); } catch (e) {}
     code = 'MAIN'; $('bJoin').disabled = true;
     $('lerr').textContent = 'Connecting…';
     if (location.search) history.replaceState(null, '', location.pathname);
-    media().catch(function (e) { $('lerr').textContent = 'No camera/mic (' + (e.message || e.name) + '); joining without them.'; return silentStream(); })
-      .then(function (s) {
-        local = s; $('selfie').srcObject = s;
-        me = new Peer(ICE);
-        me.on('open', function () { $('lobby').hidden = true; $('hud').hidden = false; count(); claimHub(); });
-        me.on('call', function (call) { call.answer(local); wire(call); });
-        me.on('error', function (e) { if (e.type === 'peer-unavailable') return; $('lerr').textContent = 'Connection error: ' + e.type; status('Connection error: ' + e.type); });
-        me.on('disconnected', function () { if (!left) try { me.reconnect(); } catch (e) {} });
-      });
+    unlockAudio();
+    media().catch(function (e) { note = 'Camera/mic blocked — joined without video. (' + (e.message || e.name) + ')'; $('lerr').textContent = note; return silentStream(); })
+      .then(function (s) { local = s; var sv = $('selfie'); sv.srcObject = s; try { sv.play().catch(function () {}); } catch (e) {} startPeer(0); })
+      .catch(fail);
   }
-  $('bJoin').onclick = function () { join(); };
+  var note = '';
+  function fail(e) { $('lerr').textContent = 'Something went wrong: ' + (e && (e.message || e.type) || e) + '. Tap Enter to try again.'; $('bJoin').disabled = false; }
+  function startPeer(tries) {
+    if (typeof Peer !== 'function') return fail(new Error('call library did not load'));
+    var opened = false;
+    me = new Peer(ICE);
+    var t = setTimeout(function () { if (opened) return; try { me.destroy(); } catch (e) {}
+      if (tries < 4) { $('lerr').textContent = "Couldn't reach the call server, retrying…"; startPeer(tries + 1); } else fail(new Error("couldn't reach the call server")); }, 10000);
+    me.on('open', function () { opened = true; clearTimeout(t); $('lobby').hidden = true; $('hud').hidden = false; count(); if (note) status(note); claimHub(); });
+    me.on('call', function (call) { call.answer(local); wire(call); });
+    me.on('error', function (e) { if (e.type === 'peer-unavailable') return; status('Connection issue: ' + e.type); if (!opened) $('lerr').textContent = 'Connection issue: ' + e.type + ' — retrying…'; });
+    me.on('disconnected', function () { if (!left && opened) try { me.reconnect(); } catch (e) {} });
+  }
+  /* iOS: unlock audio inside the Enter tap; replay anything that got blocked on the next tap */
+  var ac;
+  function unlockAudio() { try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); ac.resume(); } catch (e) {} }
+  function playAll() { unlockAudio(); document.querySelectorAll('video').forEach(function (v) { if (v.paused && v.srcObject) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } }); }
+  addEventListener('pointerup', playAll);
+  $('bJoin').onclick = function () { try { join(); } catch (e) { fail(e); } };
   $('name').onkeydown = function (e) { if (e.key === 'Enter') join(); };
 
   /* ---------- controls ---------- */
