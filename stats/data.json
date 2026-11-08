@@ -1,1 +1,98 @@
-{"updated":null,"note":"Awaiting first update: a GoatCounter API token is needed before stats can be pulled.","total_visits":null,"visitors":[],"pages":[],"referrers":[],"countries":[],"browsers":[],"systems":[]}
+{
+ "updated": "2026-11-08T02:48:31+00:00",
+ "note": null,
+ "total_visits": 9,
+ "visitors": [
+  {
+   "name": "Airron Kennedy",
+   "day": "2026-11-07",
+   "count": 1
+  }
+ ],
+ "pages": [
+  {
+   "name": "/",
+   "count": 2
+  },
+  {
+   "name": "/work/?v=h",
+   "count": 1
+  },
+  {
+   "name": "/work/showcase.html",
+   "count": 1
+  },
+  {
+   "name": "/work/skills.html",
+   "count": 1
+  },
+  {
+   "name": "/work/projects/rakshasa-systems.html",
+   "count": 1
+  },
+  {
+   "name": "/work/projects/v1ct0r.html",
+   "count": 1
+  },
+  {
+   "name": "/work",
+   "count": 1
+  }
+ ],
+ "referrers": [
+  {
+   "name": "(unknown)",
+   "count": 3
+  }
+ ],
+ "countries": [
+  {
+   "name": "United States",
+   "count": 9
+  }
+ ],
+ "browsers": [
+  {
+   "name": "Safari",
+   "count": 7
+  },
+  {
+   "name": "(unknown)",
+   "count": 1
+  },
+  {
+   "name": "Chrome",
+   "count": 1
+  }
+ ],
+ "systems": [
+  {
+   "name": "iOS",
+   "count": 8
+  },
+  {
+   "name": "Linux",
+   "count": 1
+  },
+  {
+   "name": "Screen: (unknown)",
+   "count": 8
+  },
+  {
+   "name": "Screen: (unknown)",
+   "count": 0
+  },
+  {
+   "name": "Screen: (unknown)",
+   "count": 1
+  },
+  {
+   "name": "Screen: (unknown)",
+   "count": 0
+  },
+  {
+   "name": "Screen: (unknown)",
+   "count": 0
+  }
+ ]
+}
