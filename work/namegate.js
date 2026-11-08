@@ -11,7 +11,16 @@ function logName(name){
   if(++tries<40)setTimeout(send,500);
  })();
 }
+function isRecruiterLink(){
+ try{return new URLSearchParams(location.search).get('r')==='recruiter'}catch{return false}
+}
 function gate(){
+ if(isRecruiterLink()){
+  const first=!stored();
+  try{localStorage.setItem(KEY,'Recruiter')}catch{}
+  if(first)logName('Recruiter');
+  return;
+ }
  if(stored())return;
  document.documentElement.classList.add('name-gated');
  const d=document.createElement('dialog');d.className='orbit-lock name-gate';d.setAttribute('aria-labelledby','gate-title');
