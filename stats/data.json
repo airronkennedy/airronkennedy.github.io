@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-08T02:48:31+00:00",
+ "updated": "2026-11-08T23:17:23+00:00",
  "note": null,
- "total_visits": 9,
+ "total_visits": 21,
  "visitors": [
   {
    "name": "Airron Kennedy",
@@ -12,7 +12,31 @@
  "pages": [
   {
    "name": "/",
+   "count": 8
+  },
+  {
+   "name": "/work",
    "count": 2
+  },
+  {
+   "name": "/weston",
+   "count": 1
+  },
+  {
+   "name": "/tracker",
+   "count": 1
+  },
+  {
+   "name": "/work/projects/npc-player-flow.html",
+   "count": 1
+  },
+  {
+   "name": "/work/projects/pong.html",
+   "count": 1
+  },
+  {
+   "name": "/work/resume.html",
+   "count": 1
   },
   {
    "name": "/work/?v=h",
@@ -33,50 +57,54 @@
   {
    "name": "/work/projects/v1ct0r.html",
    "count": 1
-  },
-  {
-   "name": "/work",
-   "count": 1
   }
  ],
  "referrers": [
   {
    "name": "(unknown)",
-   "count": 3
+   "count": 8
   }
  ],
  "countries": [
   {
    "name": "United States",
-   "count": 9
+   "count": 20
+  },
+  {
+   "name": "United Kingdom",
+   "count": 1
   }
  ],
  "browsers": [
   {
    "name": "Safari",
-   "count": 7
-  },
-  {
-   "name": "(unknown)",
-   "count": 1
+   "count": 16
   },
   {
    "name": "Chrome",
+   "count": 4
+  },
+  {
+   "name": "(unknown)",
    "count": 1
   }
  ],
  "systems": [
   {
    "name": "iOS",
-   "count": 8
+   "count": 17
   },
   {
    "name": "Linux",
-   "count": 1
+   "count": 2
+  },
+  {
+   "name": "Windows",
+   "count": 2
   },
   {
    "name": "Screen: (unknown)",
-   "count": 8
+   "count": 17
   },
   {
    "name": "Screen: (unknown)",
@@ -84,7 +112,7 @@
   },
   {
    "name": "Screen: (unknown)",
-   "count": 1
+   "count": 4
   },
   {
    "name": "Screen: (unknown)",
