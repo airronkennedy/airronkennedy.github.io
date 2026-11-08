@@ -123,3 +123,6 @@ footer p{margin-top:10px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media print{.bg,.veil,#stars,.orb,.fab,.section-nav,.back,.skip{display:none}body{color:#111;background:#fff}a,h1,h2,h3,.meta,.tools li{color:#111}.card,.scope{background:#fff;border:1px solid #bbb;animation:none;backdrop-filter:none}footer{padding-bottom:10px}}
+
+/* name gate */
+html.name-gated body>*:not(dialog){filter:blur(6px)}

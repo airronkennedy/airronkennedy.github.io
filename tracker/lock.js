@@ -5,6 +5,9 @@ const LOCKS={
   html:`<div class="orbit-symbol" aria-hidden="true">♄</div><h2 id="lock-title">Team Task Tracker Planet</h2><p>Your crew’s private orbit.<br>Enter the access code to continue.</p>`,cls:'orbit-lock',err:'That code did not unlock this orbit. Try again.'},
  christmas:{key:'airron-christmas-unlocked-v1',hash:'9e83e2a28e7c3a87c9eb94e840e682ae118b827ff6d579874b1edb23359527cd',guard:()=>!!document.body.dataset.christmas,
   html:`<div class="orbit-symbol" aria-hidden="true">🎄</div><h2 id="lock-title">Christmas Planet</h2><p>Family gifts live here.<br>Enter the password to land.</p>`,cls:'orbit-lock xmas-lock',err:'Not quite. Check the password and try again.'}
+,
+ stats:{key:'airron-stats-unlocked-v1',hash:'6160de6cdc9e54417c48904e9a2f65cdcb5122be6d59d089f2764b038af4f7c5',guard:()=>!!document.body.dataset.stats,
+  html:`<div class="orbit-symbol" aria-hidden="true">✦</div><h2 id="lock-title">Stats Planet</h2><p>Mission control for visitors.<br>Enter the password to land.</p>`,cls:'orbit-lock',err:'That code did not unlock this orbit. Try again.'}
 };
 // SHA-256 fallback for HTTP, where Web Crypto is unavailable. UTF-8 bytes in, digest bytes out.
 function sha256(bytes){
@@ -76,7 +79,9 @@ function open(onSuccess,name='tracker'){
  dialog.showModal();input.focus();
 }
 document.addEventListener('click',e=>{const a=e.target.closest('a[data-testid="link-planet-verdigris"]');if(a){e.preventDefault();open(()=>{location.href=a.href},'tracker')}
- const x=e.target.closest('a[data-testid="link-planet-cinder"]');if(x){e.preventDefault();open(()=>{location.href=x.href},'christmas')}});
+ const x=e.target.closest('a[data-testid="link-planet-cinder"]');if(x){e.preventDefault();open(()=>{location.href=x.href},'christmas')}
+ const st=e.target.closest('a[data-testid="link-planet-umbra"]');if(st){e.preventDefault();open(()=>{location.href=st.href},'stats')}});
+if(document.body.dataset.stats)open(()=>{document.body.classList.add('unlocked');window.dispatchEvent(new Event('stats-unlocked'))},'stats');
 if(document.body.dataset.christmas)open(()=>{document.body.classList.add('unlocked')},'christmas');
 if(document.body.dataset.tracker)open(()=>{document.getElementById('tracker-app').hidden=false;document.body.classList.add('unlocked');window.dispatchEvent(new Event('tracker-unlocked'))},'tracker');
 })();
