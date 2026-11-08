@@ -46,6 +46,16 @@ function populateChoices(preserve){
 }
 populateChoices(false);
 fields.forEach(el=>{if(typeof saved[el.id]==='string')el.value=saved[el.id]});
+// Auto-fill: add more fields here as {id: () => value}. A field is refilled on open
+// when empty or still holding the value we filled last time (user edits are kept).
+const tz='America/Los_Angeles';
+const AUTOFILL={
+ 'sheet-date':()=>new Date().toLocaleDateString('en-US',{timeZone:tz,weekday:'long',month:'long',day:'numeric',year:'numeric'}),
+};
+const autoKey='airron-team-tracker-autofill-v1';
+let autoPrev={};try{autoPrev=JSON.parse(localStorage.getItem(autoKey)||'{}')||{}}catch{}
+Object.entries(AUTOFILL).forEach(([id,fn])=>{const el=document.getElementById(id);if(!el)return;if(!el.value||el.value===autoPrev[id]){el.value=fn();autoPrev[id]=el.value}});
+try{localStorage.setItem(autoKey,JSON.stringify(autoPrev))}catch{}
 supplyRows.forEach(({choice,free})=>{
  if(!choice.value&&free.value)choice.value='__other';
  if(!choice.value&&saved[choice.id]){free.value=saved[choice.id];choice.value='__other'}
@@ -67,14 +77,15 @@ const tabs=[...document.querySelectorAll('[data-sheet]')];
 const pageStyle=document.createElement('style');document.head.append(pageStyle);
 function syncCopy(){
  document.querySelector('.print-copy')?.remove();
- if(document.body.classList.contains('two-copies')){
+ document.querySelectorAll('.print-copy').forEach(c=>c.remove());
+ if(document.body.classList.contains('two-copies'))for(let n=0;n<3;n++){
   const original=document.getElementById('supply'),copy=original.cloneNode(true);copy.removeAttribute('id');copy.classList.add('print-copy');copy.setAttribute('aria-hidden','true');
   const originals=original.querySelectorAll('input,select');
   copy.querySelectorAll('input,select').forEach((el,i)=>{el.value=originals[i].value;el.removeAttribute('id');el.tabIndex=-1;if(el.tagName==='INPUT')el.readOnly=true;else el.disabled=true});
   document.querySelector('.supply-layout').append(copy);
  }
 }
-function applyPrintSize(){renderLines();const two=active==='supply'&&document.getElementById('two-up').checked;document.body.classList.toggle('two-copies',two);pageStyle.textContent=`@page{size:Letter ${two?'landscape':'portrait'};margin:0}`;syncCopy()}
+function applyPrintSize(){renderLines();const two=active==='supply'&&document.getElementById('two-up').checked;document.body.classList.toggle('two-copies',two);pageStyle.textContent='@page{size:Letter portrait;margin:0}';syncCopy()}
 fields.forEach(el=>{
  const changed=()=>{if(el===site)populateChoices(true);renderLines();save();syncCopy()};
  el.addEventListener('input',changed);
