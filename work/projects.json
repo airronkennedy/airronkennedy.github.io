@@ -1,5 +1,19 @@
 [
   {
+    "slug": "crisis-of-dreamcell",
+    "title": "Crisis of DreamCell",
+    "category": "Game Design",
+    "role": "Level Designer & Systems Designer",
+    "description": "Crisis of DreamCell is a cinematic third-person survival horror game from Dark Star Games. After an outbreak of deadly experimental creatures, the player is trapped within DreamCell and must fight their way out of the facility while managing their own condition and supplies.",
+    "skills": [
+      "Level design",
+      "Systems design",
+      "Survival horror"
+    ],
+    "steam": "https://store.steampowered.com/app/2095830/Crisis_of_DreamCell/",
+    "developer": "Dark Star Games"
+  },
+  {
     "slug": "revived-by-ally",
     "title": "Revived by Ally",
     "category": "Game Design",
