@@ -1,0 +1,15 @@
+Task,Estimated Duration,Remaining Duration
+Make interigation scene,5,0
+Create selection mechanic ,10,5
+Adjust interrogation room lighting,5,0
+NPC AI Movement,10,=SUM(B5)
+More Interactible objects,10,=SUM(B6)
+,,=SUM(B7)
+,,=SUM(B8)
+,,=SUM(B9)
+,,=SUM(B10)
+,,=SUM(B11)
+,,=SUM(B12)
+,,=SUM(B13)
+,,=SUM(B14)
+,=SUM(B2:B14),=SUM(C2:C14)

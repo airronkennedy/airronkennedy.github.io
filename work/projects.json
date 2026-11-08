@@ -1,0 +1,417 @@
+[
+  {
+    "slug": "revived-by-ally",
+    "title": "Revived by Ally",
+    "category": "Game Design",
+    "role": "Solo designer",
+    "description": "I designed a two-player race around dice and tactical action pieces: Block, Space Swap, Double Roll and Trap. The final rules and weekly journal show how those options changed through playtesting, rather than presenting the finished rules without their history. Early effects allowed repeated turn-skipping, so I revised piece effects and limits to keep both players participating. This is a compact example of balancing a competitive system around player agency and pacing.",
+    "skills": [
+      "Systems design",
+      "balancing",
+      "rules writing",
+      "playtesting"
+    ]
+  },
+  {
+    "slug": "crystals-of-wonholdiem",
+    "title": "Crystals of Wonholdiem",
+    "category": "Game Design",
+    "role": "Solo designer",
+    "description": "Crystals of Wonholdiem is an all-versus-all strategy card game for two to four players. Players act as a mage’s apprentice, collecting seven elemental crystals while using action cards to advance their own position or disrupt rivals. I preserved both the early design and closing-design rules so the changes are visible. Revisions clarified setup, hand limits and the number of actions allowed per turn, turning the concept into a more teachable ruleset.",
+    "skills": [
+      "Card systems",
+      "meaningful choices",
+      "rule clarity",
+      "iteration"
+    ]
+  },
+  {
+    "slug": "collection-revenge",
+    "title": "Collection Revenge",
+    "category": "Game Design",
+    "role": "Solo prototype designer and playtest author",
+    "description": "I used a turn-based physical prototype to investigate choices intended for an FPS/MOBA concept. Eight documented playtest rounds explore map perspective, route selection, HP, battle randomness, recovery, Leech Life, rerolls and enemy timing. The observations show both productive changes and new problems: randomness could create frustration, while recovery and rerolls changed the player’s sense of control. The final document compares original and revised rules and reflects on the limits of translating real-time decisions into turn-based play.",
+    "skills": [
+      "Experimental prototyping",
+      "risk analysis",
+      "player choice",
+      "iteration"
+    ]
+  },
+  {
+    "slug": "utopianaries-vision",
+    "title": "Utopianaries’ Vision — Game Design Document",
+    "category": "Game Design",
+    "role": "Game designer in a team document",
+    "description": "Utopianaries’ Vision combines first-person action with MOBA-style progression, structures and battlefield control. The team design document covers the high concept, audience, systems, level design, UI wireframes and narrative. It provides a broad view of how a hybrid game can be communicated before every part exists as a finished implementation. My portfolio pairs this document with separate QA development research so a reviewer can connect design intent to features and requirements.",
+    "skills": [
+      "High-concept communication",
+      "audience definition",
+      "system specification",
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "v1ct0r",
+    "title": "V1ct0r — Character Design Workshop",
+    "category": "Game Design",
+    "role": "Character-design workshop author",
+    "description": "V1ct0r is a proposed tank-support character created for a Borderlands 2 character-design exercise. The presentation explores the character’s mechanical identity through proposed abilities and skill trees. Designing for an existing game means working within a recognizable tone and system context rather than inventing every constraint. The PowerPoint and PDF versions make the concept easy to review as both a presentation and a reference document.",
+    "skills": [
+      "Character roles",
+      "skill systems",
+      "design constraints",
+      "presentation"
+    ]
+  },
+  {
+    "slug": "uno-analysis",
+    "title": "UNO — Game Systems Analysis",
+    "category": "Game Design",
+    "role": "Analysis author",
+    "description": "I analyzed UNO as a system of goals, rules and player actions. The document organizes the familiar game into a structured design breakdown instead of relying on familiarity with its brand. This work supports a useful design habit: explaining what players can do, why those actions matter and how rules constrain their choices. It also provides a foundation for comparing existing systems with the original card-game work elsewhere in this portfolio.",
+    "skills": [
+      "Rule decomposition",
+      "goals and actions",
+      "systems literacy",
+      "communication"
+    ]
+  },
+  {
+    "slug": "rakshasa-systems",
+    "title": "Rakshasa — System Design Competency Evaluation",
+    "category": "Game Design",
+    "role": "System-analysis author",
+    "description": "This competency evaluation examines Rakshasa The Call of Hanuman through movement, combat, puzzles, interaction and exploration. I broke the experience into systems that can be discussed separately while still considering their role in the whole game. The report complements original prototypes by showing how I inspect and explain an existing design. It is a written systems-analysis sample rather than a playable submission.",
+    "skills": [
+      "System decomposition",
+      "interaction analysis",
+      "movement and combat",
+      "communication"
+    ]
+  },
+  {
+    "slug": "factory-gauntlet",
+    "title": "Factory Gauntlet — Level Design",
+    "category": "Playable Projects",
+    "role": "Level-design document author",
+    "description": "Factory Gauntlet plans a factory escape around pressure plates and switches activated with thrown objects. The document shows how a level can introduce an interaction, give the player room to practice it and then ask for more deliberate use. It is useful evidence of mechanic sequencing and communicating intended player behavior before production. I include the plan alongside implementation work without pretending a design document is itself a downloadable game.",
+    "skills": [
+      "Mechanic introduction",
+      "spatial progression",
+      "onboarding",
+      "documentation"
+    ]
+  },
+  {
+    "slug": "gun-game",
+    "title": "Gun Game — Unreal Hitscan Prototype",
+    "category": "Playable Projects",
+    "role": "Designer and Blueprint scripter",
+    "description": "Gun Game is a focused target-shooting prototype built in Unreal Engine. I adapted the default-template gun from projectile behavior to a line trace for hitscan shooting, then connected target response and timer feedback. The breakdown presentation explains the implementation, while a separate feature-lock checklist shows the compact intended scope. Together with the demonstration, these artifacts make it possible to review both the mechanic and the reasoning behind it.",
+    "skills": [
+      "Gameplay implementation",
+      "feedback",
+      "scope control",
+      "technical explanation"
+    ]
+  },
+  {
+    "slug": "arena-battler",
+    "title": "Arena Battler — Time as Currency",
+    "category": "Playable Projects",
+    "role": "Concept, pitch and Blueprint contribution within a team prototype",
+    "description": "Arena Battler is a rogue-like arena FPS prototype built to explore time as a resource. Across a proposed five-round enemy structure, players earn currency and choose between spending it on upgrades or saving it for more time. My individual contribution log records the high concept, prototype pitch, Blueprint scripting, mechanic iterations, research questions, gameplay flowchart and weekly presentations. The team postmortem adds a second perspective on balancing choices and working within production constraints.",
+    "skills": [
+      "System economies",
+      "prototyping",
+      "mechanic iteration",
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "pong",
+    "title": "Pong — Unity Project",
+    "category": "Playable Projects",
+    "role": "Unity coursework implementer",
+    "description": "This Unity archive preserves a Pong implementation with scenes, ball and paddle scripts and a build directory. Selected C# scripts were inspected to identify the ball, paddle and goal-handling responsibilities. The project is a supporting example of turning a recognizable gameplay loop into engine behavior. It gives a concrete starting point for discussing motion, collision, scoring and how game objects work together.",
+    "skills": [
+      "Core game behavior",
+      "scripting",
+      "project structure",
+      "implementation foundations"
+    ]
+  },
+  {
+    "slug": "vector-game",
+    "title": "Vector Game Portfolio — Unity Archive",
+    "category": "Playable Projects",
+    "role": "Unity coursework implementer",
+    "description": "The Vector Game Portfolio archive preserves another Unity coursework project with scenes, assets and project files. The inspected scripts include player behavior, a start page and win/lose handling. I include it as evidence of implementation foundations rather than labeling it a ready-to-run web game. The archive can support a technical conversation after its original editor and dependency requirements are restored.",
+    "skills": [
+      "Gameplay scripting",
+      "state handling",
+      "project organization",
+      "debugging preparation"
+    ]
+  },
+  {
+    "slug": "tictactoe",
+    "title": "TicTacToe — Unity Diagnostic Package",
+    "category": "Playable Projects",
+    "role": "Unity coursework implementer",
+    "description": "TicTacToe is preserved as a Unity package rather than a standalone executable. Its DiagnosticButton and DiagnosticGameManager scripts provide a focused view of interaction and overall game-state logic. A linked Trello board preserves the project’s task-tracking reference. The small scope makes this a useful sample for explaining state transitions and testing repeated or invalid input.",
+    "skills": [
+      "Interaction logic",
+      "game state",
+      "win conditions",
+      "task tracking"
+    ]
+  },
+  {
+    "slug": "lightsout",
+    "title": "LightsOut — Unity Diagnostic Package",
+    "category": "Playable Projects",
+    "role": "Unity coursework implementer",
+    "description": "LightsOut is a compact Unity diagnostic project preserved as a package, with a separate demonstration link. Its button and game-manager scripts can be reviewed as small implementation samples. The combination of source, demo and task-board reference gives more context than a screenshot alone. It is a supporting example of implementing interactions, tracking game state and communicating a small project’s behavior.",
+    "skills": [
+      "Puzzle-state logic",
+      "input handling",
+      "diagnostics",
+      "communication"
+    ]
+  },
+  {
+    "slug": "unity-navigation",
+    "title": "Unity Navigation System — Screenshot Evidence",
+    "category": "Playable Projects",
+    "role": "Coursework submission author",
+    "description": "This submission preserves screenshot evidence of Unity navigation work. It adds a visible engine-workflow example to the broader collection of scripting and systems artifacts. The image is useful when discussing the setup and intended role of navigation in a scene. I keep its scope explicit so a supporting screenshot is not mistaken for a recovered, complete game project.",
+    "skills": [
+      "Navigation concepts",
+      "engine workflow",
+      "technical communication"
+    ]
+  },
+  {
+    "slug": "navagent-state-machine",
+    "title": "NavAgent State Machine — Screenshot Evidence",
+    "category": "Playable Projects",
+    "role": "Coursework submission author",
+    "description": "This image preserves evidence submitted for a NavAgent state-machine assignment. It supports discussion of how navigation and behavior states relate to a game agent’s actions. Alongside the player-flow research and Unity samples, it connects a conceptual AI topic with engine-based coursework. The portfolio presents the screenshot as supporting evidence, not a substitute for missing project files.",
+    "skills": [
+      "Behavior-state concepts",
+      "navigation",
+      "implementation communication"
+    ]
+  },
+  {
+    "slug": "airronbot",
+    "title": "Airronbot — Discord Community Software",
+    "category": "Software",
+    "role": "Personal AI-assisted software project",
+    "description": "Airronbot brings birthday reminders, welcome messages, moderator announcements and slash commands into a Discord community. Addressed messages are filtered and sent to a separate external relay, whose authenticated callback delivers text and optional queued speech. The project also includes duplicate protection, voice-state handling and a health dashboard. This is an AI-assisted personal project, and the portfolio distinguishes documented capabilities, generated or adapted code and behavior that still needs a fresh end-to-end demonstration.",
+    "skills": [
+      "Event-driven integration",
+      "API validation",
+      "permissions",
+      "deduplication",
+      "observability"
+    ]
+  },
+  {
+    "slug": "replit-site-scaffold",
+    "title": "AttentiveDelightfulTab — Website Scaffold",
+    "category": "Software",
+    "role": "Personal Replit work in progress",
+    "description": "This Replit project preserves a website scaffold with React, routing, query-state infrastructure and theme styling. The inspected Home component still displays a building-in-progress message, and Replit returned no current publication status. I include it as an honest view of work in progress rather than presenting an unfinished starter as another launched product. It is separate from the live GitHub Pages website and has not been established as that site’s source of truth.",
+    "skills": [
+      "Project setup",
+      "frontend organization",
+      "honest work-in-progress documentation"
+    ]
+  },
+  {
+    "slug": "website-github",
+    "title": "AirronKennedy.com — Website and GitHub",
+    "category": "Software",
+    "role": "Personal portfolio; current public source verified",
+    "description": "My website organizes a personal web presence as worlds in a space-themed navigation system, with Work Planet as the professional portfolio destination. The public frontend uses HTML, CSS and JavaScript, with distinct mobile and desktop planet layouts, accessible names and reduced-motion handling. The matching public GitHub repository makes the site’s structure inspectable. The portfolio expansion connects those project cards to a deeper library of case studies, original files and source samples without replacing the visual identity.",
+    "skills": [
+      "Responsive navigation",
+      "visual theming",
+      "accessible labels",
+      "progressive interaction"
+    ]
+  },
+  {
+    "slug": "npc-player-flow",
+    "title": "NPCs and Player Flow — Applied Thesis",
+    "category": "Research & Thesis",
+    "role": "Researcher and applied-thesis author",
+    "description": "My applied thesis explores how non-player characters can be designed to induce and enhance player flow. It connects the history and role of NPCs with AI design choices, immersion and the experience of sustained engagement. The portfolio also preserves earlier journal and research-paper versions, making the development of the inquiry visible. This is a sustained academic research story rather than a claim that I deployed a proprietary AI system or measured an industry-wide engagement improvement.",
+    "skills": [
+      "Research synthesis",
+      "NPC design",
+      "AI concepts",
+      "immersion",
+      "player experience"
+    ]
+  },
+  {
+    "slug": "flow-ai-methods",
+    "title": "Flow and AI — Methods and UX Journal",
+    "category": "Research & Thesis",
+    "role": "Journal author",
+    "description": "This journal connects AI and finite-state-machine concepts with player flow and immersion. It is an early part of the research thread that continues through later papers and the applied thesis. The work shows how implementation choices can be discussed in terms of the experience they support, rather than as technology in isolation. Keeping the version distinct helps a reviewer see how the topic developed across coursework.",
+    "skills": [
+      "Research synthesis",
+      "AI/UX connections",
+      "critical reading",
+      "communication"
+    ]
+  },
+  {
+    "slug": "flow-ai-research",
+    "title": "Flow and AI — Research Paper",
+    "category": "Research & Thesis",
+    "role": "Research-paper author",
+    "description": "The later Flow and AI research paper revisits how game AI can support player experience. It belongs to the same sustained inquiry as the Methods/UX journal and the final NPC thesis, but it is preserved as its own submitted version. This makes the research progression inspectable rather than compressing several courses into one undated claim. The paper can support a conversation about sources, reasoning and the translation from research to a design question.",
+    "skills": [
+      "Academic argument",
+      "AI design reasoning",
+      "player-flow research",
+      "source communication"
+    ]
+  },
+  {
+    "slug": "audience-6-12",
+    "title": "Design Pillars — Ages 6 to 12",
+    "category": "Research & Thesis",
+    "role": "Audience-design analysis author",
+    "description": "This paper considers cognitive development and its implications for game design, UX and publishing for players aged six to twelve. It treats audience context as part of the design problem instead of assuming every player approaches mechanics in the same way. The work is one part of a three-paper series spanning different age groups. Together, the series shows a habit of questioning the assumptions behind interaction and communication choices.",
+    "skills": [
+      "Audience-centered design",
+      "UX reasoning",
+      "cognitive context",
+      "design communication"
+    ]
+  },
+  {
+    "slug": "audience-12-18",
+    "title": "Design Pillars — Ages 12 to 18",
+    "category": "Research & Thesis",
+    "role": "Audience-design analysis author",
+    "description": "This paper applies adolescent-development topics to game design and marketing considerations. It extends the audience-design series by asking how player context can change the assumptions behind a design choice. The artifact is useful as a written reasoning sample, especially when paired with the younger and young-adult papers. It demonstrates attention to audience differences without claiming that every member of an age group will behave identically.",
+    "skills": [
+      "Audience segmentation",
+      "adolescent context",
+      "UX reasoning",
+      "research communication"
+    ]
+  },
+  {
+    "slug": "audience-18-24",
+    "title": "Design Pillars — Ages 18 to 24",
+    "category": "Research & Thesis",
+    "role": "Audience-design analysis author",
+    "description": "This paper considers young-adult identity and related implications for game design. It completes the audience-design series by extending the discussion beyond children and adolescents. The artifact supports a broader view of player motivation and the context in which mechanics and presentation are experienced. It is included as evidence of research-backed design reasoning, not as a promise that a particular audience response has already been measured.",
+    "skills": [
+      "Player motivation",
+      "young-adult context",
+      "audience reasoning",
+      "written synthesis"
+    ]
+  },
+  {
+    "slug": "battletoads-study",
+    "title": "Battletoads — Game Testing Study",
+    "category": "Production & QA",
+    "role": "Co-researcher with Angelo Bowins and Valerie Rubio",
+    "description": "Our team investigated how clearly the Battletoads remaster introduces its early mechanics. Ten participants played thirty-minute sessions under consistent controller, difficulty, seating and audio conditions, with pre- and post-session surveys. The report examines onboarding, combos, character selection and collectibles against the team’s hypotheses. It supports a discussion of how apparently clear instructions can still leave mechanics undiscovered or unused.",
+    "skills": [
+      "Usability study design",
+      "operational variables",
+      "data analysis",
+      "limitations"
+    ]
+  },
+  {
+    "slug": "utopia-qa",
+    "title": "Utopianaries’ Vision — QA Development Research",
+    "category": "Production & QA",
+    "role": "QA-development research author; related design is team work",
+    "description": "This QA development-research presentation takes game goals and core actions and breaks them into features and requirements. It complements the Utopianaries’ Vision GDD by providing a more test-oriented view of the same concept. Enemy AI and other systems can be discussed in terms of what they are intended to do and what would need to be evaluated. The artifact shows the connection between design communication and planning for verification.",
+    "skills": [
+      "QA planning",
+      "features and requirements",
+      "system decomposition",
+      "testability"
+    ]
+  },
+  {
+    "slug": "robo-intero",
+    "title": "Robo-Intero — Team Postmortem",
+    "category": "Production & QA",
+    "role": "Contributor to a five-student team project",
+    "description": "Robo-Intero is a moral-dilemma game concept inspired by Papers, Please and developed within a five-student team project. The postmortem reflects on collaboration, milestones and communication problems rather than presenting only a success story. Personal tracking workbooks and progress artifacts provide additional production context. Together, these documents support an honest discussion of what the team learned and how process affects the work.",
+    "skills": [
+      "Collaboration",
+      "milestone planning",
+      "reflection",
+      "production communication"
+    ]
+  },
+  {
+    "slug": "agile-methodology",
+    "title": "Agile Methodology — Production Research",
+    "category": "Production & QA",
+    "role": "Research-paper author",
+    "description": "I examined iterative project management, feedback and teamwork through an Agile-methodology research paper. The work supports production literacy by connecting process ideas to the practical needs of collaborative development. It is paired in the portfolio with capstone shadowing and later tracking artifacts so the topic is not isolated from project evidence. The paper is a communication and analysis sample, not a certification claim.",
+    "skills": [
+      "Iterative planning",
+      "feedback",
+      "teamwork",
+      "process analysis"
+    ]
+  },
+  {
+    "slug": "capstone-shadowing",
+    "title": "Capstone — Production Shadowing",
+    "category": "Production & QA",
+    "role": "Production-shadowing participant and log author",
+    "description": "This capstone shadowing log records exposure to production milestones, timelines and staffing work. It provides a practical companion to the Agile paper by documenting what was observed in a production context. The artifact is useful when explaining how planning concepts relate to the coordination behind development. I present it as shadowing experience and written observation rather than inflating it into ownership of the capstone project.",
+    "skills": [
+      "Production awareness",
+      "planning vocabulary",
+      "observation",
+      "documentation"
+    ]
+  },
+  {
+    "slug": "team-pain",
+    "title": "Team Pain — Research and Feature Communication",
+    "category": "Production & QA",
+    "role": "Coursework team contributor",
+    "description": "The recovered Team Pain submissions preserve references to a competitive-analysis presentation, a research presentation and two feature specifications. They show the communication side of a team project: explaining comparisons and organizing a feature discussion for other people. The small original text files are pointers to external evidence, not full offline project backups. I include their links with clear access and contribution boundaries so reviewers know what they are opening.",
+    "skills": [
+      "Comparative research",
+      "feature communication",
+      "presentations",
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "production-workbooks",
+    "title": "Production Tracking — Task Lists, Logs and Burndown",
+    "category": "Production & QA",
+    "role": "Personal production-tracking artifact author",
+    "description": "The original personal production archive contains tracking spreadsheets and weekly progress presentations. The recovered workbooks preserve task-list, work-log and burndown/burnup organization; selected local CSV exports are available below. These records expose practical production work behind the project reflection. They are useful evidence of how tasks and progress were communicated, with the original archive retained for context.",
+    "skills": [
+      "Scope tracking",
+      "remaining work",
+      "progress communication",
+      "evidence organization"
+    ]
+  }
+]
