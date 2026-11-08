@@ -94,5 +94,6 @@
 <a class="back fab" href="../" aria-label="Back to homepage">&#8592; Orbit</a>
 <footer><a class="back" href="../">&larr; Back to orbit</a><p>Background: NASA, ESA, CSA, STScI</p></footer>
 <script>(function(){var c=document.getElementById("stars"),x=c.getContext("2d"),S=[];function seed(){var d=Math.min(devicePixelRatio||1,2);c.width=innerWidth*d;c.height=innerHeight*d;x.setTransform(d,0,0,d,0,0);S=[];for(var i=0;i<innerWidth*innerHeight/5200;i++)S.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*.9+.2,a:Math.random()*.6+.2,s:Math.random()*.0015+.0004,o:Math.random()*6.28})}function f(t){x.clearRect(0,0,innerWidth,innerHeight);S.forEach(function(p){x.globalAlpha=p.a*(.6+.4*Math.sin(t*p.s+p.o));x.fillStyle="#fff";x.beginPath();x.arc(p.x,p.y,p.r,0,6.28);x.fill()});if(!matchMedia("(prefers-reduced-motion:reduce)").matches)requestAnimationFrame(f)}seed();addEventListener("resize",seed);requestAnimationFrame(f)})();</script>
+  <script data-goatcounter="https://airronkennedy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
