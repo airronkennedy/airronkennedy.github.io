@@ -238,7 +238,7 @@
     "title": "AttentiveDelightfulTab — Website Scaffold",
     "category": "Software",
     "role": "Personal Replit work in progress",
-    "description": "This Replit project preserves a website scaffold with React, routing, query-state infrastructure and theme styling. The inspected Home component still displays a building-in-progress message, and Replit returned no current publication status. I include it as an honest view of work in progress rather than presenting an unfinished starter as another launched product. It is separate from the live GitHub Pages website and has not been established as that site’s source of truth.",
+    "description": "This Replit project preserves a website scaffold with React, routing, query-state infrastructure and theme styling. The inspected Home component still displays a building-in-progress message, and Replit returned no current publication status. Its public folder also preserves the original static prototype of my space-themed homepage: the Cosmic Cliffs background, starfield and eight unlabeled worlds that later became the live planets on airronkennedy.com. I include it as an honest view of work in progress rather than presenting an unfinished starter as another launched product. It is separate from the live GitHub Pages website and has not been established as that site’s source of truth.",
     "skills": [
       "Project setup",
       "frontend organization",
