@@ -85,7 +85,7 @@ function syncCopy(){
   document.querySelector('.supply-layout').append(copy);
  }
 }
-function applyPrintSize(){renderLines();const two=active==='supply'&&document.getElementById('two-up').checked;document.body.classList.toggle('two-copies',two);pageStyle.textContent='@page{size:Letter portrait;margin:0}';syncCopy()}
+function applyPrintSize(){renderLines();const two=active==='supply'&&document.getElementById('two-up').checked;document.body.classList.toggle('two-copies',two);pageStyle.textContent=two?'@page{size:letter portrait;margin:.35in}':'@page{size:Letter portrait;margin:0}';syncCopy()}
 fields.forEach(el=>{
  const changed=()=>{if(el===site)populateChoices(true);renderLines();save();syncCopy()};
  el.addEventListener('input',changed);

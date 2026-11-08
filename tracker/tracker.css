@@ -20,3 +20,6 @@ html,body{margin:0!important;padding:0!important;background:#fff!important;color
 /* 4 per Letter page: 2x2 grid, each copy fills a 4.25in x 5.5in quarter. */
 @media print{.two-copies .supply-layout{display:grid!important;grid-template-columns:4.25in 4.25in;grid-template-rows:5.5in 5.5in;gap:0;width:8.5in;height:11in;overflow:hidden;margin:0}.two-copies .supply{width:6.336in;height:8.2in;zoom:.6707!important;margin:0}}
 @media screen{.two-copies .supply-layout{flex-wrap:wrap}}
+
+/* v2: fit 2x2 inside a conservative printable area (works with default printer/Safari margins). */
+@media print{.two-copies .supply-layout{grid-template-columns:3.7in 3.7in;grid-template-rows:4.8in 4.8in;width:7.4in;height:9.6in;max-height:9.6in;margin:0 auto;overflow:hidden;break-inside:avoid;page-break-inside:avoid;page-break-after:avoid;break-after:avoid}.two-copies .supply{zoom:.584!important;overflow:hidden;break-inside:avoid}.two-copies #tracker-app>*:not(#supply-panel),body.two-copies>*:not(#tracker-app){display:none!important}.two-copies #supply-panel,.two-copies .paper-scroll,.two-copies main{height:auto!important;overflow:hidden}.two-copies,.two-copies html{height:auto!important}}
