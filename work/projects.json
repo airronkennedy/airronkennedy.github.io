@@ -4,7 +4,7 @@
     "title": "Crisis of DreamCell",
     "category": "Game Design",
     "role": "Level Designer & Systems Designer",
-    "description": "Crisis of DreamCell is a cinematic third-person survival horror game from Dark Star Games. After an outbreak of deadly experimental creatures, the player is trapped within DreamCell and must fight their way out of the facility while managing their own condition and supplies.",
+    "description": "Crisis of DreamCell is a cinematic third-person survival horror game from Dark Star Games. After an outbreak of deadly experimental creatures, the player is trapped within DreamCell and must fight their way out of the facility while managing their own condition and supplies. Per the team design document, Airron (Game Design, Level Design, Programming) designed the Containment Gas Leak and Escape levels.",
     "skills": [
       "Level design",
       "Systems design",
@@ -426,6 +426,42 @@
       "remaining work",
       "progress communication",
       "evidence organization"
+    ]
+  },
+  {
+    "slug": "aoe3-flowcharts",
+    "title": "Age of Empires III — Mechanics Flowcharts",
+    "category": "Game Design",
+    "role": "Systems-analysis author",
+    "description": "Flowcharts of Age of Empires III's core decisions: collecting, exploring, building, attacking, defending, a gold feedback loop and overall game flow.",
+    "skills": [
+      "Flowcharts",
+      "feedback loops",
+      "RTS systems"
+    ]
+  },
+  {
+    "slug": "train-tunnel-level",
+    "title": "Train Tunnel — Unity Level Design",
+    "category": "Playable Projects",
+    "role": "Level designer (Unity)",
+    "description": "Unity train-tunnel level: layout and scale passes, set dressing, lighting and an in-editor walkthrough (Aug 2022).",
+    "skills": [
+      "Unity",
+      "level layout",
+      "lighting"
+    ]
+  },
+  {
+    "slug": "yemeno-production-plan",
+    "title": "Yemeno and the Blind Fox — Agile Production Plan",
+    "category": "Production & QA",
+    "role": "Production plan author",
+    "description": "Feature list, master task list, capacity plan and sprint plan for a proposed game (Jan 2023).",
+    "skills": [
+      "Agile / Scrum",
+      "capacity planning",
+      "sprint planning"
     ]
   }
 ]

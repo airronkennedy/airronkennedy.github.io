@@ -126,3 +126,4 @@ footer p{margin-top:10px}
 
 /* name gate */
 html.name-gated body>*:not(dialog){filter:blur(6px)}
+figure.video{margin:18px 0}figure.video video{display:block;margin:auto}
