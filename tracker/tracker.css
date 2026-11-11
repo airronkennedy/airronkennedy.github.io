@@ -23,3 +23,9 @@ html,body{margin:0!important;padding:0!important;background:#fff!important;color
 
 /* v2: fit 2x2 inside a conservative printable area (works with default printer/Safari margins). */
 @media print{.two-copies .supply-layout{grid-template-columns:3.7in 3.7in;grid-template-rows:4.8in 4.8in;width:7.4in;height:9.6in;max-height:9.6in;margin:0 auto;overflow:hidden;break-inside:avoid;page-break-inside:avoid;page-break-after:avoid;break-after:avoid}.two-copies .supply{zoom:.584!important;overflow:hidden;break-inside:avoid}.two-copies #tracker-app>*:not(#supply-panel),body.two-copies>*:not(#tracker-app){display:none!important}.two-copies #supply-panel,.two-copies .paper-scroll,.two-copies main{height:auto!important;overflow:hidden}.two-copies,.two-copies html{height:auto!important}}
+
+/* Save files a day's timesheet; Open a day loads a previously filed sheet. */
+.control-deck #save,.control-deck #print{background:#d8c5fb;color:#201332;border-color:#dbcaff}
+.control-deck #save{font-weight:600}
+.filed-days{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px;font-size:13px;color:#ddd3ed}
+.filed-days select{color:#ede8fb;border:1px solid #8c7aaf66;border-radius:9px;background:#1b203a;padding:10px 14px;font:13px system-ui;max-width:100%}

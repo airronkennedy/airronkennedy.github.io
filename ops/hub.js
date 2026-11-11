@@ -23,6 +23,6 @@ function render(){
  }
 }
 render();
-window.addEventListener('storage',e=>{if(!window.WorkStatus)return;if(e.key===WorkStatus.KEY||e.key===WorkStatus.TRACKER_KEY)render()});
+window.addEventListener('storage',e=>{if(!window.WorkStatus)return;if(e.key===WorkStatus.KEY||e.key===WorkStatus.TRACKER_KEY||e.key===WorkStatus.ARCHIVE_KEY)render()});
 window.addEventListener('workplanet-unlocked',render);
 })();

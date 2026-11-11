@@ -1,9 +1,13 @@
 (() => {
 'use strict';
-const storageKey='airron-team-tracker-v1',app=document.getElementById('tracker-app'),status=document.getElementById('save-status');
+const storageKey='airron-team-tracker-v1',archiveKey='airron-team-tracker-archive-v1',draftsKey='airron-team-tracker-drafts-v1';
+const app=document.getElementById('tracker-app'),status=document.getElementById('save-status');
 const inventory=window.TRACKER_SUPPLIES||{},buildings=Object.keys(inventory);
-let active='timesheet',storageOK=true,saved={};
-try{saved=JSON.parse(localStorage.getItem(storageKey)||'{}');if(!saved||typeof saved!=='object')saved={}}catch{storageOK=false}
+const tz='America/Los_Angeles';
+let active='timesheet',storageOK=true,saved={},archive={},drafts={},currentDay='';
+try{saved=JSON.parse(localStorage.getItem(storageKey)||'{}');if(!saved||typeof saved!=='object'||Array.isArray(saved))saved={}}catch{storageOK=false}
+try{archive=JSON.parse(localStorage.getItem(archiveKey)||'{}');if(!archive||typeof archive!=='object'||Array.isArray(archive))archive={}}catch{archive={}}
+try{drafts=JSON.parse(localStorage.getItem(draftsKey)||'{}');if(!drafts||typeof drafts!=='object'||Array.isArray(drafts))drafts={}}catch{drafts={}}
 const makeOption=(value,text)=>new Option(text,value);
 const siteInput=document.getElementById('supply-site'),site=document.createElement('select');
 site.id='supply-site';site.setAttribute('aria-label','Supply request site');
@@ -26,6 +30,44 @@ for(let i=0;i<18;i++){
 const list=document.createElement('datalist');list.id='building-options';buildings.forEach(b=>list.append(makeOption(b,b)));app.append(list);
 for(let i=0;i<9;i++)document.getElementById(`site-${i}`).setAttribute('list',list.id);
 const fields=[...app.querySelectorAll('.paper input,.paper select')];
+const timesheetFields=[...document.getElementById('timesheet').querySelectorAll('input,select')].filter(el=>el.id);
+const MONTHS={january:1,february:2,march:3,april:4,may:5,june:6,july:7,august:8,september:9,october:10,november:11,december:12,jan:1,feb:2,mar:3,apr:4,jun:6,jul:7,aug:8,sep:9,sept:9,oct:10,nov:11,dec:12};
+function todayYmd(){
+ const parts=new Intl.DateTimeFormat('en-US',{timeZone:tz,year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+ const get=t=>parts.find(p=>p.type===t).value;
+ return `${get('year')}-${get('month')}-${get('day')}`;
+}
+function formatLong(ymd){
+ const [y,m,d]=ymd.split('-').map(Number);
+ if(!y||!m||!d)return ymd;
+ return new Date(Date.UTC(y,m-1,d,12)).toLocaleDateString('en-US',{timeZone:'UTC',weekday:'long',month:'long',day:'numeric',year:'numeric'});
+}
+function validYmd(y,m,d){
+ if(y<100)y+=2000;
+ if(!y||m<1||m>12||d<1||d>31)return null;
+ const dt=new Date(Date.UTC(y,m-1,d));
+ if(dt.getUTCFullYear()!==y||dt.getUTCMonth()!==m-1||dt.getUTCDate()!==d)return null;
+ return `${String(y).padStart(4,'0')}-${String(m).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+}
+function parseDate(raw){
+ const s=String(raw||'').trim();
+ if(!s)return null;
+ let m=s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+ if(m)return validYmd(+m[1],+m[2],+m[3]);
+ m=s.match(/^(\d{1,2})[/\-.](\d{1,2})[/\-.](\d{2,4})$/);
+ if(m)return validYmd(+m[3],+m[1],+m[2]);
+ m=s.match(/^(?:[A-Za-z]+,?\s+)?([A-Za-z]+)\s+(\d{1,2}),?\s+(\d{4})$/);
+ if(m){const month=MONTHS[m[1].toLowerCase()];if(month)return validYmd(+m[3],month,+m[2])}
+ return null;
+}
+function persist(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true}catch{storageOK=false;return false}}
+function timesheetSnapshot(){return Object.fromEntries(timesheetFields.map(el=>[el.id,el.value]))}
+function timesheetHasContent(data){return Object.entries(data||{}).some(([k,v])=>k!=='sheet-date'&&String(v||'').trim())}
+function applyTimesheet(data){
+ timesheetFields.forEach(el=>{el.value=data&&typeof data[el.id]==='string'?data[el.id]:''});
+}
+function clearTimesheetFields(){timesheetFields.forEach(el=>{el.value=''})}
+function filingDate(){return parseDate(document.getElementById('sheet-date').value)||todayYmd()}
 // Migrate pre-dropdown free-text sheets without losing typed content.
 if(saved['supply-site']&&!buildings.includes(saved['supply-site'])&&saved['supply-site']!=='__other'){
  saved['supply-site-other']=saved['supply-site'];saved['supply-site']='__other';
@@ -46,16 +88,26 @@ function populateChoices(preserve){
 }
 populateChoices(false);
 fields.forEach(el=>{if(typeof saved[el.id]==='string')el.value=saved[el.id]});
-// Auto-fill: add more fields here as {id: () => value}. A field is refilled on open
-// when empty or still holding the value we filled last time (user edits are kept).
-const tz='America/Los_Angeles';
-const AUTOFILL={
- 'sheet-date':()=>new Date().toLocaleDateString('en-US',{timeZone:tz,weekday:'long',month:'long',day:'numeric',year:'numeric'}),
-};
-const autoKey='airron-team-tracker-autofill-v1';
-let autoPrev={};try{autoPrev=JSON.parse(localStorage.getItem(autoKey)||'{}')||{}}catch{}
-Object.entries(AUTOFILL).forEach(([id,fn])=>{const el=document.getElementById(id);if(!el)return;if(!el.value||el.value===autoPrev[id]){el.value=fn();autoPrev[id]=el.value}});
-try{localStorage.setItem(autoKey,JSON.stringify(autoPrev))}catch{}
+const today=todayYmd();
+const workingDate=parseDate(document.getElementById('sheet-date').value);
+if(workingDate&&workingDate!==today){
+ const snap=timesheetSnapshot();
+ if(timesheetHasContent(snap)){
+  drafts[workingDate]=snap;
+  persist(draftsKey,drafts);
+  // Rescue an unfiled previous day so starting today does not drop it.
+  if(!archive[workingDate]){archive[workingDate]=snap;persist(archiveKey,archive)}
+ }
+ if(archive[today])applyTimesheet(archive[today]);
+ else if(drafts[today])applyTimesheet(drafts[today]);
+ else{clearTimesheetFields();document.getElementById('sheet-date').value=formatLong(today)}
+}else if(!workingDate){
+ if(archive[today])applyTimesheet(archive[today]);
+ else document.getElementById('sheet-date').value=formatLong(today);
+}
+currentDay=parseDate(document.getElementById('sheet-date').value)||today;
+const supplyDate=document.getElementById('supply-date');
+if(supplyDate&&!String(supplyDate.value||'').trim())supplyDate.value=formatLong(today);
 supplyRows.forEach(({choice,free})=>{
  if(!choice.value&&free.value)choice.value='__other';
  if(!choice.value&&saved[choice.id]){free.value=saved[choice.id];choice.value='__other'}
@@ -72,8 +124,64 @@ function renderLines(){
  });
 }
 function snapshot(){return Object.fromEntries(fields.map(el=>[el.id,el.value]))}
-function save(){try{const data=snapshot();localStorage.setItem(storageKey,JSON.stringify(data));if(window.WorkStatus)WorkStatus.syncFromTracker(data);status.textContent='Saved on this device only — not shared with your team.'}catch{storageOK=false;status.textContent='Saving is unavailable in this browser. Print a copy before leaving.'}}
+function maybeSyncStatus(){
+ if(!window.WorkStatus)return;
+ if(filingDate()!==todayYmd())return;
+ const data=snapshot();
+ if(String(WorkStatus.deriveFromTracker(data).building||'').trim())WorkStatus.syncFromTracker(data);
+}
+function save(message){
+ try{
+  const data=snapshot();
+  localStorage.setItem(storageKey,JSON.stringify(data));
+  maybeSyncStatus();
+  status.textContent=message||'Saved on this device only — not shared with your team.';
+ }catch{storageOK=false;status.textContent='Saving is unavailable in this browser. Print a copy before leaving.'}
+}
 if(!storageOK)status.textContent='Saving is unavailable in this browser. Print a copy before leaving.';
+function refreshDayList(){
+ const sel=document.getElementById('filed-days');
+ if(!sel)return;
+ const todayKey=todayYmd();
+ const current=parseDate(document.getElementById('sheet-date').value)||currentDay||todayKey;
+ const days=Object.keys(archive).filter(k=>/^\d{4}-\d{2}-\d{2}$/.test(k)).sort().reverse();
+ sel.replaceChildren();
+ sel.add(makeOption(todayKey,`${formatLong(todayKey)}${archive[todayKey]?' (today, filed)':' (today)'}`));
+ days.forEach(ymd=>{if(ymd!==todayKey)sel.add(makeOption(ymd,formatLong(ymd)))});
+ if(![...sel.options].some(o=>o.value===current))sel.add(makeOption(current,`${formatLong(current)} (open)`),sel.options[1]||null);
+ sel.value=current;
+}
+function openFiledDay(ymd,stash=true){
+ if(!ymd)return;
+ if(stash){
+  const from=parseDate(document.getElementById('sheet-date').value)||currentDay;
+  const snap=timesheetSnapshot();
+  if(from&&(timesheetHasContent(snap)||parseDate(snap['sheet-date']))){drafts[from]=snap;persist(draftsKey,drafts)}
+ }
+ currentDay=ymd;
+ if(archive[ymd])applyTimesheet(archive[ymd]);
+ else if(drafts[ymd])applyTimesheet(drafts[ymd]);
+ else{clearTimesheetFields();document.getElementById('sheet-date').value=formatLong(ymd)}
+ if(!document.getElementById('sheet-date').value)document.getElementById('sheet-date').value=formatLong(ymd);
+ save();
+ refreshDayList();
+}
+function fileSheet(){
+ const ymd=filingDate();
+ const dateEl=document.getElementById('sheet-date');
+ if(!parseDate(dateEl.value))dateEl.value=formatLong(ymd);
+ const data=timesheetSnapshot();
+ archive[ymd]=data;
+ drafts[ymd]=data;
+ currentDay=ymd;
+ if(!persist(archiveKey,archive)||!persist(draftsKey,drafts)){
+  status.textContent='Saving is unavailable in this browser. Print a copy before leaving.';
+  return;
+ }
+ if(ymd===todayYmd()&&window.WorkStatus)WorkStatus.syncFromTracker(snapshot());
+ save(`Filed for ${formatLong(ymd)} on this device only — not shared with your team.`);
+ refreshDayList();
+}
 const tabs=[...document.querySelectorAll('[data-sheet]')];
 const pageStyle=document.createElement('style');document.head.append(pageStyle);
 function syncCopy(){
@@ -88,7 +196,7 @@ function syncCopy(){
 }
 function applyPrintSize(){renderLines();const two=active==='supply'&&document.getElementById('two-up').checked;document.body.classList.toggle('two-copies',two);pageStyle.textContent=two?'@page{size:letter portrait;margin:.35in}':'@page{size:Letter portrait;margin:0}';syncCopy()}
 fields.forEach(el=>{
- const changed=()=>{if(el===site)populateChoices(true);renderLines();save();syncCopy()};
+ const changed=()=>{if(el===site)populateChoices(true);renderLines();save();syncCopy();if(el.id==='sheet-date')refreshDayList()};
  el.addEventListener('input',changed);
  // Some browsers dispatch only change for native select pickers.
  if(el.tagName==='SELECT')el.addEventListener('change',changed);
@@ -99,8 +207,28 @@ document.getElementById('two-up').onchange=applyPrintSize;
 document.getElementById('print').onclick=()=>{document.activeElement?.blur();applyPrintSize();window.print()};
 document.getElementById('zoom').onclick=()=>{const zoomed=document.body.classList.toggle('paper-enlarged');const button=document.getElementById('zoom');button.setAttribute('aria-pressed',String(zoomed));button.textContent=zoomed?'Fit paper':'Enlarge paper'};
 window.addEventListener('beforeprint',applyPrintSize);
-document.getElementById('clear').onclick=()=>{if(confirm(`Clear this ${active==='timesheet'?'timesheet':'supply request'} on this device? This cannot be undone.`)){document.getElementById(active).querySelectorAll('input,select').forEach(el=>el.value='');if(active==='supply')populateChoices(false);renderLines();save();syncCopy()}};
+document.getElementById('save').onclick=fileSheet;
+document.getElementById('filed-days').addEventListener('change',e=>{const ymd=e.target.value||todayYmd();openFiledDay(ymd)});
+document.getElementById('clear').onclick=()=>{if(confirm(`Clear this ${active==='timesheet'?'timesheet':'supply request'} on this device? This cannot be undone.`)){
+  if(active==='timesheet'){
+   const ymd=parseDate(document.getElementById('sheet-date').value)||currentDay||todayYmd();
+   clearTimesheetFields();
+   document.getElementById('sheet-date').value=formatLong(ymd);
+   delete drafts[ymd];
+   persist(draftsKey,drafts);
+   const kept=archive[ymd]?`Timesheet cleared. The filed copy for ${formatLong(ymd)} is unchanged until you Save. Stored on this device only — not shared with your team.`:'Timesheet cleared. Saved on this device only — not shared with your team.';
+   save(kept);
+  }else{
+   document.getElementById('supply').querySelectorAll('input,select').forEach(el=>el.value='');
+   populateChoices(false);
+   renderLines();
+   save();
+   syncCopy();
+  }
+}};
 document.getElementById('lock').onclick=()=>{try{sessionStorage.removeItem('airron-tracker-unlocked-v1')}catch{}location.reload()};
 renderLines();
-if(window.WorkStatus)WorkStatus.syncFromTracker(snapshot());
+refreshDayList();
+save(status.textContent);
+if(window.WorkStatus&&filingDate()===todayYmd())maybeSyncStatus();
 })();
