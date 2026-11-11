@@ -250,7 +250,7 @@
     "title": "AirronKennedy.com — Website and GitHub",
     "category": "Software",
     "role": "Personal portfolio; current public source verified",
-    "description": "My website organizes a personal web presence as worlds in a space-themed navigation system, with Work Planet as the professional portfolio destination. The public frontend uses HTML, CSS and JavaScript, with distinct mobile and desktop planet layouts, accessible names and reduced-motion handling. The matching public GitHub repository makes the site’s structure inspectable. The portfolio expansion connects those project cards to a deeper library of case studies, original files and source samples without replacing the visual identity.",
+    "description": "My website organizes a personal web presence as worlds in a space-themed navigation system, with Experience Planet as the professional portfolio destination. The public frontend uses HTML, CSS and JavaScript, with distinct mobile and desktop planet layouts, accessible names and reduced-motion handling. The matching public GitHub repository makes the site’s structure inspectable. The portfolio expansion connects those project cards to a deeper library of case studies, original files and source samples without replacing the visual identity.",
     "skills": [
       "Responsive navigation",
       "visual theming",

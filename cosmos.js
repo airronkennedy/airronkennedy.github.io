@@ -10,8 +10,8 @@
 var PLANETS = [
   { id: 'cinder',   label: 'Christmas Planet', url: '/christmas/', color: '#b8323f', show: true },
   { id: 'tidewell', label: "Weston's Planet", url: '/weston/', color: '#3f7fa8', show: true },
-  { id: 'aurelian', label: 'Work Planet', url: 'work/', color: '#d8b46a', show: true },
-  { id: 'verdigris',label: 'Team Task Tracker Planet', url: '/tracker/', color: '#4f9a8a', show: true },
+  { id: 'aurelian', label: 'Experience Planet', url: 'work/', color: '#d8b46a', show: true },
+  { id: 'verdigris',label: 'Work Planet', url: '/ops/', color: '#4f9a8a', show: true },
   { id: 'umbra',    label: 'Stats Planet', url: '/stats/', color: '#7a5aa6', show: true },
   { id: 'frost',    label: '', url: '#', color: '#b9d3e6' },
   { id: 'carmine',  label: '', url: '#', color: '#a8434f' },

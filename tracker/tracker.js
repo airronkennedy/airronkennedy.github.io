@@ -71,7 +71,8 @@ function renderLines(){
   print.textContent=[item,qty.value?`Qty: ${qty.value}`:''].filter(Boolean).join(' — ');
  });
 }
-function save(){try{localStorage.setItem(storageKey,JSON.stringify(Object.fromEntries(fields.map(el=>[el.id,el.value]))));status.textContent='Saved on this device only — not shared with your team.'}catch{storageOK=false;status.textContent='Saving is unavailable in this browser. Print a copy before leaving.'}}
+function snapshot(){return Object.fromEntries(fields.map(el=>[el.id,el.value]))}
+function save(){try{const data=snapshot();localStorage.setItem(storageKey,JSON.stringify(data));if(window.WorkStatus)WorkStatus.syncFromTracker(data);status.textContent='Saved on this device only — not shared with your team.'}catch{storageOK=false;status.textContent='Saving is unavailable in this browser. Print a copy before leaving.'}}
 if(!storageOK)status.textContent='Saving is unavailable in this browser. Print a copy before leaving.';
 const tabs=[...document.querySelectorAll('[data-sheet]')];
 const pageStyle=document.createElement('style');document.head.append(pageStyle);
@@ -101,4 +102,5 @@ window.addEventListener('beforeprint',applyPrintSize);
 document.getElementById('clear').onclick=()=>{if(confirm(`Clear this ${active==='timesheet'?'timesheet':'supply request'} on this device? This cannot be undone.`)){document.getElementById(active).querySelectorAll('input,select').forEach(el=>el.value='');if(active==='supply')populateChoices(false);renderLines();save();syncCopy()}};
 document.getElementById('lock').onclick=()=>{try{sessionStorage.removeItem('airron-tracker-unlocked-v1')}catch{}location.reload()};
 renderLines();
+if(window.WorkStatus)WorkStatus.syncFromTracker(snapshot());
 })();

@@ -2,7 +2,9 @@
 
 Static, dependency-free forms for the existing GitHub Pages site.
 
-- The green verdigris planet opens the shared access-code dialog; `/tracker/` gates direct visits too.
+- The green verdigris planet is Work Planet. It opens a separate access-code dialog and lands on `/ops/`, a hub that links here and shows the current building from the latest timesheet.
+- `/tracker/` still gates direct visits with this tracker’s existing access-code dialog.
+- Saving a timesheet also writes a compact status record (`airron-work-status-v1`) so the Work Planet hub can show the current building without unlocking the rest of the tracker. The hub can also derive that building from existing `airron-team-tracker-v1` timesheet fields (`site-0`…`site-8`, with an open clock-in preferred over the last filled site).
 - The code is compared with a SHA-256 digest using Web Crypto when available, or an inline pure-JavaScript SHA-256 fallback on plain HTTP. The session flag is in sessionStorage, and Lock removes it.
 - This is a casual UI gate, NOT authentication, encryption, or secure storage. Source files are public and the gate can be bypassed. Do not use for sensitive information.
 - Sheet values are stored in localStorage on this browser/device only. They are never sent to a server and are not synchronized among crew members. Clearing browser data removes them.

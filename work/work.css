@@ -57,7 +57,7 @@ footer{display:flex;justify-content:space-between;padding-bottom:28px;font-size:
 @media (max-width:700px){.o1{width:90px;height:90px}}
 @media (prefers-reduced-motion:reduce){.orb,.card{animation:none}}
 
-/* Work Planet expansion: retain the original visual shell and card language. */
+/* Experience Planet expansion: retain the original visual shell and card language. */
 [hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:24px}
 button,input{font:inherit;color:inherit}
