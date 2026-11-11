@@ -563,7 +563,7 @@ const InternalConfig = function (initConfig) { // eslint-disable-line no-unused-
 				} else if (path.endsWith('.side.wasm')) {
 					return `${loadPath}.side.wasm`;
 				} else if (path.endsWith('.wasm')) {
-					return `${loadPath}.wasm?v=1794400708`;
+					return `${loadPath}.wasm?v=1794403205`;
 				}
 				return path;
 			},
@@ -666,7 +666,7 @@ const Engine = (function () {
 	Engine.load = function (basePath, size) {
 		if (loadPromise == null) {
 			loadPath = basePath;
-			loadPromise = preloader.loadPromise(`${loadPath}.wasm?v=1794400708`, size, true);
+			loadPromise = preloader.loadPromise(`${loadPath}.wasm?v=1794403205`, size, true);
 			requestAnimationFrame(preloader.animateProgress);
 		}
 		return loadPromise;
@@ -826,7 +826,7 @@ const Engine = (function () {
 				const me = this;
 				return Promise.all([
 					this.init(exe),
-					this.preloadFile(pack + '?v=1794400708', pack),
+					this.preloadFile(pack + '?v=1794403205', pack),
 				]).then(function () {
 					return me.start.apply(me);
 				});
