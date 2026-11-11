@@ -11,7 +11,7 @@
 <title>Riftstrike — Turn-based brawl</title>
 <link rel="icon" type="image/png" href="assets/deco/03.png">
 <link rel="apple-touch-icon" href="assets/deco/03.png">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 <div id="stage">
@@ -25,12 +25,16 @@
         <div class="ribbon ribbon-yellow tagline">Turn-based rift brawl</div>
       </div>
       <div class="vs-row">
-        <div class="ribbon ribbon-blue side">6 Knights</div>
+        <div class="ribbon ribbon-blue side">Airron's Squad</div>
         <div class="vs">VS</div>
-        <div class="ribbon ribbon-red side">2–6 Goblins</div>
+        <div class="ribbon ribbon-red side">Pick a raid</div>
       </div>
-      <button id="btnFight" class="btn btn-blue big">FIGHT!</button>
-      <div class="hint">Tap your knights to set the attack order, then Execute.<br>Targets are random — then the goblins strike back.</div>
+      <div class="fight-row">
+        <button id="btnRaid3" class="btn btn-blue fight-mode">6v3 RAID</button>
+        <button id="btnRaid2" class="btn btn-blue fight-mode">6v2 ELITE</button>
+        <button id="btnRaid1" class="btn btn-red fight-mode">6v1 BOSS</button>
+      </div>
+      <div class="hint">Tap your team in attack order, then Execute. Same target = COMBO (combined ATK × 3).<br>Each hero has a class, subclass, and their own HP, attack, and defense.</div>
       <div class="credit">Art: <a href="https://pixelfrog-assets.itch.io/tiny-swords" target="_blank" rel="noopener">Tiny Swords by Pixel Frog</a> (CC0)</div>
     </div>
 
@@ -64,6 +68,6 @@
     <div id="safeProbe"></div>
   </div>
 </div>
-<script src="game.js"></script>
+<script src="game.js?v=2"></script>
 </body>
 </html>

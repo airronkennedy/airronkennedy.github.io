@@ -1,4 +1,4 @@
-RIFTSTRIKE — turn-based rift brawl (6 Knights vs 2–6 Goblins)
+RIFTSTRIKE — turn-based rift brawl (Airron's squad, 6v3 / 6v2 / 6v1 boss)
 ==============================================================
 
 PLAY
@@ -8,13 +8,20 @@ PLAY
            Works in portrait and landscape.
 
 HOW IT PLAYS
-  1. Tap FIGHT. Your team is always 6 Knights; the goblin raid is 2–6 Goblins
-     (picked fresh each battle and on Retry; smaller raids have tougher goblins).
-  2. YOUR TURN: tap your knights in the order you want them to attack.
+  1. On the title screen pick 6v3 RAID, 6v2 ELITE, or 6v1 BOSS. Your squad is
+     always Airron, Christian, Weston, Wiesen, Lanning, and Rico. Each has a
+     class, subclass, attack (1–100), defense, and HP scaled from their attack.
+     Smaller raids are tougher (the 6v1 is a single Rift Tyrant boss).
+  2. YOUR TURN: tap your units in the order you want them to attack.
      Picked knights get a cyan outline and an order number; tap again to remove.
      ALL queues every living knight, CLEAR empties the list.
   3. Press EXECUTE. Only the queued knights attack, one at a time, in your order.
-     Each one picks a random living goblin.
+     Each one picks a random living goblin. Swings are drawn out, and the next
+     unit starts right after the current attack finishes.
+     If two or more units in the same turn hit the same target, it's a COMBO:
+     damage is (their attack stats added together) × 3, then reduced by the
+     target's defense. Setup hits show "COMBO"; the last hit deals the big number.
+     Each character has their own HP, attack, and defense.
   4. ENEMY TURN: every living goblin attacks one at a time, on its own,
      against random knights. Then it's your turn again with an empty order list.
   5. When one side is wiped out you get Victory or Defeat. Retry starts a new raid.

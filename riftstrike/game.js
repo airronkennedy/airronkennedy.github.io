@@ -54,35 +54,77 @@ function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = (R() * (i
 // ---------- unit kinds (rows verified against the sheets) ----------
 var S192 = { fw: 192, fh: 192, ax: 96, ay: 134 };
 var KINDS = {
-  warrior: { img: 'warrior', f: S192, head: 84, label: 'Warrior', hp: 1180, pow: 140, range: 52, speed: 118, ranged: null,
+  warrior: { img: 'warrior', f: S192, head: 84, label: 'Warrior', hp: 1180, pow: 140, def: 72, range: 52, speed: 118, ranged: null,
     idle: { r: 0, n: 6, fps: 10 }, run: { r: 1, n: 6, fps: 12 },
-    atk: [{ r: 2, n: 6, fps: 16, hit: 3 }, { r: 3, n: 6, fps: 16, hit: 3 }],
-    atkDown: [{ r: 4, n: 6, fps: 16, hit: 3 }, { r: 5, n: 6, fps: 16, hit: 3 }], atkUp: [{ r: 6, n: 6, fps: 16, hit: 3 }, { r: 7, n: 6, fps: 16, hit: 3 }],
+    atk: [{ r: 2, n: 6, fps: 10, hit: 3, hold: 160 }, { r: 3, n: 6, fps: 10, hit: 3, hold: 180 }],
+    atkDown: [{ r: 4, n: 6, fps: 10, hit: 3, hold: 160 }, { r: 5, n: 6, fps: 10, hit: 3, hold: 180 }], atkUp: [{ r: 6, n: 6, fps: 10, hit: 3, hold: 160 }, { r: 7, n: 6, fps: 10, hit: 3, hold: 180 }],
     special: 'Rift Cleave' },
-  archer: { img: 'archer', f: S192, head: 72, label: 'Archer', hp: 840, pow: 130, range: 340, speed: 100, ranged: 'arrow',
+  archer: { img: 'archer', f: S192, head: 72, label: 'Archer', hp: 840, pow: 130, def: 44, range: 340, speed: 100, ranged: 'arrow',
     idle: { r: 0, n: 6, fps: 10 }, run: { r: 1, n: 6, fps: 12 },
-    atk: [{ r: 4, n: 8, fps: 18, hit: 5 }], atkUp: [{ r: 3, n: 8, fps: 18, hit: 5 }], atkDown: [{ r: 5, n: 8, fps: 18, hit: 5 }],
+    atk: [{ r: 4, n: 8, fps: 11, hit: 5, hold: 160 }], atkUp: [{ r: 3, n: 8, fps: 11, hit: 5, hold: 160 }], atkDown: [{ r: 5, n: 8, fps: 11, hit: 5, hold: 160 }],
     special: 'Piercing Volley' },
-  pawn: { img: 'pawn', f: S192, head: 64, label: 'Pawn', hp: 920, pow: 110, range: 46, speed: 128, ranged: null,
+  pawn: { img: 'pawn', f: S192, head: 64, label: 'Pawn', hp: 920, pow: 110, def: 60, range: 46, speed: 128, ranged: null,
     idle: { r: 0, n: 6, fps: 10 }, run: { r: 1, n: 6, fps: 12 },
-    atk: [{ r: 3, n: 6, fps: 16, hit: 3 }, { r: 2, n: 6, fps: 16, hit: 3 }], special: 'Hearth Hammer' },
-  torch: { img: 'torch', f: S192, head: 76, label: 'Torch', hp: 1050, pow: 140, range: 52, speed: 122, ranged: null,
+    atk: [{ r: 3, n: 6, fps: 10, hit: 3, hold: 180 }, { r: 2, n: 6, fps: 10, hit: 3, hold: 200 }], special: 'Hearth Hammer' },
+  torch: { img: 'torch', f: S192, head: 76, label: 'Torch', hp: 1050, pow: 140, def: 58, range: 52, speed: 122, ranged: null,
     idle: { r: 0, n: 7, fps: 10 }, run: { r: 1, n: 6, fps: 12 },
-    atk: [{ r: 2, n: 6, fps: 16, hit: 3 }], atkDown: [{ r: 3, n: 6, fps: 16, hit: 3 }], atkUp: [{ r: 4, n: 6, fps: 16, hit: 3 }],
+    atk: [{ r: 2, n: 6, fps: 10, hit: 3, hold: 170 }], atkDown: [{ r: 3, n: 6, fps: 10, hit: 3, hold: 170 }], atkUp: [{ r: 4, n: 6, fps: 10, hit: 3, hold: 170 }],
     special: 'Cinder Sweep' },
-  tnt: { img: 'tnt', f: S192, head: 66, label: 'TNT', hp: 820, pow: 150, range: 290, speed: 100, ranged: 'dynamite',
+  tnt: { img: 'tnt', f: S192, head: 66, label: 'TNT', hp: 820, pow: 150, def: 40, range: 290, speed: 100, ranged: 'dynamite',
     idle: { r: 0, n: 6, fps: 10 }, run: { r: 1, n: 6, fps: 12 },
-    atk: [{ r: 2, n: 7, fps: 16, hit: 3 }], special: 'Big Bang' },
-  barrel: { img: 'barrel', f: { fw: 128, fh: 128, ax: 64, ay: 101 }, head: 70, label: 'Barrel', hp: 1200, pow: 110, range: 48, speed: 108, ranged: null,
+    atk: [{ r: 2, n: 7, fps: 10, hit: 3, hold: 160 }], special: 'Big Bang' },
+  barrel: { img: 'barrel', f: { fw: 128, fh: 128, ax: 64, ay: 101 }, head: 70, label: 'Barrel', hp: 1200, pow: 110, def: 76, range: 48, speed: 108, ranged: null,
     idle: { r: 4, n: 3, fps: 5 }, run: { r: 3, n: 6, fps: 12 },
-    atk: [{ r: 1, n: 6, fps: 16, hit: 2 }], special: 'Powder Keg' }
+    atk: [{ r: 1, n: 6, fps: 10, hit: 2, hold: 180 }], special: 'Powder Keg' }
 };
 var ROSTER = {
-  blue: [['warrior', 'Alden', 360, 265], ['warrior', 'Bryn', 360, 395], ['pawn', 'Tarin', 315, 185], ['pawn', 'Elow', 315, 470],
-         ['archer', 'Wren', 205, 265], ['archer', 'Merrit', 205, 395]],
-  red: null // built per battle: 2-6 goblins
+  blue: [['warrior', 'Airron', 360, 265], ['warrior', 'Christian', 360, 395],
+         ['pawn', 'Lanning', 315, 185], ['pawn', 'Rico', 315, 470],
+         ['archer', 'Weston', 205, 265], ['archer', 'Wiesen', 205, 395]],
+  red: null
 };
 var GOB_NAMES = ['Rusk', 'Kael', 'Sable', 'Drenn', 'Voss', 'Iven'];
+// Player squad: unique class / subclass, ATK 1–100, HP scaled from ATK (higher ATK = lower HP).
+var CHAR = {
+  Airron:    { cls: 'Knight',    sub: 'Riftblade',     atk: 88, def: 42 },
+  Christian: { cls: 'Warrior',   sub: 'Vanguard',      atk: 70, def: 58 },
+  Weston:    { cls: 'Ranger',    sub: 'Scout',         atk: 79, def: 28 },
+  Wiesen:    { cls: 'Archer',    sub: 'Marksman',      atk: 92, def: 24 },
+  Lanning:   { cls: 'Guardian',  sub: 'Warden',        atk: 54, def: 64 },
+  Rico:      { cls: 'Fighter',   sub: 'Raider',        atk: 66, def: 40 }
+};
+var GOB_CLASS = {
+  torch:  { cls: 'Skirmisher', sub: 'Emberblade',     atk: 72, def: 36 },
+  tnt:    { cls: 'Bomber',     sub: 'Demolitionist',  atk: 84, def: 22 },
+  barrel: { cls: 'Bruiser',    sub: 'Powderguard',    atk: 58, def: 52 }
+};
+var GOB_FLAVOR = {
+  Rusk:  { atk: 0.98, def: 1.08 }, Kael: { atk: 1.10, def: 0.88 }, Sable: { atk: 0.92, def: 1.18 },
+  Drenn: { atk: 1.14, def: 0.82 }, Voss: { atk: 1.00, def: 1.05 }, Iven: { atk: 0.96, def: 1.10 }
+};
+function hpFromAtk(atk) { return Math.round((108 - atk) * 6.5 + 120); }
+function clampStat(n) { return Math.max(1, Math.min(100, Math.round(n))); }
+function charStats(name, kind, team, nRed) {
+  if (team === 'blue') {
+    var c = CHAR[name];
+    return { hp: hpFromAtk(c.atk), atk: c.atk, def: c.def, cls: c.cls, sub: c.sub, scale: 1 };
+  }
+  var g = GOB_CLASS[kind], f = GOB_FLAVOR[name] || { atk: 1, def: 1 };
+  var hpM = nRed === 1 ? 4.2 : nRed === 2 ? 2.2 : 1.25;
+  var atkM = nRed === 1 ? 1.35 : nRed === 2 ? 1.15 : 1;
+  var defM = nRed === 1 ? 1.25 : nRed === 2 ? 1.1 : 1;
+  var atk = clampStat(g.atk * f.atk * atkM);
+  var def = clampStat(g.def * f.def * defM);
+  return {
+    hp: Math.round(hpFromAtk(g.atk) * hpM),
+    atk: atk, def: def,
+    cls: nRed === 1 ? 'Boss' : nRed === 2 ? 'Elite' : g.cls,
+    sub: nRed === 1 ? 'Rift Tyrant' : g.sub,
+    scale: nRed === 1 ? 1.4 : nRed === 2 ? 1.12 : 1
+  };
+}
+function defMit(def) { return 100 / (100 + Math.max(0, def || 0)); }
+function uS(u) { return US * ((u && u.scale) || 1); }
 var RED_SLOTS = { // landscape design coords, front (melee) slots first
   2: [[680, 280], [760, 395]],
   3: [[670, 260], [670, 400], [800, 330]],
@@ -102,19 +144,20 @@ var US = 0.8; // unit draw scale
 // ---------- state ----------
 var G = null; // battle
 var phase = 'loading'; // loading | title | battle | ending | results
-var paused = false, speed = 1, muted = false, AUTO = false;
+var paused = false, speed = 1, muted = false, AUTO = false, lastRaid = 3;
 try { muted = localStorage.getItem('rs_muted') === '1'; } catch (e) {}
 var fx = [], projectiles = [], texts = [], shakeT = 0, shakeMag = 0, banner = null, now = 0, hitstop = 0;
 
 function newBattle(n) {
   var units = [];
-  n = n || +params.get('enemies') || pick([2, 3, 4, 5, 6]);
+  n = +n || +params.get('enemies') || lastRaid || 3;
+  if (n !== 1 && n !== 2 && n !== 3) n = 3;
+  lastRaid = n;
   ROSTER.red = buildRedRoster(n);
-  var buff = Math.pow(6 / n, 0.8); // fewer goblins = tougher goblins
   ['blue', 'red'].forEach(function (team) {
     ROSTER[team].forEach(function (r, i) {
-      var k = KINDS[r[0]], p = mp(r[2], r[3]), m = team === 'red' ? buff : 1, hp = Math.round(k.hp * m);
-      units.push({ id: team + i, team: team, kind: r[0], K: k, name: r[1], x: p[0], y: p[1], hx: p[0], hy: p[1], hp: hp, maxhp: hp, shownHp: hp, pm: m,
+      var k = KINDS[r[0]], p = mp(r[2], r[3]), st = charStats(r[1], r[0], team, n);
+      units.push({ id: team + i, team: team, kind: r[0], K: k, name: r[1], x: p[0], y: p[1], hx: p[0], hy: p[1], hp: st.hp, maxhp: st.hp, shownHp: st.hp, atk: st.atk, def: st.def, cls: st.cls, sub: st.sub, scale: st.scale, pm: 1,
         gauge: rand(0, 30), facing: team === 'blue' ? 1 : -1, anim: 'idle', at: rand(0, 1000), act: null, flash: 0, shake: 0, kx: 0,
         dead: false, deathT: 0, gone: false, dmg: 0, kos: 0, pop: 0, burn: null });
     });
@@ -154,7 +197,7 @@ var SFX = {
 // ---------- simulation (turn-based) ----------
 function alive(team) { return G.units.filter(function (u) { return u.team === team && !u.dead; }); }
 function enemyOf(u) { return u.team === 'blue' ? 'red' : 'blue'; }
-function surgeMult() { return G.turn > 5 ? 1 + (G.turn - 5) * 0.3 : 1; }
+function surgeMult() { return G.turn > 3 ? 1 + (G.turn - 3) * 0.35 : 1; }
 function homeFacing(u) { return u.team === 'blue' ? 1 : -1; }
 
 function pickAtk(u, tgt, list) {
@@ -173,17 +216,57 @@ function setAnim(u, a) { if (u.anim !== a) { u.anim = a; u.at = 0; } }
 //  Torch    - dashes in, flame swipe that leaves a burn tick     special: Cinder Sweep (fire burst)
 //  TNT      - lobs a dynamite stick                               special: Big Bang (big blast splash)
 //  Barrel   - rolls in and pops a powder blast (small splash)    special: Powder Keg (huge blast)
+function planActions(queue) {
+  queue.forEach(function (u) { u.plan = null; });
+  queue.forEach(function (u) {
+    if (u.dead) return;
+    var foes = alive(enemyOf(u));
+    if (!foes.length) return;
+    u.plan = { target: (params.get('focus') === '1' ? foes[0] : pick(foes)), combo: null, comboDone: false };
+  });
+  var groups = {};
+  queue.forEach(function (u) {
+    if (!u.plan || !u.plan.target) return;
+    var id = u.plan.target.id;
+    (groups[id] = groups[id] || []).push(u);
+  });
+  Object.keys(groups).forEach(function (id) {
+    var g = groups[id];
+    if (g.length >= 2) g.forEach(function (u) { u.plan.combo = g; });
+  });
+}
+function comboMates(u, t) {
+  if (!u.plan || !u.plan.combo || !t) return [];
+  return u.plan.combo.filter(function (m) {
+    return !m.dead && m.plan && m.plan.target === t && !m.plan.comboDone;
+  });
+}
+function isComboFinisher(u, t) {
+  var mates = comboMates(u, t);
+  return mates.length >= 2 && mates[mates.length - 1] === u;
+}
+function isLastContact(u, a, proj) {
+  if (u.kind === 'warrior' && a && a.swing === 0) return false;
+  if (proj && !proj.last) return false;
+  return true;
+}
+
 function startAction(u) {
   var foes = alive(enemyOf(u)); if (!foes.length) return false;
-  var t = pick(foes), special = u.gauge >= 100;
+  var t = (u.plan && u.plan.target && !u.plan.target.dead) ? u.plan.target : pick(foes);
+  if (u.plan) u.plan.target = t;
+  var special = u.gauge >= 100;
   u.act = { target: t, special: special, stage: u.K.ranged ? 'atk' : 'go', t: 0, swing: 0, done: false, ready: false, readyT: 0 };
   if (u.K.ranged) beginSwing(u);
   if (special) {
     u.gauge = 0;
-    addText(u.x, u.y - u.K.head * US - 30, u.K.special + '!', u.team === 'blue' ? '#9fe3ff' : '#ffb27a', 17, 1000, true);
+    addText(u.x, u.y - u.K.head * uS(u) - 30, u.K.special + '!', u.team === 'blue' ? '#9fe3ff' : '#ffb27a', 17, 1000, true);
     fx.push({ type: 'ring', x: u.x, y: u.y - 20, t: 0, life: 380, color: u.team === 'blue' ? '#7fd8ff' : '#ff9a4a' });
     SFX.special();
   } else u.gauge = Math.min(100, u.gauge + 22);
+  if (u.plan && u.plan.combo && comboMates(u, t).length >= 2) {
+    addText(u.x, u.y - u.K.head * uS(u) - (special ? 48 : 30), 'COMBO x' + comboMates(u, t).length, '#ffd23f', 15, 900, true);
+  }
   return true;
 }
 function beginSwing(u) {
@@ -205,7 +288,7 @@ function updateUnit(u, dt) {
   if (a.ready) a.readyT += dt;
   var t = a.target;
   if (a.stage === 'go') {
-    if (t.dead) { var foes = alive(enemyOf(u)); if (foes.length) a.target = t = pick(foes); else { a.stage = 'back'; a.ready = true; return; } }
+    if (t.dead) { var foes = alive(enemyOf(u)); if (foes.length) { a.target = t = pick(foes); if (u.plan) { u.plan.target = t; u.plan.combo = null; } } else { a.stage = 'back'; a.ready = true; return; } }
     var side = u.hx < t.x ? -1 : 1, gx = t.x + side * (u.K.range + 4), gy = t.y + 2;
     if (moveTo(u, gx, gy, 720, dt)) beginSwing(u);
     return;
@@ -214,6 +297,8 @@ function updateUnit(u, dt) {
     a.t += dt; var d = a.def, fr = Math.floor(a.t * d.fps / 1000);
     if (!a.hitDone && fr >= d.hit) { a.hitDone = true; resolveHit(u, a); }
     if (fr >= d.n) {
+      a.holdT = (a.holdT || 0) + dt;
+      if (a.holdT < (d.hold || 150)) return;
       if (u.kind === 'warrior' && a.swing === 0) { a.swing = 1; beginSwing(u); return; }
       if (u.K.ranged) { a.stage = 'wait'; } else { a.stage = 'back'; a.ready = true; }
     }
@@ -230,6 +315,27 @@ function moveTo(u, gx, gy, sp, dt) {
   u.x += dx / d * st; u.y += dy / d * st; if (Math.abs(dx) > 1) u.facing = dx > 0 ? 1 : -1; setAnim(u, 'run'); return false;
 }
 
+function deliverHit(u, t, a, proj) {
+  if (!t || t.dead) { addText(u.x + u.facing * 30, u.y - 50, 'miss', '#ddd', 12, 500); return; }
+  var mates = comboMates(u, t);
+  var combo = mates.length >= 2 && u.plan && u.plan.target === t;
+  if (combo) {
+    if (!isComboFinisher(u, t) || !isLastContact(u, a, proj)) {
+      t.flash = 90; t.shake = 120; t.kx = (t.x >= u.x ? 1 : -1) * 4;
+      addText(t.x + rand(-12, 12), t.y - t.K.head * uS(t) - 6, 'COMBO', '#ffd23f', 14, 620, true);
+      fx.push({ type: 'spark', x: t.x, y: t.y - 32, t: 0, life: 160, big: false, rot: R() * 6 });
+      SFX.hit();
+      return 'setup';
+    }
+    var sum = 0;
+    mates.forEach(function (m) { sum += m.atk; m.plan.comboDone = true; });
+    var dmg = Math.max(1, Math.round(sum * 3 * surgeMult() * defMit(t.def)));
+    dealDamage(u, t, dmg, { combo: true, members: mates, n: mates.length });
+    return 'combo';
+  }
+  return null;
+}
+
 function resolveHit(u, a) {
   var t = a.target, K = u.K, sp = a.special;
   if (K.ranged === 'arrow') {
@@ -243,16 +349,20 @@ function resolveHit(u, a) {
     tone(500, 0.06, 'triangle', 0.02, 1.6);
     return;
   }
-  if (t.dead) { addText(u.x + u.facing * 30, u.y - 50, 'miss', '#ddd', 12, 500); return; }
-  var base = u.kind === 'warrior' ? 0.6 : u.kind === 'torch' ? 0.8 : 1;
-  var final = !(u.kind === 'warrior' && a.swing === 0);
-  hit(u, t, base * (sp ? 2.5 : 1), sp && final);
+  var comboResult = deliverHit(u, t, a, null);
+  if (comboResult === 'setup') return;
+  if (comboResult !== 'combo') {
+    if (t.dead) { addText(u.x + u.facing * 30, u.y - 50, 'miss', '#ddd', 12, 500); return; }
+    var base = u.kind === 'warrior' ? 0.6 : u.kind === 'torch' ? 0.8 : 1;
+    var final = !(u.kind === 'warrior' && a.swing === 0);
+    hit(u, t, base * (sp ? 2.5 : 1), sp && final);
+  }
   if (u.kind === 'pawn') { t.kx = u.facing * 16; }
-  if (u.kind === 'torch' && !t.dead) { t.burn = { t: 380, owner: u, mult: 0.3 * (sp ? 2 : 1) }; }
+  if (u.kind === 'torch' && !t.dead && comboResult !== 'setup') { t.burn = { t: 380, owner: u, mult: 0.3 * (sp ? 2 : 1) }; }
   if (u.kind === 'barrel' && !sp) { explode(t.x, t.y, 0.55); splash(u, t.x, t.y, 70, 0.12, t); }
   if (sp && final) {
     if (u.kind === 'warrior') { splash(u, t.x, t.y, 85, 0.4, t); fx.push({ type: 'slash', x: t.x, y: t.y - 30, t: 0, life: 260, dir: u.facing }); shake(6, 200); }
-    if (u.kind === 'pawn') { addText(t.x, t.y - t.K.head * US - 30, 'SHOCK', '#fff27a', 13, 700); splash(u, t.x, t.y, 70, 0.3, t); shake(5, 160); }
+    if (u.kind === 'pawn') { addText(t.x, t.y - t.K.head * uS(t) - 30, 'SHOCK', '#fff27a', 13, 700); splash(u, t.x, t.y, 70, 0.3, t); shake(5, 160); }
     if (u.kind === 'torch') { fx.push({ type: 'sprite', img: 'fire', fw: 128, fh: 128, n: 7, fps: 14, x: t.x, y: t.y + 8, ax: 64, ay: 105, s: 0.8, t: 0, loops: 2 }); splash(u, t.x, t.y, 70, 0.35, t); shake(5, 160); }
     if (u.kind === 'barrel') { explode(t.x, t.y, 1.1); splash(u, t.x, t.y, 90, 0.4, t); }
   }
@@ -273,19 +383,41 @@ function splash(u, x, y, r, mult, except) {
 function hit(u, t, mult, special, isSplash, color) {
   if (t.dead) return;
   var crit = !special && !isSplash && R() < 0.1;
-  var dmg = Math.round(u.K.pow * (u.pm || 1) * rand(0.85, 1.15) * mult * (crit ? 1.5 : 1) * surgeMult());
-  t.hp = Math.max(0, t.hp - dmg); u.dmg += dmg;
-  t.gauge = Math.min(100, t.gauge + 9);
-  t.flash = 110; t.shake = 160; t.kx = (t.x >= u.x ? 1 : -1) * (special ? 9 : 5);
-  var big = special && !isSplash;
-  addText(t.x + rand(-10, 10), t.y - t.K.head * US - 6, String(dmg), color || (big ? '#ffd23f' : crit ? '#ff8a3d' : '#ffffff'), big ? 26 : crit ? 21 : 17, 760, big || crit);
-  fx.push({ type: 'spark', x: t.x - t.kx * 2, y: t.y - 32, t: 0, life: big ? 260 : 170, big: big || crit, rot: R() * 6 });
-  if (big) hitstop = Math.max(hitstop, 60);
+  var dmg = Math.max(1, Math.round(u.atk * rand(0.85, 1.15) * (mult || 1) * (crit ? 1.5 : 1) * surgeMult() * defMit(t.def)));
+  dealDamage(u, t, dmg, { special: special, isSplash: isSplash, crit: crit, color: color });
+}
+
+function dealDamage(u, t, dmg, opt) {
+  if (t.dead) return;
+  opt = opt || {};
+  t.hp = Math.max(0, t.hp - dmg);
+  if (opt.combo && opt.members) {
+    var sum = 0; opt.members.forEach(function (m) { sum += m.atk; });
+    opt.members.forEach(function (m) { m.dmg += Math.round(dmg * (m.atk / sum)); });
+    // fix rounding leftover on the finisher
+    var credited = opt.members.reduce(function (s, m) { return s + Math.round(dmg * (m.atk / sum)); }, 0);
+    u.dmg += dmg - credited;
+  } else {
+    u.dmg += dmg;
+  }
+  t.gauge = Math.min(100, t.gauge + (opt.combo ? 16 : 9));
+  t.flash = opt.combo ? 180 : 110; t.shake = opt.combo ? 240 : 160;
+  t.kx = (t.x >= u.x ? 1 : -1) * (opt.combo ? 14 : opt.special ? 9 : 5);
+  var big = !!(opt.combo || (opt.special && !opt.isSplash));
+  var label = opt.combo ? ('COMBO x' + opt.n + '  ' + dmg) : String(dmg);
+  addText(t.x + rand(-10, 10), t.y - t.K.head * uS(t) - 6, label, opt.color || (opt.combo ? '#ffd23f' : big ? '#ffd23f' : opt.crit ? '#ff8a3d' : '#ffffff'), opt.combo ? 28 : big ? 26 : opt.crit ? 21 : 17, opt.combo ? 1100 : 760, big || opt.crit);
+  fx.push({ type: 'spark', x: t.x - t.kx * 2, y: t.y - 32, t: 0, life: big ? 280 : 170, big: big || opt.crit, rot: R() * 6 });
+  if (opt.combo) {
+    fx.push({ type: 'ring', x: t.x, y: t.y - 20, t: 0, life: 420, color: '#ffd23f' });
+    addText(t.x, t.y - t.K.head * uS(t) - 36, 'x3', '#fff27a', 18, 800, true);
+    hitstop = Math.max(hitstop, 90);
+    SFX.special();
+  } else if (big) hitstop = Math.max(hitstop, 60);
   SFX.hit();
   if (t.hp <= 0) {
     t.dead = true; t.deathT = 0; t.act = null; t.burn = null; u.kos++;
-    addText(t.x, t.y - t.K.head * US - 28, 'KO!', '#ff5a5a', 20, 800, true);
-    SFX.ko(); shake(4, 140);
+    addText(t.x, t.y - t.K.head * uS(t) - 28, 'KO!', '#ff5a5a', 20, 800, true);
+    SFX.ko(); shake(opt.combo ? 7 : 4, opt.combo ? 200 : 140);
     if (G.queue) { var qi = G.queue.indexOf(t); if (qi >= 0 && qi >= G.qi) G.queue.splice(qi, 1); }
   }
 }
@@ -302,7 +434,10 @@ function updateProjectiles(dt) {
       var tx = t.x, ty = t.y - 30, dx = tx - p.x, dy = ty - p.y, d = Math.sqrt(dx * dx + dy * dy), st = p.speed * dt / 1000;
       p.ang = Math.atan2(dy, dx);
       if (d <= st + 6 || t.dead) {
-        if (!t.dead) hit(p.owner, t, p.mult, p.special);
+        if (!t.dead) {
+          var cr = deliverHit(p.owner, t, p.act, p);
+          if (!cr) hit(p.owner, t, p.mult, p.special);
+        }
         if (p.pierce) { splash(p.owner, tx, ty + 30, 75, 0.4, t); fx.push({ type: 'ring', x: tx, y: ty + 26, t: 0, life: 300, color: '#9fe3ff' }); }
         if (!t.dead || d < 60) fx.push({ type: 'stuck', x: tx, y: ty, ang: p.ang, t: 0, life: 260 });
         landed(p); projectiles.splice(i, 1); continue;
@@ -314,7 +449,10 @@ function updateProjectiles(dt) {
       p.x = p.sx + (p.tx - p.sx) * k; p.y = p.sy + (p.ty - 10 - p.sy) * k - Math.sin(k * Math.PI) * 110; p.rot += dt * 0.02;
       if (k >= 1) {
         explode(p.tx, p.ty, p.special ? 1.25 : 0.7);
-        if (!t.dead) hit(p.owner, t, p.special ? 2.5 : 1, p.special);
+        if (!t.dead) {
+          var cr = deliverHit(p.owner, t, p.act, p);
+          if (!cr) hit(p.owner, t, p.special ? 2.5 : 1, p.special);
+        }
         if (p.special) splash(p.owner, p.tx, p.ty, 95, 0.4, t);
         landed(p); projectiles.splice(i, 1);
       }
@@ -327,30 +465,41 @@ function busy() { return projectiles.length > 0 || G.units.some(function (u) { r
 function beginPlayerTurn() {
   G.side = 'blue'; G.mode = 'select'; G.queue = []; G.qi = 0; G.turn++;
   banner = { text: 'YOUR TURN', sub: G.turn === 1 ? 'Tap knights to set the attack order' : 'Turn ' + G.turn, t: 0, life: 1000, color: 'blue' };
-  if (G.turn === 6) { banner.sub = 'RIFT SURGE — damage rising!'; }
+  if (G.turn === 4) { banner.sub = 'RIFT SURGE — damage rising!'; }
   tone(523, 0.08, 'square', 0.04); updateCmd();
 }
 function executeOrders() {
   if (!G || G.mode !== 'select' || !G.queue.length || phase !== 'battle') return;
-  G.mode = 'resolve'; G.side = 'blue'; G.qi = 0; G.gap = 120; G.cur = null; SFX.fight(); updateCmd();
+  G.mode = 'resolve'; G.side = 'blue'; G.qi = 0; G.gap = 160; G.cur = null;
+  planActions(G.queue);
+  SFX.fight(); updateCmd();
 }
 function beginEnemyTurn() {
   G.side = 'red'; G.mode = 'enemyIntro'; G.gap = 520; G.qi = 0; G.cur = null;
   G.queue = shuffle(alive('red'));
+  planActions(G.queue);
   banner = { text: 'ENEMY TURN', t: 0, life: 850, color: 'red' };
   tone(220, 0.15, 'sawtooth', 0.04, 0.8); updateCmd();
+}
+function attackResolved(u) {
+  if (!u || u.dead || !u.act) return true;
+  var a = u.act;
+  if (a.stage === 'go' || a.stage === 'atk') return false;
+  if (projectiles.some(function (p) { return p.owner === u; })) return false;
+  if (a.stage === 'wait' && !a.ready) return false;
+  return a.readyT >= 180; // short beat after the swing, then the next unit goes
 }
 function controller(dt) {
   if (G.mode === 'select') return;
   if (G.mode === 'enemyIntro') { G.gap -= dt; if (G.gap <= 0) { G.mode = 'resolve'; G.gap = 0; } return; }
   if (G.mode === 'resolve') {
     var c = G.cur;
-    if (c && !c.dead && c.act && (c.act.stage === 'go' || c.act.stage === 'atk' || !(c.act.ready && c.act.readyT >= 60))) return; // strictly one attacker at a time
+    if (c && !attackResolved(c)) return; // one attacker at a time, next starts right after
     G.gap -= dt; if (G.gap > 0) return;
     if (alive(G.side === 'blue' ? 'red' : 'blue').length === 0) { G.mode = 'finish'; return; }
     while (G.qi < G.queue.length && G.queue[G.qi].dead) G.qi++;
     if (G.qi < G.queue.length) {
-      var u = G.queue[G.qi++]; G.cur = u; startAction(u); G.gap = 90; return;
+      var u = G.queue[G.qi++]; G.cur = u; startAction(u); G.gap = 40; return;
     }
     G.mode = 'finish';
   }
@@ -461,11 +610,11 @@ function drawUnit(u) {
   var K = u.K, f = K.f;
   if (u.dead) {
     // brief white pop of the unit, then official Dead sheet
-    if (u.deathT < 140) { var fr0 = unitFrame(u); drawFrame(null, WHITE[K.img], f.fw, f.fh, fr0.c, fr0.r, u.x, u.y, f.ax, f.ay, US * (1 + u.deathT / 900), u.facing < 0, 1 - u.deathT / 200); }
+    if (u.deathT < 140) { var fr0 = unitFrame(u); drawFrame(null, WHITE[K.img], f.fw, f.fh, fr0.c, fr0.r, u.x, u.y, f.ax, f.ay, uS(u) * (1 + u.deathT / 900), u.facing < 0, 1 - u.deathT / 200); }
     var dt = u.deathT - 60; if (dt < 0) return;
     var idx = Math.floor(dt / 85); if (idx > 13) idx = 13;
     var al = u.deathT > 1300 ? Math.max(0, 1 - (u.deathT - 1300) / 400) : 1;
-    drawFrame('dead', null, 128, 128, idx % 7, idx < 7 ? 0 : 1, u.x, u.y, 64, 96, US * 0.95, u.facing < 0, al);
+    drawFrame('dead', null, 128, 128, idx % 7, idx < 7 ? 0 : 1, u.x, u.y, 64, 96, uS(u) * 0.95, u.facing < 0, al);
     return;
   }
   var fr = unitFrame(u);
@@ -484,16 +633,17 @@ function drawUnit(u) {
     ctx.beginPath(); ctx.ellipse(x, y - 2, 24, 8, 0, 0, 7); ctx.stroke(); ctx.restore();
   }
   ctx.save(); ctx.translate(Math.round(x), Math.round(y)); ctx.scale(u.facing < 0 ? -1 / sq : 1 / sq, sq);
+  var sc = uS(u);
   if (qn) {
-    var o = 2.6, sw = f.fw * US, sh = f.fh * US, ox0 = -f.ax * US, oy0 = -f.ay * US;
+    var o = 2.6, sw = f.fw * sc, sh = f.fh * sc, ox0 = -f.ax * sc, oy0 = -f.ay * sc;
     ctx.globalAlpha = 0.95;
     [[o, 0], [-o, 0], [0, o], [0, -o], [o * 0.7, o * 0.7], [-o * 0.7, o * 0.7], [o * 0.7, -o * 0.7], [-o * 0.7, -o * 0.7]].forEach(function (d) {
       ctx.drawImage(CYAN[K.img], fr.c * f.fw, fr.r * f.fh, f.fw, f.fh, ox0 + d[0], oy0 + d[1], sw, sh);
     });
     ctx.globalAlpha = 1;
   }
-  ctx.drawImage(IMG[K.img], fr.c * f.fw, fr.r * f.fh, f.fw, f.fh, -f.ax * US, -f.ay * US, f.fw * US, f.fh * US);
-  if (u.flash > 0) { ctx.globalAlpha = Math.min(1, u.flash / 80); ctx.drawImage(WHITE[K.img], fr.c * f.fw, fr.r * f.fh, f.fw, f.fh, -f.ax * US, -f.ay * US, f.fw * US, f.fh * US); }
+  ctx.drawImage(IMG[K.img], fr.c * f.fw, fr.r * f.fh, f.fw, f.fh, -f.ax * sc, -f.ay * sc, f.fw * sc, f.fh * sc);
+  if (u.flash > 0) { ctx.globalAlpha = Math.min(1, u.flash / 80); ctx.drawImage(WHITE[K.img], fr.c * f.fw, fr.r * f.fh, f.fw, f.fh, -f.ax * sc, -f.ay * sc, f.fw * sc, f.fh * sc); }
   ctx.restore();
 }
 
@@ -506,7 +656,7 @@ function queuedNum(u) {
 }
 function drawBadge(u) {
   var n = queuedNum(u); if (!n) return;
-  var r = 11 * TS * (u.pop > 0 ? 1 + u.pop / 400 : 1), x = u.x, y = u.y - u.K.head * US - 24 - 14 * TS;
+  var r = 11 * TS * (u.pop > 0 ? 1 + u.pop / 400 : 1), x = u.x, y = u.y - u.K.head * uS(u) - 24 - 14 * TS;
   ctx.save(); ctx.fillStyle = '#0d3d4a'; ctx.beginPath(); ctx.arc(x, y, r + 2.5, 0, 7); ctx.fill();
   ctx.fillStyle = '#38f2ff'; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill();
   ctx.font = '900 ' + Math.round(r * 1.35) + 'px Trebuchet MS, Verdana, sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
@@ -514,7 +664,7 @@ function drawBadge(u) {
 }
 function drawBars(u) {
   if (u.dead) return;
-  var w = 46 * TS, bh = 5 * TS, gh = 3 * TS, x = u.x - w / 2, y = u.y - u.K.head * US - 10 - 6 * TS;
+  var w = 46 * TS, bh = 5 * TS, gh = 3 * TS, x = u.x - w / 2, y = u.y - u.K.head * uS(u) - 10 - 6 * TS;
   ctx.fillStyle = 'rgba(20,14,10,.85)'; ctx.fillRect(x - 2, y - 2, w + 4, bh + gh + 5);
   ctx.fillStyle = '#5a1f1f'; ctx.fillRect(x, y, w, bh);
   ctx.fillStyle = '#ffffff'; ctx.fillRect(x, y, w * Math.max(0, u.shownHp) / u.maxhp, bh);
@@ -527,6 +677,12 @@ function drawBars(u) {
   ctx.font = '700 ' + Math.round(10 * TS) + 'px Trebuchet MS, Verdana, sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
   ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(0,0,0,.75)'; ctx.strokeText(u.name, u.x, y - 4);
   ctx.fillStyle = u.team === 'blue' ? '#d6f1ff' : '#ffd9cf'; ctx.fillText(u.name, u.x, y - 4);
+  if (u.sub) {
+    var role = u.cls + ' · ' + u.sub;
+    ctx.font = '700 ' + Math.round(7.5 * TS) + 'px Trebuchet MS, Verdana, sans-serif';
+    ctx.lineWidth = 2.5; ctx.strokeText(role, u.x, y - 4 - 11 * TS);
+    ctx.fillStyle = u.team === 'blue' ? '#9fd4e8' : '#f0b6a8'; ctx.fillText(role, u.x, y - 4 - 11 * TS);
+  }
 }
 
 function drawFx(e) {
@@ -591,7 +747,8 @@ function drawHud() {
     var hp = 0, mx = 0; us.forEach(function (u) { hp += Math.max(0, u.shownHp); mx += u.maxhp; });
     var x = team === 'blue' ? 6 : VWc - 6 - w, isB = team === 'blue';
     draw3(isB ? IMG.ribbonBlue : IMG.ribbonRed, x, top, w, h);
-    outlined(w > 190 ? (isB ? 'KNIGHTS' : 'GOBLINS') : (isB ? 'BLUE' : 'RED'), x + (isB ? pad : w - pad), top + h * 0.42, fs, '#fff', isB ? 'left' : 'right');
+    var teamName = isB ? (w > 190 ? 'SQUAD' : 'BLUE') : (G.nRed === 1 ? 'BOSS' : G.nRed === 2 ? (w > 190 ? 'ELITES' : 'RED') : (w > 190 ? 'GOBLINS' : 'RED'));
+    outlined(teamName, x + (isB ? pad : w - pad), top + h * 0.42, fs, '#fff', isB ? 'left' : 'right');
     outlined(al + '/' + tot, x + (isB ? w - pad : pad), top + h * 0.42, fs, '#fff', isB ? 'right' : 'left');
     var bx = x + h * 0.6, bw = w - h * 1.2, by = top + h + 2;
     ctx.fillStyle = 'rgba(20,14,10,.85)'; ctx.fillRect(bx - 2, by - 2, bw + 4, 10);
@@ -676,24 +833,30 @@ if (window.visualViewport) window.visualViewport.addEventListener('resize', layo
 function $(id) { return document.getElementById(id); }
 function show(id) { ['loading', 'title', 'results'].forEach(function (s) { $(s).classList.toggle('show', s === id); }); $('hudBtns').classList.toggle('show', id === null); $('cmdBar').classList.toggle('show', id === null); updateCmd(); }
 function toTitle() { newBattle(); phase = 'title'; paused = false; $('pausedTag').style.display = 'none'; show('title'); }
-function startFight() {
-  audio(); newBattle(); phase = 'battle'; paused = false; $('pausedTag').style.display = 'none'; show(null);
-  beginPlayerTurn(); banner.text = G.nRed + ' GOBLINS!'; banner.color = 'yellow'; banner.life = 1300;
+function startFight(n) {
+  audio(); newBattle(n); phase = 'battle'; paused = false; $('pausedTag').style.display = 'none'; show(null);
+  beginPlayerTurn();
+  if (G.nRed === 1) { banner.text = 'BOSS RIFT!'; banner.sub = '6v1 — one tyrant'; }
+  else if (G.nRed === 2) { banner.text = 'ELITE RAID'; banner.sub = '6v2 — two elites'; }
+  else { banner.text = 'GOBLIN RAID'; banner.sub = '6v3 — a short raid'; }
+  banner.color = G.nRed === 1 ? 'red' : 'yellow'; banner.life = 1400;
 }
 function showResults() {
   if (phase === 'results') return; phase = 'results';
   var r = G.result, rib = $('resRibbon');
   rib.className = 'ribbon resTitle ' + (r === 'win' ? 'ribbon-blue' : r === 'lose' ? 'ribbon-red' : 'ribbon-yellow');
   rib.textContent = r === 'win' ? 'VICTORY' : r === 'lose' ? 'DEFEAT' : 'DRAW';
-  $('resSub').textContent = r === 'win' ? 'The Knights hold the rift!' : r === 'lose' ? 'The Goblins overran the rift…' : 'Nobody left standing!';
+  var raidName = G.nRed === 1 ? '6v1 Boss' : G.nRed === 2 ? '6v2 Elite' : '6v3 Raid';
+  $('resSub').textContent = r === 'win' ? 'The squad holds the rift!' : r === 'lose' ? 'The rift was overrun…' : 'Nobody left standing!';
   var blue = G.units.filter(function (u) { return u.team === 'blue'; }), red = G.units.filter(function (u) { return u.team === 'red'; });
   var bAlive = blue.filter(function (u) { return !u.dead; }).length, rAlive = red.filter(function (u) { return !u.dead; }).length;
   var mvp = G.units.slice().sort(function (a, b) { return b.dmg - a.dmg; })[0];
   var bd = blue.reduce(function (s, u) { return s + u.dmg; }, 0), rd = red.reduce(function (s, u) { return s + u.dmg; }, 0);
-  $('resStats').innerHTML = '<span class="ln">Turns: <b>' + G.turn + '</b> · Raid size: <b class="r">' + G.nRed + ' Goblins</b></span>' +
-    '<span class="ln">Standing: <b>' + bAlive + '/6 Knights</b> · <b class="r">' + rAlive + '/' + G.nRed + ' Goblins</b></span>' +
+  var mvpRole = mvp.cls ? mvp.cls + ' / ' + mvp.sub : mvp.K.label;
+  $('resStats').innerHTML = '<span class="ln">Turns: <b>' + G.turn + '</b> · Mode: <b class="r">' + raidName + '</b></span>' +
+    '<span class="ln">Standing: <b>' + bAlive + '/6</b> · <b class="r">' + rAlive + '/' + G.nRed + '</b></span>' +
     '<span class="ln">Damage: <b>' + bd.toLocaleString() + '</b> vs <b class="r">' + rd.toLocaleString() + '</b></span>' +
-    '<span class="ln">MVP: <b class="' + (mvp.team === 'red' ? 'r' : '') + '">' + mvp.name + '</b> the ' + mvp.K.label + ' — ' + mvp.dmg.toLocaleString() + ' dmg, ' + mvp.kos + ' KO' + (mvp.kos === 1 ? '' : 's') + '</span>';
+    '<span class="ln">MVP: <b class="' + (mvp.team === 'red' ? 'r' : '') + '">' + mvp.name + '</b> the ' + mvpRole + ' — ' + mvp.dmg.toLocaleString() + ' dmg, ' + mvp.kos + ' KO' + (mvp.kos === 1 ? '' : 's') + '</span>';
   show('results');
 }
 function updateCmd() {
@@ -730,13 +893,14 @@ function tap(id, fn) {
   el.addEventListener('touchend', fire, { passive: false });
   el.addEventListener('click', fire);
 }
-tap('btnFight', startFight); tap('btnRetry', startFight); tap('btnMenu', toTitle);
+tap('btnRaid3', function () { startFight(3); }); tap('btnRaid2', function () { startFight(2); }); tap('btnRaid1', function () { startFight(1); });
+tap('btnRetry', function () { startFight(lastRaid); }); tap('btnMenu', toTitle);
 tap('btnExec', executeOrders); tap('btnAll', queueAll); tap('btnClear', clearQueue);
 tap('btnPause', togglePause); tap('btnMute', toggleMute); tap('btnSpeed', toggleSpeed);
 document.addEventListener('gesturestart', function (e) { e.preventDefault(); });
 $('btnMute').classList.toggle('off', muted);
 window.addEventListener('keydown', function (e) {
-  if (e.code === 'Space' || e.code === 'Enter') { e.preventDefault(); if (phase === 'title' || phase === 'results') startFight(); else executeOrders(); }
+  if (e.code === 'Space' || e.code === 'Enter') { e.preventDefault(); if (phase === 'title' || phase === 'results') startFight(lastRaid); else executeOrders(); }
   else if (/^Digit[1-6]$/.test(e.code) && G && phase === 'battle') { var bl = G.units.filter(function (u) { return u.team === 'blue'; })[+e.code.slice(5) - 1]; if (bl) toggleQueue(bl); }
   else if (e.code === 'KeyA') queueAll(); else if (e.code === 'KeyC') clearQueue();
   else if (e.code === 'KeyP' || e.code === 'Escape') togglePause();
@@ -761,7 +925,7 @@ window.RIFTSTRIKE = {
   state: function () { return { phase: phase, t: G && G.t, units: G && G.units.map(function (u) { return { name: u.name, team: u.team, kind: u.kind, hp: u.hp, dead: u.dead, anim: u.act ? 'act:' + u.act.stage : u.anim, x: Math.round(u.x), y: Math.round(u.y), gauge: Math.round(u.gauge), dmg: u.dmg }; }), result: G && G.result }; },
   screenPos: function (name) { var u = G.units.filter(function (v) { return v.name === name; })[0]; return { x: u.x * scale + OX, y: (u.y - 26) * scale + OY }; },
   mode: function () { return G && { mode: G.mode, side: G.side, turn: G.turn, queue: G.queue.map(function (u) { return u.name; }), nRed: G.nRed }; },
-  fight: startFight, sim: function (n) { var res = { win: 0, lose: 0, draw: 0, t: 0, turns: 0, byN: {} }; AUTO = true; muted = true; for (var k = 0; k < n; k++) { newBattle(); phase = 'battle'; beginPlayerTurn(); var guard = 0; while (phase === 'battle' && guard++ < 60000) step(17); res[G.result]++; res.t += G.t; res.turns += G.turn; var b = res.byN[G.nRed] = res.byN[G.nRed] || { w: 0, l: 0 }; if (G.result === 'win') b.w++; else b.l++; phase = 'title'; } AUTO = false; muted = false; res.avgT = res.t / n / 1000; res.avgTurns = res.turns / n; return res; }, step: function (ms) { var n = Math.ceil(ms / 17); for (var i = 0; i < n; i++) step(17); render(); },
+  fight: startFight, sim: function (n) { var res = { win: 0, lose: 0, draw: 0, t: 0, turns: 0, byN: {} }; AUTO = true; muted = true; for (var k = 0; k < n; k++) { newBattle((k % 3) + 1); phase = 'battle'; beginPlayerTurn(); var guard = 0; while (phase === 'battle' && guard++ < 60000) step(17); res[G.result]++; res.t += G.t; res.turns += G.turn; var b = res.byN[G.nRed] = res.byN[G.nRed] || { w: 0, l: 0 }; if (G.result === 'win') b.w++; else b.l++; phase = 'title'; } AUTO = false; muted = false; res.avgT = res.t / n / 1000; res.avgTurns = res.turns / n; return res; }, step: function (ms) { var n = Math.ceil(ms / 17); for (var i = 0; i < n; i++) step(17); render(); },
   forceEnd: function (team) { G.units.forEach(function (u) { if (u.team === (team || 'red')) { u.hp = 0; u.dead = true; } }); }
 };
 
@@ -769,7 +933,7 @@ layout(); show('loading');
 loadAll(function () {
   Object.keys(KINDS).forEach(function (k) { WHITE[KINDS[k].img] = silhouette(IMG[KINDS[k].img], '#ffffff'); CYAN[KINDS[k].img] = silhouette(IMG[KINDS[k].img], '#38f2ff'); });
   buildTerrain(); toTitle();
-  if (params.get('auto') === '1') { AUTO = true; startFight(); }
+  if (params.get('auto') === '1') { AUTO = true; startFight(+params.get('enemies') || lastRaid); }
   requestAnimationFrame(frame);
 });
 })();

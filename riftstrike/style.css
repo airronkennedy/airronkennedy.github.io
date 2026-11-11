@@ -35,6 +35,9 @@ button{-webkit-appearance:none;appearance:none;touch-action:manipulation;-webkit
 .btn-red{-webkit-border-image:url(assets/ui/Button_Red_3Slides.png) 0 64 0 64 fill stretch;border-image:url(assets/ui/Button_Red_3Slides.png) 0 64 0 64 fill stretch}
 .btn-red:active,.btn-red.down{-webkit-border-image:url(assets/ui/Button_Red_3Slides_Pressed.png) 0 64 0 64 fill stretch;border-image:url(assets/ui/Button_Red_3Slides_Pressed.png) 0 64 0 64 fill stretch}
 .btn.big{height:80px;border-width:0 64px;font-size:38px;min-width:min(300px,78vw);padding-bottom:12px;-webkit-animation:pulse 1.1s ease-in-out infinite;animation:pulse 1.1s ease-in-out infinite}
+.fight-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;width:min(560px,94vw);margin-top:2px}
+.fight-mode{min-width:min(160px,44vw);height:70px;font-size:clamp(16px,4.4vw,22px);border-width:0 40px;padding-bottom:10px;letter-spacing:1px}
+#btnRaid1{min-width:min(200px,70vw);-webkit-animation:pulse 1.1s ease-in-out infinite;animation:pulse 1.1s ease-in-out infinite}
 @-webkit-keyframes pulse{0%,100%{-webkit-filter:brightness(1)}50%{-webkit-filter:brightness(1.18)}}
 @keyframes pulse{0%,100%{filter:brightness(1)}50%{filter:brightness(1.18)}}
 @media (hover:hover) and (pointer:fine){.btn:hover{transform:scale(1.05)}}
@@ -68,7 +71,7 @@ button{-webkit-appearance:none;appearance:none;touch-action:manipulation;-webkit
 #pausedTag{position:absolute;left:0;right:0;top:42%;text-align:center;font-size:clamp(36px,10vw,56px);font-weight:900;color:#fff;display:none;
   text-shadow:0 4px 0 #000,3px 0 0 #000,-3px 0 0 #000;pointer-events:none}
 @media (max-height:430px){
-  .logo{font-size:clamp(40px,11vh,80px)} .vs-row{margin:8px 0} .btn.big{height:64px;font-size:30px} .hint{display:none}
+  .logo{font-size:clamp(40px,11vh,80px)} .vs-row{margin:8px 0} .btn.big{height:64px;font-size:30px} .fight-mode{height:56px;font-size:16px} .hint{display:none}
   .ribbon{height:38px;line-height:31px}
   .panel{padding-top:2px;padding-bottom:4px;border-width:24px} .resTitle{height:48px;line-height:40px} .resSub{margin:2px 0 4px} .credit.small{margin-top:4px} .resStats{line-height:1.35} .resBtns{margin-top:8px}
   .credit{bottom:4px;font-size:12px}
