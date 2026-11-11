@@ -1,2 +1,519 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><title>Airronbot — Discord Community Software · Airron Kennedy</title><meta content="Airronbot brings birthday reminders, welcome messages, moderator announcements and slash commands into a Discord community" name="description"/><meta content="#05070d" name="theme-color"/><link href="/work/work.css?v=20261107l" rel="stylesheet"/><link rel="stylesheet" href="/tracker/lock.css?v=20261107l"><script defer src="/work/namegate.js?v=20261110a"></script><script defer="" src="/work/work.js?v=20261107l"></script></head><body class="subpage"><a class="skip" href="#main">Skip to content</a><div aria-hidden="true" class="bg"></div><div aria-hidden="true" class="veil"></div><canvas aria-hidden="true" id="stars"></canvas><span aria-hidden="true" class="orb o1"></span><span aria-hidden="true" class="orb o2"></span><span aria-hidden="true" class="orb o3"></span><header class="top"><a class="back" href="/work/">← Experience Planet</a><p class="eyebrow">Airron <span>Kennedy</span></p><h1>Airronbot — Discord Community Software</h1><p class="lede">Personal AI-assisted software project</p><nav aria-label="Portfolio sections" class="section-nav"><a href="/work/#game-design">Game Design</a><a href="/work/#playable-projects">Playable Projects</a><a href="/work/#software">Software</a><a href="/work/#research-thesis">Research &amp; Thesis</a><a href="/work/#production-qa">Production &amp; QA</a><a href="/work/resume.html">Resume</a><a href="/work/skills.html">Skills</a><a href="/work/contact.html">Contact</a></nav></header><main class="detail" id="main"><p class="meta">Software · Independent personal project</p><section class="evidence-block"><h2>The project</h2><p>Airronbot brings birthday reminders, welcome messages, moderator announcements and slash commands into a Discord community. Addressed messages are filtered and sent to a separate external relay, whose authenticated callback delivers text and optional queued speech. The project also includes duplicate protection, voice-state handling and a health dashboard. This is an AI-assisted personal project, and the portfolio distinguishes documented capabilities, generated or adapted code and behavior that still needs a fresh end-to-end demonstration.</p><ul class="tools"><li>TypeScript</li><li>Node.js</li><li>Discord.js</li><li>Express</li><li>React</li><li>Zod</li><li>@discordjs/voice</li><li>local eSpeak-NG TTS</li></ul></section><section class="evidence-block"><h2>What to notice</h2><p>Follow the path from a Discord event through filtering, relay transport, callback validation and delivery. The inspected code and operations README make the preview/production boundary and queued-versus-finished voice states explicit.</p></section><section class="evidence-block"><h2>Integration architecture</h2><p>Discord event → addressed-message filter → bounded relay queue → external service → authenticated callback → text delivery / optional speech. The bot integrates with the relay; it does not generate the answer itself. Duplicate suppression is process-local. Birthdays are stored in local JSON, not PostgreSQL. Preview avoids a second Discord gateway session; persistent voice needs a continuously running process. Queued speech is not listener-confirmed playback.</p></section><section class="evidence-block"><h2>Local evidence</h2><p>These files are hosted with the portfolio and need no Google Drive sign-in. Text exports are labeled separately from original-layout PDFs and editorial briefs.</p><ul class="artifact-list"><li><a href="/work/files/airronbot-brief.pdf">Editorial project brief (PDF)</a> <small>· 23 KB</small></li></ul></section><section class="evidence-block"><h2>External references</h2><ul class="artifact-list"><li>Replit workspace reference — not publicly accessible during verification (HTTP 404). Local evidence remains available above.</li><li><a href="https://chilly-athletic-arrays.replit.app" rel="noopener noreferrer" target="_blank">Open published app ↗</a></li></ul><p class="fine">Preserved source links; third-party availability and account permissions may change. No sharing settings were altered.</p></section><section class="evidence-block scope"><h2>Ownership &amp; scope</h2><p>The bot itself does not generate AI answers or search the web; the external relay is a separate dependency. Published metadata is not proof of a new Discord/voice test, and the exported source is a selected snapshot without secrets or birthday records.</p></section><section class="evidence-block"><h2>Skills in context</h2><ul class="tools"><li>Event-driven integration</li><li>API validation</li><li>permissions</li><li>deduplication</li><li>observability</li></ul></section><aside class="evidence-block"><h2>Continue exploring</h2><ul class="artifact-list"><li><a href="/work/projects/replit-site-scaffold.html">AttentiveDelightfulTab — Website Scaffold</a></li><li><a href="/work/projects/website-github.html">AirronKennedy.com — Website and GitHub</a></li></ul><p class="links"><a href="/work/">← All projects</a></p></aside></main><footer><div><a class="back" href="/">← Back to orbit</a><p>Airron Kennedy · Experience Planet</p></div><p>Background: NASA, ESA, CSA, STScI<br/><a href="/work/contact.html">Contact</a> · <a href="/work/">Portfolio</a><br/>Privacy-friendly visitor analytics: GoatCounter</p></footer><a aria-label="Back to homepage" class="back fab" href="/">← Orbit</a><script async="" data-goatcounter="https://airronkennedy.goatcounter.com/count" src="//gc.zgo.at/count.js"></script></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<title>Airronbot — AI Systems Integration · Airron Kennedy</title>
+<meta content="A case study of Airronbot: a Discord bot that carries questions to a Grok Bot agent and back, connected to Gmail, Drive, Calendar, and GitHub under rules I set." name="description"/>
+<meta content="#05070d" name="theme-color"/>
+<link href="/work/work.css?v=20261111a" rel="stylesheet"/>
+<link rel="stylesheet" href="/tracker/lock.css?v=20261107l">
+<script defer src="/work/namegate.js?v=20261110a"></script>
+<script defer src="/work/work.js?v=20261107l"></script>
+<style>
+.case-nav{display:flex;flex-wrap:wrap;gap:8px 16px;margin:8px 0 6px;padding:0;list-style:none;font-size:12px}
+.case-nav a{text-underline-offset:4px}
+.flow-path{list-style:none;padding:8px 0 4px;margin:8px 0 4px;max-width:850px;counter-reset:step}
+.flow-path li{position:relative;padding:0 0 26px 52px;border-left:1px solid rgba(240,217,184,.28);margin-left:16px}
+.flow-path li:last-child{border-left-color:transparent;padding-bottom:4px}
+.flow-path li::before{content:counter(step);counter-increment:step;position:absolute;left:-17px;top:0;width:32px;height:32px;border-radius:50%;background:rgba(12,14,28,.95);border:1px solid #d8b46a;color:#d8b46a;font-size:12px;font-weight:500;display:flex;align-items:center;justify-content:center;box-shadow:0 0 12px rgba(216,180,106,.18)}
+.flow-path strong{display:block;color:#fff;font-weight:500;font-size:16px;line-height:32px}
+.flow-path span{display:block;font-size:15px;line-height:1.65;margin-top:4px;max-width:760px}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid rgba(240,217,184,.18);border-radius:14px;background:rgba(12,14,28,.45)}
+.case-table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.55}
+.case-table th{text-align:left;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;opacity:.75;padding:12px 14px;border-bottom:1px solid rgba(240,217,184,.22);white-space:nowrap}
+.case-table td{padding:11px 14px;border-bottom:1px solid rgba(240,217,184,.12);vertical-align:top}
+.case-table tr:last-child td{border-bottom:0}
+.case-table td:first-child{color:#fff;font-weight:500;white-space:nowrap}
+@media(max-width:640px){.case-table td:first-child{white-space:normal}}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.split .scope{margin:0}
+@media(max-width:720px){.split{grid-template-columns:1fr}}
+.arch{width:100%;height:auto;margin:18px 0 8px;display:block}
+.arch-note{max-width:850px}
+.verdict{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:2px 8px;border-radius:99px;border:1px solid rgba(240,217,184,.35);color:var(--gold)}
+.verdict.yes{border-color:rgba(140,200,150,.5);color:#b8e0c0}
+.verdict.partial{border-color:rgba(216,180,106,.55)}
+.resume-block{margin:8px 0 22px}
+.resume-block h3{margin-top:8px}
+.resume-block ul{padding-left:20px;margin:10px 0;max-width:850px}
+.resume-block li{margin:9px 0;line-height:1.7;font-size:16px}
+.arch-wrap{margin:12px 0;padding:18px 12px 10px;border:1px solid rgba(240,217,184,.18);border-radius:16px;background:rgba(12,14,28,.5);overflow-x:auto}
+</style>
+</head>
+<body class="subpage">
+<a class="skip" href="#main">Skip to content</a>
+<div aria-hidden="true" class="bg"></div>
+<div aria-hidden="true" class="veil"></div>
+<canvas aria-hidden="true" id="stars"></canvas>
+<span aria-hidden="true" class="orb o1"></span>
+<span aria-hidden="true" class="orb o2"></span>
+<span aria-hidden="true" class="orb o3"></span>
+<header class="top">
+<a class="back" href="/work/">← Experience Planet</a>
+<p class="eyebrow">Airron <span>Kennedy</span></p>
+<h1>Airronbot — AI Systems Integration</h1>
+<p class="lede">A case study in connecting Discord, Grok, and Google services into one working system.</p>
+<nav aria-label="Portfolio sections" class="section-nav">
+<a href="/work/#game-design">Game Design</a>
+<a href="/work/#playable-projects">Playable Projects</a>
+<a href="/work/#software">Software</a>
+<a href="/work/#research-thesis">Research &amp; Thesis</a>
+<a href="/work/#production-qa">Production &amp; QA</a>
+<a href="/work/resume.html">Resume</a>
+<a href="/work/skills.html">Skills</a>
+<a href="/work/contact.html">Contact</a>
+</nav>
+</header>
+<main class="detail" id="main">
+<p class="meta">Software · Independent personal project · Verified 11 November 2026</p>
+
+<nav aria-label="Case study sections">
+<ul class="case-nav">
+<li><a href="#shows">What this shows</a></li>
+<li><a href="#path">How a question travels</a></li>
+<li><a href="#architecture">The full system</a></li>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#motivation">Motivation</a></li>
+<li><a href="#tech">Architecture</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contributions">My contributions</a></li>
+<li><a href="#challenges">Challenges</a></li>
+<li><a href="#demo">What you can try</a></li>
+<li><a href="#results">Results</a></li>
+<li><a href="#future">Next steps</a></li>
+<li><a href="#evaluation">What it demonstrates</a></li>
+<li><a href="#resume">Resume text</a></li>
+<li><a href="#career">Career transfer</a></li>
+</ul>
+</nav>
+
+<section class="evidence-block" id="shows">
+<h2>What this shows</h2>
+<p>This is not a chatbot I subscribed to. It is a system I designed so tools that were never built to work together can pass work to each other, with clear rules about what each one is allowed to do.</p>
+<p>The front door is Airronbot, a Discord bot I specified and host on Replit. When someone in one of my servers asks it a question, the bot does not invent an answer. It carries that question to a Grok Bot agent I set up. The agent can use my connected accounts if the question needs them, and the reply comes back into Discord without pinging anyone or lighting up phones.</p>
+</section>
+
+<section class="evidence-block" id="path">
+<h2>How a question travels</h2>
+<p>This is the path of a single question. If you only look at one thing on this page, look at this.</p>
+<ol class="flow-path">
+<li><strong>Someone asks in Discord</strong><span>A server member addresses Airronbot with a question.</span></li>
+<li><strong>The bot decides whether to forward it</strong><span>Only addressed server messages are sent on. Unrelated chat, direct messages, and other bots are ignored. The message is given an ID so it will not be handled twice.</span></li>
+<li><strong>The question is sent to the relay</strong><span>Airronbot posts the message over HTTPS to a webhook routine I configured, and expects a receipt within ten seconds. Redirects are rejected.</span></li>
+<li><strong>The agent writes the answer</strong><span>A Grok Bot agent I configured drafts the reply under rules I set: no @mentions, no personal details, silent delivery.</span></li>
+<li><strong>The answer comes back, signed</strong><span>The agent posts the reply to the bot’s callback with a shared secret. That secret is different from the outgoing webhook key, and it is checked with a timing-safe comparison.</span></li>
+<li><strong>The bot posts a quiet reply</strong><span>If the secret is valid and the message is not a duplicate, Airronbot posts the answer in the channel without a notification. It can also speak the answer in a voice channel.</span></li>
+</ol>
+<p>If the relay is down, the bot posts a fixed notice. It never falls back to another AI on its own. Slash commands, birthdays, welcomes, and the health page keep working even when the agent is offline.</p>
+</section>
+
+<section class="evidence-block" id="architecture">
+<h2>The full system</h2>
+<p>The same agent is also connected to my email, calendar, files, code, and website. I chose those connections and the trust level for each: some may only be read, and sending a message or changing an account needs my approval first.</p>
+<div class="arch-wrap">
+
+<svg class="arch" viewBox="0 0 720 980" role="img" aria-labelledby="arch-title arch-desc">
+  <title id="arch-title">Architecture of Airronbot and the connected agent system</title>
+  <desc id="arch-desc">Discord talks to Airronbot on Replit. The bot sends a webhook to a relay routine, which runs the Airron Bot agent. The agent sends a signed reply back to the bot, which posts a silent message in Discord. The same agent hands work to Game Bot and Bartenbot, reads Gmail, Calendar, and Drive with approval gates, and uses a shared Linux computer to push GitHub repos that publish airronkennedy.com. GoatCounter visit counts return as a weekly report.</desc>
+  <defs>
+    <style>
+      .bx{fill:#12162c;stroke:#d8b46a;stroke-opacity:.55;stroke-width:1.25}
+      .t1{fill:#fff;font:600 14px system-ui,Segoe UI,sans-serif}
+      .t2{fill:#d8b46a;font:400 11px system-ui,Segoe UI,sans-serif}
+      .el{fill:#f0e6d4;font:500 11px system-ui,Segoe UI,sans-serif;opacity:.9}
+      .ln{stroke:#d8b46a;stroke-opacity:.55;stroke-width:1.25;fill:none;marker-end:url(#ar)}
+      .ld{stroke:#d8b46a;stroke-opacity:.55;stroke-width:1.25;fill:none;stroke-dasharray:5 4;marker-end:url(#ar)}
+    </style>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#d8b46a" fill-opacity=".85"/>
+    </marker>
+  </defs>
+
+  <!-- main column x=210, width=300 -->
+  <rect class="bx" x="210" y="8" width="300" height="58" rx="12"/>
+  <text class="t1" x="360" y="32" text-anchor="middle">Discord</text>
+  <text class="t2" x="360" y="50" text-anchor="middle">members, text and voice</text>
+  <text class="el" x="370" y="86">chat and voice events</text>
+  <path class="ln" d="M360 66V100"/>
+
+  <rect class="bx" x="210" y="102" width="300" height="58" rx="12"/>
+  <text class="t1" x="360" y="126" text-anchor="middle">Airronbot on Replit</text>
+  <text class="t2" x="360" y="144" text-anchor="middle">TypeScript, Express, discord.js</text>
+  <text class="el" x="370" y="180">HTTPS webhook</text>
+  <path class="ln" d="M360 160V194"/>
+
+  <rect class="bx" x="210" y="196" width="300" height="58" rx="12"/>
+  <text class="t1" x="360" y="220" text-anchor="middle">Relay routine</text>
+  <text class="t2" x="360" y="238" text-anchor="middle">webhook trigger I configured</text>
+  <text class="el" x="370" y="274">runs the agent</text>
+  <path class="ln" d="M360 254V288"/>
+
+  <rect class="bx" x="210" y="290" width="300" height="58" rx="12"/>
+  <text class="t1" x="360" y="314" text-anchor="middle">Airron Bot</text>
+  <text class="t2" x="360" y="332" text-anchor="middle">coordinator agent</text>
+
+  <!-- signed reply back, left side -->
+  <path class="ld" d="M210 319H90 V131 H210"/>
+  <text class="el" x="100" y="230">signed reply</text>
+
+  <!-- silent post back to Discord, right from bot implied by left return + text near discord -->
+  <path class="ln" d="M510 131H620 V37 H510"/>
+  <text class="el" x="528" y="90">silent reply, optional speech</text>
+
+  <!-- peers -->
+  <path class="ln" d="M510 319H600 V350"/>
+  <text class="el" x="520" y="312">hands off work</text>
+  <rect class="bx" x="500" y="350" width="200" height="58" rx="12"/>
+  <text class="t1" x="600" y="374" text-anchor="middle">Game Bot, Bartenbot</text>
+  <text class="t2" x="600" y="392" text-anchor="middle">peer agents</text>
+
+  <!-- google -->
+  <text class="el" x="370" y="368">reads; acts with approval</text>
+  <path class="ln" d="M360 348V384"/>
+  <rect class="bx" x="210" y="386" width="300" height="58" rx="12"/>
+  <text class="t1" x="360" y="410" text-anchor="middle">Gmail, Calendar, Drive</text>
+  <text class="t2" x="360" y="428" text-anchor="middle">two Google accounts</text>
+
+  <!-- box -->
+  <text class="el" x="370" y="464">runs tools</text>
+  <path class="ln" d="M360 444V478"/>
+  <rect class="bx" x="210" y="480" width="300" height="58" rx="12"/>
+  <text class="t1" x="360" y="504" text-anchor="middle">Shared Linux computer</text>
+  <text class="t2" x="360" y="522" text-anchor="middle">shell, git, and deploys</text>
+
+  <!-- github -->
+  <text class="el" x="370" y="558">git push</text>
+  <path class="ln" d="M360 538V572"/>
+  <rect class="bx" x="210" y="574" width="300" height="58" rx="12"/>
+  <text class="t1" x="360" y="598" text-anchor="middle">GitHub</text>
+  <text class="t2" x="360" y="616" text-anchor="middle">website and Riftstrike repos</text>
+
+  <!-- site -->
+  <text class="el" x="370" y="652">publishes the site</text>
+  <path class="ln" d="M360 632V666"/>
+  <rect class="bx" x="210" y="668" width="300" height="58" rx="12"/>
+  <text class="t1" x="360" y="692" text-anchor="middle">airronkennedy.com</text>
+  <text class="t2" x="360" y="710" text-anchor="middle">GitHub Pages</text>
+
+  <!-- goat -->
+  <text class="el" x="370" y="746">visit counts</text>
+  <path class="ln" d="M360 726V760"/>
+  <rect class="bx" x="210" y="762" width="300" height="58" rx="12"/>
+  <text class="t1" x="360" y="786" text-anchor="middle">GoatCounter</text>
+  <text class="t2" x="360" y="804" text-anchor="middle">visitor analytics</text>
+
+  <!-- weekly report back to agent -->
+  <path class="ld" d="M210 791H48 V319 H210"/>
+  <text class="el" x="58" y="560">weekly report</text>
+</svg>
+
+</div>
+<p class="fine arch-note">Solid arrows are the main path of a question and a deploy. Dashed arrows are the signed reply back to the bot, and the weekly analytics report back to the agent.</p>
+</section>
+
+<section class="evidence-block" id="overview">
+<h2>1. Project overview</h2>
+<p>Airronbot began as a Discord bot for my own community and became the front door to a small, connected AI system. A message addressed to the bot travels over an authenticated webhook to a Grok Bot agent I configured. The agent drafts the answer under rules I set, sends it back through a secured callback, and the bot posts it silently. It can also speak the answer in a voice channel.</p>
+<p>Around that bridge I connected the same agent network to Gmail, Google Calendar, Google Drive, Replit, GitHub, and my website analytics, with scheduled routines for recurring work. The engineering is in the system design: what each service is trusted to read or do, how messages move, and where a human has to approve an action.</p>
+</section>
+
+<section class="evidence-block" id="motivation">
+<h2>2. Original motivation</h2>
+<p>I began using ChatGPT during graduate school at Full Sail to help write scripts, and used that AI-assisted workflow to build a Discord bot that could run continuously for my community. I have not found the original school-era source to attach here; that starting point is from my own account. As AI agents became able to use real tools, I wanted the bot to stop being a closed box of commands and become a connection point: a place where people could ask questions and where my assistant could act across the services I use every day.</p>
+<p>Coming from game design, I treated it like a systems problem: independent pieces with their own rules, connected by clear interfaces, with behavior that can be inspected and tuned.</p>
+</section>
+
+<section class="evidence-block" id="tech">
+<h2>3. Technical architecture</h2>
+<p>Two separate programs share the work. Airronbot owns the Discord connection: it receives events, filters them, talks to Discord’s API, runs slash commands, and can join voice. The Grok Bot agent owns reasoning and tools: it reads the question, may look at email or files if needed, and writes the reply. They trust each other only through credentials I configured. The outgoing webhook uses one key; incoming replies use a different shared secret. Those two keys cannot be swapped.</p>
+<p>I also set up two peer agents, Game Bot and Bartenbot, so work can be split. Deploys to my website go through git on a shared Linux computer, then GitHub Pages. Visitor counts from GoatCounter feed a weekly rundown.</p>
+<ul class="tools">
+<li>TypeScript</li>
+<li>Node.js</li>
+<li>discord.js 14</li>
+<li>Express 5</li>
+<li>Zod</li>
+<li>@discordjs/voice</li>
+<li>eSpeak-NG TTS</li>
+<li>Vitest</li>
+<li>React dashboard</li>
+</ul>
+</section>
+
+<section class="evidence-block" id="services">
+<h2>4. Technologies and services</h2>
+<p>Not every connection can do the same things. This table separates reading information, generating a response, and actually performing an action, and it says who supplies each piece.</p>
+<div class="table-wrap">
+<table class="case-table">
+<thead>
+<tr><th>Component</th><th>What it does here</th><th>Read, generate, or act</th><th>Who supplies it</th></tr>
+</thead>
+<tbody>
+<tr><td>Airronbot</td><td>Discord connection, commands, relay, callback, voice, admin endpoints</td><td>Reads Discord; acts in Discord</td><td>Code generated to my specification</td></tr>
+<tr><td>Discord API</td><td>Messages, members, channels, voice</td><td>Platform</td><td>Discord</td></tr>
+<tr><td>Replit</td><td>Hosting, secrets, publishing</td><td>Runs the bot</td><td>Replit</td></tr>
+<tr><td>Grok Bot agents</td><td>Interpret requests, draft answers, call tools</td><td>Generate; act through tools</td><td>Platform, configured by me</td></tr>
+<tr><td>Routines engine</td><td>Webhook and scheduled triggers</td><td>Starts agent runs</td><td>Grok Bot platform</td></tr>
+<tr><td>Gmail (2 accounts)</td><td>Search, read, draft, send</td><td>Read; send only with my approval</td><td>Connector</td></tr>
+<tr><td>Google Calendar</td><td>Read, create, or update events</td><td>Read; changes with approval</td><td>Connector</td></tr>
+<tr><td>Google Drive (2 accounts)</td><td>Search, read, create files</td><td>Read; writes when I ask</td><td>Connector</td></tr>
+<tr><td>Replit connector</td><td>List and read app files</td><td>Read</td><td>Connector</td></tr>
+<tr><td>GitHub via the computer</td><td>Commits and pushes to my repos</td><td>Act, with standing approval</td><td>GitHub and its CLI</td></tr>
+<tr><td>GitHub Pages</td><td>Serves airronkennedy.com</td><td>Hosting</td><td>GitHub</td></tr>
+<tr><td>GoatCounter</td><td>Visitor counts</td><td>Read for a weekly rundown</td><td>GoatCounter</td></tr>
+<tr><td>X connector</td><td>Search posts and news</td><td>Read only</td><td>Connector</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="evidence-block" id="contributions">
+<h2>5. My contributions</h2>
+<p>Using existing tools does not make the work less real. It does mean the credit has to be specific.</p>
+<div class="split">
+<div class="scope">
+<h3>What I did</h3>
+<ul class="artifact-list">
+<li>Conceived the bridge: Discord as the front end, a Grok Bot agent as the reasoning layer, a signed callback back to Discord.</li>
+<li>Chose the services, accounts, and the trust level for each.</li>
+<li>Specified behavior rules the code now enforces: no @mentions, silent delivery, owner-only voice, no sharing of my personal details.</li>
+<li>Configured secrets, the webhook routine, publishing, and continuous hosting for voice.</li>
+<li>Set up three agents and the recurring routines, and directed each feature through iteration.</li>
+<li>Ran the system in live Discord servers and fed issues back into fixes.</li>
+</ul>
+</div>
+<div class="scope">
+<h3>What I did not build</h3>
+<ul class="artifact-list">
+<li>Discord, Replit, GitHub, Google APIs, or GoatCounter.</li>
+<li>Grok, the Grok Bot platform, its routines engine, or its connectors.</li>
+<li>The language models that produce answers.</li>
+<li>Most of the TypeScript line by line: it was produced by AI coding tools from my requirements.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="evidence-block" id="challenges">
+<h2>6. Technical challenges and solutions</h2>
+<ol class="flow-path">
+<li><strong>Two-way trust between separate services</strong><span>The outgoing webhook uses its own bearer key. Incoming callbacks need a different shared secret, compared by SHA-256 with a timing-safe check. The two keys are never interchangeable.</span></li>
+<li><strong>Duplicate replies</strong><span>Each message is claimed before forwarding. Callbacks are deduplicated by the original message ID for an hour, and Discord’s nonce covers overlapping restarts.</span></li>
+<li><strong>Preview and production fighting over one bot</strong><span>The preview build never opens a Discord connection or joins voice, so only the published bot answers.</span></li>
+<li><strong>Social rules as code, not just prompts</strong><span>A shared send wrapper forces notification suppression and blocks all mentions on every outgoing message, including @everyone.</span></li>
+<li><strong>Voice without a paid speech API</strong><span>Local eSpeak-NG WebAssembly runs in a short-lived worker with a 60-second timeout, a per-server queue capped at five, and staged failure codes on the dashboard.</span></li>
+<li><strong>Safe agent actions inside Discord</strong><span>Authenticated endpoints let the agent create a channel, scan or repost images, list members by join date, or set the avatar, each with validation and permission checks. Image reposts have a host allowlist, a size cap, a dry-run mode, and rate limiting.</span></li>
+<li><strong>Not leaking secrets in errors</strong><span>Error responses and logs omit webhook URLs, tokens, message bodies, and raw Discord errors.</span></li>
+</ol>
+</section>
+
+<section class="evidence-block" id="demo">
+<h2>7. Demonstrable functionality</h2>
+<p>These are live. The health page showed the bot connected as AirronBot#4918 in three Discord servers on 11 November 2026. The website and game preview are public. The bot’s source is still in a private Replit project.</p>
+<div class="table-wrap">
+<table class="case-table">
+<thead>
+<tr><th>What to show</th><th>Where</th><th>Status</th></tr>
+</thead>
+<tbody>
+<tr><td>Health dashboard</td><td><a href="https://chilly-athletic-arrays.replit.app" rel="noopener noreferrer" target="_blank">chilly-athletic-arrays.replit.app</a></td><td>Published</td></tr>
+<tr><td>Connection status</td><td><a href="https://chilly-athletic-arrays.replit.app/api/healthz" rel="noopener noreferrer" target="_blank">/api/healthz</a></td><td>Live</td></tr>
+<tr><td>Uptime ping</td><td><a href="https://chilly-athletic-arrays.replit.app/ping" rel="noopener noreferrer" target="_blank">/ping</a></td><td>Live</td></tr>
+<tr><td>Voice status</td><td><a href="https://chilly-athletic-arrays.replit.app/api/discord/voice-status" rel="noopener noreferrer" target="_blank">/api/discord/voice-status</a></td><td>Live, aggregate only</td></tr>
+<tr><td>Website deploys</td><td><a href="https://github.com/airronkennedy/airronkennedy.github.io" rel="noopener noreferrer" target="_blank">airronkennedy.github.io</a></td><td>Public</td></tr>
+<tr><td>Game preview</td><td><a href="https://airronkennedy.com/riftstrike-godot/">airronkennedy.com/riftstrike-godot/</a></td><td>Public</td></tr>
+<tr><td>Relay and callback source</td><td>Private Replit project</td><td>Not public yet</td></tr>
+<tr><td>Automated tests</td><td>16 Vitest files</td><td>Present; not run for this write-up</td></tr>
+<tr><td>Recording of a full question and answer</td><td>A test-server video</td><td>Not captured yet</td></tr>
+</tbody>
+</table>
+</div>
+<p>The strongest missing piece is a short recording in a test server: someone asks a question, the silent reply appears, and optionally the bot speaks it.</p>
+</section>
+
+<section class="evidence-block" id="results">
+<h2>8. Results and limitations</h2>
+<p>The bot is published, connected to three Discord servers, and answers addressed messages through the Grok Bot relay. The same agent network handles email, calendar, Drive files, site deploys, game builds, and weekly analytics, with outgoing messages held for my approval.</p>
+<ul class="artifact-list">
+<li>Deduplication and the voice queue live in memory; a restart clears them.</li>
+<li>Birthdays are stored in a local JSON file; the birthday and welcome channels are not configured in production right now.</li>
+<li>If the Grok Bot platform hits a usage limit or an outage, answers stop and the bot shows a fixed notice.</li>
+<li>A failed webhook is not automatically retried.</li>
+<li>No performance or usage metrics are recorded, so none are claimed.</li>
+<li>The bot source is in a private Replit workspace and is not yet on GitHub.</li>
+</ul>
+</section>
+
+<section class="evidence-block" id="future">
+<h2>9. Future improvements</h2>
+<ul class="artifact-list">
+<li>Publish a cleaned-up public repository of the bot, with a README and this architecture diagram.</li>
+<li>Move deduplication and birthdays to a durable store; the project already has PostgreSQL scaffolding.</li>
+<li>Add delivery receipts and retries that survive a restart.</li>
+<li>Log relay latency and success rate so results can be measured.</li>
+<li>Record a test-server demo of text, voice, and an agent-initiated action.</li>
+<li>Restore YouTube features if they are still wanted, once older source is found. They are not in the current Replit source.</li>
+</ul>
+</section>
+
+<section class="evidence-block" id="evaluation">
+<h2>What this work demonstrates</h2>
+<div class="table-wrap">
+<table class="case-table">
+<thead>
+<tr><th>Area</th><th>Verdict</th><th>Evidence</th></tr>
+</thead>
+<tbody>
+<tr><td>Systems architecture and integration</td><td><span class="verdict yes">Yes</span></td><td>Discord, Replit, the agent runtime, Google, GitHub, and analytics connected with defined roles</td></tr>
+<tr><td>API integration</td><td><span class="verdict yes">Yes</span></td><td>Webhook out, authenticated callback and admin endpoints in, Discord API, validated contracts</td></tr>
+<tr><td>Workflow automation</td><td><span class="verdict yes">Yes</span></td><td>Webhook relay, scheduled email watch, weekly analytics rundown</td></tr>
+<tr><td>AI-assisted development</td><td><span class="verdict yes">Yes</span></td><td>Bot, site, and game code produced by AI tools from my requirements</td></tr>
+<tr><td>Cross-platform communication</td><td><span class="verdict yes">Yes</span></td><td>Discord to Replit to Grok Bot and back; agents to Gmail, Drive, and GitHub</td></tr>
+<tr><td>Persistent infrastructure</td><td><span class="verdict partial">Partial</span></td><td>Always-on published bot and a persistent computer; I operate them, I did not build the hosting</td></tr>
+<tr><td>Technical problem-solving</td><td><span class="verdict partial">Partial</span></td><td>Real problems solved; I directed the solutions, and AI tools wrote most of the code</td></tr>
+<tr><td>Iterative development</td><td><span class="verdict yes">Yes</span></td><td>Behavior rules added over time; voice and admin features came later; the website is deployed through repeated GitHub Pages updates</td></tr>
+</tbody>
+</table>
+</div>
+<p>The engineering value is real and specific: system design, interface contracts, trust boundaries, and operating a live multi-service system. It is not evidence of hand-writing a large codebase or building AI models.</p>
+</section>
+
+<section class="evidence-block" id="resume">
+<h2>Resume descriptions</h2>
+<p>Three versions of the same verified work, written for different kinds of roles. The third describes transferable experience only. Its last line is a goal, not completed autonomous-vehicle work.</p>
+
+<div class="resume-block">
+<h3>Software engineering</h3>
+<ul>
+<li>Designed and shipped Airronbot, a TypeScript/Node.js Discord bot (discord.js, Express, Zod) hosted on Replit, using AI coding tools to implement my specifications.</li>
+<li>Specified an authenticated webhook relay and callback API with timing-safe secret checks, message-ID deduplication, and fixed fallback behavior.</li>
+<li>Added local text-to-speech voice replies (eSpeak-NG WebAssembly, Opus) with a bounded queue, worker timeout, and a React status dashboard.</li>
+<li>Directed a Vitest regression suite, implemented with AI coding tools, covering relay, callback, and voice paths with mocked Discord and webhook transports.</li>
+</ul>
+</div>
+
+<div class="resume-block">
+<h3>Systems integration</h3>
+<ul>
+<li>Architected a cross-platform AI workflow linking Discord, a Replit-hosted bot, and Grok Bot agents through signed webhooks and REST callbacks.</li>
+<li>Configured three coordinated AI agents with connectors to Gmail, Google Calendar, Google Drive, Replit, and GitHub, defining read versus act permissions and approval gates.</li>
+<li>Configured scheduled and event-driven automations: a Discord relay, a scheduled email watch, and a weekly website analytics report.</li>
+<li>Directed GitHub Pages deployment of a personal site and a Godot web build from a shared Linux workspace.</li>
+</ul>
+</div>
+
+<div class="resume-block">
+<h3>Autonomous vehicle simulation engineering</h3>
+<ul>
+<li>Systems designer with 5+ years in game development and an M.S. in Game Design; designed levels and systems for Crisis of DreamCell, an Unreal Engine 4 title on Steam.</li>
+<li>Designed event-driven integrations between independent services with explicit interface contracts, failure handling, and observability.</li>
+<li>Researched game AI and finite-state behavior for NPCs; built Unreal Blueprint and Unity C# prototypes of agent behavior and interactive environments.</li>
+<li>Building toward simulation engineering: scenario design, behavior systems, and test tooling in Unreal-based simulators.</li>
+</ul>
+</div>
+</section>
+
+<section class="evidence-block" id="career">
+<h2>Career transfer: autonomous vehicles, robotics, and simulation</h2>
+<p>This project is not autonomous-vehicle work. It does show habits that AV and simulation teams use daily, and my game background is the closer match: building interactive 3D worlds with agents in them. I am interested in eventually working on autonomous semi-trucks.</p>
+<div class="table-wrap">
+<table class="case-table">
+<thead>
+<tr><th>Skill I have</th><th>Where it shows</th><th>Why it transfers</th></tr>
+</thead>
+<tbody>
+<tr><td>Unreal Engine 4 and 5</td><td>Crisis of DreamCell, prototypes</td><td>CARLA, a widely used AV simulator, is built on Unreal Engine</td></tr>
+<tr><td>Game AI and state machines</td><td>Thesis on NPCs; NavAgent work</td><td>Traffic and pedestrian actors in a scenario are behavior systems</td></tr>
+<tr><td>Level and scenario design</td><td>DreamCell levels, Factory Gauntlet</td><td>Scenario-based testing builds road layouts and edge cases</td></tr>
+<tr><td>C++ and C#</td><td>Unreal and Unity coursework</td><td>Simulation and robotics code is largely C++</td></tr>
+<tr><td>Systems integration</td><td>This case study</td><td>An AV stack is many components joined by message interfaces</td></tr>
+<tr><td>Failure handling</td><td>Dedup, timeouts, staged error codes</td><td>Safety work starts with knowing how each part fails</td></tr>
+<tr><td>QA and playtest research</td><td>Coursework and QA planning</td><td>Test design carries into validation</td></tr>
+</tbody>
+</table>
+</div>
+<h3>Skills still to build</h3>
+<ul class="artifact-list">
+<li>Python and modern C++ at production depth, on Linux.</li>
+<li>ROS 2 and robotics middleware.</li>
+<li>Sensor simulation and perception: camera, lidar, radar, and fusion.</li>
+<li>Localization, planning, and control, including Kalman filtering.</li>
+<li>Vehicle dynamics, and for semi-trucks, tractor-trailer dynamics and long braking distances.</li>
+<li>Scenario standards such as OpenSCENARIO and OpenDRIVE.</li>
+<li>Functional safety and SOTIF awareness (ISO 26262, ISO 21448).</li>
+<li>Defining an operational design domain, such as highway hub-to-hub freight.</li>
+<li>Linear algebra and probability for robotics.</li>
+</ul>
+<h3>Practical next steps</h3>
+<ol class="flow-path">
+<li><strong>Run CARLA locally</strong><span>Use my Unreal background to build one custom scenario with scripted traffic.</span></li>
+<li><strong>Learn ROS 2 basics</strong><span>Bridge a simulated vehicle’s sensor data into ROS 2 topics and log a run.</span></li>
+<li><strong>A truck-focused portfolio piece</strong><span>A highway merge or lane-change scenario for a tractor-trailer, documented the same way as this case study.</span></li>
+<li><strong>Safety literacy</strong><span>Study ISO 26262 and SOTIF and write up how the scenario supports validation.</span></li>
+</ol>
+</section>
+
+<section class="evidence-block" id="evidence">
+<h2>Evidence notes</h2>
+<ul class="artifact-list">
+<li>YouTube functionality is not in the current Replit source. Older files or screenshots would be needed to include it.</li>
+<li>The ChatGPT-era origin rests on my account; no school-era bot code was found.</li>
+<li>Most of the TypeScript is described as AI-generated from my requirements.</li>
+<li>Tests were counted, not run, for this write-up.</li>
+<li>These files are hosted with the portfolio and need no Google Drive sign-in: <a href="/work/files/airronbot-brief.pdf">earlier editorial project brief (PDF)</a>.</li>
+</ul>
+</section>
+
+<section class="evidence-block">
+<h2>External references</h2>
+<ul class="artifact-list">
+<li><a href="https://chilly-athletic-arrays.replit.app" rel="noopener noreferrer" target="_blank">Open the published health dashboard ↗</a></li>
+<li><a href="https://chilly-athletic-arrays.replit.app/api/healthz" rel="noopener noreferrer" target="_blank">Open the live connection status ↗</a></li>
+<li><a href="https://github.com/airronkennedy/airronkennedy.github.io" rel="noopener noreferrer" target="_blank">Website repository on GitHub ↗</a></li>
+<li><a href="https://github.com/airronkennedy/riftstrike" rel="noopener noreferrer" target="_blank">Riftstrike repository on GitHub ↗</a></li>
+<li>The Replit workspace itself is private and is not a public source link.</li>
+</ul>
+<p class="fine">Third-party availability may change. No secrets, tokens, or personal contact details are published on this page.</p>
+</section>
+
+<section class="evidence-block scope">
+<h2>Ownership and scope</h2>
+<p>This is my personal, AI-assisted software project. I designed the system, chose the connections, set the rules, and directed the implementation. The Grok Bot platform, Discord, Replit, and Google supply the underlying services. The bot itself does not generate AI answers; the agent on the other side of the relay does.</p>
+</section>
+
+<section class="evidence-block">
+<h2>Skills in context</h2>
+<ul class="tools">
+<li>Systems architecture</li>
+<li>API integration</li>
+<li>Workflow automation</li>
+<li>Event-driven design</li>
+<li>Trust boundaries</li>
+<li>Observability</li>
+</ul>
+</section>
+
+<aside class="evidence-block">
+<h2>Continue exploring</h2>
+<ul class="artifact-list">
+<li><a href="/work/projects/website-github.html">AirronKennedy.com — Website and GitHub</a></li>
+<li><a href="/work/projects/replit-site-scaffold.html">AttentiveDelightfulTab — Website Scaffold</a></li>
+<li><a href="/work/projects/crisis-of-dreamcell.html">Crisis of DreamCell</a></li>
+</ul>
+<p class="links"><a href="/work/">← All projects</a></p>
+</aside>
+</main>
+<footer>
+<div>
+<a class="back" href="/">← Back to orbit</a>
+<p>Airron Kennedy · Experience Planet</p>
+</div>
+<p>Background: NASA, ESA, CSA, STScI<br/>
+<a href="/work/contact.html">Contact</a> · <a href="/work/">Portfolio</a>
+<br/>Privacy-friendly visitor analytics: GoatCounter</p>
+</footer>
+<a aria-label="Back to homepage" class="back fab" href="/">← Orbit</a>
+<script async data-goatcounter="https://airronkennedy.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -221,16 +221,16 @@
   },
   {
     "slug": "airronbot",
-    "title": "Airronbot — Discord Community Software",
+    "title": "Airronbot — AI Systems Integration",
     "category": "Software",
     "role": "Personal AI-assisted software project",
-    "description": "Airronbot brings birthday reminders, welcome messages, moderator announcements and slash commands into a Discord community. Addressed messages are filtered and sent to a separate external relay, whose authenticated callback delivers text and optional queued speech. The project also includes duplicate protection, voice-state handling and a health dashboard. This is an AI-assisted personal project, and the portfolio distinguishes documented capabilities, generated or adapted code and behavior that still needs a fresh end-to-end demonstration.",
+    "description": "A Discord bot I designed that carries questions to a Grok Bot agent, then back into the channel as a quiet reply. The same agent network is connected to Gmail, Drive, Calendar, and GitHub, with rules I set for what each service may read and what needs my approval.",
     "skills": [
-      "Event-driven integration",
-      "API validation",
-      "permissions",
-      "deduplication",
-      "observability"
+      "Systems architecture",
+      "API integration",
+      "Workflow automation",
+      "Event-driven design",
+      "Trust boundaries"
     ]
   },
   {
