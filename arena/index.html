@@ -21,10 +21,27 @@
     <link rel="icon" type="image/svg+xml" href="/arena/favicon.svg" />
     <link rel="apple-touch-icon" href="/arena/icon-192.png" />
     <link rel="manifest" href="/arena/manifest.webmanifest" />
-    <script type="module" crossorigin src="/arena/assets/index-gyFyMdIU.js"></script>
-    <link rel="stylesheet" crossorigin href="/arena/assets/index-D3MBsZR6.css">
+    <script type="module" crossorigin src="/arena/assets/index-C7Tns3SK.js"></script>
+    <link rel="stylesheet" crossorigin href="/arena/assets/index-8FSLfO12.css">
   </head>
   <body>
+    <div id="boot-splash" role="status" aria-label="Loading Airron's Fall">
+      <style>
+        #boot-splash { position: fixed; inset: 0; z-index: 40; display: grid; place-content: center; justify-items: center; gap: 10px; background: radial-gradient(ellipse at 50% 30%, #2a1c14 0%, #090807 70%); color: #f3e6c8; font-family: Georgia, serif; }
+        #boot-splash .mark { width: 36px; height: 36px; border: 2px solid #e6c27a; transform: rotate(45deg); margin-bottom: 8px; box-shadow: 0 0 16px rgba(240, 190, 100, .25); }
+        #boot-splash .kicker { margin: 0; letter-spacing: .28em; text-transform: uppercase; font: 600 11px/1 system-ui, sans-serif; color: #e6c27a; opacity: .8; }
+        #boot-splash h1 { margin: 0; font: 700 42px/1 Georgia, serif; letter-spacing: .08em; }
+        #boot-splash .track { width: min(260px, 70vw); height: 6px; background: rgba(255, 255, 255, .08); box-shadow: inset 0 0 0 1px rgba(255, 210, 140, .25); }
+        #boot-splash .track i { display: block; height: 100%; width: 8%; background: linear-gradient(90deg, #8a5a28, #e6c27a); }
+        #boot-splash .pct { margin: 0; font: 600 12px/1 system-ui, sans-serif; letter-spacing: .16em; color: #b9a98a; }
+        #boot-splash.is-done { display: none; }
+      </style>
+      <div class="mark" aria-hidden="true"></div>
+      <p class="kicker">The ember kindles</p>
+      <h1>Airron's Fall</h1>
+      <div class="track" aria-hidden="true"><i id="boot-splash-bar"></i></div>
+      <p class="pct" id="boot-splash-pct">0%</p>
+    </div>
     <div id="root"></div>
   </body>
 </html>
