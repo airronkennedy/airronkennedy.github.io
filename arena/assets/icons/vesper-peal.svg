@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
-<!-- Airron's Fall icon: sunlight-benediction (a radiant sun with a face inside a doubled miracle ring). Evolved weapon. Original artwork. Replace this file with any square SVG/PNG of the same name. -->
+<!-- Airron's Fall icon: vesper-peal (redraw pending: a great bell inside a doubled ring of light). Evolved weapon. Original artwork. Replace this file with any square SVG/PNG of the same name. -->
 <defs>
 <linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#fbe7b0"/><stop offset="1" stop-color="#d39b45"/></linearGradient>
 <radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff4d6" stop-opacity=".7"/><stop offset="1" stop-color="#ffd36e" stop-opacity="0"/></radialGradient>

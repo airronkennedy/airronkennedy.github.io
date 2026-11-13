@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
-<!-- Airron's Fall icon: golden-gun (a burning hand cannon firing a solar round). Original artwork. Replace this file with any square SVG/PNG of the same name. -->
+<!-- Airron's Fall icon: brass-thunder (a brass hand cannon firing a sunfire round). Original artwork. Replace this file with any square SVG/PNG of the same name. -->
 <defs>
 <linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7b0"/><stop offset=".55" stop-color="#e2b25e"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient>
 <radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd38a" stop-opacity=".6"/><stop offset="1" stop-color="#ff9a2a" stop-opacity="0"/></radialGradient>
