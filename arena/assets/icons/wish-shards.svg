@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<!-- Airron's Fall icon: wish-shards (three Awoken wish-crystals splitting off a cupped hand of light). Original artwork. Replace this file with any square SVG/PNG of the same name. -->
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7b0"/><stop offset=".55" stop-color="#e2b25e"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient>
+<radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#d9c6ff" stop-opacity=".55"/><stop offset="1" stop-color="#9a6bff" stop-opacity="0"/></radialGradient>
+</defs>
+<circle cx="32" cy="30" r="22" fill="url(#e)"/>
+<g stroke="url(#g)" stroke-width="2.4">
+<path d="M32 10 L37 22 L32 34 L27 22 Z" fill="url(#g)" fill-opacity=".35"/>
+<path d="M16 22 L20 29 L16 36 L12 29 Z" fill="url(#g)" fill-opacity=".25"/>
+<path d="M48 22 L52 29 L48 36 L44 29 Z" fill="url(#g)" fill-opacity=".25"/>
+<path d="M14 46 Q32 58 50 46" stroke-width="2.2"/>
+<path d="M20 44 L24 40 M44 44 L40 40 M32 46 V40" stroke-width="1.8"/>
+</g>
+</svg>
