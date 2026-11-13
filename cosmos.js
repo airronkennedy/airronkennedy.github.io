@@ -13,7 +13,7 @@ var PLANETS = [
   { id: 'aurelian', label: 'Experience Planet', url: 'work/', color: '#d8b46a', show: true },
   { id: 'verdigris',label: 'Work Planet', url: '/ops/', color: '#4f9a8a', show: true },
   { id: 'umbra',    label: 'Stats Planet', url: '/stats/', color: '#7a5aa6', show: true },
-  { id: 'frost',    label: '', url: '#', color: '#b9d3e6' },
+  { id: 'ember',    label: 'Games Planet', url: '/games/', color: '#e25a2a', show: true },
   { id: 'carmine',  label: '', url: '#', color: '#a8434f' },
   { id: 'dune',     label: '', url: '#', color: '#c49a7a' }
 ];
@@ -29,7 +29,7 @@ var PLANETS = [
     { kind: 'bands', fx: 0.003, fy: 0.08, oct: 3, ds: 180 },
     { kind: 'rock',  fx: 0.03, fy: 0.03, oct: 6, ds: 90 },
     { kind: 'bands', fx: 0.006, fy: 0.035, oct: 5, ring: 2.0, r1: 'rgba(200,190,240,.45)', r2: 'rgba(150,140,200,.26)', tilt: 18, ds: 160 },
-    { kind: 'ice',   fx: 0.02, fy: 0.008, oct: 4, ds: 130 },
+    { kind: 'storm', fx: 0.008, fy: 0.025, oct: 5, ring: 1.9, r1: 'rgba(255,200,90,.55)', r2: 'rgba(255,80,40,.38)', tilt: -12, ds: 120 },
     { kind: 'rock',  fx: 0.045, fy: 0.045, oct: 5, ds: 100 },
     { kind: 'storm', fx: 0.008, fy: 0.02, oct: 5, ds: 150 }
   ];

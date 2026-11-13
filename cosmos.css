@@ -50,4 +50,10 @@ body{font-family:"Avenir Next","Segoe UI Variable","Segoe UI",system-ui,sans-ser
 .planet[data-testid=link-planet-cinder]{--r1:rgba(255,255,255,.75)!important;--r2:rgba(220,40,55,.7)!important;--glow:rgba(255,90,90,.55)!important}
 .planet[data-testid=link-planet-cinder] .body::before{content:"";position:absolute;left:0;right:0;top:56%;height:13%;background:rgba(30,140,70,.75);mix-blend-mode:multiply;z-index:1}
 .planet[data-testid=link-planet-cinder] .body::after{content:"";position:absolute;left:8%;right:8%;top:-6%;height:32%;border-radius:0 0 50% 50%/0 0 70% 70%;background:linear-gradient(#fff,#eef4ff);box-shadow:0 2px 6px rgba(255,255,255,.6);z-index:2}
+/* Games Planet: fiery core, ember glow, thin arcade ring */
+.planet[data-testid=link-planet-ember]{--r1:rgba(255,210,110,.7)!important;--r2:rgba(255,70,30,.55)!important;--glow:rgba(255,110,40,.7)!important}
+.planet[data-testid=link-planet-ember] .body::before{content:"";position:absolute;inset:0;border-radius:50%;background:
+ radial-gradient(circle at 38% 32%,rgba(255,230,160,.45),transparent 36%),
+ radial-gradient(circle at 62% 70%,rgba(180,20,10,.45),transparent 50%);z-index:1;pointer-events:none}
+.planet[data-testid=link-planet-ember] .rim{box-shadow:inset calc(var(--d)*.02) calc(var(--d)*.02) calc(var(--d)*.04) rgba(255,180,80,.55),0 0 calc(var(--d)*.18) rgba(255,90,30,.45)}
 @media (max-aspect-ratio:1/1){.tag{white-space:normal;width:max-content;max-width:132px;text-align:center;line-height:1.5}}
