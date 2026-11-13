@@ -1,14 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
-<!-- Airron's Fall icon: vesper-peal (redraw pending: a great bell inside a doubled ring of light). Evolved weapon. Original artwork. Replace this file with any square SVG/PNG of the same name. -->
-<defs>
-<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#fbe7b0"/><stop offset="1" stop-color="#d39b45"/></linearGradient>
-<radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff4d6" stop-opacity=".7"/><stop offset="1" stop-color="#ffd36e" stop-opacity="0"/></radialGradient>
-</defs>
-<circle cx="32" cy="32" r="28" fill="url(#e)"/>
-<g stroke="url(#g)" stroke-width="2.4">
-<circle cx="32" cy="32" r="26" stroke-dasharray="4 4" stroke-width="1.6"/>
-<circle cx="32" cy="32" r="10" fill="url(#g)" fill-opacity=".55"/>
-<path d="M32 8 V16 M32 48 V56 M8 32 H16 M48 32 H56 M15 15 L21 21 M43 43 L49 49 M49 15 L43 21 M15 49 L21 43"/>
-<path d="M28.5 30 H29 M35 30 H35.5 M28.5 35 Q32 37.5 35.5 35" stroke-width="1.8"/>
+<!-- Icon vesper-peal.svg: a great bell inside a doubled ring of light. Original artwork drawn for this game (2026-11-13); no third-party symbols. -->
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7b0"/><stop offset=".55" stop-color="#e2b25e"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient><radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff1c4" stop-opacity=".7"/><stop offset=".7" stop-color="#ffcf6a" stop-opacity=".18"/><stop offset="1" stop-color="#ffcf6a" stop-opacity="0"/></radialGradient></defs>
+<circle cx="32" cy="32" r="30" fill="url(#e)"/>
+<g stroke="url(#g)">
+<circle cx="32" cy="32" r="27" stroke-width="1.6" stroke-dasharray="3 3"/>
+<circle cx="32" cy="32" r="22.5" stroke-width="2"/>
+<path d="M30 11 H34 V14" stroke-width="2"/>
+<path d="M32 14 C24 14 22 21 22 29 C22 36 20 40 16 44 H48 C44 40 42 36 42 29 C42 21 40 14 32 14 Z" stroke-width="2.6" fill="url(#g)" fill-opacity=".4"/>
+<path d="M24 38 H40" stroke-width="1.6"/>
+<circle cx="32" cy="48.5" r="3" stroke-width="2.2" fill="url(#g)" fill-opacity=".6"/>
 </g>
 </svg>

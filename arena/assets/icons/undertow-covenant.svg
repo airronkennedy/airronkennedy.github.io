@@ -1,13 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
-<!-- Airron's Fall icon: undertow-covenant (redraw pending: a whirlpool eye ringed by seven sea-glass shards). Evolved weapon. Original artwork. Replace this file with any square SVG/PNG of the same name. -->
-<defs>
-<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#fbe7b0"/><stop offset="1" stop-color="#d39b45"/></linearGradient>
-<radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#e6d6ff" stop-opacity=".65"/><stop offset="1" stop-color="#a77cff" stop-opacity="0"/></radialGradient>
-</defs>
-<circle cx="32" cy="32" r="28" fill="url(#e)"/>
-<g stroke="url(#g)" stroke-width="2.4">
-<path d="M14 32 Q32 16 50 32 Q32 48 14 32 Z" fill="url(#g)" fill-opacity=".3"/>
-<path d="M32 24 Q36 32 32 40 Q28 32 32 24 Z" fill="url(#g)"/>
-<path d="M32 4 L34 8 L32 12 L30 8 Z M52 12 L54 16 L52 20 L50 16 Z M58 34 L60 38 L58 42 L56 38 Z M44 52 L46 56 L44 60 L42 56 Z M20 52 L22 56 L20 60 L18 56 Z M6 34 L8 38 L6 42 L4 38 Z M12 12 L14 16 L12 20 L10 16 Z" fill="url(#g)" stroke-width="1.4"/>
+<!-- Icon undertow-covenant.svg: a whirlpool eye ringed by seven sea-glass shards. Original artwork drawn for this game (2026-11-13); no third-party symbols. -->
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7b0"/><stop offset=".55" stop-color="#e2b25e"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient><linearGradient id="t" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d8fff4"/><stop offset="1" stop-color="#2fa59a"/></linearGradient><radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#7fe8d8" stop-opacity=".55"/><stop offset="1" stop-color="#7fe8d8" stop-opacity="0"/></radialGradient></defs>
+<circle cx="32" cy="32" r="29" fill="url(#e)"/>
+<g stroke="url(#t)" stroke-width="2.2">
+<path d="M32 18 C42 18 46 26 44 32 C42 38 34 40 30 36 C27 33 29 28 33 28 C36 28 37 31 35 33"/>
+<path d="M32 46 C22 46 18 38 20 32 C21 28 24 24.5 28 23"/>
+<path d="M17 25 C21 16 30 13 38 15" stroke-width="1.6"/>
+<path d="M47 39 C43 48 34 51 26 49" stroke-width="1.6"/>
+</g>
+<circle cx="33" cy="31.5" r="2.8" fill="#eafffb"/>
+<g stroke="url(#t)" stroke-width="1.5" fill="url(#t)" fill-opacity=".6">
+<path d="M32 2 L34.5 6.5 L32 11 L29.5 6.5 Z" transform="rotate(0 32 32)"/>
+<path d="M32 2 L34.5 6.5 L32 11 L29.5 6.5 Z" transform="rotate(51.4 32 32)"/>
+<path d="M32 2 L34.5 6.5 L32 11 L29.5 6.5 Z" transform="rotate(102.8 32 32)"/>
+<path d="M32 2 L34.5 6.5 L32 11 L29.5 6.5 Z" transform="rotate(154.3 32 32)"/>
+<path d="M32 2 L34.5 6.5 L32 11 L29.5 6.5 Z" transform="rotate(205.7 32 32)"/>
+<path d="M32 2 L34.5 6.5 L32 11 L29.5 6.5 Z" transform="rotate(257.1 32 32)"/>
+<path d="M32 2 L34.5 6.5 L32 11 L29.5 6.5 Z" transform="rotate(308.6 32 32)"/>
 </g>
 </svg>

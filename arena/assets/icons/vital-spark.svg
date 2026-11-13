@@ -1,11 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
-<!-- Airron's Fall icon: vital-spark (a flame burning inside a healing cross). Original artwork. Replace this file with any square SVG/PNG of the same name. -->
+<!-- Icon vital-spark.svg: Original artwork drawn for this game (2026-11-13); no third-party symbols. -->
 <defs>
-<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7b0"/><stop offset=".55" stop-color="#e2b25e"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient>
-<radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd38a" stop-opacity=".55"/><stop offset="1" stop-color="#ff7a2e" stop-opacity="0"/></radialGradient>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7b0"/><stop offset=".55" stop-color="#e2b25e"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient><radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd38a" stop-opacity="0.55"/><stop offset="1" stop-color="#ff7a2e" stop-opacity="0"/></radialGradient>
 </defs>
+<circle cx="32" cy="36" r="20" fill="url(#e)"/>
 <g stroke="url(#g)" stroke-width="2.6">
-<path d="M26 8 H38 V26 H56 V38 H38 V56 H26 V38 H8 V26 H26 Z"/>
-<path d="M32 44 C25 40 26 32 32 22 C38 32 39 40 32 44 Z" fill="url(#g)" fill-opacity=".7"/>
+<path d="M32 54 L12 32 L18 22 L26 22 L32 28 L38 22 L46 22 L52 32 Z" fill="url(#g)" fill-opacity=".35"/>
+<path d="M12 32 H52 M26 22 L32 54 L38 22 M18 22 L22 32 M46 22 L42 32" stroke-width="1.4"/>
+<path d="M32 6 L33.5 11 L38 12.5 L33.5 14 L32 19 L30.5 14 L26 12.5 L30.5 11 Z" fill="url(#g)"/>
 </g>
 </svg>

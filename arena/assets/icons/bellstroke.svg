@@ -1,14 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
-<!-- Airron's Fall icon: bellstroke (a bell at the centre of an expanding shockwave). Original artwork. Replace this file with any square SVG/PNG of the same name. -->
-<defs>
-<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7b0"/><stop offset=".55" stop-color="#e2b25e"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient>
-<radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff4d6" stop-opacity=".55"/><stop offset="1" stop-color="#ffe2a0" stop-opacity="0"/></radialGradient>
-</defs>
-<circle cx="32" cy="32" r="26" fill="url(#e)"/>
-<g stroke="url(#g)" stroke-width="2.4">
-<circle cx="32" cy="32" r="24" stroke-dasharray="6 5"/>
-<circle cx="32" cy="32" r="16"/>
-<path d="M27 22 H37 V42 H27 Z" fill="url(#g)" fill-opacity=".35"/>
-<path d="M32 26 V38 M28.5 30 H35.5" stroke-width="2"/>
+<!-- Icon bellstroke.svg: a bell at the centre of a shockwave. Original artwork drawn for this game (2026-11-13); no third-party symbols. -->
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7b0"/><stop offset=".55" stop-color="#e2b25e"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient><radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffe2a0" stop-opacity=".55"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient></defs>
+<circle cx="32" cy="34" r="26" fill="url(#e)"/>
+<g stroke="url(#g)">
+<path d="M12 18 C6 26 6 42 12 50 M52 18 C58 26 58 42 52 50" stroke-width="2.2"/>
+<path d="M18 22 C14 28 14 40 18 46 M46 22 C50 28 50 40 46 46" stroke-width="2"/>
+<path d="M32 15 C26 15 25 20 25 27 C25 33 23 36 20 39 H44 C41 36 39 33 39 27 C39 20 38 15 32 15 Z" stroke-width="2.6" fill="url(#g)" fill-opacity=".4"/>
+<path d="M29 12 H35" stroke-width="2.4"/>
+<circle cx="32" cy="43" r="2.6" stroke-width="2" fill="url(#g)"/>
 </g>
 </svg>

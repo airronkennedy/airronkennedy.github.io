@@ -1,13 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
-<!-- Airron's Fall icon: bright-mind (an open eye inside a radiant triangle (Bright Mind)). Original artwork. Replace this file with any square SVG/PNG of the same name. -->
+<!-- Icon bright-mind.svg: Original artwork drawn for this game (2026-11-13); no third-party symbols. -->
 <defs>
-<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7b0"/><stop offset=".55" stop-color="#e2b25e"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient>
-<radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd38a" stop-opacity=".55"/><stop offset="1" stop-color="#ff7a2e" stop-opacity="0"/></radialGradient>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7b0"/><stop offset=".55" stop-color="#e2b25e"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient><radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffe6a8" stop-opacity="0.6"/><stop offset="1" stop-color="#ffe6a8" stop-opacity="0"/></radialGradient>
 </defs>
+<circle cx="32" cy="22" r="14" fill="url(#e)"/>
 <g stroke="url(#g)" stroke-width="2.6">
-<path d="M32 6 L58 52 H6 Z"/>
-<path d="M16 38 C24 28 40 28 48 38 C40 46 24 46 16 38 Z" fill="url(#g)" fill-opacity=".2"/>
-<circle cx="32" cy="38" r="5" fill="url(#g)" stroke="none"/>
-<path d="M32 14 V20 M20 26 L23 30 M44 26 L41 30" stroke-width="1.8"/>
+<path d="M32 30 C24 26 16 26 8 28 V52 C16 50 24 50 32 54 C40 50 48 50 56 52 V28 C48 26 40 26 32 30 Z" fill="url(#g)" fill-opacity=".25"/>
+<path d="M32 30 V54 M14 34 C19 33 23 33 27 35 M14 40 C19 39 23 39 27 41 M37 35 C41 33 45 33 50 34 M37 41 C41 39 45 39 50 40" stroke-width="1.4"/>
+<path d="M32 8 L34 15 L40 17 L34 19 L32 26 L30 19 L24 17 L30 15 Z" fill="url(#g)"/>
 </g>
 </svg>
