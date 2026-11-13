@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<!-- Airron's Fall icon: faultline (the ground splitting open along a glowing crack). Original artwork. Replace this file with any square SVG/PNG of the same name. -->
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7b0"/><stop offset=".55" stop-color="#e2b25e"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient>
+<radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd38a" stop-opacity=".55"/><stop offset="1" stop-color="#ff7a2e" stop-opacity="0"/></radialGradient>
+</defs>
+<g stroke="url(#g)" stroke-width="2.6">
+<path d="M6 44 L58 44" stroke-width="1.6" opacity=".6"/>
+<path d="M8 40 L20 36 L26 42 L36 30 L42 36 L56 22" stroke-width="3"/>
+<path d="M20 36 L18 28 M36 30 L34 20 M42 36 L48 40" stroke-width="2"/>
+<path d="M14 48 L18 52 M30 48 L28 54 M46 48 L50 53" stroke-width="2"/>
+<circle cx="36" cy="30" r="8" fill="url(#e)" stroke="none"/>
+</g>
+</svg>

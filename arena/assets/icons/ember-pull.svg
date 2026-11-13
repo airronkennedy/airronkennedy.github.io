@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<!-- Airron's Fall icon: ember-pull (three arcs drawing a falling ember shard inward (Kindle Reach)). Original artwork. Replace this file with any square SVG/PNG of the same name. -->
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7b0"/><stop offset=".55" stop-color="#e2b25e"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient>
+<radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd38a" stop-opacity=".55"/><stop offset="1" stop-color="#ff7a2e" stop-opacity="0"/></radialGradient>
+</defs>
+<g stroke="url(#g)" stroke-width="2.6">
+<path d="M10 22 C18 10 46 10 54 22" stroke-width="2.2"/>
+<path d="M16 30 C22 22 42 22 48 30" stroke-width="2"/>
+<path d="M22 38 C26 34 38 34 42 38" stroke-width="1.8"/>
+<path d="M32 42 L37 50 L32 58 L27 50 Z" fill="url(#g)"/>
+<circle cx="32" cy="50" r="9" fill="url(#e)" stroke="none"/>
+</g>
+</svg>

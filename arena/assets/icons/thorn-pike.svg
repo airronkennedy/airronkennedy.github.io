@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<!-- Airron's Fall icon: thorn-pike (a long pike thrust forward, its shaft covered in thorns). Original artwork. Replace this file with any square SVG/PNG of the same name. -->
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7b0"/><stop offset=".55" stop-color="#e2b25e"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient>
+<radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd38a" stop-opacity=".55"/><stop offset="1" stop-color="#ff7a2e" stop-opacity="0"/></radialGradient>
+</defs>
+<g stroke="url(#g)" stroke-width="2.6">
+<path d="M12 52 L46 18"/>
+<path d="M46 18 L54 10 L52 22 Z M46 18 L54 10 L42 12 Z" fill="url(#g)"/>
+<path d="M20 44 L16 38 M20 44 L26 48 M28 36 L24 30 M28 36 L34 40 M36 28 L32 22 M36 28 L42 32" stroke-width="2"/>
+</g>
+</svg>

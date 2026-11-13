@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<!-- Airron's Fall icon: iron-bark (a heater shield with bark-grain ridges (Ironbark)). Original artwork. Replace this file with any square SVG/PNG of the same name. -->
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7b0"/><stop offset=".55" stop-color="#e2b25e"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient>
+<radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd38a" stop-opacity=".55"/><stop offset="1" stop-color="#ff7a2e" stop-opacity="0"/></radialGradient>
+</defs>
+<g stroke="url(#g)" stroke-width="2.6">
+<path d="M32 6 L52 13 V30 C52 44 42 52 32 58 C22 52 12 44 12 30 V13 Z" fill="url(#g)" fill-opacity=".18"/>
+<path d="M32 12 V52" stroke-width="1.6"/>
+<path d="M22 18 C24 26 20 34 23 44 M42 18 C40 26 44 34 41 44" stroke-width="1.6"/>
+<path d="M27 24 L32 28 L37 24 M27 36 L32 40 L37 36" stroke-width="1.6"/>
+</g>
+</svg>

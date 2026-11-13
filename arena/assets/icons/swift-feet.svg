@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<!-- Airron's Fall icon: swift-feet (a winged chevron surging forward (Fleet Step)). Original artwork. Replace this file with any square SVG/PNG of the same name. -->
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7b0"/><stop offset=".55" stop-color="#e2b25e"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient>
+<radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd38a" stop-opacity=".55"/><stop offset="1" stop-color="#ff7a2e" stop-opacity="0"/></radialGradient>
+</defs>
+<g stroke="url(#g)" stroke-width="2.6">
+<path d="M30 16 L46 32 L30 48" stroke-width="3"/>
+<path d="M18 20 L30 32 L18 44" stroke-width="2.2" opacity=".75"/>
+<path d="M8 24 L16 32 L8 40" stroke-width="1.6" opacity=".5"/>
+<path d="M46 32 L56 22 C56 30 52 34 46 32 Z M46 32 L56 42 C56 34 52 30 46 32 Z" fill="url(#g)"/>
+</g>
+</svg>

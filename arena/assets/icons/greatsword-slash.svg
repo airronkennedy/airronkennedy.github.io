@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<!-- Airron's Fall icon: greatsword-slash (an upright greatsword cutting a crescent arc). Original artwork. Replace this file with any square SVG/PNG of the same name. -->
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7b0"/><stop offset=".55" stop-color="#e2b25e"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient>
+<radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd38a" stop-opacity=".55"/><stop offset="1" stop-color="#ff7a2e" stop-opacity="0"/></radialGradient>
+</defs>
+<g stroke="url(#g)" stroke-width="2.6">
+<path d="M10 40 C14 18 40 8 56 18" stroke-width="2" opacity=".85"/>
+<path d="M14 44 C20 28 38 20 50 22" stroke-width="1.4" opacity=".6"/>
+<path d="M32 8 L36 12 L36 40 L28 40 L28 12 Z" fill="url(#g)" fill-opacity=".45"/>
+<path d="M32 12 V38" stroke-width="1.2"/>
+<path d="M20 42 H44"/><path d="M32 44 V52"/><circle cx="32" cy="55" r="3" fill="url(#g)" stroke="none"/>
+</g>
+</svg>

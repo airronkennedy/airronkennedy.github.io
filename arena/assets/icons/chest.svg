@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<!-- Airron's Fall icon: chest (an iron-bound elite chest with an ember seal). Original artwork. Replace this file with any square SVG/PNG of the same name. -->
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7b0"/><stop offset=".55" stop-color="#e2b25e"/><stop offset="1" stop-color="#9c6a2c"/></linearGradient>
+<radialGradient id="e" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd38a" stop-opacity=".55"/><stop offset="1" stop-color="#ff7a2e" stop-opacity="0"/></radialGradient>
+</defs>
+<g stroke="url(#g)" stroke-width="2.6">
+<path d="M10 28 H54 V52 H10 Z" fill="url(#g)" fill-opacity=".18"/>
+<path d="M10 28 C10 16 20 12 32 12 C44 12 54 16 54 28"/>
+<path d="M20 13 V52 M44 13 V52" stroke-width="2"/>
+<path d="M10 34 H54" stroke-width="1.6"/>
+<path d="M28 30 H36 V40 L32 43 L28 40 Z" fill="url(#g)"/>
+<circle cx="32" cy="36" r="10" fill="url(#e)" stroke="none"/>
+</g>
+</svg>
