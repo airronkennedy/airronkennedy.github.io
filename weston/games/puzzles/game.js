@@ -114,19 +114,22 @@
     var dock = document.querySelector('.pz-dock');
     var board = document.querySelector('.pz-board');
     var tr = tray.getBoundingClientRect();
-    var dockTop = dock.getBoundingClientRect().top;
+    var dockR = dock.getBoundingClientRect();
     var boardBottom = board.getBoundingClientRect().bottom;
-    var size = 140;
-    var gap = 22;
+    var size = window.innerHeight < 520 ? 120 : 140;
+    var gap = 16;
     var midY = (tr.top + tr.bottom) / 2;
-    /* Keep the tray between the board and the mode dock. */
+    /* Keep the tray between the board and a bottom dock. A side dock is ignored for Y. */
     var minY = boardBottom + size / 2 + 8;
-    var maxY = dockTop - size / 2 - 8;
+    var maxY = window.innerHeight - size / 2 - 8;
+    if (dockR.top > window.innerHeight * 0.55) maxY = dockR.top - size / 2 - 8;
     var y = midY;
     if (minY <= maxY) y = Math.min(maxY, Math.max(minY, midY));
-    else y = (boardBottom + dockTop) / 2;
+    else y = (minY + maxY) / 2;
     var totalW = total * size + (total - 1) * gap;
-    var start = (window.innerWidth - totalW) / 2;
+    var leftBound = tr.left || 0;
+    var rightBound = tr.right || window.innerWidth;
+    var start = leftBound + (Math.max(0, (rightBound - leftBound) - totalW) / 2);
     return { x: start + index * (size + gap) + size / 2, y: y, size: size };
   }
 

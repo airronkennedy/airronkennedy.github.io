@@ -84,8 +84,9 @@
 
   function layout() {
     var W = innerWidth, H = innerHeight;
-    var top = Math.max(120, H * 0.22);
+    var top = Math.max(88, Math.min(120, H * 0.22));
     var fSize = Math.max(160, Math.min(W, H) * 0.32);
+    if (fSize > H - top - 48) fSize = Math.max(160, H - top - 48);
     var y = Math.min(H * 0.38, H - fSize - 40);
     if (y < top) y = top;
     if (friendEl) {
@@ -95,10 +96,15 @@
     }
     var cW = Math.max(180, Math.min(W * 0.42, 320));
     var cH = Math.max(160, cW * 0.85);
+    var cTop = y + fSize * 0.22;
+    if (cTop + cH > H - 8) {
+      cH = Math.max(160, H - 8 - cTop);
+      cW = Math.max(180, Math.min(cW, cH / 0.85));
+    }
     if (covers.length === 1) {
       covers[0].style.width = cW + 'px'; covers[0].style.height = cH + 'px';
       covers[0].style.left = ((W - cW) / 2) + 'px';
-      covers[0].style.top = (y + fSize * 0.22) + 'px';
+      covers[0].style.top = cTop + 'px';
     } else if (covers.length === 2) {
       var gap = 24;
       var total = cW * 2 + gap;

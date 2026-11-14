@@ -55,3 +55,13 @@ body{font-family:"Avenir Next","Segoe UI Variable","Segoe UI",system-ui,sans-ser
 @media (prefers-reduced-motion:reduce){.tg-start .big,.tg-play{animation:none}.tg-wiggle,.tg-bounce{animation:none}}
 .tg-btn:focus{outline:none}.tg-btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
 @media (max-width:520px){.tg-jar{gap:0;padding:8px 10px;font-size:22px;max-width:calc(100vw - 176px)}.tg-jar .slot{width:26px;height:30px}}
+
+/* Short / narrow viewports (phone landscape ~844x390, etc.) */
+@media (max-height: 520px) {
+  .tg-start{padding:max(20px,env(safe-area-inset-top)) 16px max(12px,env(safe-area-inset-bottom));justify-content:center}
+  .tg-start .big{font-size:min(22vh,96px);margin:0}
+  .tg-start h1{margin:6px 0 10px;font-size:clamp(18px,4.4vh,28px)}
+  .tg-play{width:min(34vh,160px);height:min(34vh,160px);min-width:120px;min-height:120px;font-size:min(16vh,72px)}
+  .tg-adult{margin-top:12px}
+  .tg-jar{top:max(8px,env(safe-area-inset-top))}
+}
