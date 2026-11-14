@@ -5,7 +5,7 @@ window.WESTON_GAMES = [
   { n: 1,  slug: 'bubble-pop',     title: 'Bubble Pop',      icon: '🫧', color: '#4fb3e8', skill: 'Cause & effect',   owner: 'Airron Bot', live: true },
   { n: 2,  slug: 'animal-sounds',  title: 'Animal Sounds',   icon: '🐮', color: '#f0a64a', skill: 'Words & listening', owner: 'Airron Bot', live: true },
   { n: 3,  slug: 'shape-sorter',   title: 'Shape Sorter',    icon: '🔺', color: '#9a7bf0', skill: 'Shapes',            owner: 'Airron Bot', live: true },
-  { n: 4,  slug: 'color-match',    title: 'Color Match',     icon: '🎨', color: '#ef6a7a', skill: 'Colors',            owner: 'Airron Bot', live: false },
+  { n: 4,  slug: 'color-match',    title: 'Color Match',     icon: '🎨', color: '#ef6a7a', skill: 'Colors',            owner: 'Airron Bot', live: true },
   { n: 5,  slug: 'counting-ducks', title: 'Counting Ducks',  icon: '🦆', color: '#f2cf3d', skill: 'Counting 1–3',      owner: 'Game Bot',   live: true },
   { n: 6,  slug: 'peekaboo',       title: 'Peekaboo',        icon: '🙈', color: '#5cc99a', skill: 'Hidden things',     owner: 'Game Bot',   live: true },
   { n: 7,  slug: 'big-small',      title: 'Big & Small',     icon: '🐘', color: '#7fa6c9', skill: 'Big vs. small',     owner: 'Game Bot',   live: true },

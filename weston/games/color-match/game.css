@@ -1,0 +1,28 @@
+.studio{position:absolute;inset:0;background:linear-gradient(#ffe8f0,#ffd9e6 60%,#f3b9cf);overflow:hidden}
+.fridge{position:absolute;left:50%;top:max(92px,calc(env(safe-area-inset-top) + 86px));transform:translateX(-50%);display:flex;gap:10px;min-height:70px;pointer-events:none}
+.fridge .mini{width:64px;height:64px;border-radius:12px;background:#fff;box-shadow:0 4px 10px rgba(0,0,0,.15);padding:6px;transform:rotate(var(--r))}
+.fridge .mini svg{width:100%;height:100%}
+.easel{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:min(48vmin,360px);height:min(48vmin,360px);border-radius:28px;background:#fff;box-shadow:0 14px 34px rgba(120,40,80,.25),inset 0 0 0 8px #f6eadf;display:grid;place-items:center;cursor:pointer;touch-action:none}
+.easel svg{width:80%;height:80%;overflow:visible}
+.easel .o{stroke:#3b2a3a;stroke-width:3.5;stroke-linejoin:round;stroke-linecap:round}
+.easel .p{fill:var(--ghost,#fff);transition:fill .9s ease}
+.easel.done .p{fill:var(--paint)}
+.easel.pop{animation:epop .6s cubic-bezier(.2,.9,.3,1.5)}
+@keyframes epop{40%{transform:translate(-50%,-50%) scale(1.08) rotate(-2deg)}}
+.dots{position:absolute;inset:0;pointer-events:none;overflow:hidden;border-radius:28px}
+.dots i{position:absolute;width:26px;height:26px;border-radius:50%}
+.buckets{position:absolute;left:0;right:0;bottom:max(18px,env(safe-area-inset-bottom));display:flex;justify-content:center;gap:min(3vw,28px);padding:0 10px}
+.bucket{position:relative;width:min(22vw,170px);height:min(22vw,170px);min-width:120px;min-height:120px;cursor:pointer;touch-action:none;display:grid;place-items:end center}
+.bucket .pail{width:86%;height:74%;border-radius:10px 10px 28px 28px;background:linear-gradient(90deg,#d8dde6,#ffffff 40%,#c3c9d3);box-shadow:0 8px 14px rgba(0,0,0,.2);position:relative;overflow:visible}
+.bucket .pail::before{content:"";position:absolute;left:-5%;right:-5%;top:-12%;height:30%;border-radius:50%;background:var(--c);box-shadow:inset 0 -6px 0 rgba(0,0,0,.15),0 0 0 6px #e9edf3}
+.bucket .pail::after{content:"";position:absolute;left:14%;top:8%;width:22%;height:46%;border-radius:0 0 20px 20px;background:var(--c)}
+.bucket .handle{position:absolute;left:12%;right:12%;top:2%;height:50%;border:5px solid #8b93a3;border-bottom:0;border-radius:50% 50% 0 0}
+.bucket.hint{animation:bhint 1s ease-in-out 3}
+@keyframes bhint{50%{transform:translateY(-22px) scale(1.08)}}
+.brush{position:absolute;left:0;top:0;font-size:90px;pointer-events:none;z-index:8;will-change:transform}
+.painter{position:absolute;right:4vw;top:34%;font-size:min(16vmin,120px);pointer-events:none;animation:bob 2s ease-in-out infinite alternate}
+@keyframes bob{to{transform:translateY(-14px) rotate(6deg)}}
+.splat{position:absolute;left:4vw;top:34%;width:min(16vmin,120px);height:min(16vmin,120px);background:var(--c);border-radius:46% 54% 42% 58%/55% 41% 59% 45%;box-shadow:inset -8px -10px 0 rgba(0,0,0,.12);cursor:pointer;touch-action:none;transition:background .5s}
+.splat::after{content:"";position:absolute;left:62%;top:-12%;width:28%;height:28%;border-radius:50%;background:inherit}
+@media (max-aspect-ratio:3/4){.painter,.splat{top:auto;bottom:calc(min(22vw,170px) + 40px)}.easel{top:46%}}
+@media (prefers-reduced-motion:reduce){.painter,.bucket.hint,.easel.pop{animation:none}}
