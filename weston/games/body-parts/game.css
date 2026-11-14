@@ -123,6 +123,13 @@
 .bp-figure.view-face .bp-part[data-part="feet"],
 .bp-figure.view-face .bp-part[data-part="toes"]{display:none}
 
+.bp-figure.view-body .bp-part[data-part="hair"],
+.bp-figure.view-body .bp-part[data-part="ears"],
+.bp-figure.view-body .bp-part[data-part="eyes"],
+.bp-figure.view-body .bp-part[data-part="nose"],
+.bp-figure.view-body .bp-part[data-part="mouth"],
+.bp-figure.view-body .bp-part[data-part="head"]{display:none}
+
 .bp-stage.has-bar .bp-stage-area{bottom:max(300px,calc(env(safe-area-inset-bottom) + 288px))}
 .bp-confirm,.bp-sing{position:absolute;left:50%;bottom:max(168px,calc(env(safe-area-inset-bottom) + 156px));transform:translateX(-50%);z-index:6;min-width:160px;min-height:120px;padding:0 24px;border:0;border-radius:32px;color:#fff;font-size:64px;cursor:pointer;display:none;place-items:center;background:rgba(255,255,255,.22);box-shadow:inset 0 0 0 4px #ffd86b,0 8px 18px rgba(0,0,0,.3);touch-action:none}
 .bp-confirm.show,.bp-sing.show{display:grid}
@@ -154,11 +161,47 @@
 @media (max-width: 700px) {
   .bp-mode{flex:0 0 120px;}
   .bp-dock{flex-wrap:wrap;justify-content:center;width:256px;max-width:256px;gap:8px;padding:4px}
-  .bp-stage-area{bottom:max(280px, calc(env(safe-area-inset-bottom) + 268px));top:max(220px, calc(env(safe-area-inset-top) + 208px))}
+  .bp-stage-area{bottom:max(280px, calc(env(safe-area-inset-bottom) + 268px));top:max(196px, calc(env(safe-area-inset-top) + 184px))}
   .bp-book{top:max(96px, calc(env(safe-area-inset-top) + 88px));bottom:max(280px, calc(env(safe-area-inset-bottom) + 268px));left:8px;right:8px;padding:8px;overflow:auto;align-content:start}
-  .bp-stage.has-bar .bp-stage-area{bottom:max(420px, calc(env(safe-area-inset-bottom) + 408px))}
+  .bp-stage.has-bar .bp-stage-area{bottom:max(400px, calc(env(safe-area-inset-bottom) + 388px))}
   .bp-confirm,.bp-sing{bottom:max(280px, calc(env(safe-area-inset-bottom) + 268px))}
   .bp-prompt{width:120px;height:120px}
+
+  /* Narrow portrait: keep the star above the dock and off the figure; put feet/toes
+     in 120px side callouts so they are not piled by keepPartsOnStage. */
+  .bp-figure.view-body{width:min(38vw,140px);height:100%}
+  .bp-figure.view-body.sway{animation:none}
+  .bp-figure.view-body .bp-part[data-part="legs"]{top:48%;width:120px;height:120px}
+  .bp-figure.view-body .bp-part[data-part="knees"]{top:58%;width:120px;height:120px}
+  .bp-figure.view-body .bp-part[data-part="legs"].l,
+  .bp-figure.view-body .bp-part[data-part="knees"].l{left:8%;right:auto}
+  .bp-figure.view-body .bp-part[data-part="legs"].r,
+  .bp-figure.view-body .bp-part[data-part="knees"].r{right:8%;left:auto}
+  .bp-figure.view-body .bp-part[data-part="feet"],
+  .bp-figure.view-body .bp-part[data-part="toes"]{
+    width:120px;height:120px;min-width:120px;min-height:120px;
+    transform:none;
+    background:rgba(255,255,255,.22);
+    box-shadow:inset 0 0 0 3px rgba(255,255,255,.4),0 6px 14px rgba(0,0,0,.25);
+    font-size:56px;display:grid;place-items:center;z-index:5;
+  }
+  .bp-figure.view-body .bp-part[data-part="feet"]::before{content:"🦶"}
+  .bp-figure.view-body .bp-part[data-part="toes"]::before{content:"👣"}
+  .bp-figure.view-body .bp-part[data-part="feet"]::after,
+  .bp-figure.view-body .bp-part[data-part="toes"]::after{
+    content:"";position:absolute;top:50%;width:10px;height:4px;margin-top:-2px;
+    background:rgba(255,216,107,.85);border-radius:2px;pointer-events:none;
+  }
+  .bp-figure.view-body .bp-part[data-part="feet"].l,
+  .bp-figure.view-body .bp-part[data-part="toes"].l{left:auto;right:100%;margin-right:4px}
+  .bp-figure.view-body .bp-part[data-part="feet"].l::after,
+  .bp-figure.view-body .bp-part[data-part="toes"].l::after{left:100%}
+  .bp-figure.view-body .bp-part[data-part="feet"].r,
+  .bp-figure.view-body .bp-part[data-part="toes"].r{left:100%;right:auto;margin-left:4px}
+  .bp-figure.view-body .bp-part[data-part="feet"].r::after,
+  .bp-figure.view-body .bp-part[data-part="toes"].r::after{right:100%}
+  .bp-figure.view-body .bp-part[data-part="feet"]{top:0}
+  .bp-figure.view-body .bp-part[data-part="toes"]{top:128px}
 }
 @media (orientation: landscape) and (max-height: 520px) {
   .bp-prompt{left:max(12px,env(safe-area-inset-left));top:max(88px, calc(env(safe-area-inset-top) + 76px));transform:none;width:120px;height:120px}
@@ -166,8 +209,44 @@
   .bp-dock{left:auto;right:max(8px,env(safe-area-inset-right));top:auto;bottom:max(8px,env(safe-area-inset-bottom));transform:none;flex-wrap:wrap;justify-content:center;width:256px;max-width:256px;gap:8px;padding:4px}
   .bp-stage-area,.bp-stage.has-bar .bp-stage-area{top:max(80px, calc(env(safe-area-inset-top) + 68px));bottom:max(12px,env(safe-area-inset-bottom));left:140px;right:276px}
   .bp-book{top:max(88px, calc(env(safe-area-inset-top) + 76px));bottom:max(8px,env(safe-area-inset-bottom));left:8px;right:276px;padding:8px;overflow:auto;align-content:start}
-  .bp-confirm,.bp-sing{left:max(12px,env(safe-area-inset-left));right:auto;top:auto;bottom:max(12px,env(safe-area-inset-bottom));transform:none}
+  .bp-confirm,.bp-sing{left:max(12px,env(safe-area-inset-left));right:auto;top:auto;bottom:max(12px,env(safe-area-inset-bottom));transform:none;min-width:120px;width:120px;height:120px;padding:0}
   .bp-confirm:active,.bp-sing:active{transform:scale(.94)}
-  .bp-figure{height:min(100%,168px);width:min(36vw,200px)}
+  .bp-figure{height:min(100%,260px);width:min(28vw,160px)}
   .bp-figure.view-face{height:min(100%,200px);width:min(40vw,220px)}
+  .bp-figure.sway{animation:none}
+
+  /* Legs/knees stay on the taller figure. Feet/toes become 120px side callouts
+     so they don't clip or get piled up by keepPartsOnStage. */
+  .bp-figure.view-body .bp-part[data-part="legs"]{top:48%;width:120px;height:120px}
+  .bp-figure.view-body .bp-part[data-part="knees"]{top:58%;width:120px;height:120px}
+
+  .bp-figure.view-body .bp-part[data-part="feet"],
+  .bp-figure.view-body .bp-part[data-part="toes"]{
+    width:120px;height:120px;min-width:120px;min-height:120px;
+    transform:none;
+    background:rgba(255,255,255,.22);
+    box-shadow:inset 0 0 0 3px rgba(255,255,255,.4),0 6px 14px rgba(0,0,0,.25);
+    font-size:56px;display:grid;place-items:center;z-index:5;
+  }
+  .bp-figure.view-body .bp-part[data-part="feet"]::before{content:"🦶"}
+  .bp-figure.view-body .bp-part[data-part="toes"]::before{content:"👣"}
+  .bp-figure.view-body .bp-part[data-part="feet"]::after,
+  .bp-figure.view-body .bp-part[data-part="toes"]::after{
+    content:"";position:absolute;top:50%;width:10px;height:4px;margin-top:-2px;
+    background:rgba(255,216,107,.85);border-radius:2px;pointer-events:none;
+  }
+  .bp-figure.view-body .bp-part[data-part="feet"].l,
+  .bp-figure.view-body .bp-part[data-part="toes"].l{
+    left:auto;right:100%;margin-right:8px;
+  }
+  .bp-figure.view-body .bp-part[data-part="feet"].l::after,
+  .bp-figure.view-body .bp-part[data-part="toes"].l::after{left:100%}
+  .bp-figure.view-body .bp-part[data-part="feet"].r,
+  .bp-figure.view-body .bp-part[data-part="toes"].r{
+    left:100%;right:auto;margin-left:8px;
+  }
+  .bp-figure.view-body .bp-part[data-part="feet"].r::after,
+  .bp-figure.view-body .bp-part[data-part="toes"].r::after{right:100%}
+  .bp-figure.view-body .bp-part[data-part="feet"]{top:8px}
+  .bp-figure.view-body .bp-part[data-part="toes"]{top:136px}
 }

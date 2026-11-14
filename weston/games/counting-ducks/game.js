@@ -89,17 +89,33 @@
   function layout() {
     var W = innerWidth, H = innerHeight, n = ducks.length;
     var top = Math.max(120, H * 0.28);
+    var minSize = 128;
     var gap = Math.min(24, W * 0.03);
-    var size = Math.max(120, Math.min(W, H) * 0.28);
-    if (n > 0) size = Math.min(size, (W - 16 - (n - 1) * gap) / n);
-    var total = n * size + (n - 1) * gap;
-    var x0 = Math.max(8, (W - total) / 2);
-    var y = Math.min(H * 0.52, H - size - 24);
-    if (y < top) y = top;
+    var size = Math.max(150, Math.min(W, H) * 0.28);
+    var cols = n || 1;
+    if (n > 0) {
+      var fit = (W - 16 - (n - 1) * gap) / n;
+      if (fit < minSize && n >= 3) {
+        cols = 2;
+        gap = Math.min(16, gap);
+        fit = (W - 16 - (cols - 1) * gap) / cols;
+      }
+      size = Math.min(size, fit);
+      if (size < minSize) size = minSize;
+    }
+    var rowGap = Math.min(12, gap);
+    var rows = Math.ceil(n / cols) || 1;
+    var totalH = rows * size + (rows - 1) * rowGap;
+    var y0 = Math.min(H * 0.48, H - totalH - 24);
+    if (y0 < top) y0 = top;
     ducks.forEach(function (d, i) {
+      var row = Math.floor(i / cols), col = i % cols;
+      var count = Math.min(cols, n - row * cols);
+      var rowW = count * size + (count - 1) * gap;
+      var rx = Math.max(8, (W - rowW) / 2);
       d.style.width = d.style.height = size + 'px';
-      d.style.left = (x0 + i * (size + gap)) + 'px';
-      d.style.top = y + 'px';
+      d.style.left = (rx + col * (size + gap)) + 'px';
+      d.style.top = (y0 + row * (size + rowGap)) + 'px';
     });
   }
 

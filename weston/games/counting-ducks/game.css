@@ -29,7 +29,7 @@
 .cloud::after{width:50%;height:70%;right:10%;top:-40%}
 @keyframes drift{from{transform:translateX(-20vw)}to{transform:translateX(110vw)}}
 
-.duck{width:28vmin;height:28vmin;min-width:150px;min-height:150px;z-index:4;filter:drop-shadow(0 8px 6px rgba(0,0,0,.25));transition:left .6s cubic-bezier(.2,.8,.3,1),top .6s cubic-bezier(.2,.8,.3,1);animation:bob 2.4s ease-in-out infinite}
+.duck{width:28vmin;height:28vmin;min-width:128px;min-height:128px;z-index:4;filter:drop-shadow(0 8px 6px rgba(0,0,0,.25));transition:left .6s cubic-bezier(.2,.8,.3,1),top .6s cubic-bezier(.2,.8,.3,1);animation:bob 2.4s ease-in-out infinite}
 .duck.alt{animation-duration:2.9s}
 @keyframes bob{50%{transform:translateY(-8px)}}
 .duck-inner{position:relative;width:70%;height:58%;}
