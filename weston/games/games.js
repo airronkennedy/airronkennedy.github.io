@@ -11,5 +11,5 @@ window.WESTON_GAMES = [
   { n: 7,  slug: 'big-small',      title: 'Big & Small',     icon: '🐘', color: '#7fa6c9', skill: 'Big vs. small',     owner: 'Game Bot',   live: true },
   { n: 8,  slug: 'drum-pad',       title: 'Music Pad',       icon: '🥁', color: '#e8804f', skill: 'Rhythm & sound',    owner: 'Bartenbot',  live: true },
   { n: 9,  slug: 'puzzles',        title: 'Puzzles',         icon: '🧩', color: '#4fc2c9', skill: 'Parts & wholes',    owner: 'Bartenbot',  live: false },
-  { n: 10, slug: 'body-parts',     title: 'Touch Your Nose', icon: '👃', color: '#e88fc2', skill: 'Body words',        owner: 'Bartenbot',  live: false }
+  { n: 10, slug: 'body-parts',     title: 'Touch Your Nose', icon: '👃', color: '#e88fc2', skill: 'Body words',        owner: 'Bartenbot',  live: true }
 ];
