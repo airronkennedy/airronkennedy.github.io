@@ -18,7 +18,7 @@
 
 .friend{width:32vmin;height:32vmin;min-width:160px;min-height:160px;z-index:4;filter:drop-shadow(0 10px 8px rgba(0,0,0,.25));transition:left .55s cubic-bezier(.2,.8,.3,1),top .55s cubic-bezier(.2,.8,.3,1),transform .4s;animation:fbob 2.6s ease-in-out infinite}
 @keyframes fbob{50%{transform:translateY(-8px)}}
-.friend.hid{visibility:hidden;pointer-events:none}
+.friend.hid{pointer-events:none; /* stay peeking from behind the cover */ }
 .friend.found{animation:none;z-index:7}
 
 .buddy{position:relative;width:78%;height:78%}
