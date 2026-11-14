@@ -12,6 +12,7 @@ weston/
     LICENSES.md                 ← every asset + license (add yours)
     sw.js                       ← offline cache (network first)
     shell/shell.js, shell.css   ← window.Toddler: chrome, sounds, speech, rewards, fx
+    voice/                      ← Dad's voice: SCRIPT.md (what to record), clips.js (sentence → file), build_script.py, <game>/<clip>.m4a
     _template/                  ← copy this to start a game
     <slug>/index.html, game.js, game.css
 ```
@@ -37,9 +38,7 @@ Keep the slugs. You may tweak the `title`, `icon`, and `skill` of **your own** e
 
 1. **Research first.** Before you write code, read real sources about why this activity fits a 2-year-old: the [CDC 2-year milestones](https://www.cdc.gov/act-early/milestones/2-years.html), [AAP *Media and Young Minds*](https://publications.aap.org/pediatrics/article/138/5/e20162591/60503/Media-and-Young-Minds), Zero to Three, HealthyChildren.org, and peer-reviewed studies on PubMed or journal pages. **Only cite pages you actually opened. Never invent a source, quote, or statistic.** Let the research change the design (number of choices, which words, round length).
 2. `cp -r weston/games/_template weston/games/<slug>` and edit `index.html` (title), `game.js`, `game.css`.
-3. Fill in the two hidden sections in `index.html`. The shell moves them onto the start screen under **For grown-ups**:
-   - `.tg-why`: a `<span class="skill">` line and **exactly 3 sentences in Airron's own voice** (first person, a dad talking about his son Weston). Example tone: "I picked this because Weston already loves… The research says… I made sure…"
-   - `.tg-research`: 2–5 `<li>` links to the sources you fetched, each with one line on what it says and how it shaped the game.
+3. **Don't put parent notes on the page.** Airron asked for the "Why this game" text and research links to be taken off the game pages. Write your 3-sentence reasoning (in Airron's voice) and your sources in your PR description instead, and add them to `/workspace/weston-why-and-sources.md` on the box.
 4. Set `live: true` on your entry in `games/games.js`.
 5. Add any new asset to `LICENSES.md`.
 6. Test (see checklist), open a PR on `airronkennedy/airronkennedy.github.io`, merge with a merge commit (**never force-push, never rewrite history**). GitHub Pages deploys `main` in about 1 minute. Live URL: `https://airronkennedy.com/weston/games/<slug>/`.
@@ -77,7 +76,7 @@ Airron wants these to feel like real, polished games, **as elaborate as you like
 ```js
 T.init({ title, icon, color, jarIcon, intro, start })  // builds start screen + chrome; start() runs after Play
 T.stage                         // <main id="stage">, full-screen, position:fixed — put your game here
-T.say(text, {rate, pitch})      // speak (device voice); returns a Promise
+T.say(text, {rate, pitch})      // speak: Dad's recorded clip per sentence if it exists (voice/clips.js), else device voice; returns a Promise
 T.praise(extra?)                // "Great job!" etc.
 T.sfx.pop(k) .tap() .chime() .sparkle() .boing() .whoosh() .soft() .fanfare() .note(i) .drum() .snap()
 T.tone(freq, dur, {type, vol, slide, at})   T.noise(dur, {freq, filter, q, vol})   T.NOTES
@@ -100,5 +99,6 @@ Sounds and speech only start after the child taps the big ▶ Play button. That'
 - [ ] No console errors. Nothing loads from another domain.
 - [ ] Every target is ≥ 120 px. There's no way to fail or lose, and every touch does something.
 - [ ] 🏠 only exits after a 2 s hold. 🔇 silences everything, including speech.
-- [ ] The "Why this game" section has 3 first-person sentences, and every source link opens a real page you read.
+- [ ] The PR description has the 3-sentence why and real sources you read. No why/research text on the page.
+- [ ] New spoken lines are added to `voice/build_script.py`, and you re-ran it (it updates `voice/SCRIPT.md` + `voice/clips.js`).
 - [ ] `games.js` has `live: true`, and the hub tile opens the game.
