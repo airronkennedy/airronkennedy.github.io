@@ -13,6 +13,7 @@ Every game under `/weston/games/` must only use assets listed here. Add a row be
 | Pond, ducks, reeds, water, and lily pads drawn in CSS; quacks and splashes synthesized in game.js | `/weston/games/counting-ducks/` | Original, drawn and synthesized in code with the shared `Toddler` Web Audio helpers (mute-safe); no image or audio files | © Airron Kennedy |
 | Friends (teddy, puppy, kitty, bunny, duckling), covers (blanket, leaf, box, cushion, hands), and rooms drawn in CSS | `/weston/games/peekaboo/` | Original, drawn in code; giggles and reveals use the shared `Toddler` Web Audio helpers (mute-safe); no image or audio files | © Airron Kennedy |
 | Big and little characters (duck, bear, cup, truck, apple, elephant, ball) and scene backdrops drawn in CSS | `/weston/games/big-small/` | Original, drawn in code; boops and cheers use the shared `Toddler` Web Audio helpers (mute-safe); no image or audio files | © Airron Kennedy |
+| Puzzle pictures, clipped piece art, and sticker-book frames drawn in CSS | `/weston/games/puzzles/` | Original, drawn in code; snaps and cheers use the shared `Toddler` Web Audio helpers (mute-safe); no image or audio files | © Airron Kennedy |
 
 Rules for adding assets:
 
