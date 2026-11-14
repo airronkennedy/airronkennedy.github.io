@@ -1,4 +1,4 @@
-import{c as ve,r as h,j as t,s as m,i as ge,a as F,p as se,M as S,D as le,b as Ge,d as te,m as J,e as Y,o as Be,f as Ye,g as ke,h as xe,k as je,F as Ve,l as $e,B as Ke,G,n as oe,A as Xe,C as Je,E as z,q as ce,O as ze,t as He,P as Le,u as Te,W as qe,H as _e,v as Oe,w as Qe,x as ie,S as Ze,y as en,z as nn,I as tn,J as Re,K as M,R as on}from"./index-MHMVB6pf.js";const sn=[["path",{d:"M18 6 6 18",key:"1bl5f8"}],["path",{d:"m6 6 12 12",key:"d8bk6v"}]],be=ve("x",sn),an=`# Privacy policy: Airron's Fall
+import{c as ve,r as h,j as t,s as m,i as ge,a as F,p as se,M as S,D as le,b as Ge,d as te,m as J,e as Y,o as Be,f as Ye,g as ke,h as xe,k as je,F as Ve,l as $e,B as Ke,G,n as oe,A as Xe,C as Je,E as z,q as ce,O as ze,t as He,P as Le,u as Te,W as qe,H as _e,v as Oe,w as Qe,x as ie,S as Ze,y as en,z as nn,I as tn,J as Re,K as M,R as on}from"./index-BCqEZfou.js";const sn=[["path",{d:"M18 6 6 18",key:"1bl5f8"}],["path",{d:"m6 6 12 12",key:"d8bk6v"}]],be=ve("x",sn),an=`# Privacy policy: Airron's Fall
 
 Last updated: November 13, 2026
 
