@@ -1,9 +1,11 @@
 {
   "name": "Airron's Fall",
   "short_name": "Airron's Fall",
+  "id": "./",
   "start_url": "./",
   "scope": "./",
   "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
   "orientation": "any",
   "background_color": "#1b1b18",
   "theme_color": "#1b1b18",
