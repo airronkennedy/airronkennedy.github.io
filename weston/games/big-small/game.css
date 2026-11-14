@@ -1,0 +1,67 @@
+/* Big & Small — a gentle size circus. Top ~100px clear for shell chrome. */
+#stage{--bg1:#d8ecf8;--bg2:#8eb8d4;--ground:#7f9e6a}
+#stage.scene-meadow{--bg1:#d8ecf8;--bg2:#8eb8d4;--ground:#7f9e6a}
+#stage.scene-room{--bg1:#fde8c8;--bg2:#f0c48a;--ground:#c9956a}
+#stage.scene-sky{--bg1:#c8e8ff;--bg2:#6aa8e0;--ground:#8ecf7a}
+#stage.scene-dusk{--bg1:#f5c4a0;--bg2:#d07a6a;--ground:#6a7e5a}
+
+.sky{position:absolute;inset:0 0 28% 0;background:linear-gradient(to bottom,var(--bg1),var(--bg2));transition:background 1s}
+.ground{position:absolute;left:0;right:0;bottom:0;height:36%;background:linear-gradient(to bottom,color-mix(in srgb,var(--ground) 80%,#fff),var(--ground))}
+.hill{position:absolute;bottom:28%;width:50%;height:22%;background:color-mix(in srgb,var(--ground) 70%,#fff);border-radius:50% 50% 0 0;pointer-events:none;opacity:.7}
+.hill.a{left:-10%}.hill.b{right:-8%;width:40%;height:16%}
+
+.door-row{position:absolute;left:0;right:0;bottom:8%;height:28%;display:flex;justify-content:space-around;align-items:flex-end;pointer-events:none;opacity:0;transform:translateY(16px);transition:opacity .4s,transform .4s;z-index:3}
+.door-row.show{opacity:1;transform:none}
+.door{position:relative;background:#8a5a32;border-radius:12px 12px 4px 4px;box-shadow:inset 0 0 0 6px #6a4020,inset 0 0 0 10px #c48a50}
+.door.big{width:22vmin;height:28vmin;min-width:110px;min-height:140px}
+.door.little{width:12vmin;height:16vmin;min-width:70px;min-height:90px}
+.door::after{content:"";position:absolute;right:14%;top:46%;width:14%;height:14%;border-radius:50%;background:#e8c86a}
+
+.size-char{z-index:5;filter:drop-shadow(0 10px 8px rgba(0,0,0,.25));transition:left .5s cubic-bezier(.2,.8,.3,1),top .5s cubic-bezier(.2,.8,.3,1),transform .4s;animation:sbob 2.5s ease-in-out infinite}
+.size-char.little{animation-duration:2.1s}
+@keyframes sbob{50%{transform:translateY(-8px)}}
+.size-char.big{width:42vmin;height:42vmin;min-width:200px;min-height:200px}
+.size-char.little{width:22vmin;height:22vmin;min-width:130px;min-height:130px}
+.size-char.glow{z-index:6}
+.size-char.glow .body-shape,.size-char.glow .head-shape{box-shadow:0 0 0 6px rgba(255,255,255,.75),0 0 24px var(--accent, #7fa6c9)}
+
+.fig{position:relative;width:80%;height:80%}
+.body-shape{position:absolute;left:8%;bottom:0;width:84%;height:62%;border-radius:50% 50% 44% 44%}
+.head-shape{position:absolute;left:22%;top:0;width:56%;height:48%;border-radius:50%}
+.fig-eye{position:absolute;width:14%;height:14%;border-radius:50%;background:#1a1a1a;top:28%;box-shadow:inset -2px 0 0 2px #fff;animation:blink 5s ease-in-out infinite}
+.fig-eye.l{left:28%}.fig-eye.r{right:28%}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}94%,97%{transform:scaleY(.08)}}
+
+/* species palettes */
+.fig.duck .body-shape,.fig.duck .head-shape{background:radial-gradient(circle at 30% 30%,#ffe56a,#f2c01a 70%)}
+.fig.duck .bill{position:absolute;right:4%;top:28%;width:28%;height:12%;background:#f08a28;border-radius:40% 60% 60% 40%}
+.fig.bear .body-shape,.fig.bear .head-shape{background:radial-gradient(circle at 30% 30%,#e0a060,#c47a38 70%)}
+.fig.bear .ear{position:absolute;width:22%;height:22%;border-radius:50%;background:#c47a38;top:-2%}
+.fig.bear .ear.l{left:8%}.fig.bear .ear.r{right:8%}
+.fig.cup .body-shape{border-radius:16% 16% 28% 28%;height:70%;bottom:4%;background:linear-gradient(#7ec8f8,#3a8ad4)}
+.fig.cup .head-shape{display:none}
+.fig.cup .handle{position:absolute;right:-8%;top:30%;width:28%;height:36%;border:10px solid #3a8ad4;border-left:0;border-radius:0 50% 50% 0}
+.fig.cup .fig-eye{top:40%}
+.fig.truck .body-shape{height:48%;bottom:16%;border-radius:12px;background:linear-gradient(#ef6a7a,#c43a4a)}
+.fig.truck .head-shape{width:36%;height:32%;left:8%;top:18%;border-radius:10px;background:linear-gradient(#7ec8f8,#3a8ad4)}
+.fig.truck .wheel{position:absolute;bottom:0;width:22%;height:22%;border-radius:50%;background:#333;box-shadow:inset 0 0 0 6px #888}
+.fig.truck .wheel.l{left:14%}.fig.truck .wheel.r{right:14%}
+.fig.apple .body-shape{height:78%;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ff8a8a,#e03a3a 70%)}
+.fig.apple .head-shape{width:10%;height:18%;left:48%;top:-4%;border-radius:4px;background:#3d9a3a}
+.fig.elephant .body-shape{background:radial-gradient(circle at 30% 30%,#d0d6de,#9aa6b4 70%)}
+.fig.elephant .head-shape{width:48%;left:8%;background:radial-gradient(circle at 30% 30%,#d0d6de,#9aa6b4 70%)}
+.fig.elephant .trunk{position:absolute;left:0;top:36%;width:22%;height:48%;background:#9aa6b4;border-radius:40% 20% 40% 50%;transform:rotate(18deg)}
+.fig.elephant .ear{position:absolute;width:34%;height:40%;border-radius:50%;background:#b8c0ca;right:-6%;top:8%}
+.fig.ball .body-shape{height:90%;border-radius:50%;background:conic-gradient(#ef6a7a 0 25%,#4fb3e8 0 50%,#f2cf3d 0 75%,#5cc99a 0 100%)}
+.fig.ball .head-shape{display:none}
+.fig.ball .fig-eye{top:36%}
+
+.size-char.celebrate.big{animation:growpride .8s cubic-bezier(.2,.9,.3,1.3)}
+@keyframes growpride{40%{transform:scale(1.12)}70%{transform:scale(1)}}
+.size-char.celebrate.little{animation:hoppride .7s cubic-bezier(.2,.9,.3,1.3)}
+@keyframes hoppride{30%{transform:translateY(-16px) scale(1.08)}60%{transform:translateY(0)}}
+
+@media (prefers-reduced-motion:reduce){
+  .size-char,.fig-eye,.size-char.celebrate.big,.size-char.celebrate.little{animation:none}
+  .size-char,.door-row{transition:none}
+}
