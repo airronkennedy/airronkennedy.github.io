@@ -145,13 +145,13 @@
     }).catch(function () { status('Could not switch camera'); facing = facing === 'user' ? 'environment' : 'user'; });
   };
   $('bCopy').onclick = function () {
-    var url = location.origin + '/weston/';
+    var url = location.origin + '/weston/call/';
     if (navigator.share) { navigator.share({ title: "Weston's Planet", url: url }).catch(function () {}); return; }
     (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function () { status('Invite link copied'); }, function () { prompt('Invite link', url); });
   };
   function leave() { left = true; Object.keys(calls).forEach(function (k) { try { calls[k].close(); } catch (e) {} });
     try { if (hub) hub.destroy(); if (me) me.destroy(); } catch (e) {}
     if (local) local.getTracks().forEach(function (t) { t.stop(); }); }
-  $('bLeave').onclick = function () { leave(); location.href = '/'; };
+  $('bLeave').onclick = function () { leave(); location.href = '/weston/'; };
   addEventListener('pagehide', leave);
 })();

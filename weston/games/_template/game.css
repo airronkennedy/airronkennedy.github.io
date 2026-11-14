@@ -1,0 +1,2 @@
+/* Game-specific styles. Shell gives you .tg-target (≥120px tap box), .tg-wiggle, .tg-bounce. */
+.star{font-size:110px;width:160px;height:160px;transition:transform .2s}

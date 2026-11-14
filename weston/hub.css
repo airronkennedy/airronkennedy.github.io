@@ -1,0 +1,32 @@
+/* Weston's Planet hub: menu of the video call + toddler games. Planet color #3f7fa8, accents match /cosmos.css. */
+:root{--ink:#05070d;--sea:#3f7fa8;--sky:#9cc7e6;--gold:#f0d9b8}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%;background:var(--ink)}
+body{font-family:"Avenir Next","Segoe UI Variable","Segoe UI",system-ui,sans-serif;color:rgba(226,221,240,.85);-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation;padding:max(18px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));overflow-x:hidden}
+#stars{position:fixed;inset:0;width:100%;height:100%;z-index:-2}
+.glow{position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse 70% 55% at 50% 0%,rgba(63,127,168,.45),transparent 70%),radial-gradient(ellipse 60% 50% at 85% 100%,rgba(120,90,255,.18),transparent 70%),radial-gradient(ellipse 50% 40% at 10% 90%,rgba(80,200,180,.12),transparent 70%)}
+.home{position:absolute;left:max(14px,env(safe-area-inset-left));top:max(14px,env(safe-area-inset-top));color:rgba(230,224,245,.7);font-size:12px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:10px 4px}
+header{text-align:center;margin:34px auto 22px}
+.world{width:92px;height:92px;margin:0 auto 14px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#bfe3ff,#3f7fa8 45%,#0d2440 100%);box-shadow:0 0 40px rgba(63,127,168,.8),inset -12px -14px 26px rgba(0,0,20,.55);position:relative;animation:bob 6s ease-in-out infinite alternate}
+.world span{position:absolute;left:18%;top:46%;width:34%;height:22%;border-radius:50%;background:rgba(90,200,140,.7);box-shadow:30px -18px 0 -4px rgba(90,200,140,.55)}
+@keyframes bob{to{transform:translateY(-8px) rotate(6deg)}}
+h1{font-weight:300;font-size:clamp(18px,3.2vw,26px);letter-spacing:.38em;padding-left:.38em;text-transform:uppercase;color:#eae4f6}
+h1 span{font-weight:600;color:var(--sky)}
+.sub{margin-top:8px;font-size:14px;color:rgba(220,214,232,.65)}
+.menu{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:clamp(14px,2.4vw,24px);max-width:1080px;margin:0 auto}
+.tile{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:178px;padding:18px 10px;border-radius:30px;text-decoration:none;color:#fff;background:radial-gradient(circle at 30% 18%,color-mix(in srgb,var(--c) 85%,#fff 15%),var(--c) 45%,color-mix(in srgb,var(--c) 45%,#050a18 55%));box-shadow:0 10px 28px rgba(0,0,0,.45),0 0 26px color-mix(in srgb,var(--c) 45%,transparent),inset 0 2px 0 rgba(255,255,255,.25);transition:transform .25s cubic-bezier(.2,.8,.3,1.4)}
+.tile:active,.tile.pressed{transform:scale(.94)}
+.tile:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.tile .ic{font-size:clamp(64px,9vw,84px);line-height:1;filter:drop-shadow(0 4px 6px rgba(0,0,0,.35))}
+.tile .nm{font-size:15px;font-weight:600;letter-spacing:.06em;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.tile .sk{font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+.tile.call{grid-column:span 2}
+@media (max-width:420px){.tile.call{grid-column:span 1}.menu{grid-template-columns:repeat(2,1fr)}.tile{min-height:150px}}
+.tile.soon{filter:saturate(.35) brightness(.7);cursor:default}
+.tile.soon .ic{opacity:.75}
+.tile .badge{position:absolute;top:12px;right:12px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 9px;border-radius:999px;background:rgba(5,7,13,.6);color:var(--gold)}
+.tile.wiggle{animation:wig .5s}
+@keyframes wig{20%{transform:rotate(-4deg)}40%{transform:rotate(4deg)}60%{transform:rotate(-3deg)}80%{transform:rotate(2deg)}}
+footer{max-width:760px;margin:34px auto 8px;text-align:center;font-size:12px;line-height:1.7;color:rgba(220,214,232,.5)}
+footer a{color:var(--sky)}
+@media (prefers-reduced-motion:reduce){.world{animation:none}.tile{transition:none}.tile.wiggle{animation:none}}
