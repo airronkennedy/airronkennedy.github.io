@@ -122,6 +122,14 @@
       lump.style.top = (cr.top + cr.height * 0.35) + 'px';
     }
   }
+  /* Disable left/top transitions for one frame so a short landscape clamp doesn't flash the friend mid-move. */
+  function snapLayout() {
+    var els = [friendEl, lump].concat(covers);
+    els.forEach(function (e) { if (e) e.style.transition = 'none'; });
+    layout();
+    els.forEach(function (e) { if (e) void e.offsetWidth; });
+    els.forEach(function (e) { if (e) e.style.transition = ''; });
+  }
 
   function clearCovers() {
     covers.forEach(function (c) { c.remove(); });
@@ -230,16 +238,17 @@
       if (my !== gen) return;
       /* Covers appear first so we can watch the friend go under one. */
       for (var i = 0; i < nCovers; i++) covers.push(makeCover(coverKind, i));
-      layout();
+      snapLayout();
       T.say('Peekaboo? Hide, ' + friend.name + '!');
       rustle();
       return T.wait(550);
     }).then(function () {
       if (my !== gen) return;
+      snapLayout();
       friendEl.classList.add('hid');
       hiding = true; found = false;
       if (lump) lump.classList.add('show');
-      layout();
+      snapLayout();
       return T.wait(350);
     }).then(function () {
       if (my !== gen) return;
@@ -255,7 +264,7 @@
       buildWorld();
       rounds = 0; nCovers = 1;
       startRound();
-      window.addEventListener('resize', layout);
+      window.addEventListener('resize', snapLayout);
     }
   });
 })();

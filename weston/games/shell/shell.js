@@ -74,7 +74,17 @@
   function splitSentences(t) { return (String(t).match(/[^.!?\u2026]+[.!?\u2026]*/g) || []).map(function (x) { return x.trim(); }).filter(Boolean); }
   function voiceKey(t) { return String(t).toLowerCase().replace(/[\u2018\u2019]/g, "'").replace(/[^a-z0-9' ]+/g, ' ').replace(/\s+/g, ' ').trim(); }
   T.voiceKey = voiceKey; T.splitSentences = splitSentences;
-  function clipFor(sentence) { var m = window.WESTON_VOICE; return m && m[voiceKey(sentence)] || null; }
+  function clipOnDisk(file) {
+    var have = window.WESTON_VOICE_FILES;
+    if (!have) return true;
+    if (Object.prototype.toString.call(have) === '[object Array]') return have.indexOf(file) >= 0;
+    return !!have[file];
+  }
+  function clipFor(sentence) {
+    var m = window.WESTON_VOICE, f = m && m[voiceKey(sentence)] || null;
+    if (!f || clipMissing[f] || !clipOnDisk(f)) return null;
+    return f;
+  }
   function loadClip(file) {
     if (clipMissing[file]) return Promise.resolve(null);
     if (clipBuf[file]) return clipBuf[file];
@@ -89,20 +99,23 @@
   function playBuf(buf, gen) {
     return new Promise(function (res) {
       if (gen !== sayGen || muted) return res();
-      var c = audio(), src = c.createBufferSource(), g = c.createGain(); g.gain.value = 1.6; src.buffer = buf; src.connect(g); g.connect(master);
+      var c = audio(); if (!c) return res();
+      var src = c.createBufferSource(), g = c.createGain(); g.gain.value = 1.6; src.buffer = buf; src.connect(g); g.connect(master);
       var done = false, fin = function () { if (!done) { done = true; if (curSrc === src) curSrc = null; res(); } };
       src.onended = fin; setTimeout(fin, buf.duration * 1000 + 400); curSrc = src; src.start();
     });
   }
   function tts(text, o, gen) {
     return new Promise(function (res) {
-      if (gen !== sayGen || muted || !('speechSynthesis' in window)) return setTimeout(res, 300);
+      if (gen !== sayGen || muted) return setTimeout(res, 300);
+      if (!('speechSynthesis' in window)) return setTimeout(res, Math.min(1800, 400 + String(text).length * 40));
       try {
         var u = new SpeechSynthesisUtterance(text); if (voice) u.voice = voice; u.lang = (voice && voice.lang) || 'en-US';
         u.rate = o.rate || .88; u.pitch = o.pitch || 1.15; u.volume = 1;
         var done = false, fin = function () { if (!done) { done = true; res(); } };
         u.onend = fin; u.onerror = fin; setTimeout(fin, 900 + text.length * 90);
-        speechSynthesis.speak(u);
+        /* iOS often drops speak() if it follows cancel() in the same turn */
+        setTimeout(function () { if (gen !== sayGen || muted) return fin(); try { speechSynthesis.speak(u); } catch (e) { fin(); } }, 50);
       } catch (e) { res(); }
     });
   }
@@ -129,6 +142,7 @@
   var COLORS = ['#ffd86b', '#ff7aa2', '#7ee0ff', '#9dff9a', '#c59bff', '#ffa86b'];
   /* burst(x, y, {n, emoji:[..], colors:[..], spread}) */
   T.burst = function (x, y, o) {
+    if (typeof o === 'number') o = { n: o };
     o = o || {}; if (!fx) return; var n = reduce ? Math.min(6, o.n || 14) : (o.n || 14);
     for (var i = 0; i < n; i++) (function () {
       var p = el('span', 'tg-p' + (o.emoji ? '' : ' tg-dot'));
@@ -158,9 +172,9 @@
   };
   /* bigWord('⭐'): a big emoji pops in the middle and floats away */
   T.bigWord = function (txt) { var w = el('div', 'tg-word'); w.textContent = txt; document.body.appendChild(w); requestAnimationFrame(function () { w.classList.add('go'); }); setTimeout(function () { w.remove(); }, 1500); };
-  T.wiggle = function (e) { e.classList.remove('tg-wiggle'); void e.offsetWidth; e.classList.add('tg-wiggle'); };
-  T.bounce = function (e) { e.classList.remove('tg-bounce'); void e.offsetWidth; e.classList.add('tg-bounce'); };
-  T.center = function (e) { var r = e.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; };
+  T.wiggle = function (e) { if (!e || !e.classList) return; e.classList.remove('tg-wiggle'); void e.offsetWidth; e.classList.add('tg-wiggle'); };
+  T.bounce = function (e) { if (!e || !e.classList) return; e.classList.remove('tg-bounce'); void e.offsetWidth; e.classList.add('tg-bounce'); };
+  T.center = function (e) { if (!e || !e.getBoundingClientRect) return { x: innerWidth / 2, y: innerHeight / 2 }; var r = e.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; };
 
   /* ---------------- touch helpers ---------------- */
   /* onTap(el, fn(ev)): fires on pointerdown (toddlers press, they don't "click"); works with several fingers */
@@ -212,9 +226,9 @@
     home.setAttribute('aria-label', 'Home (press and hold)');
     var tip = el('div', 'tg-tip'); tip.textContent = 'Grown-ups: hold 2 seconds to leave'; document.body.appendChild(tip);
     var ht = null, tipT = null;
-    function hold(ev) { ev.preventDefault(); home.classList.add('holding'); tip.classList.add('show'); clearTimeout(tipT); ht = setTimeout(function () { T.sfx.whoosh(); location.href = '/weston/'; }, 2000); }
+    function hold(ev) { ev.preventDefault(); try { if (ev.pointerId != null) home.setPointerCapture(ev.pointerId); } catch (x) {} home.classList.add('holding'); tip.classList.add('show'); clearTimeout(tipT); ht = setTimeout(function () { T.sfx.whoosh(); location.href = '/weston/'; }, 2000); }
     function release() { clearTimeout(ht); home.classList.remove('holding'); tipT = setTimeout(function () { tip.classList.remove('show'); }, 1400); }
-    home.addEventListener('pointerdown', hold); ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (k) { home.addEventListener(k, release); });
+    home.addEventListener('pointerdown', hold); ['pointerup', 'pointercancel'].forEach(function (k) { home.addEventListener(k, release); });
     home.addEventListener('keydown', function (e) { if ((e.key === 'Enter' || e.key === ' ') && !e.repeat) hold(e); });
     home.addEventListener('keyup', release);
     home.addEventListener('click', function (e) { e.preventDefault(); });
@@ -232,12 +246,20 @@
     document.querySelectorAll('.tg-why, .tg-research').forEach(function (s) { s.remove(); }); /* parent notes are no longer shown on game pages */
     document.body.appendChild(st);
     var started = false;
-    st.querySelector('.tg-play').addEventListener('click', function () {
-      audio(); T.sfx.boing();
+    function go(ev) {
+      if (ev) ev.preventDefault();
+      audio();
+      if (started) return;
+      started = true;
+      T.sfx.boing();
       if ('speechSynthesis' in window) { try { var u = new SpeechSynthesisUtterance(' '); u.volume = 0; speechSynthesis.speak(u); } catch (e) {} } /* iOS: unlock speech inside the tap */
-      st.hidden = true; if (!started) { started = true; setTimeout(function () { o.start && o.start(); }, 250); }
+      st.hidden = true;
+      setTimeout(function () { o.start && o.start(); }, 250);
       if (o.intro) setTimeout(function () { T.say(o.intro); }, 350);
-    });
+    }
+    var playBtn = st.querySelector('.tg-play');
+    playBtn.addEventListener('pointerdown', go);
+    playBtn.addEventListener('click', go);
   };
 
   /* no zooming, no long-press menus, no rubber-band scrolling while playing */

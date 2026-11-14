@@ -29,7 +29,12 @@
     cast.forEach(function (a, i) {
       var d = T.el('div', 'ani'); d.innerHTML = '<div class="shadow"></div><div class="e"></div>'; d.querySelector('.e').textContent = art(a);
       d.setAttribute('role', 'button'); d.setAttribute('aria-label', a.n); a.el = d; pen.appendChild(d);
-      d.animate([{ transform: 'translateX(-70vw) scale(.5)', opacity: 0 }, { transform: 'translateX(0) scale(1)', opacity: 1 }], { duration: 900, delay: i * 350, easing: 'cubic-bezier(.2,.9,.3,1.2)', fill: 'backwards' });
+      /* Entrance starts at scale(.5) (~60–110px). Don't let a tap land until the animal is full size. */
+      d.style.pointerEvents = 'none';
+      var enter = d.animate([{ transform: 'translateX(-70vw) scale(.5)', opacity: 0 }, { transform: 'translateX(0) scale(1)', opacity: 1 }], { duration: 900, delay: i * 350, easing: 'cubic-bezier(.2,.9,.3,1.2)', fill: 'backwards' });
+      function entered() { d.style.pointerEvents = ''; }
+      if (enter && enter.finished) enter.finished.then(entered);
+      else setTimeout(entered, 900 + i * 350 + 40);
       T.onTap(d, function () { tapAnimal(a); });
     });
     setTimeout(function () { barn.classList.remove('open'); }, 1400);
@@ -90,7 +95,7 @@
       f.addEventListener('pointerdown', function (e) { if (e.target === f) { T.sfx.tap(); T.burst(e.clientX, e.clientY, { emoji: ['🌼', '🌸', '🍀'], n: 5, spread: 60 }); } });
       build(2);
       T.say("Let's meet the animals!").then(meet).then(askNext);
-      T.idle(function () { if (target && !busy) { T.wiggle(target.el); target.fx(); T.say('Find the ' + target.n + '!'); } }, 8000);
+      T.idle(function () { if (target && target.el && !busy) { T.wiggle(target.el); target.fx(); T.say('Find the ' + target.n + '!'); } }, 8000);
     }
   });
 })();

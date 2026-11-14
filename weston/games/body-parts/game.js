@@ -101,6 +101,7 @@
     var fig = document.querySelector('.bp-figure');
     fig.classList.toggle('view-face', !!face);
     fig.classList.toggle('view-body', !face);
+    requestAnimationFrame(keepPartsOnStage);
   }
 
   function setPrompt(icon, partId) {
@@ -300,6 +301,17 @@
     });
   }
 
+  function keepPartsOnStage() {
+    var area = document.querySelector('.bp-stage-area');
+    if (!area) return;
+    var bound = Math.min(innerHeight - 6, area.getBoundingClientRect().bottom);
+    document.querySelectorAll('.bp-part[data-part="feet"], .bp-part[data-part="legs"], .bp-part[data-part="toes"], .bp-part[data-part="knees"]').forEach(function (p) {
+      p.style.marginTop = '0px';
+      var r = p.getBoundingClientRect();
+      if (r.bottom > bound) p.style.marginTop = (bound - r.bottom) + 'px';
+    });
+  }
+
   function buildStage() {
     var stage = T.stage;
     stage.classList.add('bp-stage');
@@ -405,12 +417,14 @@
       T.sfx.tap();
       startSong();
     });
+    window.addEventListener('resize', keepPartsOnStage);
     T.idle(function () {
       if (busy || mode === 'friends' || singing) return;
       var el = document.querySelector('.bp-part[data-part="' + (PARTS[target] && PARTS[target].alias || target) + '"]');
       if (el && mode === 'find') T.wiggle(el);
     }, 8000);
     setMode('find');
+    keepPartsOnStage();
   }
 
   T.init({

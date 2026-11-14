@@ -48,7 +48,7 @@
       { duration: T.reduceMotion ? 300 : 1300, easing: 'ease-in-out' }).finished.then(function () { br.remove(); });
   }
   function pickBucket(b) {
-    var k = b.dataset.k; T.bounce(b);
+    var k = b.dataset.k; T.wiggle(b);
     if (busy || !target) { T.sfx.tap(); T.say(k); return; }
     busy = true;
     if (k === target) {
@@ -89,11 +89,11 @@
       studio = T.el('div', 'studio'); fridge = T.el('div', 'fridge'); easel = T.el('div', 'easel'); buckets = T.el('div', 'buckets');
       splat = T.el('div', 'splat'); splat.setAttribute('aria-label', 'this color'); painter = T.el('div', 'painter'); painter.textContent = '🧑‍🎨';
       [fridge, splat, painter, easel, buckets].forEach(function (e) { studio.appendChild(e); }); T.stage.appendChild(studio);
-      T.onTap(splat, function () { T.bounce(splat); T.sfx.boing(); if (target) { T.say(target + '!'); hint(); } });
+      T.onTap(splat, function () { T.wiggle(splat); T.sfx.boing(); if (target) { T.say(target + '!'); hint(); } });
       T.onTap(easel, function (e) { T.sfx.tap(); T.burst(e.clientX, e.clientY, { n: 5, colors: [target ? C[target] : '#fff'], spread: 50 }); if (target && !busy) T.say('Find ' + target + '!'); else if (pic) T.say(pic[0] + '!'); });
       studio.addEventListener('pointerdown', function (e) { if (e.target === studio) { T.sfx.tap(); T.burst(e.clientX, e.clientY, { n: 6, spread: 60 }); } });
       T.say("Let's paint!").then(showPicture);
-      T.idle(function () { if (target && !busy) { hint(); T.bounce(splat); T.say('Find ' + target + '!'); } }, 8000);
+      T.idle(function () { if (target && !busy) { hint(); T.wiggle(splat); T.say('Find ' + target + '!'); } }, 8000);
     }
   });
 })();

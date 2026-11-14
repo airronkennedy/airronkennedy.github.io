@@ -184,17 +184,22 @@
 
   function bindPiece(p) {
     T.drag(p, {
-      onStart: function () {
-        if (p.classList.contains('locked')) return false;
+      start: function () {
+        if (p.classList.contains('locked')) return;
         if (chosen && chosen !== p) chosen.classList.remove('chosen');
         chosen = p;
         p.classList.add('chosen', 'dragging');
         T.sfx.tap();
       },
-      onMove: function () {},
-      onEnd: function (info) {
+      move: function (x, y, ox, oy) {
+        if (p.classList.contains('locked')) return;
+        p.style.left = (x - ox) + 'px';
+        p.style.top = (y - oy) + 'px';
+      },
+      end: function (x, y) {
         p.classList.remove('dragging');
-        tryPlace(p, info.clientX, info.clientY);
+        if (p.classList.contains('locked')) return;
+        tryPlace(p, x, y);
       },
     });
     T.onTap(p, function () {
@@ -241,7 +246,7 @@
     if (chosen === piece) chosen = null;
     placed.push(i);
     T.sfx.snap();
-    T.burst(x, y, 10);
+    T.burst(x, y, { n: 10 });
     if (placed.length === nPieces) finishPuzzle();
     else {
       T.sfx.chime();
@@ -293,7 +298,7 @@
         s.setAttribute('aria-label', n);
         T.onTap(s, function (e) {
           T.sfx.pop();
-          T.burst(e.clientX, e.clientY, 8);
+          T.burst(e.clientX, e.clientY, { n: 8 });
           T.say(n);
         });
         box.appendChild(s);
@@ -355,7 +360,7 @@
       var t = ev.target;
       if (t === stage || t === sky || (t.classList && (t.classList.contains('pz-hill') || t.classList.contains('pz-board-wrap') || t.classList.contains('pz-tray') || t.classList.contains('pz-rail') || t.classList.contains('pz-sky')))) {
         T.sfx.tap();
-        T.burst(ev.clientX, ev.clientY, 6);
+        T.burst(ev.clientX, ev.clientY, { n: 6 });
       }
     });
   }

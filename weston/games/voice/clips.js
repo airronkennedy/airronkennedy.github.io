@@ -491,3 +491,5 @@ window.WESTON_VOICE = {
 "the bear wants to play": "body-parts/friend-08.m4a",
 "the robot wants to play": "body-parts/friend-09.m4a"
 };
+/* Filenames that are actually in this folder. Empty until Dad drops in recordings. The shell skips fetch (and the 404) for anything not listed. */
+window.WESTON_VOICE_FILES = [];
