@@ -53,3 +53,5 @@ body{font-family:"Avenir Next","Segoe UI Variable","Segoe UI",system-ui,sans-ser
 .tg-bounce{animation:tgbounce .6s cubic-bezier(.2,.9,.3,1.5)}
 @keyframes tgbounce{30%{transform:scale(1.25)}60%{transform:scale(.92)}}
 @media (prefers-reduced-motion:reduce){.tg-start .big,.tg-play{animation:none}.tg-wiggle,.tg-bounce{animation:none}}
+.tg-btn:focus{outline:none}.tg-btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+@media (max-width:520px){.tg-jar{gap:0;padding:8px 10px;font-size:22px;max-width:calc(100vw - 176px)}.tg-jar .slot{width:26px;height:30px}}

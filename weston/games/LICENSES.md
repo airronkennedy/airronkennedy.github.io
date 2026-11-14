@@ -9,6 +9,7 @@ Every game under `/weston/games/` must only use assets listed here. Add a row be
 | Spoken words and prompts | `shell/shell.js` (`Toddler.say`) | The device's own built-in text-to-speech voice (Web Speech API); no recordings are shipped | Rendered on the device, nothing redistributed |
 | Emoji pictures (animals, shapes, icons) | game pages, hub tiles | Typed Unicode characters drawn by the device's system emoji font (Apple Color Emoji on iPad); no emoji images are shipped | Rendered by the OS font, nothing redistributed |
 | Shapes, bubbles, characters drawn with CSS / SVG / canvas | game folders | Original, drawn in code | © Airron Kennedy |
+| Extra drum, shaker, bell, block, crash and toot voices | `/weston/games/drum-pad/game.js` | Synthesized live with the Web Audio API through `Toddler.tone` and `Toddler.noise` (same mute path as the shell); no audio files | Original (generated) |
 
 Rules for adding assets:
 

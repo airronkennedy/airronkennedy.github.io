@@ -1,0 +1,62 @@
+/* Counting Ducks — a living pond. Keep the top ~100px clear for shell chrome. */
+#stage{--water:#3aa0c8;--sky1:#9ad8ff;--sky2:#e8f6ff}
+#stage.scene-dawn{--water:#5aa7b8;--sky1:#ffb07a;--sky2:#ffe4c4}
+#stage.scene-day{--water:#3aa0c8;--sky1:#7ec8f8;--sky2:#e4f4ff}
+#stage.scene-dusk{--water:#3d6e9a;--sky1:#e07a5f;--sky2:#f2c9a1}
+#stage.scene-night{--water:#1d3a5c;--sky1:#1a2744;--sky2:#3a4a72}
+
+.sky{position:absolute;inset:0 0 38% 0;background:linear-gradient(to bottom,var(--sky2),var(--sky1));transition:background 1s}
+.sun,.moon{position:absolute;width:18vmin;height:18vmin;border-radius:50%;right:10%;top:14%;pointer-events:none;box-shadow:0 0 40px 12px rgba(255,220,120,.45);background:radial-gradient(circle at 35% 35%,#fff6c8,#ffd36a 55%,#f0a020)}
+.moon{background:radial-gradient(circle at 35% 35%,#f4f1e0,#d5d0c0);box-shadow:0 0 24px 8px rgba(200,220,255,.25)}
+.sun.hid,.moon.hid{display:none}
+
+.water{position:absolute;left:0;right:0;bottom:0;height:46%;background:linear-gradient(to bottom,var(--water),#1a5a78);overflow:hidden}
+.water::before,.water::after{content:"";position:absolute;left:-10%;right:-10%;height:28px;border-radius:50%;background:rgba(255,255,255,.16);animation:wave 5s ease-in-out infinite}
+.water::after{top:18%;animation-duration:7s;opacity:.5}
+@keyframes wave{50%{transform:translateY(10px)}}
+
+.reed{position:absolute;bottom:42%;width:14px;height:22vmin;background:linear-gradient(#2f7a3a,#1c5528);border-radius:8px 8px 2px 2px;transform-origin:bottom center;animation:sway 4s ease-in-out infinite;pointer-events:none}
+.reed::after{content:"";position:absolute;top:-8px;left:-10px;width:28px;height:16px;background:#3d9248;border-radius:50% 0 50% 50%;transform:rotate(-20deg)}
+.reed.r2{animation-duration:5.2s;height:18vmin}
+@keyframes sway{50%{transform:rotate(6deg)}}
+
+.lily{position:absolute;width:12vmin;height:7vmin;background:#4a9a58;border-radius:50%;pointer-events:none;box-shadow:0 4px 0 #2e6a3a}
+.lily::after{content:"";position:absolute;left:50%;top:0;width:0;height:0;border-left:2vmin solid transparent;border-right:2vmin solid transparent;border-top:3.2vmin solid var(--water)}
+
+.cloud{position:absolute;background:#fff;border-radius:40px;opacity:.85;pointer-events:none;animation:drift 40s linear infinite}
+.cloud::before,.cloud::after{content:"";position:absolute;background:#fff;border-radius:50%}
+.cloud::before{width:60%;height:80%;left:10%;top:-50%}
+.cloud::after{width:50%;height:70%;right:10%;top:-40%}
+@keyframes drift{from{transform:translateX(-20vw)}to{transform:translateX(110vw)}}
+
+.duck{width:28vmin;height:28vmin;min-width:150px;min-height:150px;z-index:4;filter:drop-shadow(0 8px 6px rgba(0,0,0,.25));transition:left .6s cubic-bezier(.2,.8,.3,1),top .6s cubic-bezier(.2,.8,.3,1);animation:bob 2.4s ease-in-out infinite}
+.duck.alt{animation-duration:2.9s}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.duck-inner{position:relative;width:70%;height:58%;}
+.duck-body{position:absolute;left:8%;bottom:0;width:84%;height:70%;border-radius:50% 50% 46% 46%;background:radial-gradient(circle at 30% 30%,#ffe56a,#f2c01a 60%,#d39a00)}
+.duck.d2 .duck-body{background:radial-gradient(circle at 30% 30%,#fff4d0,#f0d48a 60%,#d0b060)}
+.duck.d3 .duck-body{background:radial-gradient(circle at 30% 30%,#ffd0a0,#f08a40 60%,#c45a18)}
+.duck-wing{position:absolute;left:18%;top:28%;width:42%;height:42%;border-radius:50%;background:rgba(255,255,255,.28);transform-origin:30% 60%;animation:flap 1.6s ease-in-out infinite}
+@keyframes flap{50%{transform:rotate(-18deg)}}
+.duck-head{position:absolute;right:-6%;top:-38%;width:58%;height:62%;border-radius:50%;background:radial-gradient(circle at 40% 30%,#ffe56a,#f2c01a 70%)}
+.duck.d2 .duck-head{background:radial-gradient(circle at 40% 30%,#fff4d0,#f0d48a 70%)}
+.duck.d3 .duck-head{background:radial-gradient(circle at 40% 30%,#ffd0a0,#f08a40 70%)}
+.duck-eye{position:absolute;left:38%;top:32%;width:18%;height:18%;border-radius:50%;background:#1a1a1a;box-shadow:2px 0 0 3px #fff inset}
+.duck-eye::after{content:"";position:absolute;inset:0;border-radius:50%;background:#1a1a1a;animation:blink 5s ease-in-out infinite}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}94%,97%{transform:scaleY(.08)}}
+.duck-bill{position:absolute;right:-28%;top:48%;width:44%;height:22%;background:#f08a28;border-radius:40% 60% 60% 40%;transform:rotate(-8deg)}
+.duck-bill::after{content:"";position:absolute;left:10%;top:40%;right:10%;height:2px;background:rgba(0,0,0,.2)}
+.duck.counted .duck-body,.duck.counted .duck-head{box-shadow:0 0 0 6px rgba(255,255,255,.7)}
+.duck.talk .duck-bill{animation:talk .3s ease-in-out 2}
+@keyframes talk{50%{transform:rotate(-8deg) scaleY(1.35)}}
+
+.ripple{position:absolute;border:3px solid rgba(255,255,255,.7);border-radius:50%;pointer-events:none;animation:rip 0.9s ease-out forwards;z-index:3}
+@keyframes rip{to{transform:scale(4);opacity:0}}
+
+.num-pop{position:absolute;z-index:6;font-size:min(14vw,96px);font-weight:800;color:#fff;text-shadow:0 4px 0 rgba(0,0,0,.2),0 0 16px rgba(255,200,40,.8);pointer-events:none;animation:numin .8s cubic-bezier(.2,.9,.3,1.4) forwards}
+@keyframes numin{0%{transform:translate(-50%,-40%) scale(.3);opacity:0}30%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}100%{opacity:0;transform:translate(-50%,-120%) scale(.9)}}
+
+@media (prefers-reduced-motion:reduce){
+  .duck,.reed,.cloud,.sun,.water::before,.water::after,.duck-wing,.duck-eye::after{animation:none}
+  .duck{transition:none}
+}

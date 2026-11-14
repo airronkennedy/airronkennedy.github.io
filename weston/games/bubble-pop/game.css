@@ -1,0 +1,17 @@
+.scene{position:absolute;inset:0;transition:background 1.2s}
+.scene.sea{background:radial-gradient(ellipse 120% 80% at 50% 0%,#5fd0ff,#1a6fb5 55%,#0a2f66)}
+.scene.sky{background:linear-gradient(#7fd3ff,#bfe9ff 60%,#ffe9c4)}
+.scene.space{background:radial-gradient(ellipse 90% 70% at 50% 100%,#4b2d8f,#140c38 60%,#05040f)}
+.deco{position:absolute;pointer-events:none;font-size:64px;opacity:.85;will-change:transform}
+.bub{position:absolute;left:0;top:0;border-radius:50%;cursor:pointer;will-change:transform;touch-action:none;
+  background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95) 0 7%,rgba(255,255,255,.25) 12%,transparent 30%),
+   radial-gradient(circle at 70% 75%,hsla(var(--h),100%,80%,.55),transparent 45%),
+   radial-gradient(circle,hsla(var(--h),95%,70%,.12) 55%,hsla(var(--h),100%,75%,.65) 70%,hsla(calc(var(--h) + 60),100%,85%,.9) 74%,transparent 76%);
+  box-shadow:inset 0 0 20px hsla(var(--h),100%,85%,.35)}
+.bub .in{position:absolute;inset:0;display:grid;place-items:center;font-size:calc(var(--s) * .42);pointer-events:none}
+.bub.gold{background:radial-gradient(circle at 32% 28%,#fff 0 7%,rgba(255,255,255,.3) 13%,transparent 30%),radial-gradient(circle,rgba(255,220,90,.35) 55%,rgba(255,200,40,.9) 71%,#fff3b0 74%,transparent 76%);box-shadow:0 0 40px rgba(255,210,80,.8)}
+.bub.gold .in{animation:spin 3s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.mini{position:absolute;left:0;top:0;border-radius:50%;pointer-events:none;border:2px solid rgba(255,255,255,.8);background:radial-gradient(circle at 30% 30%,#fff9,transparent 50%);will-change:transform,opacity}
+.drop{position:absolute;left:0;top:0;pointer-events:none;font-size:70px;will-change:transform,opacity}
+.ring{position:absolute;left:0;top:0;border-radius:50%;border:4px solid rgba(255,255,255,.9);pointer-events:none}
