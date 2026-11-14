@@ -27,3 +27,22 @@
 @keyframes askp{50%{transform:translateX(-50%) scale(1.08)}}
 .note{position:absolute;pointer-events:none;font-size:44px}
 @media (prefers-reduced-motion:reduce){.ani .e,.ani.dance .e,.sun,.cloud,.ask.show{animation:none}}
+
+.ani{flex:0 0 auto}
+@media (max-width: 700px) {
+  .pen{flex-wrap:wrap;gap:8px;height:auto;min-height:130px;bottom:max(12px,env(safe-area-inset-bottom));padding:0 8px}
+  .ani{width:120px;height:120px;min-width:120px;min-height:120px;flex:0 0 120px}
+  .ani .e{font-size:96px}
+  .barn{width:90px;height:76px;left:8px;bottom:auto;top:max(128px, calc(env(safe-area-inset-top) + 116px))}
+  .fence{bottom:28vh}
+  .ask{top:max(96px, calc(env(safe-area-inset-top) + 88px));width:120px;height:120px;font-size:64px}
+}
+@media (orientation: landscape) and (max-height: 520px) {
+  .barn{width:96px;height:80px;left:max(92px, calc(env(safe-area-inset-left) + 84px));top:max(16px, env(safe-area-inset-top));bottom:auto}
+  .sun{width:72px;height:72px;top:max(88px, calc(env(safe-area-inset-top) + 76px));right:max(92px, calc(env(safe-area-inset-right) + 84px))}
+  .pen{bottom:max(8px,env(safe-area-inset-bottom));height:auto;min-height:130px;flex-wrap:wrap}
+  .ani{width:130px;height:130px;min-width:120px;min-height:120px;flex:0 0 130px}
+  .ani .e{font-size:100px}
+  .fence{bottom:38%}
+  .ask{top:max(16px, env(safe-area-inset-top));left:auto;right:max(180px, calc(env(safe-area-inset-right) + 170px));transform:none;width:120px;height:120px}
+}

@@ -26,3 +26,20 @@
 .splat::after{content:"";position:absolute;left:62%;top:-12%;width:28%;height:28%;border-radius:50%;background:inherit}
 @media (max-aspect-ratio:3/4){.painter,.splat{top:auto;bottom:calc(min(22vw,170px) + 40px)}.easel{top:46%}}
 @media (prefers-reduced-motion:reduce){.painter,.bucket.hint,.easel.pop{animation:none}}
+
+.splat{min-width:120px;min-height:120px}
+.bucket{flex:0 0 auto}
+@media (max-width: 700px) {
+  .splat{width:120px;height:120px}
+  .painter{font-size:72px}
+  .fridge .mini{width:48px;height:48px}
+}
+@media (orientation: landscape) and (max-height: 520px) {
+  .fridge{top:max(80px, calc(env(safe-area-inset-top) + 68px));transform:none;left:max(92px, calc(env(safe-area-inset-left) + 84px));gap:6px}
+  .fridge .mini{width:44px;height:44px}
+  .buckets{left:auto;right:max(8px,env(safe-area-inset-right));top:max(96px, calc(env(safe-area-inset-top) + 88px));bottom:max(8px,env(safe-area-inset-bottom));width:128px;flex-direction:column;justify-content:center;gap:8px;padding:0}
+  .bucket{width:120px;height:120px;min-width:120px;min-height:120px}
+  .easel{left:40%;top:58%;width:min(42vh,260px);height:min(42vh,260px)}
+  .painter{right:148px;top:30%;font-size:64px}
+  .splat{left:max(8px,env(safe-area-inset-left));top:50%;width:120px;height:120px}
+}

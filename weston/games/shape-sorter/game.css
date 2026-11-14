@@ -19,3 +19,8 @@
 .piece .mouth{fill:none;stroke:#222;stroke-width:4;stroke-linecap:round}
 .piece.held svg{filter:drop-shadow(0 22px 14px rgba(0,0,0,.35))}
 .dancer{position:absolute;z-index:6;pointer-events:none;width:120px;height:120px}
+
+@media (orientation: landscape) and (max-height: 520px) {
+  .box{bottom:max(8px,env(safe-area-inset-bottom));height:min(46vh,200px)}
+  .hole{width:min(22vw,160px);height:min(22vw,160px,36vh)}
+}

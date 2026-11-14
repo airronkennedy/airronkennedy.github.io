@@ -65,3 +65,19 @@
 @media (prefers-reduced-motion:reduce){
   .drum-mascot .body,.drum-star,.drum-mascot .eye{animation:none}
 }
+
+@media (max-width: 700px) {
+  .drum-mode{flex:0 0 120px;}
+  .drum-dock{flex-wrap:wrap;justify-content:center;width:256px;max-width:256px;gap:8px;padding:4px}
+  .drum-pads{bottom:max(280px, calc(env(safe-area-inset-bottom) + 268px))}
+}
+@media (orientation: landscape) and (max-height: 520px) {
+  .drum-mascot,.drum-friends{display:none}
+  .drum-banner{top:max(80px, calc(env(safe-area-inset-top) + 68px));font-size:min(6vmin,28px)}
+  .drum-dock{left:auto;right:max(8px,env(safe-area-inset-right));top:auto;bottom:max(8px,env(safe-area-inset-bottom));transform:none;flex-wrap:wrap;justify-content:center;width:256px;max-width:256px;gap:8px;padding:4px}
+  .drum-pads{top:max(88px, calc(env(safe-area-inset-top) + 76px));bottom:max(8px,env(safe-area-inset-bottom));left:3vw;right:276px}
+  .drum-pad.tg-target{width:min(100%,28vh,22vw);height:min(100%,28vh,22vw)}
+  .drum-go{left:3vw;top:max(88px, calc(env(safe-area-inset-top) + 76px));transform:none;width:120px;height:120px}
+  .drum-stop{right:276px;top:max(88px, calc(env(safe-area-inset-top) + 76px));transform:none;width:120px;height:120px}
+  .drum-go:active,.drum-stop:active{transform:scale(.96)}
+}
