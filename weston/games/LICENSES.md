@@ -10,6 +10,7 @@ Every game under `/weston/games/` must only use assets listed here. Add a row be
 | Emoji pictures (animals, shapes, icons) | game pages, hub tiles | Typed Unicode characters drawn by the device's system emoji font (Apple Color Emoji on iPad); no emoji images are shipped | Rendered by the OS font, nothing redistributed |
 | Shapes, bubbles, characters drawn with CSS / SVG / canvas | game folders | Original, drawn in code | © Airron Kennedy |
 | Extra drum, shaker, bell, block, crash and toot voices | `/weston/games/drum-pad/game.js` | Synthesized live with the Web Audio API through `Toddler.tone` and `Toddler.noise` (same mute path as the shell); no audio files | Original (generated) |
+| Friends (teddy, puppy, kitty, bunny, duckling), covers (blanket, leaf, box, cushion, hands), and rooms drawn in CSS | `/weston/games/peekaboo/` | Original, drawn in code; giggles and reveals use the shared `Toddler` Web Audio helpers (mute-safe); no image or audio files | © Airron Kennedy |
 
 Rules for adding assets:
 
