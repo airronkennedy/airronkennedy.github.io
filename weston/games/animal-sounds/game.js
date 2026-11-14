@@ -45,7 +45,7 @@
     target = lastT = T.pick(choices.length ? choices : cast);
     ask.textContent = '👂'; ask.classList.add('show');
     target.fx(); /* sound first: listening */
-    return T.wait(500).then(function () { return T.say('Who says ' + target.s + ' Find the ' + target.n + '!'); });
+    var t = target; return T.wait(500).then(function () { return T.say('Who says ' + t.s + ' Find the ' + t.n + '!'); });
   }
   function tapAnimal(a) {
     if (busy) { cls(a.el, 'talk', 600); a.fx(); return; }
@@ -64,7 +64,7 @@
     } else {
       /* not wrong — just a different friend: name it, then point back at the one we're looking for */
       busy = true;
-      speak(a, "That's the " + a.n + '! ' + a.s).then(function () { T.sfx.soft(); T.wiggle(target.el); target.fx(); return T.say('Where is the ' + target.n + '?'); }).then(function () { busy = false; });
+      var t = target; speak(a, "That's the " + a.n + '! ' + a.s).then(function () { T.sfx.soft(); T.wiggle(t.el); t.fx(); return T.say('Where is the ' + t.n + '?'); }).then(function () { busy = false; });
     }
   }
   function party() {
@@ -84,7 +84,7 @@
       pen = T.el('div', 'pen'); f.appendChild(pen);
       ask = T.el('div', 'ask'); ask.setAttribute('aria-label', 'Hear it again'); f.appendChild(ask);
       T.stage.appendChild(f);
-      T.onTap(ask, function () { if (target && !busy) { T.bounce(ask); target.fx(); T.wait(450).then(function () { T.say('Who says ' + target.s + ' Find the ' + target.n + '!'); }); } });
+      T.onTap(ask, function () { if (target && !busy) { T.bounce(ask); var t = target; t.fx(); T.wait(450).then(function () { if (target === t) T.say('Who says ' + t.s + ' Find the ' + t.n + '!'); }); } });
       T.onTap(barn, function () { barn.classList.add('open'); T.sfx.boing(); setTimeout(function () { barn.classList.remove('open'); }, 700); });
       T.onTap(f.querySelector('.sun'), function (e) { T.sfx.sparkle(); T.burst(e.clientX, e.clientY, { emoji: ['☀️', '✨'] }); T.say('The sun!'); });
       f.addEventListener('pointerdown', function (e) { if (e.target === f) { T.sfx.tap(); T.burst(e.clientX, e.clientY, { emoji: ['🌼', '🌸', '🍀'], n: 5, spread: 60 }); } });

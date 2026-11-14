@@ -1,10 +1,11 @@
 /* Weston's Planet toddler game shell (window.Toddler).
-   Gives every game: start screen with a giant Play button + "For grown-ups" notes, press-and-hold-2s home button,
+   Gives every game: start screen with a giant Play button, press-and-hold-2s home button,
    mute toggle, star reward jar, synthesized sound effects (Web Audio, no files), spoken cues (on-device speech),
    particle bursts / confetti, and touch helpers. No network calls, no tracking. See ../README.md. */
 (function () {
   'use strict';
   var T = window.Toddler = {};
+  if (!window.WESTON_VOICE) { var vs = document.createElement('script'); vs.src = '/weston/games/voice/clips.js?v=' + (window.WESTON_VOICE_V || '1'); document.head.appendChild(vs); }
   var muted = false; try { muted = localStorage.getItem('weston-muted') === '1'; } catch (e) {}
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   T.reduceMotion = reduce;
@@ -66,19 +67,58 @@
     if (!voice) voice = vs.filter(function (v) { return /^en(-|_)US/i.test(v.lang); })[0] || vs.filter(function (v) { return /^en/i.test(v.lang); })[0] || null;
   }
   if ('speechSynthesis' in window) { chooseVoice(); speechSynthesis.onvoiceschanged = chooseVoice; }
-  /* say(text, {rate, pitch, interrupt=true}) -> Promise resolved when done (or ~ estimated time) */
-  T.say = function (text, o) {
-    o = o || {};
+  /* say(text, {rate, pitch, interrupt=true}) -> Promise resolved when done.
+     Each sentence plays Dad's recording from /weston/games/voice/<file> when voice/clips.js maps it and the file exists;
+     otherwise that sentence falls back to the device voice. Clips can be dropped in one at a time. */
+  var VOICE_DIR = '/weston/games/voice/', clipBuf = {}, clipMissing = {}, sayGen = 0, curSrc = null;
+  function splitSentences(t) { return (String(t).match(/[^.!?\u2026]+[.!?\u2026]*/g) || []).map(function (x) { return x.trim(); }).filter(Boolean); }
+  function voiceKey(t) { return String(t).toLowerCase().replace(/[\u2018\u2019]/g, "'").replace(/[^a-z0-9' ]+/g, ' ').replace(/\s+/g, ' ').trim(); }
+  T.voiceKey = voiceKey; T.splitSentences = splitSentences;
+  function clipFor(sentence) { var m = window.WESTON_VOICE; return m && m[voiceKey(sentence)] || null; }
+  function loadClip(file) {
+    if (clipMissing[file]) return Promise.resolve(null);
+    if (clipBuf[file]) return clipBuf[file];
+    var c = audio(); if (!c || !window.fetch) return Promise.resolve(null);
+    clipBuf[file] = fetch(VOICE_DIR + file).then(function (r) { if (!r.ok) throw 0; return r.arrayBuffer(); })
+      .then(function (ab) { return new Promise(function (ok, no) { c.decodeAudioData(ab, ok, no); }); })
+      .catch(function () { clipMissing[file] = 1; delete clipBuf[file]; return null; });
+    return clipBuf[file];
+  }
+  T.preloadVoice = function (lines) { (lines || []).forEach(function (l) { splitSentences(l).forEach(function (s) { var f = clipFor(s); if (f) loadClip(f); }); }); };
+  function stopSpeech() { if (curSrc) { try { curSrc.stop(); } catch (e) {} curSrc = null; } if ('speechSynthesis' in window) try { speechSynthesis.cancel(); } catch (e) {} }
+  function playBuf(buf, gen) {
     return new Promise(function (res) {
-      if (muted || !('speechSynthesis' in window)) return setTimeout(res, 300);
+      if (gen !== sayGen || muted) return res();
+      var c = audio(), src = c.createBufferSource(), g = c.createGain(); g.gain.value = 1.6; src.buffer = buf; src.connect(g); g.connect(master);
+      var done = false, fin = function () { if (!done) { done = true; if (curSrc === src) curSrc = null; res(); } };
+      src.onended = fin; setTimeout(fin, buf.duration * 1000 + 400); curSrc = src; src.start();
+    });
+  }
+  function tts(text, o, gen) {
+    return new Promise(function (res) {
+      if (gen !== sayGen || muted || !('speechSynthesis' in window)) return setTimeout(res, 300);
       try {
-        if (o.interrupt !== false) speechSynthesis.cancel();
         var u = new SpeechSynthesisUtterance(text); if (voice) u.voice = voice; u.lang = (voice && voice.lang) || 'en-US';
         u.rate = o.rate || .88; u.pitch = o.pitch || 1.15; u.volume = 1;
         var done = false, fin = function () { if (!done) { done = true; res(); } };
         u.onend = fin; u.onerror = fin; setTimeout(fin, 900 + text.length * 90);
         speechSynthesis.speak(u);
       } catch (e) { res(); }
+    });
+  }
+  T.say = function (text, o) {
+    o = o || {};
+    if (muted) return new Promise(function (r) { setTimeout(r, 300); });
+    if (o.interrupt !== false) { sayGen++; stopSpeech(); }
+    var gen = sayGen, parts = splitSentences(text);
+    if (!parts.length) return Promise.resolve();
+    /* start every clip download at once, then play in order; runs of unrecorded sentences are spoken together */
+    var loads = parts.map(function (p) { var f = clipFor(p); return f ? loadClip(f) : Promise.resolve(null); });
+    return Promise.all(loads).then(function (bufs) {
+      var steps = [], pend = [];
+      bufs.forEach(function (b, i) { if (b) { if (pend.length) { steps.push(pend.join(' ')); pend = []; } steps.push(b); } else pend.push(parts[i]); });
+      if (pend.length) steps.push(pend.join(' '));
+      return steps.reduce(function (p, st) { return p.then(function () { if (gen !== sayGen) return; return typeof st === 'string' ? tts(st, o, gen) : playBuf(st, gen); }); }, Promise.resolve());
     });
   };
   var PRAISE = ['Yay!', 'Great job!', 'You did it!', 'Wow!', 'Hooray!', 'Nice!', 'So good!', 'Way to go!'];
@@ -182,16 +222,14 @@
     /* mute */
     var mb = el('button', 'tg-btn tg-mute'); function paintMute() { mb.textContent = muted ? '🔇' : '🔊'; mb.setAttribute('aria-label', muted ? 'Sound off' : 'Sound on'); mb.setAttribute('aria-pressed', muted ? 'true' : 'false'); }
     paintMute();
-    mb.addEventListener('pointerdown', function (e) { e.preventDefault(); muted = !muted; try { localStorage.setItem('weston-muted', muted ? '1' : '0'); } catch (x) {} if (muted && 'speechSynthesis' in window) speechSynthesis.cancel(); paintMute(); if (!muted) T.sfx.tap(); });
+    mb.addEventListener('pointerdown', function (e) { e.preventDefault(); muted = !muted; try { localStorage.setItem('weston-muted', muted ? '1' : '0'); } catch (x) {} if (muted) { sayGen++; stopSpeech(); } paintMute(); if (!muted) T.sfx.tap(); });
     document.body.appendChild(mb);
-    /* start screen; moves .tg-why and .tg-research from the page into "For grown-ups" */
+    /* start screen: icon, title, giant Play button */
     var st = el('section', 'tg-start');
     st.innerHTML = '<div class="big" aria-hidden="true"></div><h1></h1><button class="tg-play" aria-label="Play">▶</button>' +
-      '<details class="tg-adult"><summary>For grown-ups: why this game</summary><div class="in"></div></details>';
+      '';
     st.querySelector('.big').textContent = o.icon || '⭐'; st.querySelector('h1').textContent = o.title || document.title;
-    var inn = st.querySelector('.in');
-    document.querySelectorAll('.tg-why, .tg-research').forEach(function (s) { s.hidden = false; inn.appendChild(s); });
-    if (!inn.children.length) st.querySelector('details').remove();
+    document.querySelectorAll('.tg-why, .tg-research').forEach(function (s) { s.remove(); }); /* parent notes are no longer shown on game pages */
     document.body.appendChild(st);
     var started = false;
     st.querySelector('.tg-play').addEventListener('click', function () {
@@ -203,9 +241,9 @@
   };
 
   /* no zooming, no long-press menus, no rubber-band scrolling while playing */
-  ['gesturestart', 'gesturechange', 'dblclick', 'contextmenu'].forEach(function (k) { document.addEventListener(k, function (e) { if (!e.target.closest || !e.target.closest('.tg-adult')) e.preventDefault(); }); });
+  ['gesturestart', 'gesturechange', 'dblclick', 'contextmenu'].forEach(function (k) { document.addEventListener(k, function (e) { e.preventDefault(); }); });
   document.addEventListener('touchmove', function (e) { if (!e.target.closest || !e.target.closest('.tg-start')) e.preventDefault(); }, { passive: false });
-  document.addEventListener('visibilitychange', function () { if (document.hidden && 'speechSynthesis' in window) speechSynthesis.cancel(); });
+  document.addEventListener('visibilitychange', function () { if (document.hidden) { sayGen++; stopSpeech(); } });
   /* offline-ish: cache the games so they open with weak Wi-Fi (network first, cache fallback) */
   if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('/weston/games/sw.js', { scope: '/weston/games/' }).catch(function () {});
 })();
