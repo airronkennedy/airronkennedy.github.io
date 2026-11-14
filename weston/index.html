@@ -4,36 +4,35 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#071224" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Weston" />
     <title>Weston's Planet</title>
-    <link rel="stylesheet" href="/cosmos.css?v=20261107l" />
-    <link rel="stylesheet" href="room.css?v=20261107l" />
+    <script>/* old invite links like /weston/?x=… go straight to the call */ if (location.search) location.replace('/weston/call/' + location.search);</script>
+    <link rel="stylesheet" href="hub.css?v=20261114a" />
   </head>
   <body>
-    <main class="sky" aria-label="Weston's Planet">
-      <div id="people" class="people"></div>
-      <a class="home nodrag" href="/" aria-label="Back home">&larr; Home</a>
-      <div id="hud" class="hud" hidden>
-        <div class="me nodrag"><video id="selfie" autoplay playsinline muted></video><span>You</span></div>
-        <div class="bar nodrag">
-          <button id="bMute" title="Mute">Mute</button>
-          <button id="bCam" title="Camera off">Camera</button>
-          <button id="bFlip" title="Flip camera">Flip</button>
-          <button id="bCopy" title="Copy invite link">Invite</button>
-          <button id="bLeave" class="leave" title="Leave">Leave</button>
-        </div>
-        <p id="status" class="status"></p>
-      </div>
-      <section id="lobby" class="lobby nodrag">
-        <h1>Weston's <span>Planet</span></h1>
-        <p class="sub">A video call out in space. Turn around to find everyone.</p>
-        <label>Your name (optional)<input id="name" maxlength="20" autocomplete="name" placeholder="Guest" /></label>
-        <button id="bJoin" class="enter">Enter Weston's Planet</button>
-        <p id="lerr" class="err" role="alert"></p>
-      </section>
+    <canvas id="stars" aria-hidden="true"></canvas>
+    <div class="glow" aria-hidden="true"></div>
+    <a class="home" href="/" aria-label="Back to Airron's home page">&larr; Home</a>
+    <header>
+      <div class="world" aria-hidden="true"><span></span></div>
+      <h1>Weston's <span>Planet</span></h1>
+      <p class="sub">Games and a video call, made by Dad.</p>
+    </header>
+    <main id="menu" class="menu" aria-label="Weston's games">
+      <a class="tile call" href="/weston/call/" style="--c:#3f7fa8">
+        <span class="ic" aria-hidden="true">📹</span>
+        <span class="nm">Video Call</span>
+      </a>
     </main>
-    <script src="/sky.js?v=20261107l"></script>
-    <script src="peerjs.min.js?v=20261107l"></script>
-    <script src="room.js?v=20261107l"></script>
+    <footer>
+      <p>Made for Weston by his dad. No ads, no links out, nothing collected in the games.</p>
+      <p><a href="/weston/games/LICENSES.md">Credits &amp; licenses</a></p>
+    </footer>
+    <script src="games/games.js?v=20261114a"></script>
+    <script src="hub.js?v=20261114a"></script>
     <script data-goatcounter="https://airronkennedy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-</body>
+  </body>
 </html>
