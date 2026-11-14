@@ -89,8 +89,9 @@
   function layout() {
     var W = innerWidth, H = innerHeight, n = ducks.length;
     var top = Math.max(120, H * 0.28);
-    var size = Math.max(150, Math.min(W, H) * 0.28);
-    var gap = Math.min(40, W * 0.04);
+    var gap = Math.min(24, W * 0.03);
+    var size = Math.max(120, Math.min(W, H) * 0.28);
+    if (n > 0) size = Math.min(size, (W - 16 - (n - 1) * gap) / n);
     var total = n * size + (n - 1) * gap;
     var x0 = Math.max(8, (W - total) / 2);
     var y = Math.min(H * 0.52, H - size - 24);

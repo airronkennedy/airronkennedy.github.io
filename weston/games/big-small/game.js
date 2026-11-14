@@ -62,9 +62,12 @@
 
   function layout() {
     var W = innerWidth, H = innerHeight;
-    var top = Math.max(120, H * 0.2);
-    var big = Math.max(200, Math.min(W * 0.42, H * 0.46));
-    var little = Math.max(130, big * 0.52);
+    var top = Math.max(110, H * 0.18);
+    var big = Math.min(W * 0.42, H * 0.46, Math.max(80, H - top - 24));
+    big = Math.max(140, big);
+    if (big + top + 16 > H) big = Math.max(120, H - top - 16);
+    var little = Math.max(110, big * 0.52);
+    if (little + 16 > W * 0.45) little = Math.max(100, W * 0.38);
     var y = Math.min(H * 0.34, H - big - 20);
     if (y < top) y = top;
     var gap = Math.max(16, W * 0.04);

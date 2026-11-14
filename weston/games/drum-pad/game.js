@@ -189,7 +189,7 @@
       if (uniqueTried() >= 3) revealFriends();
       if (uniqueTried() >= 6) revealFriends();
 
-      if (mode === 'echo' && !fromEcho) {
+      if (mode === 'echo' && !fromEcho && !echoBusy) {
         echoStep++;
         if (echoStep >= Math.max(1, echoPattern.length)) {
           finishEcho();
@@ -236,7 +236,6 @@
       var n = 1 + Math.min(2, Math.floor(hits / 6));
       echoPattern = [];
       for (var i = 0; i < n; i++) echoPattern.push(T.pick(PADS));
-      T.idle(function () { if (mode === 'echo') T.wiggle(padEls[echoPattern[0].id]); }, 8000);
       T.wait(700).then(playEchoPattern);
     }
 
@@ -259,6 +258,7 @@
     }
 
     function finishEcho() {
+      if (mode !== 'echo' || echoBusy) return;
       echoBusy = true;
       T.sfx.chime();
       T.bounce(mascot);

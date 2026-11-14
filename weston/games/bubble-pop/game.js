@@ -84,6 +84,13 @@
       S.addEventListener('pointermove', function (e) { if (e.buttons && (e.target === S || e.target === scene) && Math.random() < .35) wand(e.clientX, e.clientY); });
       for (var i = 0; i < 4; i++) spawn({ y: T.rand(H() * .35, H() * .8) });
       requestAnimationFrame(loop);
+      addEventListener('resize', function () {
+        bubbles.forEach(function (b) {
+          b.x = Math.max(-20, Math.min(W() - b.s + 20, b.x));
+          if (b.y < -b.s) b.y = H() + 20;
+          if (b.y > H() + b.s + 80) b.y = H() - 40;
+        });
+      });
       T.idle(function () { var b = bubbles.filter(function (x) { return x.y > 100 && x.y < H() - 150; })[0]; if (b) b.el.animate([{ filter: 'brightness(1)' }, { filter: 'brightness(1.9)' }, { filter: 'brightness(1)' }], { duration: 800, iterations: 2 }); T.say('Pop the bubbles!'); }, 9000);
     }
   });
