@@ -3,9 +3,9 @@ body[data-games="1"]{--gold:#f0c4a0}
 body[data-games="1"] .o1{--g:rgba(226,90,42,.45);background:radial-gradient(circle at 34% 30%,#ffd7a0,#e25a2a 40%,#5a1c10 85%)}
 body[data-games="1"] .o2{--g:rgba(255,160,60,.35);background:radial-gradient(circle at 34% 30%,#ffe2a8,#d4742a 40%,#3a1a10 85%)}
 body[data-games="1"] .o3{--g:rgba(255,80,40,.4);background:radial-gradient(circle at 34% 30%,#ffc090,#c43a22 40%,#2a100c 85%)}
-.games-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));padding-bottom:48px}
+.games-grid{grid-template-columns:1fr;max-width:920px;margin-inline:auto;width:100%;padding-bottom:48px}
 .games-grid .shots{padding:0;background:#0a0c14}
-.games-grid .shots a{display:block;width:100%}
+.games-grid .shots a,.games-grid .shots picture{display:block;width:100%}
 .games-grid .shots img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:0;max-width:none}
 .games-grid .txt h2{font-size:clamp(22px,2.4vw,28px);margin:4px 0 10px}
 .games-grid .txt p{font-size:15px}

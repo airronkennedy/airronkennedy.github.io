@@ -4,13 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Games Planet · Airron Kennedy</title>
-    <meta name="description" content="Play Airron Kennedy’s browser games, including Airron’s Fall and Riftstrike." />
+    <meta name="description" content="Play Airron’s Fall, a survival run in the old field, in the browser." />
     <meta property="og:title" content="Games Planet · Airron Kennedy" />
-    <meta property="og:description" content="Play Airron Kennedy’s browser games." />
+    <meta property="og:description" content="Play Airron’s Fall in the browser. Twenty-five minutes on an ashen field." />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://airronkennedy.com/games/" />
+    <meta property="og:image" content="https://airronkennedy.com/games/thumbs/airrons-fall.jpg?v=20261113c" />
+    <meta property="og:image:alt" content="A lone keeper walks an ashen field of cracked stone and ember-lit runes, toward ruined towers and fallen machinery under a pale moon." />
     <meta name="theme-color" content="#05070d" />
+    <link rel="preload" as="image" type="image/webp" href="/games/thumbs/airrons-fall.webp?v=20261113c" imagesrcset="/games/thumbs/airrons-fall-1280.webp?v=20261113c 1280w, /games/thumbs/airrons-fall.webp?v=20261113c 1920w" imagesizes="(max-width: 920px) 100vw, 920px" />
     <link rel="stylesheet" href="/work/work.css?v=20261113a" />
-    <link rel="stylesheet" href="/games/games.css?v=20261113a" />
+    <link rel="stylesheet" href="/games/games.css?v=20261113c" />
   </head>
   <body class="subpage" data-games="1">
     <a class="skip" href="#main">Skip to content</a>
@@ -27,21 +31,36 @@
       <p class="lede">A place to see the games I’m building and play them in the browser.</p>
     </header>
     <main id="main" class="grid games-grid" aria-label="Playable games">
-      <article class="card">
+      <article class="card featured">
         <div class="shots">
           <a href="/arena/" aria-label="Play Airron’s Fall">
-            <img src="/games/thumbs/airrons-fall.webp" alt="Title screen of Airron’s Fall, a top-down arena survival game" width="1280" height="720" loading="lazy" decoding="async" />
+            <picture>
+              <source
+                type="image/webp"
+                srcset="/games/thumbs/airrons-fall-1280.webp?v=20261113c 1280w, /games/thumbs/airrons-fall.webp?v=20261113c 1920w"
+                sizes="(max-width: 920px) 100vw, 920px"
+              />
+              <img
+                src="/games/thumbs/airrons-fall.jpg?v=20261113c"
+                alt="A lone keeper walks an ashen field of cracked stone and ember-lit runes, toward ruined towers and fallen machinery under a pale moon."
+                width="1920"
+                height="1080"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
           </a>
         </div>
         <div class="txt">
-          <p class="meta">Early preview</p>
+          <p class="meta">Play now</p>
           <h2>Airron’s Fall</h2>
-          <p>A top-down bullet-heaven survival game. You move around a walled arena while weapons fire on their own, collect experience to choose upgrades, and last through waves of ash creatures. A run is timed to 25 minutes.</p>
+          <p>Twenty-five minutes on an ashen field. Steer your keeper, let the arsenal work, and last until the Sovereign arrives.</p>
           <div class="actions">
-            <a class="button" href="/arena/">Play →</a>
+            <a class="button" href="/arena/">Play</a>
           </div>
         </div>
       </article>
+      <!-- Other games are hidden for now and will come back later. Do not delete their pages or thumbs.
       <article class="card">
         <div class="shots">
           <a href="/riftstrike-godot/" aria-label="Play Riftstrike">
@@ -72,13 +91,14 @@
           </div>
         </div>
       </article>
+      -->
     </main>
     <footer>
       <div>
         <a class="back" href="/">← Back to orbit</a>
         <p>Airron Kennedy · Games Planet</p>
       </div>
-      <p>Background: NASA, ESA, CSA, STScI<br>Privacy-friendly visitor analytics: GoatCounter</p>
+      <p>Airron’s Fall cover: original artwork made for this site (AI-assisted).<br>Background: NASA, ESA, CSA, STScI<br>Privacy-friendly visitor analytics: GoatCounter</p>
     </footer>
     <a class="back fab" href="/" aria-label="Back to homepage">← Orbit</a>
     <script defer src="/work/work.js?v=20261113a"></script>
