@@ -1,4 +1,4 @@
-import{c as ue,r as l,j as n,s as S,M as D,D as z,o as pe,C as me,E as Y,h as ee,O as fe,A as re,P as Te,a as le,W as He,H as ge,S as Le,b as be,G as ye,d as ne,I as w,R as we}from"./index-D5VqPw9l.js";const Ce=[["path",{d:"M18 6 6 18",key:"1bl5f8"}],["path",{d:"m6 6 12 12",key:"d8bk6v"}]],Ie=ue("x",Ce),Fe=`# Privacy policy: Airron's Fall
+import{c as ue,r as l,j as n,s as S,M as D,D as z,o as pe,C as me,E as Y,h as ee,O as fe,A as re,P as Te,a as le,W as He,H as ge,S as Le,b as be,G as ye,d as ne,I as w,R as we}from"./index-CqPVLDze.js";const Ce=[["path",{d:"M18 6 6 18",key:"1bl5f8"}],["path",{d:"m6 6 12 12",key:"d8bk6v"}]],Ie=ue("x",Ce),Fe=`# Privacy policy: Airron's Fall
 
 Last updated: November 13, 2026
 
