@@ -127,3 +127,14 @@ footer p{margin-top:10px}
 /* name gate */
 html.name-gated body>*:not(dialog){filter:blur(6px)}
 figure.video{margin:18px 0}figure.video video{display:block;margin:auto}
+
+/* Featured: Airron's Fall as the lead project (portrait trailer stills). */
+#featured-airrons-fall h2{font-size:clamp(36px,5.5vw,72px);letter-spacing:.12em;text-transform:uppercase;font-weight:200;text-shadow:0 0 40px rgba(216,180,106,.35);margin:6px 0 8px}
+#featured-airrons-fall .gallery{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+#featured-airrons-fall .gallery img{height:auto;max-height:none;aspect-ratio:9/16;object-fit:cover;width:100%}
+#featured-airrons-fall>.actions{margin-top:22px}
+.gallery.gallery-posters{grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr))}
+.gallery.gallery-posters img{height:auto;max-height:none;aspect-ratio:9/16;object-fit:cover}
+@media(max-width:700px){
+ #featured-airrons-fall .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+}

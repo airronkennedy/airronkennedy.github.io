@@ -1,5 +1,19 @@
 [
   {
+    "slug": "airrons-fall",
+    "title": "Airron’s Fall",
+    "category": "Playable Projects",
+    "role": "Solo Game Designer & Director",
+    "description": "Airron’s Fall is an original, browser-playable arena survival roguelite I designed and directed. It has a medieval look inspired by Dark Souls and Destiny. You choose one of 42 keepers and fight to last a 25-minute run, then face the Ash Sovereign. Weapons evolve when paired with a matching passive. Between runs, gold is spent in the Banked Tithe, and the field holds pickups, missions and unlock objectives. A Compendium, controller and keyboard support, and a live player feedback chat are part of the game. I directed an AI-assisted team of bots to help me build it, through 109 merged pull requests. It is playable now at airronkennedy.com/arena.",
+    "skills": [
+      "Systems design",
+      "Roguelite design",
+      "React/TypeScript",
+      "Direction"
+    ],
+    "play": "https://airronkennedy.com/arena/"
+  },
+  {
     "slug": "crisis-of-dreamcell",
     "title": "Crisis of DreamCell",
     "category": "Game Design",
