@@ -1,5 +1,5 @@
 /* Airron's Fall offline cache. Scope is the game base (e.g. / or /arena/). */
-const CACHE = 'airrons-fall-shell-v5';
+const CACHE = 'airrons-fall-shell-v6';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(self.skipWaiting());
