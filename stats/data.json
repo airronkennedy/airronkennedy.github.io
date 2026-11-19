@@ -1,29 +1,106 @@
 {
- "updated": "2026-11-08T23:17:23+00:00",
+ "updated": "2026-11-19T04:22:26+00:00",
  "note": null,
- "total_visits": 21,
+ "total_visits": 87,
  "visitors": [
+  {
+   "name": "Airron Kennedy",
+   "day": "2026-11-15",
+   "count": 1
+  },
+  {
+   "name": "Airron Kennedy",
+   "day": "2026-11-11",
+   "count": 1
+  },
+  {
+   "name": "Recruiter",
+   "day": "2026-11-11",
+   "count": 1
+  },
+  {
+   "name": "Tyler Wiesen",
+   "day": "2026-11-11",
+   "count": 1
+  },
+  {
+   "name": "Not Lanning",
+   "day": "2026-11-11",
+   "count": 1
+  },
+  {
+   "name": "Recruiter",
+   "day": "2026-11-10",
+   "count": 1
+  },
   {
    "name": "Airron Kennedy",
    "day": "2026-11-07",
    "count": 1
   }
  ],
+ "arena_players": [
+  {
+   "name": "BotTest",
+   "day": "2026-11-18",
+   "count": 1
+  }
+ ],
  "pages": [
   {
    "name": "/",
-   "count": 8
+   "count": 28
+  },
+  {
+   "name": "/games",
+   "count": 10
   },
   {
    "name": "/work",
-   "count": 2
+   "count": 9
   },
   {
    "name": "/weston",
-   "count": 1
+   "count": 6
+  },
+  {
+   "name": "/ops",
+   "count": 4
   },
   {
    "name": "/tracker",
+   "count": 4
+  },
+  {
+   "name": "/work/projects/airronbot.html?r=recruiter",
+   "count": 2
+  },
+  {
+   "name": "/work/?r=recruiter",
+   "count": 2
+  },
+  {
+   "name": "/arena",
+   "count": 1
+  },
+  {
+   "name": "/weston/call",
+   "count": 1
+  },
+  {
+   "name": "/work/projects/crisis-of-dreamcell.html",
+   "count": 1
+  },
+  {
+   "name": "/work/projects/airronbot.html",
+   "count": 1
+  },
+  {
+   "name": "/work/projects/gun-game.html",
+   "count": 1
+  },
+  {
+   "name": "/work/projects/website-github.html",
    "count": 1
   },
   {
@@ -62,27 +139,35 @@
  "referrers": [
   {
    "name": "(unknown)",
-   "count": 8
+   "count": 36
+  },
+  {
+   "name": "www.linkedin.com",
+   "count": 2
   }
  ],
  "countries": [
   {
    "name": "United States",
-   "count": 20
+   "count": 83
   },
   {
    "name": "United Kingdom",
+   "count": 3
+  },
+  {
+   "name": "Russia",
    "count": 1
   }
  ],
  "browsers": [
   {
    "name": "Safari",
-   "count": 16
+   "count": 71
   },
   {
    "name": "Chrome",
-   "count": 4
+   "count": 15
   },
   {
    "name": "(unknown)",
@@ -92,31 +177,39 @@
  "systems": [
   {
    "name": "iOS",
-   "count": 17
-  },
-  {
-   "name": "Linux",
-   "count": 2
+   "count": 70
   },
   {
    "name": "Windows",
+   "count": 8
+  },
+  {
+   "name": "Linux",
+   "count": 6
+  },
+  {
+   "name": "macOS",
    "count": 2
   },
   {
-   "name": "Screen: (unknown)",
-   "count": 17
+   "name": "Android",
+   "count": 1
   },
   {
    "name": "Screen: (unknown)",
-   "count": 0
+   "count": 71
   },
   {
    "name": "Screen: (unknown)",
-   "count": 4
+   "count": 3
   },
   {
    "name": "Screen: (unknown)",
-   "count": 0
+   "count": 8
+  },
+  {
+   "name": "Screen: (unknown)",
+   "count": 5
   },
   {
    "name": "Screen: (unknown)",
