@@ -60,7 +60,7 @@ window.TrackerLock={open:(cb)=>open(cb,'tracker'),openLock:open};
 const dialogs={};
 function open(onSuccess,name='tracker'){
  const L=LOCKS[name];let dialog=dialogs[name];
- if(isUnlocked(L)){onSuccess();return;}
+ if(isUnlocked(L)&&!(name==='stats'&&!(()=>{try{return sessionStorage.getItem('airron-stats-code')}catch{return 'x'}})())){onSuccess();return;}
  if(!dialog){
  dialog=dialogs[name]=document.createElement('dialog');dialog.className=L.cls;
  dialog.setAttribute('aria-labelledby','lock-title');
@@ -74,7 +74,7 @@ function open(onSuccess,name='tracker'){
  try{
  const digest=await digestCode(input.value);
  const actual=Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join('');
- if(actual===L.hash){remember(L);input.value='';dialog.close();onSuccess()}
+ if(actual===L.hash){remember(L);if(name==='stats'){try{sessionStorage.setItem('airron-stats-code',input.value)}catch{}}input.value='';dialog.close();onSuccess()}
  else{error.textContent=L.err;input.select()}
  }catch{error.textContent='The access check could not finish. Please try again.'}
  };
