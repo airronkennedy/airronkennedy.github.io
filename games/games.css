@@ -20,3 +20,6 @@ body[data-games="1"] .o3{--g:rgba(255,80,40,.4);background:radial-gradient(circl
 @media (prefers-reduced-motion:reduce){
   .games-grid .card{animation:none}
 }
+.games-grid .txt .disclaimer{font-size:12px;opacity:.7;margin-top:10px;line-height:1.5}
+.games-grid .button.coming-soon{cursor:default;opacity:.72;pointer-events:none;background:rgba(240,217,184,.06)}
+.games-grid .wip{color:#ead266;font-weight:700;letter-spacing:.08em;opacity:1}
