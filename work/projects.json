@@ -14,6 +14,19 @@
     "play": "https://airronkennedy.com/arena/"
   },
   {
+    "slug": "magic-commander",
+    "title": "Magic Commander",
+    "category": "Playable Projects",
+    "role": "Designer & Engineer",
+    "description": "Magic Commander is a free, unofficial, fan-made Commander tabletop I designed and directed as a browser app. Players create a game, share a 6-letter room code, and two to four people pick up the same table later. Magic: The Gathering is a trademark of Wizards of the Coast; this project is not affiliated with or endorsed by Wizards of the Coast.",
+    "skills": [
+      "Systems design",
+      "Web app",
+      "Multiplayer"
+    ],
+    "play": "https://mtg-commander-taupe.vercel.app"
+  },
+  {
     "slug": "crisis-of-dreamcell",
     "title": "Crisis of DreamCell",
     "category": "Game Design",
