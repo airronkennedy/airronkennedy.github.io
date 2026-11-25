@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Commander Wall · Airron Kennedy</title>
+    <meta name="description" content="Search a commander and post it to a shared wall. Large card images, newest first." />
+    <meta property="og:title" content="Commander Wall · Airron Kennedy" />
+    <meta property="og:description" content="Search a commander and post it to a shared wall. Large card images, newest first." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://airronkennedy.com/commanders/" />
+    <meta property="og:image" content="https://airronkennedy.com/games/thumbs/commander-wall.webp?v=20261125a" />
+    <meta property="og:image:alt" content="A cloaked keeper stands beyond a low stone wall of three ember-lit rune tablets, under a pale moon among ruined arches." />
+    <meta name="theme-color" content="#05070d" />
+    <link rel="stylesheet" href="/work/work.css?v=20261113a" />
+    <link rel="stylesheet" href="/commanders/commanders.css?v=20261125a" />
+  </head>
+  <body class="subpage" data-commanders="1">
+    <a class="skip" href="#search">Skip to search</a>
+    <div class="bg" aria-hidden="true"></div>
+    <div class="veil" aria-hidden="true"></div>
+    <canvas id="stars" aria-hidden="true"></canvas>
+    <span class="orb o1" aria-hidden="true"></span>
+    <span class="orb o2" aria-hidden="true"></span>
+    <span class="orb o3" aria-hidden="true"></span>
+    <header class="top">
+      <a class="back" href="/games/">← Games Planet</a>
+      <p class="eyebrow">Airron <span>Kennedy</span></p>
+      <h1>Commander Wall</h1>
+      <p class="lede">Search a commander and post it so it can be read on a shared wall. Newest first. That’s all it does.</p>
+    </header>
+    <main id="main">
+      <section class="post-panel" aria-label="Post a commander">
+        <label for="search">Search a commander</label>
+        <div class="search-row">
+          <input
+            id="search"
+            type="search"
+            name="q"
+            placeholder="Start typing a commander name"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+            enterkeyhint="search"
+          />
+          <button type="button" id="post" class="button" disabled>Post</button>
+        </div>
+        <div id="results" class="results" hidden role="listbox" aria-label="Search results"></div>
+        <p id="status" class="status" role="status"></p>
+        <div id="picked" class="picked" hidden></div>
+      </section>
+      <section id="wall" class="wall" aria-live="polite" aria-label="Posted commanders"></section>
+      <p id="more-status" class="status more-status" role="status"></p>
+      <div id="sentinel" class="sentinel" aria-hidden="true"></div>
+    </main>
+    <footer>
+      <div>
+        <a class="back" href="/games/">← Games Planet</a>
+        <p>Airron Kennedy · Commander Wall</p>
+      </div>
+      <p>
+        Unofficial fan-made site. Magic: The Gathering is a trademark of Wizards of the Coast.
+        Not affiliated with or endorsed by Wizards of the Coast.
+        Card images via Scryfall.
+      </p>
+    </footer>
+    <a class="back fab" href="/games/" aria-label="Back to Games Planet">← Games</a>
+    <script defer src="/work/work.js?v=20261113a"></script>
+    <script type="module" src="/commanders/commanders.js?v=20261125a"></script>
+    <script data-goatcounter="https://airronkennedy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </body>
+</html>
