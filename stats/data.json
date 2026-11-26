@@ -1,8 +1,377 @@
 {
- "updated": "2026-11-19T04:22:26+00:00",
+ "updated": "2026-11-26T07:05:35+00:00",
  "note": null,
- "total_visits": 87,
+ "timezone": "America/Los_Angeles",
+ "tracking_started": "2026-11-07",
+ "total_visits": 131,
+ "total_events": 14,
+ "unique_visitors": 131,
+ "unique_visitors_note": "GoatCounter visits are unique sessions in the selected range, not raw pageviews.",
+ "new_vs_returning": null,
+ "daily": [
+  {
+   "day": "2026-11-07",
+   "visits": 10
+  },
+  {
+   "day": "2026-11-08",
+   "visits": 10
+  },
+  {
+   "day": "2026-11-09",
+   "visits": 2
+  },
+  {
+   "day": "2026-11-10",
+   "visits": 9
+  },
+  {
+   "day": "2026-11-11",
+   "visits": 17
+  },
+  {
+   "day": "2026-11-12",
+   "visits": 4
+  },
+  {
+   "day": "2026-11-13",
+   "visits": 5
+  },
+  {
+   "day": "2026-11-14",
+   "visits": 9
+  },
+  {
+   "day": "2026-11-15",
+   "visits": 7
+  },
+  {
+   "day": "2026-11-16",
+   "visits": 4
+  },
+  {
+   "day": "2026-11-17",
+   "visits": 0
+  },
+  {
+   "day": "2026-11-18",
+   "visits": 5
+  },
+  {
+   "day": "2026-11-19",
+   "visits": 7
+  },
+  {
+   "day": "2026-11-20",
+   "visits": 10
+  },
+  {
+   "day": "2026-11-21",
+   "visits": 7
+  },
+  {
+   "day": "2026-11-22",
+   "visits": 4
+  },
+  {
+   "day": "2026-11-23",
+   "visits": 6
+  },
+  {
+   "day": "2026-11-24",
+   "visits": 8
+  },
+  {
+   "day": "2026-11-25",
+   "visits": 7
+  }
+ ],
+ "weekly": [
+  {
+   "start": "2026-11-02",
+   "end": "2026-11-08",
+   "label": "Nov 2–Nov 8, 2026",
+   "visits": 20
+  },
+  {
+   "start": "2026-11-09",
+   "end": "2026-11-15",
+   "label": "Nov 9–Nov 15, 2026",
+   "visits": 53
+  },
+  {
+   "start": "2026-11-16",
+   "end": "2026-11-22",
+   "label": "Nov 16–Nov 22, 2026",
+   "visits": 37
+  },
+  {
+   "start": "2026-11-23",
+   "end": "2026-11-29",
+   "label": "Nov 23–Nov 29, 2026",
+   "visits": 21
+  }
+ ],
+ "monthly": [
+  {
+   "month": "2026-11",
+   "label": "November 2026",
+   "visits": 131
+  }
+ ],
+ "today_hourly": [
+  {
+   "day": "2026-11-24",
+   "hour": 0,
+   "visits": 3
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 1,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 2,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 3,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 4,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 5,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 6,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 7,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 8,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 9,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 10,
+   "visits": 2
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 11,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 12,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 13,
+   "visits": 3
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 14,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 15,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 16,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 17,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 18,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 19,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 20,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 21,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 22,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-24",
+   "hour": 23,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 0,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 1,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 2,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 3,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 4,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 5,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 6,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 7,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 8,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 9,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 10,
+   "visits": 4
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 11,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 12,
+   "visits": 1
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 13,
+   "visits": 1
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 14,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 15,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 16,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 17,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 18,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 19,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 20,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 21,
+   "visits": 0
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 22,
+   "visits": 1
+  },
+  {
+   "day": "2026-11-25",
+   "hour": 23,
+   "visits": 0
+  }
+ ],
  "visitors": [
+  {
+   "name": "Reee",
+   "day": "2026-11-23",
+   "count": 1
+  },
+  {
+   "name": "Airron Kennedy",
+   "day": "2026-11-18",
+   "count": 1
+  },
   {
    "name": "Airron Kennedy",
    "day": "2026-11-15",
@@ -41,6 +410,21 @@
  ],
  "arena_players": [
   {
+   "name": "Airron Kennedy",
+   "day": "2026-11-19",
+   "count": 2
+  },
+  {
+   "name": "Testing 123",
+   "day": "2026-11-19",
+   "count": 1
+  },
+  {
+   "name": "Airron Kennedy",
+   "day": "2026-11-18",
+   "count": 1
+  },
+  {
    "name": "BotTest",
    "day": "2026-11-18",
    "count": 1
@@ -49,18 +433,22 @@
  "pages": [
   {
    "name": "/",
-   "count": 28
+   "count": 44
   },
   {
    "name": "/games",
-   "count": 10
+   "count": 24
   },
   {
    "name": "/work",
-   "count": 9
+   "count": 14
   },
   {
    "name": "/weston",
+   "count": 11
+  },
+  {
+   "name": "/arena",
    "count": 6
   },
   {
@@ -72,6 +460,14 @@
    "count": 4
   },
   {
+   "name": "/commanders",
+   "count": 3
+  },
+  {
+   "name": "/quest",
+   "count": 3
+  },
+  {
    "name": "/work/projects/airronbot.html?r=recruiter",
    "count": 2
   },
@@ -80,7 +476,7 @@
    "count": 2
   },
   {
-   "name": "/arena",
+   "name": "/christmas",
    "count": 1
   },
   {
@@ -136,38 +532,204 @@
    "count": 1
   }
  ],
+ "planets": [
+  {
+   "name": "Orbit / Home",
+   "count": 44
+  },
+  {
+   "name": "Experience Planet",
+   "count": 30
+  },
+  {
+   "name": "Games Planet",
+   "count": 24
+  },
+  {
+   "name": "Airron's Fall",
+   "count": 6
+  },
+  {
+   "name": "Airron's Quest",
+   "count": 3
+  },
+  {
+   "name": "Commander Wall",
+   "count": 3
+  },
+  {
+   "name": "Work Planet",
+   "count": 4
+  },
+  {
+   "name": "Team Task Tracker",
+   "count": 4
+  },
+  {
+   "name": "Weston's Planet",
+   "count": 12
+  },
+  {
+   "name": "Christmas Planet",
+   "count": 1
+  }
+ ],
  "referrers": [
   {
-   "name": "(unknown)",
-   "count": 36
+   "name": "Direct / unknown",
+   "count": 63
   },
   {
    "name": "www.linkedin.com",
    "count": 2
   }
  ],
+ "sources": [
+  {
+   "name": "LinkedIn",
+   "count": 2
+  },
+  {
+   "name": "Recruiter link (?r=recruiter)",
+   "count": 4
+  },
+  {
+   "name": "Direct / unknown",
+   "count": 63
+  }
+ ],
  "countries": [
   {
    "name": "United States",
-   "count": 83
+   "count": 140
   },
   {
    "name": "United Kingdom",
    "count": 3
   },
   {
+   "name": "France",
+   "count": 1
+  },
+  {
    "name": "Russia",
    "count": 1
   }
  ],
+ "regions": [
+  {
+   "name": "Oregon, United States",
+   "count": 116
+  },
+  {
+   "name": "Florida, United States",
+   "count": 7
+  },
+  {
+   "name": "Pennsylvania, United States",
+   "count": 7
+  },
+  {
+   "name": "Alabama, United States",
+   "count": 4
+  },
+  {
+   "name": "United Kingdom",
+   "count": 3
+  },
+  {
+   "name": "Louisiana, United States",
+   "count": 2
+  },
+  {
+   "name": "Tennessee, United States",
+   "count": 2
+  },
+  {
+   "name": "California, United States",
+   "count": 1
+  },
+  {
+   "name": "Virginia, United States",
+   "count": 1
+  },
+  {
+   "name": "France",
+   "count": 1
+  },
+  {
+   "name": "Russia",
+   "count": 1
+  }
+ ],
+ "cities": [],
+ "cities_note": "GoatCounter does not provide city-level data. Regions and states are shown instead.",
  "browsers": [
   {
    "name": "Safari",
-   "count": 71
+   "count": 118
   },
   {
    "name": "Chrome",
-   "count": 15
+   "count": 26
+  },
+  {
+   "name": "(unknown)",
+   "count": 1
+  }
+ ],
+ "browser_versions": [
+  {
+   "name": "Safari 11.0",
+   "count": 88
+  },
+  {
+   "name": "Safari 26.6",
+   "count": 25
+  },
+  {
+   "name": "Chrome 157",
+   "count": 10
+  },
+  {
+   "name": "Chrome 158",
+   "count": 6
+  },
+  {
+   "name": "Safari 27.2",
+   "count": 3
+  },
+  {
+   "name": "Safari 18.7",
+   "count": 2
+  },
+  {
+   "name": "Chrome 141",
+   "count": 2
+  },
+  {
+   "name": "Chrome 146",
+   "count": 2
+  },
+  {
+   "name": "Chrome 156",
+   "count": 2
+  },
+  {
+   "name": "Chrome 116",
+   "count": 1
+  },
+  {
+   "name": "Chrome 134",
+   "count": 1
+  },
+  {
+   "name": "Chrome 149",
+   "count": 1
+  },
+  {
+   "name": "Chrome 153",
+   "count": 1
   },
   {
    "name": "(unknown)",
@@ -177,43 +739,1833 @@
  "systems": [
   {
    "name": "iOS",
-   "count": 70
+   "count": 117
   },
   {
    "name": "Windows",
-   "count": 8
+   "count": 14
   },
   {
    "name": "Linux",
-   "count": 6
+   "count": 7
+  },
+  {
+   "name": "Android",
+   "count": 5
   },
   {
    "name": "macOS",
    "count": 2
+  }
+ ],
+ "devices": [
+  {
+   "name": "Phones",
+   "count": 122
   },
   {
-   "name": "Android",
-   "count": 1
+   "name": "Tablets and large phones",
+   "count": 4
   },
   {
-   "name": "Screen: (unknown)",
-   "count": 71
-  },
-  {
-   "name": "Screen: (unknown)",
-   "count": 3
-  },
-  {
-   "name": "Screen: (unknown)",
+   "name": "Computer monitors",
    "count": 8
   },
   {
-   "name": "Screen: (unknown)",
+   "name": "Computer monitors larger than HD",
+   "count": 11
+  }
+ ],
+ "screens": [
+  {
+   "name": "430px · Phones",
+   "count": 108
+  },
+  {
+   "name": "2560px · Computer monitors larger than HD",
+   "count": 11
+  },
+  {
+   "name": "440px · Phones",
+   "count": 6
+  },
+  {
+   "name": "1920px · Computer monitors",
    "count": 5
   },
   {
-   "name": "Screen: (unknown)",
-   "count": 0
+   "name": "434px · Phones",
+   "count": 4
+  },
+  {
+   "name": "402px · Phones",
+   "count": 2
+  },
+  {
+   "name": "800px · Tablets and large phones",
+   "count": 2
+  },
+  {
+   "name": "810px · Tablets and large phones",
+   "count": 2
+  },
+  {
+   "name": "1280px · Computer monitors",
+   "count": 2
+  },
+  {
+   "name": "360px · Phones",
+   "count": 1
+  },
+  {
+   "name": "400px · Phones",
+   "count": 1
+  },
+  {
+   "name": "1600px · Computer monitors",
+   "count": 1
   }
- ]
+ ],
+ "clicks": [],
+ "click_total": 0,
+ "recruiter_pages": [
+  {
+   "name": "/work/projects/airronbot.html?r=recruiter",
+   "count": 2
+  },
+  {
+   "name": "/work/?r=recruiter",
+   "count": 2
+  }
+ ],
+ "recruiter_page_hits": 4,
+ "recruiter_skip_events": [],
+ "recruiter_skip_total": 4,
+ "ranges": {
+  "day": {
+   "start": "2026-11-25",
+   "end": "2026-11-25",
+   "total_visits": 7,
+   "total_events": 0,
+   "total_visits_including_events": 7,
+   "daily": [
+    {
+     "day": "2026-11-25",
+     "visits": 7
+    }
+   ],
+   "weekly": [
+    {
+     "start": "2026-11-23",
+     "end": "2026-11-29",
+     "label": "Nov 23–Nov 29, 2026",
+     "visits": 7
+    }
+   ],
+   "monthly": [
+    {
+     "month": "2026-11",
+     "label": "November 2026",
+     "visits": 7
+    }
+   ],
+   "pages": [
+    {
+     "name": "/commanders",
+     "count": 3
+    },
+    {
+     "name": "/games",
+     "count": 1
+    },
+    {
+     "name": "/weston",
+     "count": 1
+    },
+    {
+     "name": "/work",
+     "count": 1
+    },
+    {
+     "name": "/",
+     "count": 1
+    }
+   ],
+   "planets": [
+    {
+     "name": "Orbit / Home",
+     "count": 1
+    },
+    {
+     "name": "Experience Planet",
+     "count": 1
+    },
+    {
+     "name": "Games Planet",
+     "count": 1
+    },
+    {
+     "name": "Commander Wall",
+     "count": 3
+    },
+    {
+     "name": "Weston's Planet",
+     "count": 1
+    }
+   ],
+   "referrers": [
+    {
+     "name": "Direct / unknown",
+     "count": 4
+    }
+   ],
+   "sources": [
+    {
+     "name": "Direct / unknown",
+     "count": 4
+    }
+   ],
+   "countries": [
+    {
+     "name": "United States",
+     "count": 7
+    }
+   ],
+   "regions": [
+    {
+     "name": "Oregon, United States",
+     "count": 6
+    },
+    {
+     "name": "Pennsylvania, United States",
+     "count": 1
+    }
+   ],
+   "browsers": [
+    {
+     "name": "Safari",
+     "count": 7
+    }
+   ],
+   "browser_versions": [
+    {
+     "name": "Safari 11.0",
+     "count": 6
+    },
+    {
+     "name": "Safari 26.6",
+     "count": 1
+    }
+   ],
+   "systems": [
+    {
+     "name": "iOS",
+     "count": 7
+    }
+   ],
+   "devices": [
+    {
+     "name": "Phones",
+     "count": 7
+    }
+   ],
+   "screens": [
+    {
+     "name": "430px · Phones",
+     "count": 6
+    },
+    {
+     "name": "402px · Phones",
+     "count": 1
+    }
+   ],
+   "clicks": [],
+   "click_total": 0,
+   "recruiter_pages": [],
+   "recruiter_page_hits": 0,
+   "recruiter_skip_events": [],
+   "recruiter_skip_total": 0,
+   "named_visitor_count": 0,
+   "hourly": [
+    {
+     "day": "2026-11-24",
+     "hour": 0,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 1,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 2,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 3,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 4,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 5,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 6,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 7,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 8,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 9,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 10,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 11,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 12,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 13,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 14,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 15,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 16,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 17,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 18,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 19,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 20,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 21,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 22,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-24",
+     "hour": 23,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 0,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 1,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 2,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 3,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 4,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 5,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 6,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 7,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 8,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 9,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 10,
+     "visits": 4
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 11,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 12,
+     "visits": 1
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 13,
+     "visits": 1
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 14,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 15,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 16,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 17,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 18,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 19,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 20,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 21,
+     "visits": 0
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 22,
+     "visits": 1
+    },
+    {
+     "day": "2026-11-25",
+     "hour": 23,
+     "visits": 0
+    }
+   ]
+  },
+  "week": {
+   "start": "2026-11-19",
+   "end": "2026-11-25",
+   "total_visits": 49,
+   "total_events": 7,
+   "total_visits_including_events": 60,
+   "daily": [
+    {
+     "day": "2026-11-19",
+     "visits": 7
+    },
+    {
+     "day": "2026-11-20",
+     "visits": 10
+    },
+    {
+     "day": "2026-11-21",
+     "visits": 7
+    },
+    {
+     "day": "2026-11-22",
+     "visits": 4
+    },
+    {
+     "day": "2026-11-23",
+     "visits": 6
+    },
+    {
+     "day": "2026-11-24",
+     "visits": 8
+    },
+    {
+     "day": "2026-11-25",
+     "visits": 7
+    }
+   ],
+   "weekly": [
+    {
+     "start": "2026-11-16",
+     "end": "2026-11-22",
+     "label": "Nov 16–Nov 22, 2026",
+     "visits": 28
+    },
+    {
+     "start": "2026-11-23",
+     "end": "2026-11-29",
+     "label": "Nov 23–Nov 29, 2026",
+     "visits": 21
+    }
+   ],
+   "monthly": [
+    {
+     "month": "2026-11",
+     "label": "November 2026",
+     "visits": 49
+    }
+   ],
+   "pages": [
+    {
+     "name": "/",
+     "count": 16
+    },
+    {
+     "name": "/games",
+     "count": 14
+    },
+    {
+     "name": "/arena",
+     "count": 6
+    },
+    {
+     "name": "/weston",
+     "count": 5
+    },
+    {
+     "name": "/work",
+     "count": 5
+    },
+    {
+     "name": "/commanders",
+     "count": 3
+    },
+    {
+     "name": "/quest",
+     "count": 3
+    },
+    {
+     "name": "/christmas",
+     "count": 1
+    }
+   ],
+   "planets": [
+    {
+     "name": "Orbit / Home",
+     "count": 16
+    },
+    {
+     "name": "Experience Planet",
+     "count": 5
+    },
+    {
+     "name": "Games Planet",
+     "count": 14
+    },
+    {
+     "name": "Airron's Fall",
+     "count": 6
+    },
+    {
+     "name": "Airron's Quest",
+     "count": 3
+    },
+    {
+     "name": "Commander Wall",
+     "count": 3
+    },
+    {
+     "name": "Weston's Planet",
+     "count": 5
+    },
+    {
+     "name": "Christmas Planet",
+     "count": 1
+    }
+   ],
+   "referrers": [
+    {
+     "name": "Direct / unknown",
+     "count": 29
+    }
+   ],
+   "sources": [
+    {
+     "name": "Direct / unknown",
+     "count": 29
+    }
+   ],
+   "countries": [
+    {
+     "name": "United States",
+     "count": 59
+    },
+    {
+     "name": "France",
+     "count": 1
+    }
+   ],
+   "regions": [
+    {
+     "name": "Oregon, United States",
+     "count": 51
+    },
+    {
+     "name": "Florida, United States",
+     "count": 4
+    },
+    {
+     "name": "Louisiana, United States",
+     "count": 2
+    },
+    {
+     "name": "Pennsylvania, United States",
+     "count": 2
+    },
+    {
+     "name": "France",
+     "count": 1
+    }
+   ],
+   "browsers": [
+    {
+     "name": "Safari",
+     "count": 47
+    },
+    {
+     "name": "Chrome",
+     "count": 13
+    }
+   ],
+   "browser_versions": [
+    {
+     "name": "Safari 11.0",
+     "count": 33
+    },
+    {
+     "name": "Safari 26.6",
+     "count": 13
+    },
+    {
+     "name": "Chrome 158",
+     "count": 6
+    },
+    {
+     "name": "Chrome 157",
+     "count": 4
+    },
+    {
+     "name": "Chrome 141",
+     "count": 2
+    },
+    {
+     "name": "Safari 27.2",
+     "count": 1
+    },
+    {
+     "name": "Chrome 134",
+     "count": 1
+    }
+   ],
+   "systems": [
+    {
+     "name": "iOS",
+     "count": 47
+    },
+    {
+     "name": "Windows",
+     "count": 6
+    },
+    {
+     "name": "Android",
+     "count": 4
+    },
+    {
+     "name": "Linux",
+     "count": 3
+    }
+   ],
+   "devices": [
+    {
+     "name": "Phones",
+     "count": 51
+    },
+    {
+     "name": "Tablets and large phones",
+     "count": 1
+    },
+    {
+     "name": "Computer monitors",
+     "count": 2
+    },
+    {
+     "name": "Computer monitors larger than HD",
+     "count": 6
+    }
+   ],
+   "screens": [
+    {
+     "name": "430px · Phones",
+     "count": 45
+    },
+    {
+     "name": "2560px · Computer monitors larger than HD",
+     "count": 6
+    },
+    {
+     "name": "434px · Phones",
+     "count": 4
+    },
+    {
+     "name": "402px · Phones",
+     "count": 2
+    },
+    {
+     "name": "1280px · Computer monitors",
+     "count": 2
+    },
+    {
+     "name": "800px · Tablets and large phones",
+     "count": 1
+    }
+   ],
+   "clicks": [],
+   "click_total": 0,
+   "recruiter_pages": [],
+   "recruiter_page_hits": 0,
+   "recruiter_skip_events": [],
+   "recruiter_skip_total": 0,
+   "named_visitor_count": 2,
+   "hourly": []
+  },
+  "month": {
+   "start": "2026-10-27",
+   "end": "2026-11-25",
+   "total_visits": 131,
+   "total_events": 14,
+   "total_visits_including_events": 145,
+   "daily": [
+    {
+     "day": "2026-11-07",
+     "visits": 10
+    },
+    {
+     "day": "2026-11-08",
+     "visits": 10
+    },
+    {
+     "day": "2026-11-09",
+     "visits": 2
+    },
+    {
+     "day": "2026-11-10",
+     "visits": 9
+    },
+    {
+     "day": "2026-11-11",
+     "visits": 17
+    },
+    {
+     "day": "2026-11-12",
+     "visits": 4
+    },
+    {
+     "day": "2026-11-13",
+     "visits": 5
+    },
+    {
+     "day": "2026-11-14",
+     "visits": 9
+    },
+    {
+     "day": "2026-11-15",
+     "visits": 7
+    },
+    {
+     "day": "2026-11-16",
+     "visits": 4
+    },
+    {
+     "day": "2026-11-17",
+     "visits": 0
+    },
+    {
+     "day": "2026-11-18",
+     "visits": 5
+    },
+    {
+     "day": "2026-11-19",
+     "visits": 7
+    },
+    {
+     "day": "2026-11-20",
+     "visits": 10
+    },
+    {
+     "day": "2026-11-21",
+     "visits": 7
+    },
+    {
+     "day": "2026-11-22",
+     "visits": 4
+    },
+    {
+     "day": "2026-11-23",
+     "visits": 6
+    },
+    {
+     "day": "2026-11-24",
+     "visits": 8
+    },
+    {
+     "day": "2026-11-25",
+     "visits": 7
+    }
+   ],
+   "weekly": [
+    {
+     "start": "2026-11-02",
+     "end": "2026-11-08",
+     "label": "Nov 2–Nov 8, 2026",
+     "visits": 20
+    },
+    {
+     "start": "2026-11-09",
+     "end": "2026-11-15",
+     "label": "Nov 9–Nov 15, 2026",
+     "visits": 53
+    },
+    {
+     "start": "2026-11-16",
+     "end": "2026-11-22",
+     "label": "Nov 16–Nov 22, 2026",
+     "visits": 37
+    },
+    {
+     "start": "2026-11-23",
+     "end": "2026-11-29",
+     "label": "Nov 23–Nov 29, 2026",
+     "visits": 21
+    }
+   ],
+   "monthly": [
+    {
+     "month": "2026-11",
+     "label": "November 2026",
+     "visits": 131
+    }
+   ],
+   "pages": [
+    {
+     "name": "/",
+     "count": 44
+    },
+    {
+     "name": "/games",
+     "count": 24
+    },
+    {
+     "name": "/work",
+     "count": 14
+    },
+    {
+     "name": "/weston",
+     "count": 11
+    },
+    {
+     "name": "/arena",
+     "count": 6
+    },
+    {
+     "name": "/ops",
+     "count": 4
+    },
+    {
+     "name": "/tracker",
+     "count": 4
+    },
+    {
+     "name": "/commanders",
+     "count": 3
+    },
+    {
+     "name": "/quest",
+     "count": 3
+    },
+    {
+     "name": "/work/projects/airronbot.html?r=recruiter",
+     "count": 2
+    },
+    {
+     "name": "/work/?r=recruiter",
+     "count": 2
+    },
+    {
+     "name": "/christmas",
+     "count": 1
+    },
+    {
+     "name": "/weston/call",
+     "count": 1
+    },
+    {
+     "name": "/work/projects/crisis-of-dreamcell.html",
+     "count": 1
+    },
+    {
+     "name": "/work/projects/airronbot.html",
+     "count": 1
+    },
+    {
+     "name": "/work/projects/gun-game.html",
+     "count": 1
+    },
+    {
+     "name": "/work/projects/website-github.html",
+     "count": 1
+    },
+    {
+     "name": "/work/projects/npc-player-flow.html",
+     "count": 1
+    },
+    {
+     "name": "/work/projects/pong.html",
+     "count": 1
+    },
+    {
+     "name": "/work/resume.html",
+     "count": 1
+    },
+    {
+     "name": "/work/?v=h",
+     "count": 1
+    },
+    {
+     "name": "/work/showcase.html",
+     "count": 1
+    },
+    {
+     "name": "/work/skills.html",
+     "count": 1
+    },
+    {
+     "name": "/work/projects/rakshasa-systems.html",
+     "count": 1
+    },
+    {
+     "name": "/work/projects/v1ct0r.html",
+     "count": 1
+    }
+   ],
+   "planets": [
+    {
+     "name": "Orbit / Home",
+     "count": 44
+    },
+    {
+     "name": "Experience Planet",
+     "count": 30
+    },
+    {
+     "name": "Games Planet",
+     "count": 24
+    },
+    {
+     "name": "Airron's Fall",
+     "count": 6
+    },
+    {
+     "name": "Airron's Quest",
+     "count": 3
+    },
+    {
+     "name": "Commander Wall",
+     "count": 3
+    },
+    {
+     "name": "Work Planet",
+     "count": 4
+    },
+    {
+     "name": "Team Task Tracker",
+     "count": 4
+    },
+    {
+     "name": "Weston's Planet",
+     "count": 12
+    },
+    {
+     "name": "Christmas Planet",
+     "count": 1
+    }
+   ],
+   "referrers": [
+    {
+     "name": "Direct / unknown",
+     "count": 63
+    },
+    {
+     "name": "www.linkedin.com",
+     "count": 2
+    }
+   ],
+   "sources": [
+    {
+     "name": "LinkedIn",
+     "count": 2
+    },
+    {
+     "name": "Recruiter link (?r=recruiter)",
+     "count": 4
+    },
+    {
+     "name": "Direct / unknown",
+     "count": 63
+    }
+   ],
+   "countries": [
+    {
+     "name": "United States",
+     "count": 140
+    },
+    {
+     "name": "United Kingdom",
+     "count": 3
+    },
+    {
+     "name": "France",
+     "count": 1
+    },
+    {
+     "name": "Russia",
+     "count": 1
+    }
+   ],
+   "regions": [
+    {
+     "name": "Oregon, United States",
+     "count": 116
+    },
+    {
+     "name": "Florida, United States",
+     "count": 7
+    },
+    {
+     "name": "Pennsylvania, United States",
+     "count": 7
+    },
+    {
+     "name": "Alabama, United States",
+     "count": 4
+    },
+    {
+     "name": "United Kingdom",
+     "count": 3
+    },
+    {
+     "name": "Louisiana, United States",
+     "count": 2
+    },
+    {
+     "name": "Tennessee, United States",
+     "count": 2
+    },
+    {
+     "name": "California, United States",
+     "count": 1
+    },
+    {
+     "name": "Virginia, United States",
+     "count": 1
+    },
+    {
+     "name": "France",
+     "count": 1
+    },
+    {
+     "name": "Russia",
+     "count": 1
+    }
+   ],
+   "browsers": [
+    {
+     "name": "Safari",
+     "count": 118
+    },
+    {
+     "name": "Chrome",
+     "count": 26
+    },
+    {
+     "name": "(unknown)",
+     "count": 1
+    }
+   ],
+   "browser_versions": [
+    {
+     "name": "Safari 11.0",
+     "count": 88
+    },
+    {
+     "name": "Safari 26.6",
+     "count": 25
+    },
+    {
+     "name": "Chrome 157",
+     "count": 10
+    },
+    {
+     "name": "Chrome 158",
+     "count": 6
+    },
+    {
+     "name": "Safari 27.2",
+     "count": 3
+    },
+    {
+     "name": "Safari 18.7",
+     "count": 2
+    },
+    {
+     "name": "Chrome 141",
+     "count": 2
+    },
+    {
+     "name": "Chrome 146",
+     "count": 2
+    },
+    {
+     "name": "Chrome 156",
+     "count": 2
+    },
+    {
+     "name": "Chrome 116",
+     "count": 1
+    },
+    {
+     "name": "Chrome 134",
+     "count": 1
+    },
+    {
+     "name": "Chrome 149",
+     "count": 1
+    },
+    {
+     "name": "Chrome 153",
+     "count": 1
+    },
+    {
+     "name": "(unknown)",
+     "count": 1
+    }
+   ],
+   "systems": [
+    {
+     "name": "iOS",
+     "count": 117
+    },
+    {
+     "name": "Windows",
+     "count": 14
+    },
+    {
+     "name": "Linux",
+     "count": 7
+    },
+    {
+     "name": "Android",
+     "count": 5
+    },
+    {
+     "name": "macOS",
+     "count": 2
+    }
+   ],
+   "devices": [
+    {
+     "name": "Phones",
+     "count": 122
+    },
+    {
+     "name": "Tablets and large phones",
+     "count": 4
+    },
+    {
+     "name": "Computer monitors",
+     "count": 8
+    },
+    {
+     "name": "Computer monitors larger than HD",
+     "count": 11
+    }
+   ],
+   "screens": [
+    {
+     "name": "430px · Phones",
+     "count": 108
+    },
+    {
+     "name": "2560px · Computer monitors larger than HD",
+     "count": 11
+    },
+    {
+     "name": "440px · Phones",
+     "count": 6
+    },
+    {
+     "name": "1920px · Computer monitors",
+     "count": 5
+    },
+    {
+     "name": "434px · Phones",
+     "count": 4
+    },
+    {
+     "name": "402px · Phones",
+     "count": 2
+    },
+    {
+     "name": "800px · Tablets and large phones",
+     "count": 2
+    },
+    {
+     "name": "810px · Tablets and large phones",
+     "count": 2
+    },
+    {
+     "name": "1280px · Computer monitors",
+     "count": 2
+    },
+    {
+     "name": "360px · Phones",
+     "count": 1
+    },
+    {
+     "name": "400px · Phones",
+     "count": 1
+    },
+    {
+     "name": "1600px · Computer monitors",
+     "count": 1
+    }
+   ],
+   "clicks": [],
+   "click_total": 0,
+   "recruiter_pages": [
+    {
+     "name": "/work/projects/airronbot.html?r=recruiter",
+     "count": 2
+    },
+    {
+     "name": "/work/?r=recruiter",
+     "count": 2
+    }
+   ],
+   "recruiter_page_hits": 4,
+   "recruiter_skip_events": [],
+   "recruiter_skip_total": 4,
+   "named_visitor_count": 9,
+   "hourly": []
+  },
+  "all": {
+   "start": "2026-11-07",
+   "end": "2026-11-25",
+   "total_visits": 131,
+   "total_events": 14,
+   "total_visits_including_events": 145,
+   "daily": [
+    {
+     "day": "2026-11-07",
+     "visits": 10
+    },
+    {
+     "day": "2026-11-08",
+     "visits": 10
+    },
+    {
+     "day": "2026-11-09",
+     "visits": 2
+    },
+    {
+     "day": "2026-11-10",
+     "visits": 9
+    },
+    {
+     "day": "2026-11-11",
+     "visits": 17
+    },
+    {
+     "day": "2026-11-12",
+     "visits": 4
+    },
+    {
+     "day": "2026-11-13",
+     "visits": 5
+    },
+    {
+     "day": "2026-11-14",
+     "visits": 9
+    },
+    {
+     "day": "2026-11-15",
+     "visits": 7
+    },
+    {
+     "day": "2026-11-16",
+     "visits": 4
+    },
+    {
+     "day": "2026-11-17",
+     "visits": 0
+    },
+    {
+     "day": "2026-11-18",
+     "visits": 5
+    },
+    {
+     "day": "2026-11-19",
+     "visits": 7
+    },
+    {
+     "day": "2026-11-20",
+     "visits": 10
+    },
+    {
+     "day": "2026-11-21",
+     "visits": 7
+    },
+    {
+     "day": "2026-11-22",
+     "visits": 4
+    },
+    {
+     "day": "2026-11-23",
+     "visits": 6
+    },
+    {
+     "day": "2026-11-24",
+     "visits": 8
+    },
+    {
+     "day": "2026-11-25",
+     "visits": 7
+    }
+   ],
+   "weekly": [
+    {
+     "start": "2026-11-02",
+     "end": "2026-11-08",
+     "label": "Nov 2–Nov 8, 2026",
+     "visits": 20
+    },
+    {
+     "start": "2026-11-09",
+     "end": "2026-11-15",
+     "label": "Nov 9–Nov 15, 2026",
+     "visits": 53
+    },
+    {
+     "start": "2026-11-16",
+     "end": "2026-11-22",
+     "label": "Nov 16–Nov 22, 2026",
+     "visits": 37
+    },
+    {
+     "start": "2026-11-23",
+     "end": "2026-11-29",
+     "label": "Nov 23–Nov 29, 2026",
+     "visits": 21
+    }
+   ],
+   "monthly": [
+    {
+     "month": "2026-11",
+     "label": "November 2026",
+     "visits": 131
+    }
+   ],
+   "pages": [
+    {
+     "name": "/",
+     "count": 44
+    },
+    {
+     "name": "/games",
+     "count": 24
+    },
+    {
+     "name": "/work",
+     "count": 14
+    },
+    {
+     "name": "/weston",
+     "count": 11
+    },
+    {
+     "name": "/arena",
+     "count": 6
+    },
+    {
+     "name": "/ops",
+     "count": 4
+    },
+    {
+     "name": "/tracker",
+     "count": 4
+    },
+    {
+     "name": "/commanders",
+     "count": 3
+    },
+    {
+     "name": "/quest",
+     "count": 3
+    },
+    {
+     "name": "/work/projects/airronbot.html?r=recruiter",
+     "count": 2
+    },
+    {
+     "name": "/work/?r=recruiter",
+     "count": 2
+    },
+    {
+     "name": "/christmas",
+     "count": 1
+    },
+    {
+     "name": "/weston/call",
+     "count": 1
+    },
+    {
+     "name": "/work/projects/crisis-of-dreamcell.html",
+     "count": 1
+    },
+    {
+     "name": "/work/projects/airronbot.html",
+     "count": 1
+    },
+    {
+     "name": "/work/projects/gun-game.html",
+     "count": 1
+    },
+    {
+     "name": "/work/projects/website-github.html",
+     "count": 1
+    },
+    {
+     "name": "/work/projects/npc-player-flow.html",
+     "count": 1
+    },
+    {
+     "name": "/work/projects/pong.html",
+     "count": 1
+    },
+    {
+     "name": "/work/resume.html",
+     "count": 1
+    },
+    {
+     "name": "/work/?v=h",
+     "count": 1
+    },
+    {
+     "name": "/work/showcase.html",
+     "count": 1
+    },
+    {
+     "name": "/work/skills.html",
+     "count": 1
+    },
+    {
+     "name": "/work/projects/rakshasa-systems.html",
+     "count": 1
+    },
+    {
+     "name": "/work/projects/v1ct0r.html",
+     "count": 1
+    }
+   ],
+   "planets": [
+    {
+     "name": "Orbit / Home",
+     "count": 44
+    },
+    {
+     "name": "Experience Planet",
+     "count": 30
+    },
+    {
+     "name": "Games Planet",
+     "count": 24
+    },
+    {
+     "name": "Airron's Fall",
+     "count": 6
+    },
+    {
+     "name": "Airron's Quest",
+     "count": 3
+    },
+    {
+     "name": "Commander Wall",
+     "count": 3
+    },
+    {
+     "name": "Work Planet",
+     "count": 4
+    },
+    {
+     "name": "Team Task Tracker",
+     "count": 4
+    },
+    {
+     "name": "Weston's Planet",
+     "count": 12
+    },
+    {
+     "name": "Christmas Planet",
+     "count": 1
+    }
+   ],
+   "referrers": [
+    {
+     "name": "Direct / unknown",
+     "count": 63
+    },
+    {
+     "name": "www.linkedin.com",
+     "count": 2
+    }
+   ],
+   "sources": [
+    {
+     "name": "LinkedIn",
+     "count": 2
+    },
+    {
+     "name": "Recruiter link (?r=recruiter)",
+     "count": 4
+    },
+    {
+     "name": "Direct / unknown",
+     "count": 63
+    }
+   ],
+   "countries": [
+    {
+     "name": "United States",
+     "count": 140
+    },
+    {
+     "name": "United Kingdom",
+     "count": 3
+    },
+    {
+     "name": "France",
+     "count": 1
+    },
+    {
+     "name": "Russia",
+     "count": 1
+    }
+   ],
+   "regions": [
+    {
+     "name": "Oregon, United States",
+     "count": 116
+    },
+    {
+     "name": "Florida, United States",
+     "count": 7
+    },
+    {
+     "name": "Pennsylvania, United States",
+     "count": 7
+    },
+    {
+     "name": "Alabama, United States",
+     "count": 4
+    },
+    {
+     "name": "United Kingdom",
+     "count": 3
+    },
+    {
+     "name": "Louisiana, United States",
+     "count": 2
+    },
+    {
+     "name": "Tennessee, United States",
+     "count": 2
+    },
+    {
+     "name": "California, United States",
+     "count": 1
+    },
+    {
+     "name": "Virginia, United States",
+     "count": 1
+    },
+    {
+     "name": "France",
+     "count": 1
+    },
+    {
+     "name": "Russia",
+     "count": 1
+    }
+   ],
+   "browsers": [
+    {
+     "name": "Safari",
+     "count": 118
+    },
+    {
+     "name": "Chrome",
+     "count": 26
+    },
+    {
+     "name": "(unknown)",
+     "count": 1
+    }
+   ],
+   "browser_versions": [
+    {
+     "name": "Safari 11.0",
+     "count": 88
+    },
+    {
+     "name": "Safari 26.6",
+     "count": 25
+    },
+    {
+     "name": "Chrome 157",
+     "count": 10
+    },
+    {
+     "name": "Chrome 158",
+     "count": 6
+    },
+    {
+     "name": "Safari 27.2",
+     "count": 3
+    },
+    {
+     "name": "Safari 18.7",
+     "count": 2
+    },
+    {
+     "name": "Chrome 141",
+     "count": 2
+    },
+    {
+     "name": "Chrome 146",
+     "count": 2
+    },
+    {
+     "name": "Chrome 156",
+     "count": 2
+    },
+    {
+     "name": "Chrome 116",
+     "count": 1
+    },
+    {
+     "name": "Chrome 134",
+     "count": 1
+    },
+    {
+     "name": "Chrome 149",
+     "count": 1
+    },
+    {
+     "name": "Chrome 153",
+     "count": 1
+    },
+    {
+     "name": "(unknown)",
+     "count": 1
+    }
+   ],
+   "systems": [
+    {
+     "name": "iOS",
+     "count": 117
+    },
+    {
+     "name": "Windows",
+     "count": 14
+    },
+    {
+     "name": "Linux",
+     "count": 7
+    },
+    {
+     "name": "Android",
+     "count": 5
+    },
+    {
+     "name": "macOS",
+     "count": 2
+    }
+   ],
+   "devices": [
+    {
+     "name": "Phones",
+     "count": 122
+    },
+    {
+     "name": "Tablets and large phones",
+     "count": 4
+    },
+    {
+     "name": "Computer monitors",
+     "count": 8
+    },
+    {
+     "name": "Computer monitors larger than HD",
+     "count": 11
+    }
+   ],
+   "screens": [
+    {
+     "name": "430px · Phones",
+     "count": 108
+    },
+    {
+     "name": "2560px · Computer monitors larger than HD",
+     "count": 11
+    },
+    {
+     "name": "440px · Phones",
+     "count": 6
+    },
+    {
+     "name": "1920px · Computer monitors",
+     "count": 5
+    },
+    {
+     "name": "434px · Phones",
+     "count": 4
+    },
+    {
+     "name": "402px · Phones",
+     "count": 2
+    },
+    {
+     "name": "800px · Tablets and large phones",
+     "count": 2
+    },
+    {
+     "name": "810px · Tablets and large phones",
+     "count": 2
+    },
+    {
+     "name": "1280px · Computer monitors",
+     "count": 2
+    },
+    {
+     "name": "360px · Phones",
+     "count": 1
+    },
+    {
+     "name": "400px · Phones",
+     "count": 1
+    },
+    {
+     "name": "1600px · Computer monitors",
+     "count": 1
+    }
+   ],
+   "clicks": [],
+   "click_total": 0,
+   "recruiter_pages": [
+    {
+     "name": "/work/projects/airronbot.html?r=recruiter",
+     "count": 2
+    },
+    {
+     "name": "/work/?r=recruiter",
+     "count": 2
+    }
+   ],
+   "recruiter_page_hits": 4,
+   "recruiter_skip_events": [],
+   "recruiter_skip_total": 4,
+   "named_visitor_count": 9,
+   "hourly": []
+  }
+ }
 }
