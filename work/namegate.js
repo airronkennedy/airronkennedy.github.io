@@ -2,14 +2,17 @@
 'use strict';
 const KEY='airron-work-visitor-name';
 function stored(){try{return localStorage.getItem(KEY)}catch{return null}}
-function logName(name){
- const clean=name.trim().slice(0,60);
- const payload={path:'work-visitor/'+encodeURIComponent(clean),title:'Work visitor: '+clean,event:true};
+function logEvent(path,title){
+ const payload={path,title,event:true};
  let tries=0;
  (function send(){
   if(window.goatcounter&&typeof window.goatcounter.count==='function'){try{window.goatcounter.count(payload)}catch{}return}
   if(++tries<40)setTimeout(send,500);
  })();
+}
+function logName(name){
+ const clean=name.trim().slice(0,60);
+ logEvent('work-visitor/'+encodeURIComponent(clean),'Work visitor: '+clean);
 }
 function isRecruiterLink(){
  try{return new URLSearchParams(location.search).get('r')==='recruiter'}catch{return false}
@@ -18,7 +21,7 @@ function gate(){
  if(isRecruiterLink()){
   const first=!stored();
   try{localStorage.setItem(KEY,'Recruiter')}catch{}
-  if(first)logName('Recruiter');
+  if(first){logName('Recruiter');logEvent('recruiter-skip','Recruiter skip link');}
   return;
  }
  if(stored())return;

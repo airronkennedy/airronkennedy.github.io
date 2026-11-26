@@ -1,1 +1,171 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Stats Planet · Airron Kennedy</title><meta name="robots" content="noindex"><meta name="theme-color" content="#05070d"><link rel="stylesheet" href="/work/work.css?v=20261110a"><link rel="stylesheet" href="/tracker/lock.css?v=20261110a"><link rel="stylesheet" href="/stats/stats.css?v=20261118a"></head><body class="subpage" data-stats="1"><div class="bg" aria-hidden="true"></div><div class="veil" aria-hidden="true"></div><canvas id="stars" aria-hidden="true"></canvas><span class="orb o1" aria-hidden="true"></span><span class="orb o2" aria-hidden="true"></span><header class="top"><a class="back" href="/">← Back to orbit</a><p class="eyebrow">Airron <span>Kennedy</span></p><h1>Stats Planet</h1><p class="lede">Who's been visiting the orbit.</p><p class="fine" id="updated">Loading…</p></header><main id="main" class="detail" id="stats-app"><p id="note" class="fine" hidden></p><section class="evidence-block"><h2>Total visits</h2><p class="big" id="total">—</p></section><section class="evidence-block"><h2>Experience Planet visitors</h2><table id="names"><thead><tr><th>Name</th><th>When (PT)</th></tr></thead><tbody></tbody></table></section><section class="evidence-block"><h2>Airron's Fall players</h2><p class="fine" id="arena-counts">—</p><table id="arena-players"><thead><tr><th>Name</th><th>When (PT)</th></tr></thead><tbody></tbody></table></section><section class="evidence-block"><h2>Visits by page / planet</h2><table id="pages"><tbody></tbody></table></section><section class="evidence-block"><h2>Top referrers</h2><table id="refs"><tbody></tbody></table></section><section class="evidence-block"><h2>Countries</h2><table id="locations"><tbody></tbody></table></section><section class="evidence-block"><h2>Browsers</h2><table id="browsers"><tbody></tbody></table></section><section class="evidence-block"><h2>Devices / systems</h2><table id="systems"><tbody></tbody></table></section></main><footer><div><a class="back" href="/">← Back to orbit</a><p>Airron Kennedy · Stats Planet</p></div><p>Data from GoatCounter, refreshed by Airron Bot. Ad blockers may skip counting.</p></footer><script defer src="/work/work.js?v=20261107l"></script><script src="/tracker/lock.js?v=20261119a"></script><script src="/stats/stats.js?v=20261119a"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Stats Planet · Airron Kennedy</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#05070d">
+<link rel="stylesheet" href="/work/work.css?v=20261110a">
+<link rel="stylesheet" href="/tracker/lock.css?v=20261110a">
+<link rel="stylesheet" href="/stats/stats.css?v=20261125b">
+</head>
+<body class="subpage" data-stats="1">
+<div class="bg" aria-hidden="true"></div>
+<div class="veil" aria-hidden="true"></div>
+<canvas id="stars" aria-hidden="true"></canvas>
+<span class="orb o1" aria-hidden="true"></span>
+<span class="orb o2" aria-hidden="true"></span>
+<header class="top">
+  <a class="back" href="/">← Back to orbit</a>
+  <p class="eyebrow">Airron <span>Kennedy</span></p>
+  <h1>Stats Planet</h1>
+  <p class="lede">Mission control for visits, sources, named visitors and outbound clicks.</p>
+  <p class="fine" id="updated">Loading…</p>
+</header>
+<main id="main" class="detail">
+  <p id="note" class="fine" hidden></p>
+
+  <section class="evidence-block" aria-label="Time range">
+    <h2 class="sr-only">Time range</h2>
+    <div class="period" role="tablist" aria-label="Time range">
+      <button type="button" role="tab" data-range="day" aria-selected="false">Today</button>
+      <button type="button" role="tab" data-range="week" aria-selected="false">Last 7 days</button>
+      <button type="button" role="tab" data-range="month" aria-selected="false">Last 30 days</button>
+      <button type="button" role="tab" data-range="all" aria-selected="true">All time</button>
+    </div>
+    <p class="fine" id="range-label"></p>
+  </section>
+
+  <section class="evidence-block" aria-label="Overview">
+    <h2>Overview</h2>
+    <div class="kpis" id="kpis"></div>
+    <p class="fine" id="unique-note"></p>
+  </section>
+
+  <section class="evidence-block">
+    <h2 id="trend-title">Visits over time</h2>
+    <div class="chart" id="chart" role="img" aria-labelledby="trend-title"></div>
+    <div class="split">
+      <div>
+        <h3>By week</h3>
+        <table id="weekly"><thead><tr><th>Week</th><th>Visits</th></tr></thead><tbody></tbody></table>
+      </div>
+      <div>
+        <h3>By month</h3>
+        <table id="monthly"><thead><tr><th>Month</th><th>Visits</th></tr></thead><tbody></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <section class="evidence-block" id="new-returning-block">
+    <h2>New vs returning visitors</h2>
+    <p class="fine" id="nvr-note"></p>
+    <div class="kpis compact" id="nvr"></div>
+  </section>
+
+  <section class="evidence-block">
+    <h2>Planets and pages</h2>
+    <div class="split">
+      <div>
+        <h3>Planets</h3>
+        <table id="planets"><thead><tr><th>Planet</th><th>Visits</th></tr></thead><tbody></tbody></table>
+      </div>
+      <div>
+        <h3>Pages</h3>
+        <table id="pages"><thead><tr><th>Page</th><th>Visits</th></tr></thead><tbody></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <section class="evidence-block">
+    <h2>Referrers and sources</h2>
+    <p class="fine">LinkedIn and recruiter-link hits are called out in Sources.</p>
+    <div class="split">
+      <div>
+        <h3>Sources</h3>
+        <table id="sources"><thead><tr><th>Source</th><th>Visits</th></tr></thead><tbody></tbody></table>
+      </div>
+      <div>
+        <h3>Referrers</h3>
+        <table id="refs"><thead><tr><th>Referrer</th><th>Visits</th></tr></thead><tbody></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <section class="evidence-block">
+    <h2>Experience Planet visitors</h2>
+    <p class="fine">Names entered at the Experience Planet gate, with timestamps when the export includes them.</p>
+    <table id="names"><thead><tr><th>Name</th><th>When (PT)</th></tr></thead><tbody></tbody></table>
+  </section>
+
+  <section class="evidence-block">
+    <h2>Recruiter skip-link</h2>
+    <p class="fine" id="recruiter-note">Pages opened with <code>?r=recruiter</code>, plus dedicated skip-link events once that tracking is live.</p>
+    <p class="big" id="recruiter-total">—</p>
+    <table id="recruiter-pages"><thead><tr><th>Page</th><th>Hits</th></tr></thead><tbody></tbody></table>
+  </section>
+
+  <section class="evidence-block">
+    <h2>Airron's Fall players</h2>
+    <p class="fine" id="arena-counts">—</p>
+    <table id="arena-players"><thead><tr><th>Name</th><th>When (PT)</th></tr></thead><tbody></tbody></table>
+  </section>
+
+  <section class="evidence-block">
+    <h2>Outbound clicks</h2>
+    <p class="fine">Resume, LinkedIn, GitHub, Magic Commander, Airron's Fall and Airron's Quest. Click tracking starts with this update, so older visits will not have click counts.</p>
+    <table id="clicks"><thead><tr><th>Link</th><th>Clicks</th></tr></thead><tbody></tbody></table>
+  </section>
+
+  <section class="evidence-block">
+    <h2>Places</h2>
+    <p class="fine" id="cities-note"></p>
+    <div class="split">
+      <div>
+        <h3>Countries</h3>
+        <table id="locations"><thead><tr><th>Country</th><th>Visits</th></tr></thead><tbody></tbody></table>
+      </div>
+      <div>
+        <h3>Regions / cities</h3>
+        <table id="regions"><thead><tr><th>Place</th><th>Visits</th></tr></thead><tbody></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <section class="evidence-block">
+    <h2>Devices and browsers</h2>
+    <div class="split">
+      <div>
+        <h3>Devices</h3>
+        <table id="devices"><thead><tr><th>Device</th><th>Visits</th></tr></thead><tbody></tbody></table>
+      </div>
+      <div>
+        <h3>Operating systems</h3>
+        <table id="systems"><thead><tr><th>System</th><th>Visits</th></tr></thead><tbody></tbody></table>
+      </div>
+      <div>
+        <h3>Browsers</h3>
+        <table id="browsers"><thead><tr><th>Browser</th><th>Visits</th></tr></thead><tbody></tbody></table>
+      </div>
+      <div>
+        <h3>Browser versions</h3>
+        <table id="browser-versions"><thead><tr><th>Version</th><th>Visits</th></tr></thead><tbody></tbody></table>
+      </div>
+    </div>
+    <h3>Screen sizes</h3>
+    <table id="screens"><thead><tr><th>Width</th><th>Visits</th></tr></thead><tbody></tbody></table>
+  </section>
+</main>
+<footer>
+  <div>
+    <a class="back" href="/">← Back to orbit</a>
+    <p>Airron Kennedy · Stats Planet</p>
+  </div>
+  <p>Data from GoatCounter, refreshed by Airron Bot. Ad blockers may skip counting. This page is locked and not itself counted.</p>
+</footer>
+<script defer src="/work/work.js?v=20261107l"></script>
+<script src="/tracker/lock.js?v=20261119a"></script>
+<script src="/stats/stats.js?v=20261125c"></script>
+</body>
+</html>
