@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-26T07:05:35+00:00",
+ "updated": "2026-11-27T22:48:03+00:00",
  "note": null,
  "timezone": "America/Los_Angeles",
  "tracking_started": "2026-11-07",
- "total_visits": 131,
- "total_events": 14,
- "unique_visitors": 131,
+ "total_visits": 143,
+ "total_events": 19,
+ "unique_visitors": 143,
  "unique_visitors_note": "GoatCounter visits are unique sessions in the selected range, not raw pageviews.",
  "new_vs_returning": null,
  "daily": [
@@ -84,6 +84,14 @@
   {
    "day": "2026-11-25",
    "visits": 7
+  },
+  {
+   "day": "2026-11-26",
+   "visits": 8
+  },
+  {
+   "day": "2026-11-27",
+   "visits": 4
   }
  ],
  "weekly": [
@@ -109,254 +117,254 @@
    "start": "2026-11-23",
    "end": "2026-11-29",
    "label": "Nov 23–Nov 29, 2026",
-   "visits": 21
+   "visits": 33
   }
  ],
  "monthly": [
   {
    "month": "2026-11",
    "label": "November 2026",
-   "visits": 131
+   "visits": 143
   }
  ],
  "today_hourly": [
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 0,
-   "visits": 3
+   "visits": 0
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 1,
    "visits": 0
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 2,
-   "visits": 0
+   "visits": 1
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 3,
    "visits": 0
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 4,
    "visits": 0
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 5,
    "visits": 0
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 6,
    "visits": 0
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 7,
    "visits": 0
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 8,
    "visits": 0
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 9,
    "visits": 0
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 10,
-   "visits": 2
+   "visits": 0
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 11,
    "visits": 0
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 12,
    "visits": 0
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 13,
-   "visits": 3
+   "visits": 1
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 14,
    "visits": 0
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 15,
    "visits": 0
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 16,
    "visits": 0
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 17,
    "visits": 0
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 18,
    "visits": 0
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 19,
-   "visits": 0
+   "visits": 5
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 20,
-   "visits": 0
+   "visits": 6
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 21,
    "visits": 0
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 22,
    "visits": 0
   },
   {
-   "day": "2026-11-24",
+   "day": "2026-11-26",
    "hour": 23,
    "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 0,
-   "visits": 0
+   "visits": 1
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 1,
-   "visits": 0
+   "visits": 3
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 2,
    "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 3,
    "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 4,
    "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 5,
    "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 6,
    "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 7,
    "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 8,
    "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 9,
    "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 10,
-   "visits": 4
+   "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 11,
    "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 12,
-   "visits": 1
+   "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 13,
-   "visits": 1
+   "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 14,
    "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 15,
    "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 16,
    "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 17,
    "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 18,
    "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 19,
    "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 20,
    "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 21,
    "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 22,
-   "visits": 1
+   "visits": 0
   },
   {
-   "day": "2026-11-25",
+   "day": "2026-11-27",
    "hour": 23,
    "visits": 0
   }
@@ -410,6 +418,16 @@
  ],
  "arena_players": [
   {
+   "name": "Megablaster",
+   "day": "2026-11-26",
+   "count": 1
+  },
+  {
+   "name": "hunter",
+   "day": "2026-11-26",
+   "count": 1
+  },
+  {
    "name": "Airron Kennedy",
    "day": "2026-11-19",
    "count": 2
@@ -433,11 +451,11 @@
  "pages": [
   {
    "name": "/",
-   "count": 44
+   "count": 46
   },
   {
    "name": "/games",
-   "count": 24
+   "count": 28
   },
   {
    "name": "/work",
@@ -449,7 +467,11 @@
   },
   {
    "name": "/arena",
-   "count": 6
+   "count": 8
+  },
+  {
+   "name": "/commanders",
+   "count": 7
   },
   {
    "name": "/ops",
@@ -458,10 +480,6 @@
   {
    "name": "/tracker",
    "count": 4
-  },
-  {
-   "name": "/commanders",
-   "count": 3
   },
   {
    "name": "/quest",
@@ -535,7 +553,7 @@
  "planets": [
   {
    "name": "Orbit / Home",
-   "count": 44
+   "count": 46
   },
   {
    "name": "Experience Planet",
@@ -543,11 +561,11 @@
   },
   {
    "name": "Games Planet",
-   "count": 24
+   "count": 28
   },
   {
    "name": "Airron's Fall",
-   "count": 6
+   "count": 8
   },
   {
    "name": "Airron's Quest",
@@ -555,7 +573,7 @@
   },
   {
    "name": "Commander Wall",
-   "count": 3
+   "count": 7
   },
   {
    "name": "Work Planet",
@@ -577,11 +595,19 @@
  "referrers": [
   {
    "name": "Direct / unknown",
-   "count": 63
+   "count": 67
   },
   {
    "name": "www.linkedin.com",
    "count": 2
+  },
+  {
+   "name": "Google",
+   "count": 1
+  },
+  {
+   "name": "mtg-commander-taupe.vercel.app",
+   "count": 1
   }
  ],
  "sources": [
@@ -595,13 +621,25 @@
   },
   {
    "name": "Direct / unknown",
-   "count": 63
+   "count": 67
+  },
+  {
+   "name": "Google",
+   "count": 1
+  },
+  {
+   "name": "mtg-commander-taupe.vercel.app",
+   "count": 1
   }
  ],
  "countries": [
   {
    "name": "United States",
-   "count": 140
+   "count": 162
+  },
+  {
+   "name": "Denmark",
+   "count": 5
   },
   {
    "name": "United Kingdom",
@@ -619,15 +657,19 @@
  "regions": [
   {
    "name": "Oregon, United States",
-   "count": 116
+   "count": 137
+  },
+  {
+   "name": "Pennsylvania, United States",
+   "count": 8
   },
   {
    "name": "Florida, United States",
    "count": 7
   },
   {
-   "name": "Pennsylvania, United States",
-   "count": 7
+   "name": "Denmark",
+   "count": 5
   },
   {
    "name": "Alabama, United States",
@@ -667,11 +709,11 @@
  "browsers": [
   {
    "name": "Safari",
-   "count": 118
+   "count": 131
   },
   {
    "name": "Chrome",
-   "count": 26
+   "count": 40
   },
   {
    "name": "(unknown)",
@@ -681,19 +723,19 @@
  "browser_versions": [
   {
    "name": "Safari 11.0",
-   "count": 88
+   "count": 101
   },
   {
    "name": "Safari 26.6",
    "count": 25
   },
   {
-   "name": "Chrome 157",
-   "count": 10
+   "name": "Chrome 158",
+   "count": 20
   },
   {
-   "name": "Chrome 158",
-   "count": 6
+   "name": "Chrome 157",
+   "count": 10
   },
   {
    "name": "Safari 27.2",
@@ -739,29 +781,29 @@
  "systems": [
   {
    "name": "iOS",
-   "count": 117
+   "count": 130
   },
   {
    "name": "Windows",
-   "count": 14
+   "count": 19
+  },
+  {
+   "name": "Android",
+   "count": 9
   },
   {
    "name": "Linux",
    "count": 7
   },
   {
-   "name": "Android",
-   "count": 5
-  },
-  {
    "name": "macOS",
-   "count": 2
+   "count": 7
   }
  ],
  "devices": [
   {
    "name": "Phones",
-   "count": 122
+   "count": 139
   },
   {
    "name": "Tablets and large phones",
@@ -769,7 +811,7 @@
   },
   {
    "name": "Computer monitors",
-   "count": 8
+   "count": 18
   },
   {
    "name": "Computer monitors larger than HD",
@@ -779,7 +821,7 @@
  "screens": [
   {
    "name": "430px · Phones",
-   "count": 108
+   "count": 120
   },
   {
    "name": "2560px · Computer monitors larger than HD",
@@ -790,8 +832,20 @@
    "count": 6
   },
   {
+   "name": "1496px · Computer monitors",
+   "count": 5
+  },
+  {
+   "name": "1707px · Computer monitors",
+   "count": 5
+  },
+  {
    "name": "1920px · Computer monitors",
    "count": 5
+  },
+  {
+   "name": "339px · Phones",
+   "count": 4
   },
   {
    "name": "434px · Phones",
@@ -799,7 +853,7 @@
   },
   {
    "name": "402px · Phones",
-   "count": 2
+   "count": 3
   },
   {
    "name": "800px · Tablets and large phones",
@@ -826,8 +880,19 @@
    "count": 1
   }
  ],
- "clicks": [],
- "click_total": 0,
+ "clicks": [
+  {
+   "name": "Airron's Fall",
+   "path": "click/airrons-fall",
+   "count": 2
+  },
+  {
+   "name": "Magic Commander",
+   "path": "click/mtg-commander",
+   "count": 1
+  }
+ ],
+ "click_total": 3,
  "recruiter_pages": [
   {
    "name": "/work/projects/airronbot.html?r=recruiter",
@@ -843,15 +908,15 @@
  "recruiter_skip_total": 4,
  "ranges": {
   "day": {
-   "start": "2026-11-25",
-   "end": "2026-11-25",
-   "total_visits": 7,
-   "total_events": 0,
-   "total_visits_including_events": 7,
+   "start": "2026-11-27",
+   "end": "2026-11-27",
+   "total_visits": 4,
+   "total_events": 4,
+   "total_visits_including_events": 15,
    "daily": [
     {
-     "day": "2026-11-25",
-     "visits": 7
+     "day": "2026-11-27",
+     "visits": 4
     }
    ],
    "weekly": [
@@ -859,82 +924,90 @@
      "start": "2026-11-23",
      "end": "2026-11-29",
      "label": "Nov 23–Nov 29, 2026",
-     "visits": 7
+     "visits": 4
     }
    ],
    "monthly": [
     {
      "month": "2026-11",
      "label": "November 2026",
-     "visits": 7
+     "visits": 4
     }
    ],
    "pages": [
+    {
+     "name": "/games",
+     "count": 4
+    },
     {
      "name": "/commanders",
      "count": 3
     },
     {
-     "name": "/games",
-     "count": 1
-    },
-    {
-     "name": "/weston",
-     "count": 1
-    },
-    {
-     "name": "/work",
-     "count": 1
+     "name": "/arena",
+     "count": 2
     },
     {
      "name": "/",
-     "count": 1
+     "count": 2
     }
    ],
    "planets": [
     {
      "name": "Orbit / Home",
-     "count": 1
-    },
-    {
-     "name": "Experience Planet",
-     "count": 1
+     "count": 2
     },
     {
      "name": "Games Planet",
-     "count": 1
+     "count": 4
+    },
+    {
+     "name": "Airron's Fall",
+     "count": 2
     },
     {
      "name": "Commander Wall",
      "count": 3
-    },
-    {
-     "name": "Weston's Planet",
-     "count": 1
     }
    ],
    "referrers": [
     {
      "name": "Direct / unknown",
      "count": 4
+    },
+    {
+     "name": "Google",
+     "count": 1
     }
    ],
    "sources": [
     {
      "name": "Direct / unknown",
      "count": 4
+    },
+    {
+     "name": "Google",
+     "count": 1
     }
    ],
    "countries": [
     {
      "name": "United States",
-     "count": 7
+     "count": 20
+    },
+    {
+     "name": "Denmark",
+     "count": 5
     }
    ],
    "regions": [
     {
      "name": "Oregon, United States",
-     "count": 6
+     "count": 19
+    },
+    {
+     "name": "Denmark",
+     "count": 5
     },
     {
      "name": "Pennsylvania, United States",
@@ -943,44 +1016,82 @@
    ],
    "browsers": [
     {
+     "name": "Chrome",
+     "count": 14
+    },
+    {
      "name": "Safari",
-     "count": 7
+     "count": 11
     }
    ],
    "browser_versions": [
     {
-     "name": "Safari 11.0",
-     "count": 6
+     "name": "Chrome 158",
+     "count": 14
     },
     {
-     "name": "Safari 26.6",
-     "count": 1
+     "name": "Safari 11.0",
+     "count": 11
     }
    ],
    "systems": [
     {
      "name": "iOS",
-     "count": 7
+     "count": 11
+    },
+    {
+     "name": "macOS",
+     "count": 5
+    },
+    {
+     "name": "Windows",
+     "count": 5
+    },
+    {
+     "name": "Android",
+     "count": 4
     }
    ],
    "devices": [
     {
      "name": "Phones",
-     "count": 7
+     "count": 15
+    },
+    {
+     "name": "Computer monitors",
+     "count": 10
     }
    ],
    "screens": [
     {
      "name": "430px · Phones",
-     "count": 6
+     "count": 10
+    },
+    {
+     "name": "1496px · Computer monitors",
+     "count": 5
+    },
+    {
+     "name": "1707px · Computer monitors",
+     "count": 5
+    },
+    {
+     "name": "339px · Phones",
+     "count": 4
     },
     {
      "name": "402px · Phones",
      "count": 1
     }
    ],
-   "clicks": [],
-   "click_total": 0,
+   "clicks": [
+    {
+     "name": "Airron's Fall",
+     "path": "click/airrons-fall",
+     "count": 2
+    }
+   ],
+   "click_total": 2,
    "recruiter_pages": [],
    "recruiter_page_hits": 0,
    "recruiter_skip_events": [],
@@ -988,262 +1099,254 @@
    "named_visitor_count": 0,
    "hourly": [
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 0,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 1,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 2,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 3,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 4,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 5,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 6,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 7,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 8,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 9,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 10,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 11,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 12,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 13,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 14,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 15,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 16,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 17,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 18,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 19,
-     "visits": 0
+     "visits": 5
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 20,
-     "visits": 0
+     "visits": 6
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 21,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 22,
      "visits": 0
     },
     {
-     "day": "2026-11-24",
+     "day": "2026-11-26",
      "hour": 23,
      "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 0,
-     "visits": 0
+     "visits": 1
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 1,
-     "visits": 0
+     "visits": 3
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 2,
      "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 3,
      "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 4,
      "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 5,
      "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 6,
      "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 7,
      "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 8,
      "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 9,
      "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 10,
-     "visits": 4
+     "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 11,
      "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 12,
-     "visits": 1
+     "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 13,
-     "visits": 1
+     "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 14,
      "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 15,
      "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 16,
      "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 17,
      "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 18,
      "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 19,
      "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 20,
      "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 21,
      "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 22,
-     "visits": 1
+     "visits": 0
     },
     {
-     "day": "2026-11-25",
+     "day": "2026-11-27",
      "hour": 23,
      "visits": 0
     }
    ]
   },
   "week": {
-   "start": "2026-11-19",
-   "end": "2026-11-25",
-   "total_visits": 49,
-   "total_events": 7,
-   "total_visits_including_events": 60,
+   "start": "2026-11-21",
+   "end": "2026-11-27",
+   "total_visits": 44,
+   "total_events": 6,
+   "total_visits_including_events": 54,
    "daily": [
-    {
-     "day": "2026-11-19",
-     "visits": 7
-    },
-    {
-     "day": "2026-11-20",
-     "visits": 10
-    },
     {
      "day": "2026-11-21",
      "visits": 7
@@ -1263,6 +1366,14 @@
     {
      "day": "2026-11-25",
      "visits": 7
+    },
+    {
+     "day": "2026-11-26",
+     "visits": 8
+    },
+    {
+     "day": "2026-11-27",
+     "visits": 4
     }
    ],
    "weekly": [
@@ -1270,34 +1381,34 @@
      "start": "2026-11-16",
      "end": "2026-11-22",
      "label": "Nov 16–Nov 22, 2026",
-     "visits": 28
+     "visits": 11
     },
     {
      "start": "2026-11-23",
      "end": "2026-11-29",
      "label": "Nov 23–Nov 29, 2026",
-     "visits": 21
+     "visits": 33
     }
    ],
    "monthly": [
     {
      "month": "2026-11",
      "label": "November 2026",
-     "visits": 49
+     "visits": 44
     }
    ],
    "pages": [
-    {
-     "name": "/",
-     "count": 16
-    },
     {
      "name": "/games",
      "count": 14
     },
     {
-     "name": "/arena",
-     "count": 6
+     "name": "/",
+     "count": 13
+    },
+    {
+     "name": "/commanders",
+     "count": 7
     },
     {
      "name": "/weston",
@@ -1305,29 +1416,29 @@
     },
     {
      "name": "/work",
-     "count": 5
+     "count": 4
     },
     {
-     "name": "/commanders",
-     "count": 3
-    },
-    {
-     "name": "/quest",
+     "name": "/arena",
      "count": 3
     },
     {
      "name": "/christmas",
+     "count": 1
+    },
+    {
+     "name": "/quest",
      "count": 1
     }
    ],
    "planets": [
     {
      "name": "Orbit / Home",
-     "count": 16
+     "count": 13
     },
     {
      "name": "Experience Planet",
-     "count": 5
+     "count": 4
     },
     {
      "name": "Games Planet",
@@ -1335,15 +1446,15 @@
     },
     {
      "name": "Airron's Fall",
-     "count": 6
+     "count": 3
     },
     {
      "name": "Airron's Quest",
-     "count": 3
+     "count": 1
     },
     {
      "name": "Commander Wall",
-     "count": 3
+     "count": 7
     },
     {
      "name": "Weston's Planet",
@@ -1357,19 +1468,39 @@
    "referrers": [
     {
      "name": "Direct / unknown",
-     "count": 29
+     "count": 20
+    },
+    {
+     "name": "Google",
+     "count": 1
+    },
+    {
+     "name": "mtg-commander-taupe.vercel.app",
+     "count": 1
     }
    ],
    "sources": [
     {
      "name": "Direct / unknown",
-     "count": 29
+     "count": 20
+    },
+    {
+     "name": "Google",
+     "count": 1
+    },
+    {
+     "name": "mtg-commander-taupe.vercel.app",
+     "count": 1
     }
    ],
    "countries": [
     {
      "name": "United States",
-     "count": 59
+     "count": 58
+    },
+    {
+     "name": "Denmark",
+     "count": 5
     },
     {
      "name": "France",
@@ -1382,16 +1513,16 @@
      "count": 51
     },
     {
+     "name": "Denmark",
+     "count": 5
+    },
+    {
      "name": "Florida, United States",
      "count": 4
     },
     {
-     "name": "Louisiana, United States",
-     "count": 2
-    },
-    {
      "name": "Pennsylvania, United States",
-     "count": 2
+     "count": 3
     },
     {
      "name": "France",
@@ -1401,33 +1532,29 @@
    "browsers": [
     {
      "name": "Safari",
-     "count": 47
+     "count": 39
     },
     {
      "name": "Chrome",
-     "count": 13
+     "count": 25
     }
    ],
    "browser_versions": [
     {
      "name": "Safari 11.0",
-     "count": 33
-    },
-    {
-     "name": "Safari 26.6",
-     "count": 13
+     "count": 35
     },
     {
      "name": "Chrome 158",
-     "count": 6
+     "count": 20
     },
     {
      "name": "Chrome 157",
      "count": 4
     },
     {
-     "name": "Chrome 141",
-     "count": 2
+     "name": "Safari 26.6",
+     "count": 3
     },
     {
      "name": "Safari 27.2",
@@ -1441,25 +1568,29 @@
    "systems": [
     {
      "name": "iOS",
-     "count": 47
+     "count": 39
     },
     {
      "name": "Windows",
-     "count": 6
+     "count": 11
     },
     {
      "name": "Android",
-     "count": 4
+     "count": 8
+    },
+    {
+     "name": "macOS",
+     "count": 5
     },
     {
      "name": "Linux",
-     "count": 3
+     "count": 1
     }
    ],
    "devices": [
     {
      "name": "Phones",
-     "count": 51
+     "count": 47
     },
     {
      "name": "Tablets and large phones",
@@ -1467,7 +1598,7 @@
     },
     {
      "name": "Computer monitors",
-     "count": 2
+     "count": 10
     },
     {
      "name": "Computer monitors larger than HD",
@@ -1477,11 +1608,23 @@
    "screens": [
     {
      "name": "430px · Phones",
-     "count": 45
+     "count": 36
     },
     {
      "name": "2560px · Computer monitors larger than HD",
      "count": 6
+    },
+    {
+     "name": "1496px · Computer monitors",
+     "count": 5
+    },
+    {
+     "name": "1707px · Computer monitors",
+     "count": 5
+    },
+    {
+     "name": "339px · Phones",
+     "count": 4
     },
     {
      "name": "434px · Phones",
@@ -1489,32 +1632,39 @@
     },
     {
      "name": "402px · Phones",
-     "count": 2
-    },
-    {
-     "name": "1280px · Computer monitors",
-     "count": 2
+     "count": 3
     },
     {
      "name": "800px · Tablets and large phones",
      "count": 1
     }
    ],
-   "clicks": [],
-   "click_total": 0,
+   "clicks": [
+    {
+     "name": "Airron's Fall",
+     "path": "click/airrons-fall",
+     "count": 2
+    },
+    {
+     "name": "Magic Commander",
+     "path": "click/mtg-commander",
+     "count": 1
+    }
+   ],
+   "click_total": 3,
    "recruiter_pages": [],
    "recruiter_page_hits": 0,
    "recruiter_skip_events": [],
    "recruiter_skip_total": 0,
-   "named_visitor_count": 2,
+   "named_visitor_count": 1,
    "hourly": []
   },
   "month": {
-   "start": "2026-10-27",
-   "end": "2026-11-25",
-   "total_visits": 131,
-   "total_events": 14,
-   "total_visits_including_events": 145,
+   "start": "2026-10-29",
+   "end": "2026-11-27",
+   "total_visits": 143,
+   "total_events": 19,
+   "total_visits_including_events": 162,
    "daily": [
     {
      "day": "2026-11-07",
@@ -1591,6 +1741,14 @@
     {
      "day": "2026-11-25",
      "visits": 7
+    },
+    {
+     "day": "2026-11-26",
+     "visits": 8
+    },
+    {
+     "day": "2026-11-27",
+     "visits": 4
     }
    ],
    "weekly": [
@@ -1616,24 +1774,24 @@
      "start": "2026-11-23",
      "end": "2026-11-29",
      "label": "Nov 23–Nov 29, 2026",
-     "visits": 21
+     "visits": 33
     }
    ],
    "monthly": [
     {
      "month": "2026-11",
      "label": "November 2026",
-     "visits": 131
+     "visits": 143
     }
    ],
    "pages": [
     {
      "name": "/",
-     "count": 44
+     "count": 46
     },
     {
      "name": "/games",
-     "count": 24
+     "count": 28
     },
     {
      "name": "/work",
@@ -1645,7 +1803,11 @@
     },
     {
      "name": "/arena",
-     "count": 6
+     "count": 8
+    },
+    {
+     "name": "/commanders",
+     "count": 7
     },
     {
      "name": "/ops",
@@ -1654,10 +1816,6 @@
     {
      "name": "/tracker",
      "count": 4
-    },
-    {
-     "name": "/commanders",
-     "count": 3
     },
     {
      "name": "/quest",
@@ -1731,7 +1889,7 @@
    "planets": [
     {
      "name": "Orbit / Home",
-     "count": 44
+     "count": 46
     },
     {
      "name": "Experience Planet",
@@ -1739,11 +1897,11 @@
     },
     {
      "name": "Games Planet",
-     "count": 24
+     "count": 28
     },
     {
      "name": "Airron's Fall",
-     "count": 6
+     "count": 8
     },
     {
      "name": "Airron's Quest",
@@ -1751,7 +1909,7 @@
     },
     {
      "name": "Commander Wall",
-     "count": 3
+     "count": 7
     },
     {
      "name": "Work Planet",
@@ -1773,11 +1931,19 @@
    "referrers": [
     {
      "name": "Direct / unknown",
-     "count": 63
+     "count": 67
     },
     {
      "name": "www.linkedin.com",
      "count": 2
+    },
+    {
+     "name": "Google",
+     "count": 1
+    },
+    {
+     "name": "mtg-commander-taupe.vercel.app",
+     "count": 1
     }
    ],
    "sources": [
@@ -1791,13 +1957,25 @@
     },
     {
      "name": "Direct / unknown",
-     "count": 63
+     "count": 67
+    },
+    {
+     "name": "Google",
+     "count": 1
+    },
+    {
+     "name": "mtg-commander-taupe.vercel.app",
+     "count": 1
     }
    ],
    "countries": [
     {
      "name": "United States",
-     "count": 140
+     "count": 162
+    },
+    {
+     "name": "Denmark",
+     "count": 5
     },
     {
      "name": "United Kingdom",
@@ -1815,15 +1993,19 @@
    "regions": [
     {
      "name": "Oregon, United States",
-     "count": 116
+     "count": 137
+    },
+    {
+     "name": "Pennsylvania, United States",
+     "count": 8
     },
     {
      "name": "Florida, United States",
      "count": 7
     },
     {
-     "name": "Pennsylvania, United States",
-     "count": 7
+     "name": "Denmark",
+     "count": 5
     },
     {
      "name": "Alabama, United States",
@@ -1861,11 +2043,11 @@
    "browsers": [
     {
      "name": "Safari",
-     "count": 118
+     "count": 131
     },
     {
      "name": "Chrome",
-     "count": 26
+     "count": 40
     },
     {
      "name": "(unknown)",
@@ -1875,19 +2057,19 @@
    "browser_versions": [
     {
      "name": "Safari 11.0",
-     "count": 88
+     "count": 101
     },
     {
      "name": "Safari 26.6",
      "count": 25
     },
     {
-     "name": "Chrome 157",
-     "count": 10
+     "name": "Chrome 158",
+     "count": 20
     },
     {
-     "name": "Chrome 158",
-     "count": 6
+     "name": "Chrome 157",
+     "count": 10
     },
     {
      "name": "Safari 27.2",
@@ -1933,29 +2115,29 @@
    "systems": [
     {
      "name": "iOS",
-     "count": 117
+     "count": 130
     },
     {
      "name": "Windows",
-     "count": 14
+     "count": 19
+    },
+    {
+     "name": "Android",
+     "count": 9
     },
     {
      "name": "Linux",
      "count": 7
     },
     {
-     "name": "Android",
-     "count": 5
-    },
-    {
      "name": "macOS",
-     "count": 2
+     "count": 7
     }
    ],
    "devices": [
     {
      "name": "Phones",
-     "count": 122
+     "count": 139
     },
     {
      "name": "Tablets and large phones",
@@ -1963,7 +2145,7 @@
     },
     {
      "name": "Computer monitors",
-     "count": 8
+     "count": 18
     },
     {
      "name": "Computer monitors larger than HD",
@@ -1973,7 +2155,7 @@
    "screens": [
     {
      "name": "430px · Phones",
-     "count": 108
+     "count": 120
     },
     {
      "name": "2560px · Computer monitors larger than HD",
@@ -1984,8 +2166,20 @@
      "count": 6
     },
     {
+     "name": "1496px · Computer monitors",
+     "count": 5
+    },
+    {
+     "name": "1707px · Computer monitors",
+     "count": 5
+    },
+    {
      "name": "1920px · Computer monitors",
      "count": 5
+    },
+    {
+     "name": "339px · Phones",
+     "count": 4
     },
     {
      "name": "434px · Phones",
@@ -1993,7 +2187,7 @@
     },
     {
      "name": "402px · Phones",
-     "count": 2
+     "count": 3
     },
     {
      "name": "800px · Tablets and large phones",
@@ -2020,8 +2214,19 @@
      "count": 1
     }
    ],
-   "clicks": [],
-   "click_total": 0,
+   "clicks": [
+    {
+     "name": "Airron's Fall",
+     "path": "click/airrons-fall",
+     "count": 2
+    },
+    {
+     "name": "Magic Commander",
+     "path": "click/mtg-commander",
+     "count": 1
+    }
+   ],
+   "click_total": 3,
    "recruiter_pages": [
     {
      "name": "/work/projects/airronbot.html?r=recruiter",
@@ -2040,10 +2245,10 @@
   },
   "all": {
    "start": "2026-11-07",
-   "end": "2026-11-25",
-   "total_visits": 131,
-   "total_events": 14,
-   "total_visits_including_events": 145,
+   "end": "2026-11-27",
+   "total_visits": 143,
+   "total_events": 19,
+   "total_visits_including_events": 162,
    "daily": [
     {
      "day": "2026-11-07",
@@ -2120,6 +2325,14 @@
     {
      "day": "2026-11-25",
      "visits": 7
+    },
+    {
+     "day": "2026-11-26",
+     "visits": 8
+    },
+    {
+     "day": "2026-11-27",
+     "visits": 4
     }
    ],
    "weekly": [
@@ -2145,24 +2358,24 @@
      "start": "2026-11-23",
      "end": "2026-11-29",
      "label": "Nov 23–Nov 29, 2026",
-     "visits": 21
+     "visits": 33
     }
    ],
    "monthly": [
     {
      "month": "2026-11",
      "label": "November 2026",
-     "visits": 131
+     "visits": 143
     }
    ],
    "pages": [
     {
      "name": "/",
-     "count": 44
+     "count": 46
     },
     {
      "name": "/games",
-     "count": 24
+     "count": 28
     },
     {
      "name": "/work",
@@ -2174,7 +2387,11 @@
     },
     {
      "name": "/arena",
-     "count": 6
+     "count": 8
+    },
+    {
+     "name": "/commanders",
+     "count": 7
     },
     {
      "name": "/ops",
@@ -2183,10 +2400,6 @@
     {
      "name": "/tracker",
      "count": 4
-    },
-    {
-     "name": "/commanders",
-     "count": 3
     },
     {
      "name": "/quest",
@@ -2260,7 +2473,7 @@
    "planets": [
     {
      "name": "Orbit / Home",
-     "count": 44
+     "count": 46
     },
     {
      "name": "Experience Planet",
@@ -2268,11 +2481,11 @@
     },
     {
      "name": "Games Planet",
-     "count": 24
+     "count": 28
     },
     {
      "name": "Airron's Fall",
-     "count": 6
+     "count": 8
     },
     {
      "name": "Airron's Quest",
@@ -2280,7 +2493,7 @@
     },
     {
      "name": "Commander Wall",
-     "count": 3
+     "count": 7
     },
     {
      "name": "Work Planet",
@@ -2302,11 +2515,19 @@
    "referrers": [
     {
      "name": "Direct / unknown",
-     "count": 63
+     "count": 67
     },
     {
      "name": "www.linkedin.com",
      "count": 2
+    },
+    {
+     "name": "Google",
+     "count": 1
+    },
+    {
+     "name": "mtg-commander-taupe.vercel.app",
+     "count": 1
     }
    ],
    "sources": [
@@ -2320,13 +2541,25 @@
     },
     {
      "name": "Direct / unknown",
-     "count": 63
+     "count": 67
+    },
+    {
+     "name": "Google",
+     "count": 1
+    },
+    {
+     "name": "mtg-commander-taupe.vercel.app",
+     "count": 1
     }
    ],
    "countries": [
     {
      "name": "United States",
-     "count": 140
+     "count": 162
+    },
+    {
+     "name": "Denmark",
+     "count": 5
     },
     {
      "name": "United Kingdom",
@@ -2344,15 +2577,19 @@
    "regions": [
     {
      "name": "Oregon, United States",
-     "count": 116
+     "count": 137
+    },
+    {
+     "name": "Pennsylvania, United States",
+     "count": 8
     },
     {
      "name": "Florida, United States",
      "count": 7
     },
     {
-     "name": "Pennsylvania, United States",
-     "count": 7
+     "name": "Denmark",
+     "count": 5
     },
     {
      "name": "Alabama, United States",
@@ -2390,11 +2627,11 @@
    "browsers": [
     {
      "name": "Safari",
-     "count": 118
+     "count": 131
     },
     {
      "name": "Chrome",
-     "count": 26
+     "count": 40
     },
     {
      "name": "(unknown)",
@@ -2404,19 +2641,19 @@
    "browser_versions": [
     {
      "name": "Safari 11.0",
-     "count": 88
+     "count": 101
     },
     {
      "name": "Safari 26.6",
      "count": 25
     },
     {
-     "name": "Chrome 157",
-     "count": 10
+     "name": "Chrome 158",
+     "count": 20
     },
     {
-     "name": "Chrome 158",
-     "count": 6
+     "name": "Chrome 157",
+     "count": 10
     },
     {
      "name": "Safari 27.2",
@@ -2462,29 +2699,29 @@
    "systems": [
     {
      "name": "iOS",
-     "count": 117
+     "count": 130
     },
     {
      "name": "Windows",
-     "count": 14
+     "count": 19
+    },
+    {
+     "name": "Android",
+     "count": 9
     },
     {
      "name": "Linux",
      "count": 7
     },
     {
-     "name": "Android",
-     "count": 5
-    },
-    {
      "name": "macOS",
-     "count": 2
+     "count": 7
     }
    ],
    "devices": [
     {
      "name": "Phones",
-     "count": 122
+     "count": 139
     },
     {
      "name": "Tablets and large phones",
@@ -2492,7 +2729,7 @@
     },
     {
      "name": "Computer monitors",
-     "count": 8
+     "count": 18
     },
     {
      "name": "Computer monitors larger than HD",
@@ -2502,7 +2739,7 @@
    "screens": [
     {
      "name": "430px · Phones",
-     "count": 108
+     "count": 120
     },
     {
      "name": "2560px · Computer monitors larger than HD",
@@ -2513,8 +2750,20 @@
      "count": 6
     },
     {
+     "name": "1496px · Computer monitors",
+     "count": 5
+    },
+    {
+     "name": "1707px · Computer monitors",
+     "count": 5
+    },
+    {
      "name": "1920px · Computer monitors",
      "count": 5
+    },
+    {
+     "name": "339px · Phones",
+     "count": 4
     },
     {
      "name": "434px · Phones",
@@ -2522,7 +2771,7 @@
     },
     {
      "name": "402px · Phones",
-     "count": 2
+     "count": 3
     },
     {
      "name": "800px · Tablets and large phones",
@@ -2549,8 +2798,19 @@
      "count": 1
     }
    ],
-   "clicks": [],
-   "click_total": 0,
+   "clicks": [
+    {
+     "name": "Airron's Fall",
+     "path": "click/airrons-fall",
+     "count": 2
+    },
+    {
+     "name": "Magic Commander",
+     "path": "click/mtg-commander",
+     "count": 1
+    }
+   ],
+   "click_total": 3,
    "recruiter_pages": [
     {
      "name": "/work/projects/airronbot.html?r=recruiter",
