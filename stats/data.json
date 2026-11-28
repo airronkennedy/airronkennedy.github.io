@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-27T22:48:03+00:00",
+ "updated": "2026-11-28T06:52:46+00:00",
  "note": null,
  "timezone": "America/Los_Angeles",
  "tracking_started": "2026-11-07",
- "total_visits": 143,
- "total_events": 19,
- "unique_visitors": 143,
+ "total_visits": 153,
+ "total_events": 23,
+ "unique_visitors": 153,
  "unique_visitors_note": "GoatCounter visits are unique sessions in the selected range, not raw pageviews.",
  "new_vs_returning": null,
  "daily": [
@@ -91,7 +91,7 @@
   },
   {
    "day": "2026-11-27",
-   "visits": 4
+   "visits": 14
   }
  ],
  "weekly": [
@@ -117,14 +117,14 @@
    "start": "2026-11-23",
    "end": "2026-11-29",
    "label": "Nov 23–Nov 29, 2026",
-   "visits": 33
+   "visits": 43
   }
  ],
  "monthly": [
   {
    "month": "2026-11",
    "label": "November 2026",
-   "visits": 143
+   "visits": 153
   }
  ],
  "today_hourly": [
@@ -301,12 +301,12 @@
   {
    "day": "2026-11-27",
    "hour": 10,
-   "visits": 0
+   "visits": 4
   },
   {
    "day": "2026-11-27",
    "hour": 11,
-   "visits": 0
+   "visits": 5
   },
   {
    "day": "2026-11-27",
@@ -321,7 +321,7 @@
   {
    "day": "2026-11-27",
    "hour": 14,
-   "visits": 0
+   "visits": 1
   },
   {
    "day": "2026-11-27",
@@ -361,7 +361,7 @@
   {
    "day": "2026-11-27",
    "hour": 22,
-   "visits": 0
+   "visits": 4
   },
   {
    "day": "2026-11-27",
@@ -418,6 +418,11 @@
  ],
  "arena_players": [
   {
+   "name": "Rando",
+   "day": "2026-11-27",
+   "count": 1
+  },
+  {
    "name": "Megablaster",
    "day": "2026-11-26",
    "count": 1
@@ -451,11 +456,11 @@
  "pages": [
   {
    "name": "/",
-   "count": 46
+   "count": 50
   },
   {
    "name": "/games",
-   "count": 28
+   "count": 32
   },
   {
    "name": "/work",
@@ -467,11 +472,11 @@
   },
   {
    "name": "/arena",
-   "count": 8
+   "count": 9
   },
   {
    "name": "/commanders",
-   "count": 7
+   "count": 8
   },
   {
    "name": "/ops",
@@ -553,7 +558,7 @@
  "planets": [
   {
    "name": "Orbit / Home",
-   "count": 46
+   "count": 50
   },
   {
    "name": "Experience Planet",
@@ -561,11 +566,11 @@
   },
   {
    "name": "Games Planet",
-   "count": 28
+   "count": 32
   },
   {
    "name": "Airron's Fall",
-   "count": 8
+   "count": 9
   },
   {
    "name": "Airron's Quest",
@@ -573,7 +578,7 @@
   },
   {
    "name": "Commander Wall",
-   "count": 7
+   "count": 8
   },
   {
    "name": "Work Planet",
@@ -595,7 +600,11 @@
  "referrers": [
   {
    "name": "Direct / unknown",
-   "count": 67
+   "count": 72
+  },
+  {
+   "name": "mtg-commander-taupe.vercel.app",
+   "count": 3
   },
   {
    "name": "www.linkedin.com",
@@ -603,10 +612,6 @@
   },
   {
    "name": "Google",
-   "count": 1
-  },
-  {
-   "name": "mtg-commander-taupe.vercel.app",
    "count": 1
   }
  ],
@@ -621,21 +626,21 @@
   },
   {
    "name": "Direct / unknown",
-   "count": 67
-  },
-  {
-   "name": "Google",
-   "count": 1
+   "count": 72
   },
   {
    "name": "mtg-commander-taupe.vercel.app",
+   "count": 3
+  },
+  {
+   "name": "Google",
    "count": 1
   }
  ],
  "countries": [
   {
    "name": "United States",
-   "count": 162
+   "count": 166
   },
   {
    "name": "Denmark",
@@ -657,7 +662,7 @@
  "regions": [
   {
    "name": "Oregon, United States",
-   "count": 137
+   "count": 140
   },
   {
    "name": "Pennsylvania, United States",
@@ -692,6 +697,10 @@
    "count": 1
   },
   {
+   "name": "Georgia, United States",
+   "count": 1
+  },
+  {
    "name": "Virginia, United States",
    "count": 1
   },
@@ -709,11 +718,11 @@
  "browsers": [
   {
    "name": "Safari",
-   "count": 131
+   "count": 133
   },
   {
    "name": "Chrome",
-   "count": 40
+   "count": 42
   },
   {
    "name": "(unknown)",
@@ -723,7 +732,7 @@
  "browser_versions": [
   {
    "name": "Safari 11.0",
-   "count": 101
+   "count": 103
   },
   {
    "name": "Safari 26.6",
@@ -731,7 +740,7 @@
   },
   {
    "name": "Chrome 158",
-   "count": 20
+   "count": 21
   },
   {
    "name": "Chrome 157",
@@ -762,6 +771,10 @@
    "count": 1
   },
   {
+   "name": "Chrome 117",
+   "count": 1
+  },
+  {
    "name": "Chrome 134",
    "count": 1
   },
@@ -781,15 +794,15 @@
  "systems": [
   {
    "name": "iOS",
-   "count": 130
+   "count": 132
   },
   {
    "name": "Windows",
-   "count": 19
+   "count": 20
   },
   {
    "name": "Android",
-   "count": 9
+   "count": 10
   },
   {
    "name": "Linux",
@@ -803,11 +816,11 @@
  "devices": [
   {
    "name": "Phones",
-   "count": 139
+   "count": 142
   },
   {
    "name": "Tablets and large phones",
-   "count": 4
+   "count": 5
   },
   {
    "name": "Computer monitors",
@@ -821,7 +834,7 @@
  "screens": [
   {
    "name": "430px · Phones",
-   "count": 120
+   "count": 122
   },
   {
    "name": "2560px · Computer monitors larger than HD",
@@ -857,7 +870,7 @@
   },
   {
    "name": "800px · Tablets and large phones",
-   "count": 2
+   "count": 3
   },
   {
    "name": "810px · Tablets and large phones",
@@ -876,6 +889,10 @@
    "count": 1
   },
   {
+   "name": "412px · Phones",
+   "count": 1
+  },
+  {
    "name": "1600px · Computer monitors",
    "count": 1
   }
@@ -884,15 +901,15 @@
   {
    "name": "Airron's Fall",
    "path": "click/airrons-fall",
-   "count": 2
+   "count": 3
   },
   {
    "name": "Magic Commander",
    "path": "click/mtg-commander",
-   "count": 1
+   "count": 3
   }
  ],
- "click_total": 3,
+ "click_total": 6,
  "recruiter_pages": [
   {
    "name": "/work/projects/airronbot.html?r=recruiter",
@@ -910,13 +927,13 @@
   "day": {
    "start": "2026-11-27",
    "end": "2026-11-27",
-   "total_visits": 4,
-   "total_events": 4,
-   "total_visits_including_events": 15,
+   "total_visits": 14,
+   "total_events": 8,
+   "total_visits_including_events": 29,
    "daily": [
     {
      "day": "2026-11-27",
-     "visits": 4
+     "visits": 14
     }
    ],
    "weekly": [
@@ -924,56 +941,60 @@
      "start": "2026-11-23",
      "end": "2026-11-29",
      "label": "Nov 23–Nov 29, 2026",
-     "visits": 4
+     "visits": 14
     }
    ],
    "monthly": [
     {
      "month": "2026-11",
      "label": "November 2026",
-     "visits": 4
+     "visits": 14
     }
    ],
    "pages": [
     {
      "name": "/games",
-     "count": 4
-    },
-    {
-     "name": "/commanders",
-     "count": 3
-    },
-    {
-     "name": "/arena",
-     "count": 2
+     "count": 8
     },
     {
      "name": "/",
-     "count": 2
+     "count": 6
+    },
+    {
+     "name": "/commanders",
+     "count": 4
+    },
+    {
+     "name": "/arena",
+     "count": 3
     }
    ],
    "planets": [
     {
      "name": "Orbit / Home",
-     "count": 2
+     "count": 6
     },
     {
      "name": "Games Planet",
-     "count": 4
+     "count": 8
     },
     {
      "name": "Airron's Fall",
-     "count": 2
+     "count": 3
     },
     {
      "name": "Commander Wall",
-     "count": 3
+     "count": 4
     }
    ],
    "referrers": [
     {
      "name": "Direct / unknown",
-     "count": 4
+     "count": 9
+    },
+    {
+     "name": "mtg-commander-taupe.vercel.app",
+     "count": 2
     },
     {
      "name": "Google",
@@ -983,7 +1004,11 @@
    "sources": [
     {
      "name": "Direct / unknown",
-     "count": 4
+     "count": 9
+    },
+    {
+     "name": "mtg-commander-taupe.vercel.app",
+     "count": 2
     },
     {
      "name": "Google",
@@ -993,7 +1018,7 @@
    "countries": [
     {
      "name": "United States",
-     "count": 20
+     "count": 24
     },
     {
      "name": "Denmark",
@@ -1003,11 +1028,15 @@
    "regions": [
     {
      "name": "Oregon, United States",
-     "count": 19
+     "count": 22
     },
     {
      "name": "Denmark",
      "count": 5
+    },
+    {
+     "name": "Georgia, United States",
+     "count": 1
     },
     {
      "name": "Pennsylvania, United States",
@@ -1017,45 +1046,53 @@
    "browsers": [
     {
      "name": "Chrome",
-     "count": 14
+     "count": 16
     },
     {
      "name": "Safari",
-     "count": 11
+     "count": 13
     }
    ],
    "browser_versions": [
     {
      "name": "Chrome 158",
-     "count": 14
+     "count": 15
     },
     {
      "name": "Safari 11.0",
-     "count": 11
+     "count": 13
+    },
+    {
+     "name": "Chrome 117",
+     "count": 1
     }
    ],
    "systems": [
     {
      "name": "iOS",
-     "count": 11
+     "count": 13
+    },
+    {
+     "name": "Windows",
+     "count": 6
+    },
+    {
+     "name": "Android",
+     "count": 5
     },
     {
      "name": "macOS",
      "count": 5
-    },
-    {
-     "name": "Windows",
-     "count": 5
-    },
-    {
-     "name": "Android",
-     "count": 4
     }
    ],
    "devices": [
     {
      "name": "Phones",
-     "count": 15
+     "count": 18
+    },
+    {
+     "name": "Tablets and large phones",
+     "count": 1
     },
     {
      "name": "Computer monitors",
@@ -1065,7 +1102,7 @@
    "screens": [
     {
      "name": "430px · Phones",
-     "count": 10
+     "count": 12
     },
     {
      "name": "1496px · Computer monitors",
@@ -1082,16 +1119,29 @@
     {
      "name": "402px · Phones",
      "count": 1
+    },
+    {
+     "name": "412px · Phones",
+     "count": 1
+    },
+    {
+     "name": "800px · Tablets and large phones",
+     "count": 1
     }
    ],
    "clicks": [
     {
      "name": "Airron's Fall",
      "path": "click/airrons-fall",
+     "count": 3
+    },
+    {
+     "name": "Magic Commander",
+     "path": "click/mtg-commander",
      "count": 2
     }
    ],
-   "click_total": 2,
+   "click_total": 5,
    "recruiter_pages": [],
    "recruiter_page_hits": 0,
    "recruiter_skip_events": [],
@@ -1271,12 +1321,12 @@
     {
      "day": "2026-11-27",
      "hour": 10,
-     "visits": 0
+     "visits": 4
     },
     {
      "day": "2026-11-27",
      "hour": 11,
-     "visits": 0
+     "visits": 5
     },
     {
      "day": "2026-11-27",
@@ -1291,7 +1341,7 @@
     {
      "day": "2026-11-27",
      "hour": 14,
-     "visits": 0
+     "visits": 1
     },
     {
      "day": "2026-11-27",
@@ -1331,7 +1381,7 @@
     {
      "day": "2026-11-27",
      "hour": 22,
-     "visits": 0
+     "visits": 4
     },
     {
      "day": "2026-11-27",
@@ -1343,9 +1393,9 @@
   "week": {
    "start": "2026-11-21",
    "end": "2026-11-27",
-   "total_visits": 44,
-   "total_events": 6,
-   "total_visits_including_events": 54,
+   "total_visits": 54,
+   "total_events": 10,
+   "total_visits_including_events": 68,
    "daily": [
     {
      "day": "2026-11-21",
@@ -1373,7 +1423,7 @@
     },
     {
      "day": "2026-11-27",
-     "visits": 4
+     "visits": 14
     }
    ],
    "weekly": [
@@ -1387,40 +1437,40 @@
      "start": "2026-11-23",
      "end": "2026-11-29",
      "label": "Nov 23–Nov 29, 2026",
-     "visits": 33
+     "visits": 43
     }
    ],
    "monthly": [
     {
      "month": "2026-11",
      "label": "November 2026",
-     "visits": 44
+     "visits": 54
     }
    ],
    "pages": [
     {
      "name": "/games",
-     "count": 14
+     "count": 18
     },
     {
      "name": "/",
-     "count": 13
+     "count": 17
     },
     {
      "name": "/commanders",
-     "count": 7
+     "count": 8
     },
     {
      "name": "/weston",
      "count": 5
     },
     {
-     "name": "/work",
+     "name": "/arena",
      "count": 4
     },
     {
-     "name": "/arena",
-     "count": 3
+     "name": "/work",
+     "count": 4
     },
     {
      "name": "/christmas",
@@ -1434,7 +1484,7 @@
    "planets": [
     {
      "name": "Orbit / Home",
-     "count": 13
+     "count": 17
     },
     {
      "name": "Experience Planet",
@@ -1442,11 +1492,11 @@
     },
     {
      "name": "Games Planet",
-     "count": 14
+     "count": 18
     },
     {
      "name": "Airron's Fall",
-     "count": 3
+     "count": 4
     },
     {
      "name": "Airron's Quest",
@@ -1454,7 +1504,7 @@
     },
     {
      "name": "Commander Wall",
-     "count": 7
+     "count": 8
     },
     {
      "name": "Weston's Planet",
@@ -1468,35 +1518,35 @@
    "referrers": [
     {
      "name": "Direct / unknown",
-     "count": 20
-    },
-    {
-     "name": "Google",
-     "count": 1
+     "count": 25
     },
     {
      "name": "mtg-commander-taupe.vercel.app",
+     "count": 3
+    },
+    {
+     "name": "Google",
      "count": 1
     }
    ],
    "sources": [
     {
      "name": "Direct / unknown",
-     "count": 20
-    },
-    {
-     "name": "Google",
-     "count": 1
+     "count": 25
     },
     {
      "name": "mtg-commander-taupe.vercel.app",
+     "count": 3
+    },
+    {
+     "name": "Google",
      "count": 1
     }
    ],
    "countries": [
     {
      "name": "United States",
-     "count": 58
+     "count": 62
     },
     {
      "name": "Denmark",
@@ -1510,7 +1560,7 @@
    "regions": [
     {
      "name": "Oregon, United States",
-     "count": 51
+     "count": 54
     },
     {
      "name": "Denmark",
@@ -1525,6 +1575,10 @@
      "count": 3
     },
     {
+     "name": "Georgia, United States",
+     "count": 1
+    },
+    {
      "name": "France",
      "count": 1
     }
@@ -1532,21 +1586,21 @@
    "browsers": [
     {
      "name": "Safari",
-     "count": 39
+     "count": 41
     },
     {
      "name": "Chrome",
-     "count": 25
+     "count": 27
     }
    ],
    "browser_versions": [
     {
      "name": "Safari 11.0",
-     "count": 35
+     "count": 37
     },
     {
      "name": "Chrome 158",
-     "count": 20
+     "count": 21
     },
     {
      "name": "Chrome 157",
@@ -1561,6 +1615,10 @@
      "count": 1
     },
     {
+     "name": "Chrome 117",
+     "count": 1
+    },
+    {
      "name": "Chrome 134",
      "count": 1
     }
@@ -1568,15 +1626,15 @@
    "systems": [
     {
      "name": "iOS",
-     "count": 39
+     "count": 41
     },
     {
      "name": "Windows",
-     "count": 11
+     "count": 12
     },
     {
      "name": "Android",
-     "count": 8
+     "count": 9
     },
     {
      "name": "macOS",
@@ -1590,11 +1648,11 @@
    "devices": [
     {
      "name": "Phones",
-     "count": 47
+     "count": 50
     },
     {
      "name": "Tablets and large phones",
-     "count": 1
+     "count": 2
     },
     {
      "name": "Computer monitors",
@@ -1608,7 +1666,7 @@
    "screens": [
     {
      "name": "430px · Phones",
-     "count": 36
+     "count": 38
     },
     {
      "name": "2560px · Computer monitors larger than HD",
@@ -1636,6 +1694,10 @@
     },
     {
      "name": "800px · Tablets and large phones",
+     "count": 2
+    },
+    {
+     "name": "412px · Phones",
      "count": 1
     }
    ],
@@ -1643,15 +1705,15 @@
     {
      "name": "Airron's Fall",
      "path": "click/airrons-fall",
-     "count": 2
+     "count": 3
     },
     {
      "name": "Magic Commander",
      "path": "click/mtg-commander",
-     "count": 1
+     "count": 3
     }
    ],
-   "click_total": 3,
+   "click_total": 6,
    "recruiter_pages": [],
    "recruiter_page_hits": 0,
    "recruiter_skip_events": [],
@@ -1662,9 +1724,9 @@
   "month": {
    "start": "2026-10-29",
    "end": "2026-11-27",
-   "total_visits": 143,
-   "total_events": 19,
-   "total_visits_including_events": 162,
+   "total_visits": 153,
+   "total_events": 23,
+   "total_visits_including_events": 176,
    "daily": [
     {
      "day": "2026-11-07",
@@ -1748,7 +1810,7 @@
     },
     {
      "day": "2026-11-27",
-     "visits": 4
+     "visits": 14
     }
    ],
    "weekly": [
@@ -1774,24 +1836,24 @@
      "start": "2026-11-23",
      "end": "2026-11-29",
      "label": "Nov 23–Nov 29, 2026",
-     "visits": 33
+     "visits": 43
     }
    ],
    "monthly": [
     {
      "month": "2026-11",
      "label": "November 2026",
-     "visits": 143
+     "visits": 153
     }
    ],
    "pages": [
     {
      "name": "/",
-     "count": 46
+     "count": 50
     },
     {
      "name": "/games",
-     "count": 28
+     "count": 32
     },
     {
      "name": "/work",
@@ -1803,11 +1865,11 @@
     },
     {
      "name": "/arena",
-     "count": 8
+     "count": 9
     },
     {
      "name": "/commanders",
-     "count": 7
+     "count": 8
     },
     {
      "name": "/ops",
@@ -1889,7 +1951,7 @@
    "planets": [
     {
      "name": "Orbit / Home",
-     "count": 46
+     "count": 50
     },
     {
      "name": "Experience Planet",
@@ -1897,11 +1959,11 @@
     },
     {
      "name": "Games Planet",
-     "count": 28
+     "count": 32
     },
     {
      "name": "Airron's Fall",
-     "count": 8
+     "count": 9
     },
     {
      "name": "Airron's Quest",
@@ -1909,7 +1971,7 @@
     },
     {
      "name": "Commander Wall",
-     "count": 7
+     "count": 8
     },
     {
      "name": "Work Planet",
@@ -1931,7 +1993,11 @@
    "referrers": [
     {
      "name": "Direct / unknown",
-     "count": 67
+     "count": 72
+    },
+    {
+     "name": "mtg-commander-taupe.vercel.app",
+     "count": 3
     },
     {
      "name": "www.linkedin.com",
@@ -1939,10 +2005,6 @@
     },
     {
      "name": "Google",
-     "count": 1
-    },
-    {
-     "name": "mtg-commander-taupe.vercel.app",
      "count": 1
     }
    ],
@@ -1957,21 +2019,21 @@
     },
     {
      "name": "Direct / unknown",
-     "count": 67
-    },
-    {
-     "name": "Google",
-     "count": 1
+     "count": 72
     },
     {
      "name": "mtg-commander-taupe.vercel.app",
+     "count": 3
+    },
+    {
+     "name": "Google",
      "count": 1
     }
    ],
    "countries": [
     {
      "name": "United States",
-     "count": 162
+     "count": 166
     },
     {
      "name": "Denmark",
@@ -1993,7 +2055,7 @@
    "regions": [
     {
      "name": "Oregon, United States",
-     "count": 137
+     "count": 140
     },
     {
      "name": "Pennsylvania, United States",
@@ -2028,6 +2090,10 @@
      "count": 1
     },
     {
+     "name": "Georgia, United States",
+     "count": 1
+    },
+    {
      "name": "Virginia, United States",
      "count": 1
     },
@@ -2043,11 +2109,11 @@
    "browsers": [
     {
      "name": "Safari",
-     "count": 131
+     "count": 133
     },
     {
      "name": "Chrome",
-     "count": 40
+     "count": 42
     },
     {
      "name": "(unknown)",
@@ -2057,7 +2123,7 @@
    "browser_versions": [
     {
      "name": "Safari 11.0",
-     "count": 101
+     "count": 103
     },
     {
      "name": "Safari 26.6",
@@ -2065,7 +2131,7 @@
     },
     {
      "name": "Chrome 158",
-     "count": 20
+     "count": 21
     },
     {
      "name": "Chrome 157",
@@ -2096,6 +2162,10 @@
      "count": 1
     },
     {
+     "name": "Chrome 117",
+     "count": 1
+    },
+    {
      "name": "Chrome 134",
      "count": 1
     },
@@ -2115,15 +2185,15 @@
    "systems": [
     {
      "name": "iOS",
-     "count": 130
+     "count": 132
     },
     {
      "name": "Windows",
-     "count": 19
+     "count": 20
     },
     {
      "name": "Android",
-     "count": 9
+     "count": 10
     },
     {
      "name": "Linux",
@@ -2137,11 +2207,11 @@
    "devices": [
     {
      "name": "Phones",
-     "count": 139
+     "count": 142
     },
     {
      "name": "Tablets and large phones",
-     "count": 4
+     "count": 5
     },
     {
      "name": "Computer monitors",
@@ -2155,7 +2225,7 @@
    "screens": [
     {
      "name": "430px · Phones",
-     "count": 120
+     "count": 122
     },
     {
      "name": "2560px · Computer monitors larger than HD",
@@ -2191,7 +2261,7 @@
     },
     {
      "name": "800px · Tablets and large phones",
-     "count": 2
+     "count": 3
     },
     {
      "name": "810px · Tablets and large phones",
@@ -2210,6 +2280,10 @@
      "count": 1
     },
     {
+     "name": "412px · Phones",
+     "count": 1
+    },
+    {
      "name": "1600px · Computer monitors",
      "count": 1
     }
@@ -2218,15 +2292,15 @@
     {
      "name": "Airron's Fall",
      "path": "click/airrons-fall",
-     "count": 2
+     "count": 3
     },
     {
      "name": "Magic Commander",
      "path": "click/mtg-commander",
-     "count": 1
+     "count": 3
     }
    ],
-   "click_total": 3,
+   "click_total": 6,
    "recruiter_pages": [
     {
      "name": "/work/projects/airronbot.html?r=recruiter",
@@ -2246,9 +2320,9 @@
   "all": {
    "start": "2026-11-07",
    "end": "2026-11-27",
-   "total_visits": 143,
-   "total_events": 19,
-   "total_visits_including_events": 162,
+   "total_visits": 153,
+   "total_events": 23,
+   "total_visits_including_events": 176,
    "daily": [
     {
      "day": "2026-11-07",
@@ -2332,7 +2406,7 @@
     },
     {
      "day": "2026-11-27",
-     "visits": 4
+     "visits": 14
     }
    ],
    "weekly": [
@@ -2358,24 +2432,24 @@
      "start": "2026-11-23",
      "end": "2026-11-29",
      "label": "Nov 23–Nov 29, 2026",
-     "visits": 33
+     "visits": 43
     }
    ],
    "monthly": [
     {
      "month": "2026-11",
      "label": "November 2026",
-     "visits": 143
+     "visits": 153
     }
    ],
    "pages": [
     {
      "name": "/",
-     "count": 46
+     "count": 50
     },
     {
      "name": "/games",
-     "count": 28
+     "count": 32
     },
     {
      "name": "/work",
@@ -2387,11 +2461,11 @@
     },
     {
      "name": "/arena",
-     "count": 8
+     "count": 9
     },
     {
      "name": "/commanders",
-     "count": 7
+     "count": 8
     },
     {
      "name": "/ops",
@@ -2473,7 +2547,7 @@
    "planets": [
     {
      "name": "Orbit / Home",
-     "count": 46
+     "count": 50
     },
     {
      "name": "Experience Planet",
@@ -2481,11 +2555,11 @@
     },
     {
      "name": "Games Planet",
-     "count": 28
+     "count": 32
     },
     {
      "name": "Airron's Fall",
-     "count": 8
+     "count": 9
     },
     {
      "name": "Airron's Quest",
@@ -2493,7 +2567,7 @@
     },
     {
      "name": "Commander Wall",
-     "count": 7
+     "count": 8
     },
     {
      "name": "Work Planet",
@@ -2515,7 +2589,11 @@
    "referrers": [
     {
      "name": "Direct / unknown",
-     "count": 67
+     "count": 72
+    },
+    {
+     "name": "mtg-commander-taupe.vercel.app",
+     "count": 3
     },
     {
      "name": "www.linkedin.com",
@@ -2523,10 +2601,6 @@
     },
     {
      "name": "Google",
-     "count": 1
-    },
-    {
-     "name": "mtg-commander-taupe.vercel.app",
      "count": 1
     }
    ],
@@ -2541,21 +2615,21 @@
     },
     {
      "name": "Direct / unknown",
-     "count": 67
-    },
-    {
-     "name": "Google",
-     "count": 1
+     "count": 72
     },
     {
      "name": "mtg-commander-taupe.vercel.app",
+     "count": 3
+    },
+    {
+     "name": "Google",
      "count": 1
     }
    ],
    "countries": [
     {
      "name": "United States",
-     "count": 162
+     "count": 166
     },
     {
      "name": "Denmark",
@@ -2577,7 +2651,7 @@
    "regions": [
     {
      "name": "Oregon, United States",
-     "count": 137
+     "count": 140
     },
     {
      "name": "Pennsylvania, United States",
@@ -2612,6 +2686,10 @@
      "count": 1
     },
     {
+     "name": "Georgia, United States",
+     "count": 1
+    },
+    {
      "name": "Virginia, United States",
      "count": 1
     },
@@ -2627,11 +2705,11 @@
    "browsers": [
     {
      "name": "Safari",
-     "count": 131
+     "count": 133
     },
     {
      "name": "Chrome",
-     "count": 40
+     "count": 42
     },
     {
      "name": "(unknown)",
@@ -2641,7 +2719,7 @@
    "browser_versions": [
     {
      "name": "Safari 11.0",
-     "count": 101
+     "count": 103
     },
     {
      "name": "Safari 26.6",
@@ -2649,7 +2727,7 @@
     },
     {
      "name": "Chrome 158",
-     "count": 20
+     "count": 21
     },
     {
      "name": "Chrome 157",
@@ -2680,6 +2758,10 @@
      "count": 1
     },
     {
+     "name": "Chrome 117",
+     "count": 1
+    },
+    {
      "name": "Chrome 134",
      "count": 1
     },
@@ -2699,15 +2781,15 @@
    "systems": [
     {
      "name": "iOS",
-     "count": 130
+     "count": 132
     },
     {
      "name": "Windows",
-     "count": 19
+     "count": 20
     },
     {
      "name": "Android",
-     "count": 9
+     "count": 10
     },
     {
      "name": "Linux",
@@ -2721,11 +2803,11 @@
    "devices": [
     {
      "name": "Phones",
-     "count": 139
+     "count": 142
     },
     {
      "name": "Tablets and large phones",
-     "count": 4
+     "count": 5
     },
     {
      "name": "Computer monitors",
@@ -2739,7 +2821,7 @@
    "screens": [
     {
      "name": "430px · Phones",
-     "count": 120
+     "count": 122
     },
     {
      "name": "2560px · Computer monitors larger than HD",
@@ -2775,7 +2857,7 @@
     },
     {
      "name": "800px · Tablets and large phones",
-     "count": 2
+     "count": 3
     },
     {
      "name": "810px · Tablets and large phones",
@@ -2794,6 +2876,10 @@
      "count": 1
     },
     {
+     "name": "412px · Phones",
+     "count": 1
+    },
+    {
      "name": "1600px · Computer monitors",
      "count": 1
     }
@@ -2802,15 +2888,15 @@
     {
      "name": "Airron's Fall",
      "path": "click/airrons-fall",
-     "count": 2
+     "count": 3
     },
     {
      "name": "Magic Commander",
      "path": "click/mtg-commander",
-     "count": 1
+     "count": 3
     }
    ],
-   "click_total": 3,
+   "click_total": 6,
    "recruiter_pages": [
     {
      "name": "/work/projects/airronbot.html?r=recruiter",
